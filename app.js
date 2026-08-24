@@ -1239,9 +1239,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const loginBtn = document.getElementById('loginBtn');
     const loginFullName = document.getElementById('loginFullName');
     const loginClass = document.getElementById('loginClass');
+    const loginPassword = document.getElementById('loginPassword');
     const loginError = document.getElementById('loginError');
 
     const allowedClasses = ['CB196', 'CB201', 'CB202', 'B209'];
+    const REQUIRED_PASSWORD = 'VSTEPSEPTEMBER';
 
     const loggedInUser = localStorage.getItem('vstep_student_info');
     if (loggedInUser) {
@@ -1254,6 +1256,7 @@ document.addEventListener('DOMContentLoaded', () => {
         loginBtn.addEventListener('click', () => {
             const fullName = loginFullName.value.trim();
             const className = loginClass.value.trim().toUpperCase();
+            const password = loginPassword ? loginPassword.value.trim() : '';
 
             if (!fullName) {
                 loginError.textContent = 'Vui lòng nhập Họ và tên.';
@@ -1267,6 +1270,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (!allowedClasses.includes(className)) {
                 loginError.textContent = 'Lớp học không hợp lệ. Chỉ nhận CB196, CB201, CB202, B209.';
+                return;
+            }
+
+            if (!password) {
+                loginError.textContent = 'Vui lòng nhập Mật khẩu.';
+                return;
+            }
+
+            if (password !== REQUIRED_PASSWORD) {
+                loginError.textContent = 'Mật khẩu không chính xác.';
                 return;
             }
 
