@@ -1243,7 +1243,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const loginError = document.getElementById('loginError');
 
     const allowedClasses = ['CB196', 'CB201', 'CB202', 'B209'];
-    const REQUIRED_PASSWORD = 'VSTEPSEPTEMBER';
+    const REQUIRED_PASSWORD = 'PRACTICEWRITING';
 
     // Check if authenticated in current session
     const isSessionAuth = sessionStorage.getItem('vstep_authenticated');
