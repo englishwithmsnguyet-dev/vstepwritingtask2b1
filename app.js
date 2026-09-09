@@ -1242,8 +1242,35 @@ document.addEventListener('DOMContentLoaded', () => {
     const loginPassword = document.getElementById('loginPassword');
     const loginError = document.getElementById('loginError');
 
-    const allowedClasses = ['CB196', 'CB201', 'CB202', 'B209'];
     const REQUIRED_PASSWORD = 'PRACTICEWRITING';
+    const ALLOWED_CLASS = 'CB206';
+
+    const ALLOWED_STUDENTS = [
+        "Nguyễn Thị Vân Anh",
+        "Nguyễn Thị Hồng Duyên",
+        "Nguyễn Thị Thúy Hồng",
+        "Trương Ngọc Nhi",
+        "Nguyễn Phạm Như Quỳnh",
+        "Trần Lê Quỳnh",
+        "Ông Lê Thành",
+        "Trần Nguyễn Thanh Thảo",
+        "Phan Nhật Thiện",
+        "Trần Thị Cẩm Tiên",
+        "Võ Trần Bảo Tính",
+        "Trương Thanh Toàn",
+        "Phạm Ngọc Trâm",
+        "Nguyễn Võ Bảo Trân"
+    ];
+
+    function normalizeName(str) {
+        return str
+            .normalize('NFC')
+            .toLowerCase()
+            .replace(/\s+/g, ' ')
+            .trim();
+    }
+
+    const normalizedStudentList = ALLOWED_STUDENTS.map(normalizeName);
 
     // Check if authenticated in current session
     const isSessionAuth = sessionStorage.getItem('vstep_authenticated');
@@ -1262,11 +1289,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function handleLoginSubmit() {
-        const fullName = loginFullName ? loginFullName.value.trim() : '';
+        const rawFullName = loginFullName ? loginFullName.value.trim() : '';
         const className = loginClass ? loginClass.value.trim().toUpperCase() : '';
         const password = loginPassword ? loginPassword.value.trim() : '';
 
-        if (!fullName) {
+        if (!rawFullName) {
             if (loginError) loginError.textContent = 'Vui lòng nhập Họ và tên.';
             if (loginFullName) loginFullName.focus();
             return;
@@ -1278,22 +1305,39 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        if (!allowedClasses.includes(className)) {
-            if (loginError) loginError.textContent = 'Lớp học không hợp lệ. Chỉ nhận CB196, CB201, CB202, B209.';
-            if (loginClass) loginClass.focus();
-            return;
-        }
+        // Check if teacher login: tên PTMN, lớp GV -> đăng nhập được ngay, không cần pass
+        const isTeacher = (rawFullName.toUpperCase() === 'PTMN' && className === 'GV');
+        let finalFullName = rawFullName;
 
-        if (!password) {
-            if (loginError) loginError.textContent = 'Vui lòng nhập Mật khẩu.';
-            if (loginPassword) loginPassword.focus();
-            return;
-        }
+        if (!isTeacher) {
+            // Student validation:
+            if (className !== ALLOWED_CLASS) {
+                if (loginError) loginError.textContent = 'Lớp học không hợp lệ. Chỉ nhận lớp CB206.';
+                if (loginClass) loginClass.focus();
+                return;
+            }
 
-        if (password !== REQUIRED_PASSWORD) {
-            if (loginError) loginError.textContent = 'Mật khẩu không chính xác.';
-            if (loginPassword) loginPassword.focus();
-            return;
+            const normInputName = normalizeName(rawFullName);
+            const matchedIndex = normalizedStudentList.indexOf(normInputName);
+            if (matchedIndex === -1) {
+                if (loginError) loginError.textContent = 'Họ và tên không có trong danh sách lớp CB206.';
+                if (loginFullName) loginFullName.focus();
+                return;
+            }
+
+            finalFullName = ALLOWED_STUDENTS[matchedIndex];
+
+            if (!password) {
+                if (loginError) loginError.textContent = 'Vui lòng nhập Mật khẩu.';
+                if (loginPassword) loginPassword.focus();
+                return;
+            }
+
+            if (password !== REQUIRED_PASSWORD) {
+                if (loginError) loginError.textContent = 'Mật khẩu không chính xác.';
+                if (loginPassword) loginPassword.focus();
+                return;
+            }
         }
 
         if (loginError) loginError.textContent = '';
@@ -1304,7 +1348,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Save to localStorage & sessionStorage
         try {
-            const studentInfo = { fullName, className };
+            const studentInfo = { fullName: finalFullName, className };
             localStorage.setItem('vstep_student_info', JSON.stringify(studentInfo));
             sessionStorage.setItem('vstep_authenticated', 'true');
         } catch (e) {}
@@ -1312,7 +1356,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Submit to Google Forms via no-cors fetch
         const formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLScU5Jd_R15uECAgsBMHZsqKAaCR2g2K1IzqOGs-ZN9_RbDkdQ/formResponse';
         const formData = new URLSearchParams();
-        formData.append('entry.388968236', `${fullName} - ${className}`);
+        formData.append('entry.388968236', `${finalFullName} - ${className}`);
 
         fetch(formUrl, {
             method: 'POST',
