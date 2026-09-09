@@ -752,9 +752,38 @@ let evaluationIcon;
 
 // Recitation State
 let activeEssayTypeId = 'adv-disadv';
+let currentOutlineIndex = 0;
 let currentQuestionIndex = 0;
 let activeQuestions = [];
 let questionScores = [];
+
+function getCompletedOutlines() {
+    try {
+        const completed = localStorage.getItem('vstep_completed_outlines');
+        return completed ? JSON.parse(completed) : {};
+    } catch (e) {
+        return {};
+    }
+}
+
+function markOutlineCompleted(typeId, outlineIdx) {
+    if (!typeId) return;
+    let completed = getCompletedOutlines();
+    if (!completed[typeId]) {
+        completed[typeId] = [];
+    }
+    if (!completed[typeId].includes(outlineIdx)) {
+        completed[typeId].push(outlineIdx);
+        try {
+            localStorage.setItem('vstep_completed_outlines', JSON.stringify(completed));
+        } catch (e) {}
+    }
+
+    const outlines = recitationOutlines[typeId] || [];
+    if (outlines.length > 0 && completed[typeId].length >= outlines.length) {
+        markEssayCompleted(typeId);
+    }
+}
 
 // Word-by-word diff algorithm using LCS
 function diffWords(userText, targetText) {
