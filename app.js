@@ -508,112 +508,215 @@ const essayTypes = [
     }
 ];
 
-const recitationQuestions = {
+const recitationOutlines = {
     'adv-disadv': [
-        {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>1. MỞ BÀI<br>Viết câu giới thiệu chủ đề:', target: 'In recent years, [chủ đề] has become more common in modern society.', vn: 'Trong những năm gần đây, [chủ đề] đã trở nên phổ biến hơn trong xã hội hiện đại.'},
-        {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>1. MỞ BÀI<br>Viết câu khẳng định vấn đề có hai mặt (lợi và hại):', target: 'Although it has some benefits, there are also some drawbacks.', vn: 'Mặc dù nó có một số lợi ích, nhưng cũng có một vài bất lợi.'},
-        {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>1. MỞ BÀI<br>Viết câu giới thiệu mục đích bài viết:', target: 'This essay will discuss both sides of this topic.', vn: 'Bài viết này sẽ thảo luận cả hai mặt của chủ đề này.'},
-        {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>2. THÂN BÀI<br>Viết câu chủ đoạn cho thân bài miêu tả thuận lợi:', target: 'On the one hand, [chủ đề] has several advantages.', vn: 'Một mặt, [chủ đề] có một vài thuận lợi.'},
-        {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>2. THÂN BÀI<br>Viết câu dẫn lợi ích 1:', target: 'One major benefit is that [lợi ích 1].', vn: 'Một lợi ích chính là [lợi ích 1].'},
-        {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>2. THÂN BÀI<br>Viết câu dẫn lợi ích 2:', target: 'Another positive aspect is that [lợi ích 2].', vn: 'Một khía cạnh tích cực khác là [lợi ích 2].'},
-        {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>2. THÂN BÀI<br>Viết câu dẫn lợi ích 3:', target: 'A further good point is that [lợi ích 3].', vn: 'Một điểm tốt nữa là [lợi ích 3].'},
-        {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>2. THÂN BÀI<br>Viết câu chủ đoạn cho thân bài miêu tả bất lợi:', target: 'On the other hand, there are also several disadvantages.', vn: 'Mặt khác, cũng có một vài bất lợi.'},
-        {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>2. THÂN BÀI<br>Viết câu dẫn bất lợi 1:', target: 'One possible drawback is that [bất lợi 1].', vn: 'Một bất lợi có thể xảy ra là [bất lợi 1].'},
-        {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>2. THÂN BÀI<br>Viết câu dẫn bất lợi 2:', target: 'Another negative aspect is that [bất lợi 2].', vn: 'Một khía cạnh tiêu cực khác là [bất lợi 2].'},
-        {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>2. THÂN BÀI<br>Viết câu dẫn bất lợi 3:', target: 'A further problem is that [bất lợi 3].', vn: 'Một vấn đề nữa là [bất lợi 3].'},
-        {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>3. KẾT BÀI<br>Viết câu Kết bài khẳng định chủ đề có cả hai mặt:', target: 'In conclusion, [chủ đề] has both advantages and disadvantages.', vn: 'Tóm lại, [chủ đề] có cả thuận lợi và bất lợi.'},
-        {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>3. KẾT BÀI<br>Viết câu nhận xét chung:', target: 'These points show that it has different effects on people’s lives.', vn: 'Những điểm này cho thấy nó có nhiều ảnh hưởng khác nhau lên đời sống con người.'},
-        {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>3. KẾT BÀI<br>Viết câu chốt lại lời khuyên :', target: 'Therefore, it is important to consider both sides before making a decision.', vn: 'Vì vậy, việc xem xét cả hai mặt trước khi đưa ra quyết định là điều quan trọng.'},
-        
-        {cue: '[DÀN Ý 02 - CHỈ THUẬN LỢI]<br>1. MỞ BÀI<br>Viết câu dẫn dắt chủ đề:', target: 'In recent years, [chủ đề] has become more common in modern society.', vn: 'Trong những năm gần đây, [chủ đề] đã trở nên phổ biến hơn trong xã hội hiện đại.'},
-        {cue: '[DÀN Ý 02 - CHỈ THUẬN LỢI]<br>1. MỞ BÀI<br>Viết câu nêu góc nhìn tích cực:', target: 'Many people see this as a positive development.', vn: 'Nhiều người xem đây là một sự phát triển tích cực.'},
-        {cue: '[DÀN Ý 02 - CHỈ THUẬN LỢI]<br>1. MỞ BÀI<br>Viết câu giới thiệu mục đích bài viết:', target: 'This essay will discuss the main advantages of this topic.', vn: 'Bài viết này sẽ thảo luận những thuận lợi chính của chủ đề này.'},
-        {cue: '[DÀN Ý 02 - CHỈ THUẬN LỢI]<br>2. THÂN BÀI<br>Thân bài 1 - Lợi ích 1:', target: 'One main advantage is that [lợi ích 1].', vn: 'Một thuận lợi chính là [lợi ích 1].'},
-        {cue: '[DÀN Ý 02 - CHỈ THUẬN LỢI]<br>2. THÂN BÀI<br>Thân bài 2 - Lợi ích 2:', target: 'Another positive aspect is that [lợi ích 2].', vn: 'Một khía cạnh tích cực khác là [lợi ích 2].'},
-        {cue: '[DÀN Ý 02 - CHỈ THUẬN LỢI]<br>2. THÂN BÀI<br>Thân bài 3 - Lợi ích 3:', target: 'A further benefit is that [lợi ích 3].', vn: 'Một lợi ích nữa là [lợi ích 3].'},
-        {cue: '[DÀN Ý 02 - CHỈ THUẬN LỢI]<br>3. KẾT BÀI<br>Viết câu tóm tắt lại lợi ích:', target: 'In conclusion, [chủ đề] offers several benefits.', vn: 'Tóm lại, [chủ đề] mang lại một vài lợi ích.'},
-        {cue: '[DÀN Ý 02 - CHỈ THUẬN LỢI]<br>3. KẾT BÀI<br>Viết câu khẳng định giá trị:', target: 'These advantages make it useful for many people.', vn: 'Những thuận lợi này khiến nó trở nên hữu ích cho nhiều người.'},
-        {cue: '[DÀN Ý 02 - CHỈ THUẬN LỢI]<br>3. KẾT BÀI<br>Viết câu chốt lại vấn đề:', target: 'Overall, it is a positive development in modern society.', vn: 'Nhìn chung, đây là một sự phát triển tích cực trong xã hội hiện đại.'}
+        {
+            id: 'adv-disadv-1',
+            shortTitle: 'DÀN Ý 01',
+            subtitle: 'Thuận Lợi & Bất Lợi',
+            outlineName: 'DÀN Ý 01 - THUẬN LỢI & BẤT LỢI',
+            shortName: 'Dàn ý 01: Thuận lợi & Bất lợi',
+            questions: [
+                {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>1. MỞ BÀI<br>Viết câu giới thiệu chủ đề:', target: 'In recent years, [chủ đề] has become more common in modern society.', vn: 'Trong những năm gần đây, [chủ đề] đã trở nên phổ biến hơn trong xã hội hiện đại.'},
+                {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>1. MỞ BÀI<br>Viết câu khẳng định vấn đề có hai mặt (lợi và hại):', target: 'Although it has some benefits, there are also some drawbacks.', vn: 'Mặc dù nó có một số lợi ích, nhưng cũng có một vài bất lợi.'},
+                {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>1. MỞ BÀI<br>Viết câu giới thiệu mục đích bài viết:', target: 'This essay will discuss both sides of this topic.', vn: 'Bài viết này sẽ thảo luận cả hai mặt của chủ đề này.'},
+                {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>2. THÂN BÀI<br>Viết câu chủ đoạn cho thân bài miêu tả thuận lợi:', target: 'On the one hand, [chủ đề] has several advantages.', vn: 'Một mặt, [chủ đề] có một vài thuận lợi.'},
+                {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>2. THÂN BÀI<br>Viết câu dẫn lợi ích 1:', target: 'One major benefit is that [lợi ích 1].', vn: 'Một lợi ích chính là [lợi ích 1].'},
+                {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>2. THÂN BÀI<br>Viết câu dẫn lợi ích 2:', target: 'Another positive aspect is that [lợi ích 2].', vn: 'Một khía cạnh tích cực khác là [lợi ích 2].'},
+                {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>2. THÂN BÀI<br>Viết câu dẫn lợi ích 3:', target: 'A further good point is that [lợi ích 3].', vn: 'Một điểm tốt nữa là [lợi ích 3].'},
+                {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>2. THÂN BÀI<br>Viết câu chủ đoạn cho thân bài miêu tả bất lợi:', target: 'On the other hand, there are also several disadvantages.', vn: 'Mặt khác, cũng có một vài bất lợi.'},
+                {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>2. THÂN BÀI<br>Viết câu dẫn bất lợi 1:', target: 'One possible drawback is that [bất lợi 1].', vn: 'Một bất lợi có thể xảy ra là [bất lợi 1].'},
+                {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>2. THÂN BÀI<br>Viết câu dẫn bất lợi 2:', target: 'Another negative aspect is that [bất lợi 2].', vn: 'Một khía cạnh tiêu cực khác là [bất lợi 2].'},
+                {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>2. THÂN BÀI<br>Viết câu dẫn bất lợi 3:', target: 'A further problem is that [bất lợi 3].', vn: 'Một vấn đề nữa là [bất lợi 3].'},
+                {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>3. KẾT BÀI<br>Viết câu Kết bài khẳng định chủ đề có cả hai mặt:', target: 'In conclusion, [chủ đề] has both advantages and disadvantages.', vn: 'Tóm lại, [chủ đề] có cả thuận lợi và bất lợi.'},
+                {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>3. KẾT BÀI<br>Viết câu nhận xét chung:', target: 'These points show that it has different effects on people’s lives.', vn: 'Những điểm này cho thấy nó có nhiều ảnh hưởng khác nhau lên đời sống con người.'},
+                {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>3. KẾT BÀI<br>Viết câu chốt lại lời khuyên :', target: 'Therefore, it is important to consider both sides before making a decision.', vn: 'Vì vậy, việc xem xét cả hai mặt trước khi đưa ra quyết định là điều quan trọng.'}
+            ]
+        },
+        {
+            id: 'adv-disadv-2',
+            shortTitle: 'DÀN Ý 02',
+            subtitle: 'Chỉ Thuận Lợi',
+            outlineName: 'DÀN Ý 02 - CHỈ THUẬN LỢI',
+            shortName: 'Dàn ý 02: Chỉ Thuận lợi',
+            questions: [
+                {cue: '[DÀN Ý 02 - CHỈ THUẬN LỢI]<br>1. MỞ BÀI<br>Viết câu dẫn dắt chủ đề:', target: 'In recent years, [chủ đề] has become more common in modern society.', vn: 'Trong những năm gần đây, [chủ đề] đã trở nên phổ biến hơn trong xã hội hiện đại.'},
+                {cue: '[DÀN Ý 02 - CHỈ THUẬN LỢI]<br>1. MỞ BÀI<br>Viết câu nêu góc nhìn tích cực:', target: 'Many people see this as a positive development.', vn: 'Nhiều người xem đây là một sự phát triển tích cực.'},
+                {cue: '[DÀN Ý 02 - CHỈ THUẬN LỢI]<br>1. MỞ BÀI<br>Viết câu giới thiệu mục đích bài viết:', target: 'This essay will discuss the main advantages of this topic.', vn: 'Bài viết này sẽ thảo luận những thuận lợi chính của chủ đề này.'},
+                {cue: '[DÀN Ý 02 - CHỈ THUẬN LỢI]<br>2. THÂN BÀI<br>Thân bài 1 - Lợi ích 1:', target: 'One main advantage is that [lợi ích 1].', vn: 'Một thuận lợi chính là [lợi ích 1].'},
+                {cue: '[DÀN Ý 02 - CHỈ THUẬN LỢI]<br>2. THÂN BÀI<br>Thân bài 2 - Lợi ích 2:', target: 'Another positive aspect is that [lợi ích 2].', vn: 'Một khía cạnh tích cực khác là [lợi ích 2].'},
+                {cue: '[DÀN Ý 02 - CHỈ THUẬN LỢI]<br>2. THÂN BÀI<br>Thân bài 3 - Lợi ích 3:', target: 'A further benefit is that [lợi ích 3].', vn: 'Một lợi ích nữa là [lợi ích 3].'},
+                {cue: '[DÀN Ý 02 - CHỈ THUẬN LỢI]<br>3. KẾT BÀI<br>Viết câu tóm tắt lại lợi ích:', target: 'In conclusion, [chủ đề] offers several benefits.', vn: 'Tóm lại, [chủ đề] mang lại một vài lợi ích.'},
+                {cue: '[DÀN Ý 02 - CHỈ THUẬN LỢI]<br>3. KẾT BÀI<br>Viết câu khẳng định giá trị:', target: 'These advantages make it useful for many people.', vn: 'Những thuận lợi này khiến nó trở nên hữu ích cho nhiều người.'},
+                {cue: '[DÀN Ý 02 - CHỈ THUẬN LỢI]<br>3. KẾT BÀI<br>Viết câu chốt lại vấn đề:', target: 'Overall, it is a positive development in modern society.', vn: 'Nhìn chung, đây là một sự phát triển tích cực trong xã hội hiện đại.'}
+            ]
+        }
     ],
     'cause-effect': [
-        {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>1. MỞ BÀI<br>Viết câu dẫn dắt chủ đề:', target: 'In recent years, [chủ đề] has become a growing concern in many parts of the world.', vn: 'Trong những năm gần đây, [chủ đề] đã trở thành một mối lo ngại ngày càng tăng ở nhiều nơi trên thế giới.'},
-        {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>1. MỞ BÀI<br>Viết câu nêu mức độ nghiêm trọng:', target: 'This issue affects both individuals and society in different ways.', vn: 'Vấn đề này ảnh hưởng đến cả cá nhân và xã hội theo nhiều cách khác nhau.'},
-        {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>1. MỞ BÀI<br>Viết câu giới thiệu mục đích bài viết:', target: 'This essay will discuss the main causes of this problem and suggest possible solutions.', vn: 'Bài viết này sẽ thảo luận những nguyên nhân chính của vấn đề này và đề xuất các giải pháp khả thi.'},
-        {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>2. THÂN BÀI<br>Dẫn dắt Thân bài 1 (Nguyên nhân):', target: 'This issue can be caused by several factors.', vn: 'Vấn đề này có thể được gây ra bởi một vài yếu tố.'},
-        {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>2. THÂN BÀI<br>Câu dẫn nguyên nhân 1:', target: 'One major cause is that [nguyên nhân 1].', vn: 'Một nguyên nhân chính là [nguyên nhân 1].'},
-        {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>2. THÂN BÀI<br>Câu dẫn nguyên nhân 2:', target: 'Another contributing factor is that [nguyên nhân 2].', vn: 'Một yếu tố góp phần khác là [nguyên nhân 2].'},
-        {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>2. THÂN BÀI<br>Câu dẫn nguyên nhân 3:', target: 'A further reason is that [nguyên nhân 3].', vn: 'Một lý do nữa là [nguyên nhân 3].'},
-        {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>2. THÂN BÀI<br>Dẫn dắt Thân bài 2 (Giải pháp):', target: 'To solve this problem, several measures can be taken.', vn: 'Để giải quyết vấn đề này, một vài biện pháp có thể được thực hiện.'},
-        {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>2. THÂN BÀI<br>Câu dẫn giải pháp 1:', target: 'One effective solution is to [giải pháp 1].', vn: 'Một giải pháp hiệu quả là [giải pháp 1].'},
-        {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>2. THÂN BÀI<br>Câu dẫn giải pháp 2:', target: 'Another possible measure is to [giải pháp 2].', vn: 'Một biện pháp khả thi khác là [giải pháp 2].'},
-        {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>2. THÂN BÀI<br>Câu dẫn giải pháp 3:', target: 'Finally, it is important to [giải pháp 3].', vn: 'Cuối cùng, điều quan trọng là phải [giải pháp 3].'},
-        {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>3. KẾT BÀI<br>Viết câu tóm tắt nguyên nhân và giải pháp:', target: 'In conclusion, [chủ đề] is caused by several factors and requires practical solutions.', vn: 'Tóm lại, [chủ đề] được gây ra bởi một vài yếu tố và đòi hỏi các giải pháp thực tế.'},
-        {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>3. KẾT BÀI<br>Viết câu khẳng định tính khả thi:', target: 'By addressing the causes and applying suitable measures, this problem can be reduced in the future.', vn: 'Bằng cách giải quyết nguyên nhân và áp dụng các biện pháp phù hợp, vấn đề này có thể được giảm thiểu trong tương lai.'},
-        {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>3. KẾT BÀI<br>Viết câu chốt lại vấn đề:', target: 'These actions can help create positive changes for both individuals and society.', vn: 'Những hành động này có thể giúp tạo ra những thay đổi tích cực cho cả cá nhân và xã hội.'},
-        
-        {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>1. MỞ BÀI<br>Viết câu dẫn dắt chủ đề:', target: 'In recent years, [chủ đề] has become a growing concern in many parts of the world.', vn: 'Trong những năm gần đây, [chủ đề] đã trở thành một mối lo ngại ngày càng tăng ở nhiều nơi trên thế giới.'},
-        {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>1. MỞ BÀI<br>Viết câu nêu mức độ nghiêm trọng:', target: 'This issue affects both individuals and society in different ways.', vn: 'Vấn đề này ảnh hưởng đến cả cá nhân và xã hội theo nhiều cách khác nhau.'},
-        {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>1. MỞ BÀI<br>Viết câu giới thiệu mục đích bài viết:', target: 'This essay will discuss the main causes of this problem and its possible effects.', vn: 'Bài viết này sẽ thảo luận những nguyên nhân chính của vấn đề này và những ảnh hưởng có thể có của nó.'},
-        {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>2. THÂN BÀI<br>Dẫn dắt Thân bài 2 (Ảnh hưởng):', target: 'This problem can lead to several negative effects.', vn: 'Vấn đề này có thể dẫn đến một vài ảnh hưởng tiêu cực.'},
-        {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>2. THÂN BÀI<br>Câu dẫn ảnh hưởng 1:', target: 'One serious impact is that [ảnh hưởng 1].', vn: 'Một tác động nghiêm trọng là [ảnh hưởng 1].'},
-        {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>2. THÂN BÀI<br>Câu dẫn ảnh hưởng 2:', target: 'Another consequence is that [ảnh hưởng 2].', vn: 'Một hậu quả khác là [ảnh hưởng 2].'},
-        {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>2. THÂN BÀI<br>Câu dẫn ảnh hưởng 3:', target: 'A further problem is that [ảnh hưởng 3].', vn: 'Một vấn đề nữa là [ảnh hưởng 3].'},
-        {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>3. KẾT BÀI<br>Viết câu tóm tắt nguyên nhân và ảnh hưởng:', target: 'In conclusion, [chủ đề] is caused by several factors and can lead to many negative effects.', vn: 'Tóm lại, [chủ đề] được gây ra bởi một vài yếu tố và có thể dẫn đến nhiều ảnh hưởng tiêu cực.'},
-        {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>3. KẾT BÀI<br>Viết câu đề xuất hướng cải thiện:', target: 'By understanding the causes and paying more attention to this issue, the situation can be improved in the future.', vn: 'Bằng cách thấu hiểu nguyên nhân và quan tâm hơn đến vấn đề này, tình hình có thể được cải thiện trong tương lai.'},
-        {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>3. KẾT BÀI<br>Viết câu chốt lại vấn đề:', target: 'These actions can help create a better environment for both individuals and society.', vn: 'Những hành động này có thể giúp tạo ra một môi trường tốt hơn cho cả cá nhân và xã hội.'},
-        
-        {cue: '[DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP]<br>1. MỞ BÀI<br>Viết câu dẫn dắt chủ đề:', target: 'In recent years, [chủ đề] has become a growing concern in many parts of the world.', vn: 'Trong những năm gần đây, [chủ đề] đã trở thành một mối lo ngại ngày càng tăng ở nhiều nơi trên thế giới.'},
-        {cue: '[DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP]<br>1. MỞ BÀI<br>Viết câu nêu mức độ nghiêm trọng:', target: 'This issue affects both individuals and society in different ways.', vn: 'Vấn đề này ảnh hưởng đến cả cá nhân và xã hội theo nhiều cách khác nhau.'},
-        {cue: '[DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP]<br>1. MỞ BÀI<br>Viết câu giới thiệu mục đích bài viết:', target: 'This essay will discuss the main effects of this problem and suggest possible solutions.', vn: 'Bài viết này sẽ thảo luận những ảnh hưởng chính của vấn đề này và đề xuất các giải pháp khả thi.'},
-        {cue: '[DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP]<br>3. KẾT BÀI<br>Viết câu tóm tắt ảnh hưởng và giải pháp:', target: 'In conclusion, [chủ đề] leads to several negative effects and requires practical solutions.', vn: 'Tóm lại, [chủ đề] dẫn đến một vài ảnh hưởng tiêu cực và đòi hỏi các giải pháp thực tế.'},
-        {cue: '[DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP]<br>3. KẾT BÀI<br>Viết câu đề xuất hướng cải thiện:', target: 'By applying suitable measures and paying more attention to this issue, the situation can be improved in the future.', vn: 'Bằng cách áp dụng các biện pháp phù hợp và quan tâm hơn đến vấn đề này, tình hình có thể được cải thiện trong tương lai.'},
-        {cue: '[DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP]<br>3. KẾT BÀI<br>Viết câu chốt lại vấn đề:', target: 'These actions can help create positive changes for both individuals and society.', vn: 'Những hành động này có thể giúp tạo ra những thay đổi tích cực cho cả cá nhân và xã hội.'},
-        
-        {cue: '1. MỞ BÀI<br>(DÀN Ý 4: Chỉ Nguyên Nhân) Viết câu dẫn dắt chủ đề:', target: 'In recent years, [chủ đề] has become a growing concern in many parts of the world.', vn: 'Trong những năm gần đây, [chủ đề] đã trở thành một mối lo ngại ngày càng tăng ở nhiều nơi trên thế giới.'},
-        {cue: '1. MỞ BÀI<br>(DÀN Ý 4: Chỉ Nguyên Nhân) Viết câu nêu mức độ nghiêm trọng:', target: 'This issue affects both individuals and society in different ways.', vn: 'Vấn đề này ảnh hưởng đến cả cá nhân và xã hội theo nhiều cách khác nhau.'},
-        {cue: '1. MỞ BÀI<br>(DÀN Ý 4: Chỉ Nguyên Nhân) Viết câu giới thiệu mục đích bài viết:', target: 'This essay will discuss the main causes of this problem.', vn: 'Bài viết này sẽ thảo luận những nguyên nhân chính của vấn đề này.'},
-        {cue: '3. KẾT BÀI<br>(DÀN Ý 4: Chỉ Nguyên Nhân) Viết câu tóm tắt nguyên nhân:', target: 'In conclusion, [chủ đề] is caused by several factors that affect both individuals and society.', vn: 'Tóm lại, [chủ đề] được gây ra bởi một vài yếu tố có ảnh hưởng đến cả cá nhân và xã hội.'},
-        {cue: '1. MỞ BÀI<br>(DÀN Ý 4: Chỉ Nguyên Nhân) Viết câu khẳng định tầm quan trọng:', target: 'Understanding these causes is important to improve the situation in the future.', vn: 'Việc thấu hiểu những nguyên nhân này là quan trọng để cải thiện tình hình trong tương lai.'},
-        {cue: '3. KẾT BÀI<br>(DÀN Ý 4: Chỉ Nguyên Nhân) Viết câu chốt lại vấn đề:', target: 'With greater attention, this problem can be reduced over time.', vn: 'Với sự quan tâm lớn hơn, vấn đề này có thể được giảm thiểu theo thời gian.'},
-        
-        {cue: '1. MỞ BÀI<br>(DÀN Ý 5: Chỉ Ảnh Hưởng) Viết câu dẫn dắt chủ đề:', target: 'In recent years, [chủ đề] has become a growing concern in many parts of the world.', vn: 'Trong những năm gần đây, [chủ đề] đã trở thành một mối lo ngại ngày càng tăng ở nhiều nơi trên thế giới.'},
-        {cue: '1. MỞ BÀI<br>(DÀN Ý 5: Chỉ Ảnh Hưởng) Viết câu nêu mức độ nghiêm trọng:', target: 'This issue affects both individuals and society in different ways.', vn: 'Vấn đề này ảnh hưởng đến cả cá nhân và xã hội theo nhiều cách khác nhau.'},
-        {cue: '1. MỞ BÀI<br>(DÀN Ý 5: Chỉ Ảnh Hưởng) Viết câu giới thiệu mục đích bài viết:', target: 'This essay will discuss the main effects of this problem.', vn: 'Bài viết này sẽ thảo luận những ảnh hưởng chính của vấn đề này.'},
-        {cue: '2. THÂN BÀI<br>(DÀN Ý 5: Chỉ Ảnh Hưởng) Thân bài 3 - Ảnh hưởng 3:', target: 'A further consequence is that [ảnh hưởng 3].', vn: 'Một hậu quả nữa là [ảnh hưởng 3].'},
-        {cue: '3. KẾT BÀI<br>(DÀN Ý 5: Chỉ Ảnh Hưởng) Viết câu tóm tắt ảnh hưởng:', target: 'In conclusion, [chủ đề] leads to several negative effects on both individuals and society.', vn: 'Tóm lại, [chủ đề] dẫn đến một vài ảnh hưởng tiêu cực lên cả cá nhân và xã hội.'},
-        {cue: '1. MỞ BÀI<br>(DÀN Ý 5: Chỉ Ảnh Hưởng) Viết câu khẳng định mức độ tác động:', target: 'These impacts can affect many areas of life in different ways.', vn: 'Những tác động này có thể ảnh hưởng đến nhiều lĩnh vực của đời sống theo những cách khác nhau.'},
-        {cue: '3. KẾT BÀI<br>(DÀN Ý 5: Chỉ Ảnh Hưởng) Viết câu chốt lại lời khuyên:', target: 'Therefore, it is important to pay more attention to this issue in the future.', vn: 'Vì vậy, việc quan tâm nhiều hơn đến vấn đề này trong tương lai là điều quan trọng.'},
-        
-        {cue: '1. MỞ BÀI<br>(DÀN Ý 6: Chỉ Giải Pháp) Viết câu dẫn dắt chủ đề:', target: 'In recent years, [chủ đề] has become increasingly important in modern society.', vn: 'Trong những năm gần đây, [chủ đề] đã trở nên ngày càng quan trọng trong xã hội hiện đại.'},
-        {cue: '1. MỞ BÀI<br>(DÀN Ý 6: Chỉ Giải Pháp) Viết câu nêu tính cấp thiết:', target: 'Many people believe that more effective actions are needed in this area.', vn: 'Nhiều người tin rằng cần có những hành động hiệu quả hơn trong lĩnh vực này.'},
-        {cue: '1. MỞ BÀI<br>(DÀN Ý 6: Chỉ Giải Pháp) Viết câu giới thiệu mục đích bài viết:', target: 'This essay will suggest several practical measures to improve the situation.', vn: 'Bài viết này sẽ đề xuất một vài biện pháp thực tế để cải thiện tình hình.'},
-        {cue: '2. THÂN BÀI<br>(DÀN Ý 6: Chỉ Giải Pháp) Thân bài 1 - Giải pháp 1:', target: 'One effective solution is to [giải pháp 1].', vn: 'Một giải pháp hiệu quả là [giải pháp 1].'},
-        {cue: '2. THÂN BÀI<br>(DÀN Ý 6: Chỉ Giải Pháp) Thân bài 2 - Giải pháp 2:', target: 'Another possible measure is to [giải pháp 2].', vn: 'Một biện pháp khả thi khác là [giải pháp 2].'},
-        {cue: '2. THÂN BÀI<br>(DÀN Ý 6: Chỉ Giải Pháp) Thân bài 3 - Giải pháp 3:', target: 'A further approach is to [giải pháp 3].', vn: 'Một hướng tiếp cận nữa là [giải pháp 3].'},
-        {cue: '3. KẾT BÀI<br>(DÀN Ý 6: Chỉ Giải Pháp) Viết câu tóm tắt giải pháp:', target: 'In conclusion, several practical measures can help improve this situation effectively.', vn: 'Tóm lại, một vài biện pháp thực tế có thể giúp cải thiện tình hình này một cách hiệu quả.'},
-        {cue: '3. KẾT BÀI<br>(DÀN Ý 6: Chỉ Giải Pháp) Viết câu dự báo kết quả:', target: 'These solutions can bring positive changes for both individuals and society.', vn: 'Những giải pháp này có thể mang lại thay đổi tích cực cho cả cá nhân và xã hội.'},
-        {cue: '3. KẾT BÀI<br>(DÀN Ý 6: Chỉ Giải Pháp) Viết câu chốt lại lời khuyên:', target: 'Therefore, it is important to take suitable actions in the future.', vn: 'Vì vậy, việc đưa ra các hành động phù hợp trong tương lai là điều quan trọng.'}
+        {
+            id: 'cause-effect-1',
+            shortTitle: 'DÀN Ý 01',
+            subtitle: 'Nguyên Nhân & Giải Pháp',
+            outlineName: 'DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP',
+            shortName: 'Dàn ý 01: Nguyên nhân & Giải pháp',
+            questions: [
+                {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>1. MỞ BÀI<br>Viết câu dẫn dắt chủ đề:', target: 'In recent years, [chủ đề] has become a growing concern in many parts of the world.', vn: 'Trong những năm gần đây, [chủ đề] đã trở thành một mối lo ngại ngày càng tăng ở nhiều nơi trên thế giới.'},
+                {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>1. MỞ BÀI<br>Viết câu nêu mức độ nghiêm trọng:', target: 'This issue affects both individuals and society in different ways.', vn: 'Vấn đề này ảnh hưởng đến cả cá nhân và xã hội theo nhiều cách khác nhau.'},
+                {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>1. MỞ BÀI<br>Viết câu giới thiệu mục đích bài viết:', target: 'This essay will discuss the main causes of this problem and suggest possible solutions.', vn: 'Bài viết này sẽ thảo luận những nguyên nhân chính của vấn đề này và đề xuất các giải pháp khả thi.'},
+                {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>2. THÂN BÀI<br>Dẫn dắt Thân bài 1 (Nguyên nhân):', target: 'This issue can be caused by several factors.', vn: 'Vấn đề này có thể được gây ra bởi một vài yếu tố.'},
+                {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>2. THÂN BÀI<br>Câu dẫn nguyên nhân 1:', target: 'One major cause is that [nguyên nhân 1].', vn: 'Một nguyên nhân chính là [nguyên nhân 1].'},
+                {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>2. THÂN BÀI<br>Câu dẫn nguyên nhân 2:', target: 'Another contributing factor is that [nguyên nhân 2].', vn: 'Một yếu tố góp phần khác là [nguyên nhân 2].'},
+                {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>2. THÂN BÀI<br>Câu dẫn nguyên nhân 3:', target: 'A further reason is that [nguyên nhân 3].', vn: 'Một lý do nữa là [nguyên nhân 3].'},
+                {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>2. THÂN BÀI<br>Dẫn dắt Thân bài 2 (Giải pháp):', target: 'To solve this problem, several measures can be taken.', vn: 'Để giải quyết vấn đề này, một vài biện pháp có thể được thực hiện.'},
+                {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>2. THÂN BÀI<br>Câu dẫn giải pháp 1:', target: 'One effective solution is to [giải pháp 1].', vn: 'Một giải pháp hiệu quả là [giải pháp 1].'},
+                {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>2. THÂN BÀI<br>Câu dẫn giải pháp 2:', target: 'Another possible measure is to [giải pháp 2].', vn: 'Một biện pháp khả thi khác là [giải pháp 2].'},
+                {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>2. THÂN BÀI<br>Câu dẫn giải pháp 3:', target: 'Finally, it is important to [giải pháp 3].', vn: 'Cuối cùng, điều quan trọng là phải [giải pháp 3].'},
+                {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>3. KẾT BÀI<br>Viết câu tóm tắt nguyên nhân và giải pháp:', target: 'In conclusion, [chủ đề] is caused by several factors and requires practical solutions.', vn: 'Tóm lại, [chủ đề] được gây ra bởi một vài yếu tố và đòi hỏi các giải pháp thực tế.'},
+                {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>3. KẾT BÀI<br>Viết câu khẳng định tính khả thi:', target: 'By addressing the causes and applying suitable measures, this problem can be reduced in the future.', vn: 'Bằng cách giải quyết nguyên nhân và áp dụng các biện pháp phù hợp, vấn đề này có thể được giảm thiểu trong tương lai.'},
+                {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>3. KẾT BÀI<br>Viết câu chốt lại vấn đề:', target: 'These actions can help create positive changes for both individuals and society.', vn: 'Những hành động này có thể giúp tạo ra những thay đổi tích cực cho cả cá nhân và xã hội.'}
+            ]
+        },
+        {
+            id: 'cause-effect-2',
+            shortTitle: 'DÀN Ý 02',
+            subtitle: 'Nguyên Nhân & Ảnh Hưởng',
+            outlineName: 'DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG',
+            shortName: 'Dàn ý 02: Nguyên nhân & Ảnh hưởng',
+            questions: [
+                {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>1. MỞ BÀI<br>Viết câu dẫn dắt chủ đề:', target: 'In recent years, [chủ đề] has become a growing concern in many parts of the world.', vn: 'Trong những năm gần đây, [chủ đề] đã trở thành một mối lo ngại ngày càng tăng ở nhiều nơi trên thế giới.'},
+                {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>1. MỞ BÀI<br>Viết câu nêu mức độ nghiêm trọng:', target: 'This issue affects both individuals and society in different ways.', vn: 'Vấn đề này ảnh hưởng đến cả cá nhân và xã hội theo nhiều cách khác nhau.'},
+                {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>1. MỞ BÀI<br>Viết câu giới thiệu mục đích bài viết:', target: 'This essay will discuss the main causes of this problem and its possible effects.', vn: 'Bài viết này sẽ thảo luận những nguyên nhân chính của vấn đề này và những ảnh hưởng có thể có của nó.'},
+                {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>2. THÂN BÀI<br>Dẫn dắt Thân bài 1 (Nguyên nhân):', target: 'This issue can be caused by several factors.', vn: 'Vấn đề này có thể được gây ra bởi một vài yếu tố.'},
+                {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>2. THÂN BÀI<br>Câu dẫn nguyên nhân 1:', target: 'One major cause is that [nguyên nhân 1].', vn: 'Một nguyên nhân chính là [nguyên nhân 1].'},
+                {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>2. THÂN BÀI<br>Câu dẫn nguyên nhân 2:', target: 'Another contributing factor is that [nguyên nhân 2].', vn: 'Một yếu tố góp phần khác là [nguyên nhân 2].'},
+                {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>2. THÂN BÀI<br>Câu dẫn nguyên nhân 3:', target: 'A further reason is that [nguyên nhân 3].', vn: 'Một lý do nữa là [nguyên nhân 3].'},
+                {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>2. THÂN BÀI<br>Dẫn dắt Thân bài 2 (Ảnh hưởng):', target: 'This problem can lead to several negative effects.', vn: 'Vấn đề này có thể dẫn đến một vài ảnh hưởng tiêu cực.'},
+                {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>2. THÂN BÀI<br>Câu dẫn ảnh hưởng 1:', target: 'One serious impact is that [ảnh hưởng 1].', vn: 'Một tác động nghiêm trọng là [ảnh hưởng 1].'},
+                {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>2. THÂN BÀI<br>Câu dẫn ảnh hưởng 2:', target: 'Another consequence is that [ảnh hưởng 2].', vn: 'Một hậu quả khác là [ảnh hưởng 2].'},
+                {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>2. THÂN BÀI<br>Câu dẫn ảnh hưởng 3:', target: 'A further problem is that [ảnh hưởng 3].', vn: 'Một vấn đề nữa là [ảnh hưởng 3].'},
+                {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>3. KẾT BÀI<br>Viết câu tóm tắt nguyên nhân và ảnh hưởng:', target: 'In conclusion, [chủ đề] is caused by several factors and can lead to many negative effects.', vn: 'Tóm lại, [chủ đề] được gây ra bởi một vài yếu tố và có thể dẫn đến nhiều ảnh hưởng tiêu cực.'},
+                {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>3. KẾT BÀI<br>Viết câu đề xuất hướng cải thiện:', target: 'By understanding the causes and paying more attention to this issue, the situation can be improved in the future.', vn: 'Bằng cách thấu hiểu nguyên nhân và quan tâm hơn đến vấn đề này, tình hình có thể được cải thiện trong tương lai.'},
+                {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>3. KẾT BÀI<br>Viết câu chốt lại vấn đề:', target: 'These actions can help create a better environment for both individuals and society.', vn: 'Những hành động này có thể giúp tạo ra một môi trường tốt hơn cho cả cá nhân và xã hội.'}
+            ]
+        },
+        {
+            id: 'cause-effect-3',
+            shortTitle: 'DÀN Ý 03',
+            subtitle: 'Ảnh Hưởng & Giải Pháp',
+            outlineName: 'DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP',
+            shortName: 'Dàn ý 03: Ảnh hưởng & Giải pháp',
+            questions: [
+                {cue: '[DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP]<br>1. MỞ BÀI<br>Viết câu dẫn dắt chủ đề:', target: 'In recent years, [chủ đề] has become a growing concern in many parts of the world.', vn: 'Trong những năm gần đây, [chủ đề] đã trở thành một mối lo ngại ngày càng tăng ở nhiều nơi trên thế giới.'},
+                {cue: '[DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP]<br>1. MỞ BÀI<br>Viết câu nêu mức độ nghiêm trọng:', target: 'This issue affects both individuals and society in different ways.', vn: 'Vấn đề này ảnh hưởng đến cả cá nhân và xã hội theo nhiều cách khác nhau.'},
+                {cue: '[DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP]<br>1. MỞ BÀI<br>Viết câu giới thiệu mục đích bài viết:', target: 'This essay will discuss the main effects of this problem and suggest possible solutions.', vn: 'Bài viết này sẽ thảo luận những ảnh hưởng chính của vấn đề này và đề xuất các giải pháp khả thi.'},
+                {cue: '[DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP]<br>2. THÂN BÀI<br>Dẫn dắt Thân bài 1 (Ảnh hưởng):', target: 'This problem can lead to several negative effects.', vn: 'Vấn đề này có thể dẫn đến một vài ảnh hưởng tiêu cực.'},
+                {cue: '[DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP]<br>2. THÂN BÀI<br>Câu dẫn ảnh hưởng 1:', target: 'One serious impact is that [ảnh hưởng 1].', vn: 'Một tác động nghiêm trọng là [ảnh hưởng 1].'},
+                {cue: '[DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP]<br>2. THÂN BÀI<br>Câu dẫn ảnh hưởng 2:', target: 'Another consequence is that [ảnh hưởng 2].', vn: 'Một hậu quả khác là [ảnh hưởng 2].'},
+                {cue: '[DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP]<br>2. THÂN BÀI<br>Câu dẫn ảnh hưởng 3:', target: 'A further problem is that [ảnh hưởng 3].', vn: 'Một vấn đề nữa là [ảnh hưởng 3].'},
+                {cue: '[DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP]<br>2. THÂN BÀI<br>Dẫn dắt Thân bài 2 (Giải pháp):', target: 'To solve this problem, several measures can be taken.', vn: 'Để giải quyết vấn đề này, một vài biện pháp có thể được thực hiện.'},
+                {cue: '[DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP]<br>2. THÂN BÀI<br>Câu dẫn giải pháp 1:', target: 'One effective solution is to [giải pháp 1].', vn: 'Một giải pháp hiệu quả là [giải pháp 1].'},
+                {cue: '[DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP]<br>2. THÂN BÀI<br>Câu dẫn giải pháp 2:', target: 'Another possible measure is to [giải pháp 2].', vn: 'Một biện pháp khả thi khác là [giải pháp 2].'},
+                {cue: '[DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP]<br>2. THÂN BÀI<br>Câu dẫn giải pháp 3:', target: 'Finally, it is important to [giải pháp 3].', vn: 'Cuối cùng, điều quan trọng là phải [giải pháp 3].'},
+                {cue: '[DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP]<br>3. KẾT BÀI<br>Viết câu tóm tắt ảnh hưởng và giải pháp:', target: 'In conclusion, [chủ đề] leads to several negative effects and requires practical solutions.', vn: 'Tóm lại, [chủ đề] dẫn đến một vài ảnh hưởng tiêu cực và đòi hỏi các giải pháp thực tế.'},
+                {cue: '[DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP]<br>3. KẾT BÀI<br>Viết câu đề xuất hướng cải thiện:', target: 'By applying suitable measures and paying more attention to this issue, the situation can be improved in the future.', vn: 'Bằng cách áp dụng các biện pháp phù hợp và quan tâm hơn đến vấn đề này, tình hình có thể được cải thiện trong tương lai.'},
+                {cue: '[DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP]<br>3. KẾT BÀI<br>Viết câu chốt lại vấn đề:', target: 'These actions can help create positive changes for both individuals and society.', vn: 'Những hành động này có thể giúp tạo ra những thay đổi tích cực cho cả cá nhân và xã hội.'}
+            ]
+        },
+        {
+            id: 'cause-effect-4',
+            shortTitle: 'DÀN Ý 04',
+            subtitle: 'Chỉ Nguyên Nhân',
+            outlineName: 'DÀN Ý 04 - CHỈ NGUYÊN NHÂN',
+            shortName: 'Dàn ý 04: Chỉ Nguyên nhân',
+            questions: [
+                {cue: '[DÀN Ý 04 - CHỈ NGUYÊN NHÂN]<br>1. MỞ BÀI<br>Viết câu dẫn dắt chủ đề:', target: 'In recent years, [chủ đề] has become a growing concern in many parts of the world.', vn: 'Trong những năm gần đây, [chủ đề] đã trở thành một mối lo ngại ngày càng tăng ở nhiều nơi trên thế giới.'},
+                {cue: '[DÀN Ý 04 - CHỈ NGUYÊN NHÂN]<br>1. MỞ BÀI<br>Viết câu nêu mức độ nghiêm trọng:', target: 'This issue affects both individuals and society in different ways.', vn: 'Vấn đề này ảnh hưởng đến cả cá nhân và xã hội theo nhiều cách khác nhau.'},
+                {cue: '[DÀN Ý 04 - CHỈ NGUYÊN NHÂN]<br>1. MỞ BÀI<br>Viết câu giới thiệu mục đích bài viết:', target: 'This essay will discuss the main causes of this problem.', vn: 'Bài viết này sẽ thảo luận những nguyên nhân chính của vấn đề này.'},
+                {cue: '[DÀN Ý 04 - CHỈ NGUYÊN NHÂN]<br>2. THÂN BÀI<br>Thân bài 1 - Câu dẫn nguyên nhân 1:', target: 'One major cause is that [nguyên nhân 1].', vn: 'Một nguyên nhân chính là [nguyên nhân 1].'},
+                {cue: '[DÀN Ý 04 - CHỈ NGUYÊN NHÂN]<br>2. THÂN BÀI<br>Thân bài 2 - Câu dẫn nguyên nhân 2:', target: 'Another contributing factor is that [nguyên nhân 2].', vn: 'Một yếu tố góp phần khác là [nguyên nhân 2].'},
+                {cue: '[DÀN Ý 04 - CHỈ NGUYÊN NHÂN]<br>2. THÂN BÀI<br>Thân bài 3 - Câu dẫn nguyên nhân 3:', target: 'A further reason is that [nguyên nhân 3].', vn: 'Một lý do nữa là [nguyên nhân 3].'},
+                {cue: '[DÀN Ý 04 - CHỈ NGUYÊN NHÂN]<br>3. KẾT BÀI<br>Viết câu tóm tắt nguyên nhân:', target: 'In conclusion, [chủ đề] is caused by several factors that affect both individuals and society.', vn: 'Tóm lại, [chủ đề] được gây ra bởi một vài yếu tố có ảnh hưởng đến cả cá nhân và xã hội.'},
+                {cue: '[DÀN Ý 04 - CHỈ NGUYÊN NHÂN]<br>3. KẾT BÀI<br>Viết câu khẳng định tầm quan trọng:', target: 'Understanding these causes is important to improve the situation in the future.', vn: 'Việc thấu hiểu những nguyên nhân này là quan trọng để cải thiện tình hình trong tương lai.'},
+                {cue: '[DÀN Ý 04 - CHỈ NGUYÊN NHÂN]<br>3. KẾT BÀI<br>Viết câu chốt lại vấn đề:', target: 'With greater attention, this problem can be reduced over time.', vn: 'Với sự quan tâm lớn hơn, vấn đề này có thể được giảm thiểu theo thời gian.'}
+            ]
+        },
+        {
+            id: 'cause-effect-5',
+            shortTitle: 'DÀN Ý 05',
+            subtitle: 'Chỉ Ảnh Hưởng',
+            outlineName: 'DÀN Ý 05 - CHỈ ẢNH HƯỞNG',
+            shortName: 'Dàn ý 05: Chỉ Ảnh hưởng',
+            questions: [
+                {cue: '[DÀN Ý 05 - CHỈ ẢNH HƯỞNG]<br>1. MỞ BÀI<br>Viết câu dẫn dắt chủ đề:', target: 'In recent years, [chủ đề] has become a growing concern in many parts of the world.', vn: 'Trong những năm gần đây, [chủ đề] đã trở thành một mối lo ngại ngày càng tăng ở nhiều nơi trên thế giới.'},
+                {cue: '[DÀN Ý 05 - CHỈ ẢNH HƯỞNG]<br>1. MỞ BÀI<br>Viết câu nêu mức độ nghiêm trọng:', target: 'This issue affects both individuals and society in different ways.', vn: 'Vấn đề này ảnh hưởng đến cả cá nhân và xã hội theo nhiều cách khác nhau.'},
+                {cue: '[DÀN Ý 05 - CHỈ ẢNH HƯỞNG]<br>1. MỞ BÀI<br>Viết câu giới thiệu mục đích bài viết:', target: 'This essay will discuss the main effects of this problem.', vn: 'Bài viết này sẽ thảo luận những ảnh hưởng chính của vấn đề này.'},
+                {cue: '[DÀN Ý 05 - CHỈ ẢNH HƯỞNG]<br>2. THÂN BÀI<br>Thân bài 1 - Câu dẫn ảnh hưởng 1:', target: 'One major effect is that [ảnh hưởng 1].', vn: 'Một ảnh hưởng chính là [ảnh hưởng 1].'},
+                {cue: '[DÀN Ý 05 - CHỈ ẢNH HƯỞNG]<br>2. THÂN BÀI<br>Thân bài 2 - Câu dẫn ảnh hưởng 2:', target: 'Another serious impact is that [ảnh hưởng 2].', vn: 'Một tác động nghiêm trọng khác là [ảnh hưởng 2].'},
+                {cue: '[DÀN Ý 05 - CHỈ ẢNH HƯỞNG]<br>2. THÂN BÀI<br>Thân bài 3 - Câu dẫn ảnh hưởng 3:', target: 'A further consequence is that [ảnh hưởng 3].', vn: 'Một hậu quả nữa là [ảnh hưởng 3].'},
+                {cue: '[DÀN Ý 05 - CHỈ ẢNH HƯỞNG]<br>3. KẾT BÀI<br>Viết câu tóm tắt ảnh hưởng:', target: 'In conclusion, [chủ đề] leads to several negative effects on both individuals and society.', vn: 'Tóm lại, [chủ đề] dẫn đến một vài ảnh hưởng tiêu cực lên cả cá nhân và xã hội.'},
+                {cue: '[DÀN Ý 05 - CHỈ ẢNH HƯỞNG]<br>3. KẾT BÀI<br>Viết câu khẳng định mức độ tác động:', target: 'These impacts can affect many areas of life in different ways.', vn: 'Những tác động này có thể ảnh hưởng đến nhiều lĩnh vực của đời sống theo những cách khác nhau.'},
+                {cue: '[DÀN Ý 05 - CHỈ ẢNH HƯỞNG]<br>3. KẾT BÀI<br>Viết câu chốt lại lời khuyên:', target: 'Therefore, it is important to pay more attention to this issue in the future.', vn: 'Vì vậy, việc quan tâm nhiều hơn đến vấn đề này trong tương lai là điều quan trọng.'}
+            ]
+        },
+        {
+            id: 'cause-effect-6',
+            shortTitle: 'DÀN Ý 06',
+            subtitle: 'Chỉ Giải Pháp',
+            outlineName: 'DÀN Ý 06 - CHỈ GIẢI PHÁP',
+            shortName: 'Dàn ý 06: Chỉ Giải pháp',
+            questions: [
+                {cue: '[DÀN Ý 06 - CHỈ GIẢI PHÁP]<br>1. MỞ BÀI<br>Viết câu dẫn dắt chủ đề:', target: 'In recent years, [chủ đề] has become increasingly important in modern society.', vn: 'Trong những năm gần đây, [chủ đề] đã trở nên ngày càng quan trọng trong xã hội hiện đại.'},
+                {cue: '[DÀN Ý 06 - CHỈ GIẢI PHÁP]<br>1. MỞ BÀI<br>Viết câu nêu tính cấp thiết:', target: 'Many people believe that more effective actions are needed in this area.', vn: 'Nhiều người tin rằng cần có những hành động hiệu quả hơn trong lĩnh vực này.'},
+                {cue: '[DÀN Ý 06 - CHỈ GIẢI PHÁP]<br>1. MỞ BÀI<br>Viết câu giới thiệu mục đích bài viết:', target: 'This essay will suggest several practical measures to improve the situation.', vn: 'Bài viết này sẽ đề xuất một vài biện pháp thực tế để cải thiện tình hình.'},
+                {cue: '[DÀN Ý 06 - CHỈ GIẢI PHÁP]<br>2. THÂN BÀI<br>Thân bài 1 - Giải pháp 1:', target: 'One effective solution is to [giải pháp 1].', vn: 'Một giải pháp hiệu quả là [giải pháp 1].'},
+                {cue: '[DÀN Ý 06 - CHỈ GIẢI PHÁP]<br>2. THÂN BÀI<br>Thân bài 2 - Giải pháp 2:', target: 'Another possible measure is to [giải pháp 2].', vn: 'Một biện pháp khả thi khác là [giải pháp 2].'},
+                {cue: '[DÀN Ý 06 - CHỈ GIẢI PHÁP]<br>2. THÂN BÀI<br>Thân bài 3 - Giải pháp 3:', target: 'A further approach is to [giải pháp 3].', vn: 'Một hướng tiếp cận nữa là [giải pháp 3].'},
+                {cue: '[DÀN Ý 06 - CHỈ GIẢI PHÁP]<br>3. KẾT BÀI<br>Viết câu tóm tắt giải pháp:', target: 'In conclusion, several practical measures can help improve this situation effectively.', vn: 'Tóm lại, một vài biện pháp thực tế có thể giúp cải thiện tình hình này một cách hiệu quả.'},
+                {cue: '[DÀN Ý 06 - CHỈ GIẢI PHÁP]<br>3. KẾT BÀI<br>Viết câu dự báo kết quả:', target: 'These solutions can bring positive changes for both individuals and society.', vn: 'Những giải pháp này có thể mang lại thay đổi tích cực cho cả cá nhân và xã hội.'},
+                {cue: '[DÀN Ý 06 - CHỈ GIẢI PHÁP]<br>3. KẾT BÀI<br>Viết câu chốt lại lời khuyên:', target: 'Therefore, it is important to take suitable actions in the future.', vn: 'Vì vậy, việc đưa ra các hành động phù hợp trong tương lai là điều quan trọng.'}
+            ]
+        }
     ],
     'opinion': [
-        {cue: '1. MỞ BÀI<br>Viết câu mở bài cho dạng Opinion:', target: 'In recent years, the idea that [quan điểm trong đề bài – mệnh đề] has become a common topic of discussion.', vn: 'Trong những năm gần đây, ý kiến cho rằng [quan điểm trong đề bài – mệnh đề] đã trở thành một chủ đề thảo luận phổ biến.'},
-        {cue: '1. MỞ BÀI<br>Viết câu thể hiện quan điểm cá nhân (Đồng ý / Không đồng ý):', target: 'From my perspective, I completely agree / disagree with this opinion for several important reasons.', vn: 'Theo quan điểm của tôi, tôi hoàn toàn đồng ý / không đồng ý với ý kiến này vì một vài lý do quan trọng.'},
-        {cue: '1. MỞ BÀI<br>Viết câu kết nối dẫn dắt vào Thân bài:', target: 'This essay will present the main arguments supporting my viewpoint.', vn: 'Bài viết này sẽ trình bày những lập luận chính ủng hộ quan điểm của tôi.'},
-        {cue: '2. THÂN BÀI<br>Viết câu dẫn lý do 1:', target: 'The first reason why I agree / disagree with this opinion is that [lý do 1 – mệnh đề].', vn: 'Lý do đầu tiên khiến tôi đồng ý / không đồng ý với ý kiến này là [lý do 1 – mệnh đề].'},
-        {cue: '2. THÂN BÀI<br>Viết câu dẫn lý do 2:', target: 'Another important reason is that [lý do 2 – mệnh đề].', vn: 'Một lý do quan trọng khác là [lý do 2 – mệnh đề].'},
-        {cue: '2. THÂN BÀI<br>Viết câu dẫn lý do 3:', target: 'A further reason supporting my viewpoint is that [lý do 3 – mệnh đề].', vn: 'Một lý do nữa ủng hộ quan điểm của tôi là [lý do 3 – mệnh đề].'},
-        {cue: '3. KẾT BÀI<br>Viết câu Kết bài khẳng định lại quan điểm:', target: 'In conclusion, I strongly agree / disagree with the idea that [quan điểm trong đề bài – mệnh đề].', vn: 'Tóm lại, tôi mạnh mẽ đồng ý / không đồng ý với ý kiến cho rằng [quan điểm trong đề bài – mệnh đề].'},
-        {cue: '2. THÂN BÀI<br>Viết câu kết luận cuối cùng:', target: 'The reasons above clearly explain why I support / oppose this viewpoint.', vn: 'Những lý do trên giải thích rõ ràng tại sao tôi ủng hộ / phản đối quan điểm này.'}
+        {
+            id: 'opinion-1',
+            shortTitle: 'DÀN Ý CHUẨN',
+            subtitle: 'Trình Bày Quan Điểm',
+            outlineName: 'DÀN Ý TRÌNH BÀY QUAN ĐIỂM',
+            shortName: 'Dàn ý chuẩn',
+            questions: [
+                {cue: '[DÀN Ý TRÌNH BÀY QUAN ĐIỂM]<br>1. MỞ BÀI<br>Viết câu mở bài cho dạng Opinion:', target: 'In recent years, the idea that [quan điểm trong đề bài – mệnh đề] has become a common topic of discussion.', vn: 'Trong những năm gần đây, ý kiến cho rằng [quan điểm trong đề bài – mệnh đề] đã trở thành một chủ đề thảo luận phổ biến.'},
+                {cue: '[DÀN Ý TRÌNH BÀY QUAN ĐIỂM]<br>1. MỞ BÀI<br>Viết câu thể hiện quan điểm cá nhân (Đồng ý / Không đồng ý):', target: 'From my perspective, I completely agree / disagree with this opinion for several important reasons.', vn: 'Theo quan điểm của tôi, tôi hoàn toàn đồng ý / không đồng ý với ý kiến này vì một vài lý do quan trọng.'},
+                {cue: '[DÀN Ý TRÌNH BÀY QUAN ĐIỂM]<br>1. MỞ BÀI<br>Viết câu kết nối dẫn dắt vào Thân bài:', target: 'This essay will present the main arguments supporting my viewpoint.', vn: 'Bài viết này sẽ trình bày những lập luận chính ủng hộ quan điểm của tôi.'},
+                {cue: '[DÀN Ý TRÌNH BÀY QUAN ĐIỂM]<br>2. THÂN BÀI<br>Viết câu dẫn lý do 1:', target: 'The first reason why I agree / disagree with this opinion is that [lý do 1 – mệnh đề].', vn: 'Lý do đầu tiên khiến tôi đồng ý / không đồng ý với ý kiến này là [lý do 1 – mệnh đề].'},
+                {cue: '[DÀN Ý TRÌNH BÀY QUAN ĐIỂM]<br>2. THÂN BÀI<br>Viết câu dẫn lý do 2:', target: 'Another important reason is that [lý do 2 – mệnh đề].', vn: 'Một lý do quan trọng khác là [lý do 2 – mệnh đề].'},
+                {cue: '[DÀN Ý TRÌNH BÀY QUAN ĐIỂM]<br>2. THÂN BÀI<br>Viết câu dẫn lý do 3:', target: 'A further reason supporting my viewpoint is that [lý do 3 – mệnh đề].', vn: 'Một lý do nữa ủng hộ quan điểm của tôi là [lý do 3 – mệnh đề].'},
+                {cue: '[DÀN Ý TRÌNH BÀY QUAN ĐIỂM]<br>3. KẾT BÀI<br>Viết câu Kết bài khẳng định lại quan điểm:', target: 'In conclusion, I strongly agree / disagree with the idea that [quan điểm trong đề bài – mệnh đề].', vn: 'Tóm lại, tôi mạnh mẽ đồng ý / không đồng ý với ý kiến cho rằng [quan điểm trong đề bài – mệnh đề].'},
+                {cue: '[DÀN Ý TRÌNH BÀY QUAN ĐIỂM]<br>3. KẾT BÀI<br>Viết câu kết luận cuối cùng:', target: 'The reasons above clearly explain why I support / oppose this viewpoint.', vn: 'Những lý do trên giải thích rõ ràng tại sao tôi ủng hộ / phản đối quan điểm này.'}
+            ]
+        }
     ],
     'discussion': [
-        {cue: '1. MỞ BÀI<br>Viết câu mở bài cho dạng Discussion:', target: 'In recent years, [chủ đề] has become a common topic of discussion.', vn: 'Trong những năm gần đây, [chủ đề] đã trở thành một chủ đề thảo luận phổ biến.'},
-        {cue: '2. THÂN BÀI<br>Viết câu trình bày 2 luồng quan điểm:', target: 'Some people believe that [ý kiến 1 – mệnh đề], while others argue that [ý kiến 2 – mệnh đề].', vn: 'Một số người tin rằng [ý kiến 1 – mệnh đề], trong khi những người khác cho rằng [ý kiến 2 – mệnh đề].'},
-        {cue: '2. THÂN BÀI<br>Viết câu kết nối dẫn dắt vào Thân bài (kèm quan điểm cá nhân):', target: 'This essay will discuss both views and give my own opinion.', vn: 'Bài viết này sẽ thảo luận cả hai quan điểm và đưa ra ý kiến của riêng tôi.'},
-        {cue: '2. THÂN BÀI<br>Viết câu mở đầu Thân bài 1 (Ý kiến 1):', target: 'On the one hand, it is argued that [ý kiến 1 – mệnh đề].', vn: 'Một mặt, người ta lập luận rằng [ý kiến 1 – mệnh đề].'},
-        {cue: '2. THÂN BÀI<br>Viết câu mở đầu Thân bài 2 (Ý kiến 2):', target: 'On the other hand, it is believed that [ý kiến 2 – mệnh đề].', vn: 'Mặt khác, người ta tin rằng [ý kiến 2 – mệnh đề].'},
-        {cue: '3. KẾT BÀI<br>Viết câu Kết bài tóm tắt:', target: 'In conclusion, both views have their own reasons.', vn: 'Tóm lại, cả hai quan điểm đều có những lý do riêng.'},
-        {cue: '3. KẾT BÀI<br>Viết câu Kết bài nêu quan điểm cá nhân:', target: 'However, I believe that [quan điểm cá nhân – mệnh đề] because [lý do ngắn gọn – mệnh đề].', vn: 'Tuy nhiên, tôi tin rằng [quan điểm cá nhân – mệnh đề] bởi vì [lý do ngắn gọn – mệnh đề].'}
+        {
+            id: 'discussion-1',
+            shortTitle: 'DÀN Ý CHUẨN',
+            subtitle: 'Thảo Luận 2 Chiều',
+            outlineName: 'DÀN Ý THẢO LUẬN 2 CHIỀU',
+            shortName: 'Dàn ý chuẩn',
+            questions: [
+                {cue: '[DÀN Ý THẢO LUẬN 2 CHIỀU]<br>1. MỞ BÀI<br>Viết câu mở bài cho dạng Discussion:', target: 'In recent years, [chủ đề] has become a common topic of discussion.', vn: 'Trong những năm gần đây, [chủ đề] đã trở thành một chủ đề thảo luận phổ biến.'},
+                {cue: '[DÀN Ý THẢO LUẬN 2 CHIỀU]<br>1. MỞ BÀI<br>Viết câu trình bày 2 luồng quan điểm:', target: 'Some people believe that [ý kiến 1 – mệnh đề], while others argue that [ý kiến 2 – mệnh đề].', vn: 'Một số người tin rằng [ý kiến 1 – mệnh đề], trong khi những người khác cho rằng [ý kiến 2 – mệnh đề].'},
+                {cue: '[DÀN Ý THẢO LUẬN 2 CHIỀU]<br>1. MỞ BÀI<br>Viết câu kết nối dẫn dắt vào Thân bài (kèm quan điểm cá nhân):', target: 'This essay will discuss both views and give my own opinion.', vn: 'Bài viết này sẽ thảo luận cả hai quan điểm và đưa ra ý kiến của riêng tôi.'},
+                {cue: '[DÀN Ý THẢO LUẬN 2 CHIỀU]<br>2. THÂN BÀI<br>Viết câu mở đầu Thân bài 1 (Ý kiến 1):', target: 'On the one hand, it is argued that [ý kiến 1 – mệnh đề].', vn: 'Một mặt, người ta lập luận rằng [ý kiến 1 – mệnh đề].'},
+                {cue: '[DÀN Ý THẢO LUẬN 2 CHIỀU]<br>2. THÂN BÀI<br>Viết câu mở đầu Thân bài 2 (Ý kiến 2):', target: 'On the other hand, it is believed that [ý kiến 2 – mệnh đề].', vn: 'Mặt khác, người ta tin rằng [ý kiến 2 – mệnh đề].'},
+                {cue: '[DÀN Ý THẢO LUẬN 2 CHIỀU]<br>3. KẾT BÀI<br>Viết câu Kết bài tóm tắt:', target: 'In conclusion, both views have their own reasons.', vn: 'Tóm lại, cả hai quan điểm đều có những lý do riêng.'},
+                {cue: '[DÀN Ý THẢO LUẬN 2 CHIỀU]<br>3. KẾT BÀI<br>Viết câu Kết bài nêu quan điểm cá nhân:', target: 'However, I believe that [quan điểm cá nhân – mệnh đề] because [lý do ngắn gọn – mệnh đề].', vn: 'Tuy nhiên, tôi tin rằng [quan điểm cá nhân – mệnh đề] bởi vì [lý do ngắn gọn – mệnh đề].'}
+            ]
+        }
     ]
 };
+
+const recitationQuestions = recitationOutlines;
 
 // DOM Elements
 let essayNav;
@@ -782,23 +885,84 @@ function resetLearningProgress() {
 function saveCurrentRecitationProgress() {
     if (!activeEssayTypeId) return;
     try {
-        localStorage.setItem('vstep_recitation_' + activeEssayTypeId, JSON.stringify({
+        const key = 'vstep_recitation_' + activeEssayTypeId + '_' + currentOutlineIndex;
+        localStorage.setItem(key, JSON.stringify({
             currentQuestionIndex,
             questionScores
         }));
     } catch (e) {}
 }
 
-// Reset Recitation State and UI
-function resetRecitationUI(isRestart = false) {
-    if (isRestart === true && activeEssayTypeId) {
-        try { localStorage.removeItem('vstep_recitation_' + activeEssayTypeId); } catch (e) {}
+// Render Outline Selector in Trả Bài
+function renderOutlineSelector() {
+    const container = document.getElementById('outlineSelectorContainer');
+    if (!container) return;
+
+    const outlines = recitationOutlines[activeEssayTypeId] || [];
+    if (outlines.length <= 1) {
+        container.classList.add('hidden');
+        return;
     }
 
-    activeQuestions = recitationQuestions[activeEssayTypeId] || [];
+    container.classList.remove('hidden');
+    const completedList = getCompletedOutlines()[activeEssayTypeId] || [];
+    const activeOutline = outlines[currentOutlineIndex] || outlines[0];
+
+    container.innerHTML = `
+        <div class="outline-selector-header">
+            <span class="outline-selector-title">
+                <i class="fa-solid fa-layer-group"></i> CHỌN DÀN Ý ĐỂ TRẢ BÀI:
+            </span>
+            <span class="outline-current-badge">
+                Đang trả bài: <strong>${activeOutline.shortName}</strong>
+            </span>
+        </div>
+        <div class="outline-btn-grid">
+            ${outlines.map((o, idx) => {
+                const isDone = completedList.includes(idx);
+                return `
+                    <button class="outline-tab-btn ${idx === currentOutlineIndex ? 'active' : ''}" data-outline-index="${idx}">
+                        <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+                            <span class="outline-tab-btn-tag">${o.shortTitle}</span>
+                            ${isDone ? '<span class="outline-badge-done"><i class="fa-solid fa-circle-check"></i> ĐÃ ĐẠT</span>' : ''}
+                        </div>
+                        <span class="outline-tab-btn-name">${o.subtitle}</span>
+                        <span class="outline-tab-btn-count">
+                            <i class="fa-solid fa-list-check"></i> ${o.questions.length} câu hỏi
+                        </span>
+                    </button>
+                `;
+            }).join('')}
+        </div>
+    `;
+
+    container.querySelectorAll('.outline-tab-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const idx = parseInt(e.currentTarget.dataset.outlineIndex, 10);
+            if (idx === currentOutlineIndex) return;
+            currentOutlineIndex = idx;
+            renderOutlineSelector();
+            resetRecitationUI(false);
+        });
+    });
+}
+
+// Reset Recitation State and UI
+function resetRecitationUI(isRestart = false) {
+    const outlines = recitationOutlines[activeEssayTypeId] || [];
+    if (currentOutlineIndex >= outlines.length) currentOutlineIndex = 0;
+    const currentOutline = outlines[currentOutlineIndex];
+    activeQuestions = currentOutline ? currentOutline.questions : [];
+
+    const key = 'vstep_recitation_' + activeEssayTypeId + '_' + currentOutlineIndex;
+
+    if (isRestart === true && activeEssayTypeId) {
+        try { localStorage.removeItem(key); } catch (e) {}
+    }
+
     let savedProgress = null;
     try {
-        const data = localStorage.getItem('vstep_recitation_' + activeEssayTypeId);
+        const data = localStorage.getItem(key);
         if (data) savedProgress = JSON.parse(data);
     } catch (e) {}
 
@@ -1042,7 +1206,9 @@ function showEvaluationResult() {
     
     // Get active essay type data for dynamic title
     const typeData = essayTypes.find(t => t.id === activeEssayTypeId);
-    const essayTitleEn = typeData ? typeData.titleEn : 'This Essay Type';
+    const outlines = recitationOutlines[activeEssayTypeId] || [];
+    const currentOutline = outlines[currentOutlineIndex];
+    const outlineName = currentOutline ? currentOutline.outlineName : (typeData ? typeData.titleEn : 'Dàn ý này');
     
     const evalCard = document.querySelector('.evaluation-card');
     
@@ -1052,7 +1218,9 @@ function showEvaluationResult() {
             resultStatusVal.textContent = 'ĐẠT';
         }
         if (resultMessageVal) {
-            resultMessageVal.textContent = `Chúc mừng bạn đã chinh phục được ${essayTitleEn}. Nhiệm vụ đã được hoàn thành, hãy tiếp tục với phần tiếp theo.`;
+            resultMessageVal.textContent = `Chúc mừng bạn đã chinh phục xuất sắc ${outlineName}! Nhiệm vụ đã được hoàn thành.`;
+        markOutlineCompleted(activeEssayTypeId, currentOutlineIndex);
+        renderOutlineSelector();
         }
         if (evaluationIcon) {
             evaluationIcon.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
@@ -1194,6 +1362,8 @@ function selectEssayType(id) {
     if (sampleWritingPanel) sampleWritingPanel.innerHTML = typeData.sampleWriting;
 
     // Reset recitation for this type
+    currentOutlineIndex = 0;
+    renderOutlineSelector();
     resetRecitationUI();
 
     // Reset tabs to first tab
@@ -1417,6 +1587,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const tabId = e.currentTarget.dataset.tab;
             const panel = document.getElementById(`${tabId}Panel`);
             if (panel) panel.classList.add('active');
+
+            if (tabId === 'writingPractice') {
+                renderOutlineSelector();
+                resetRecitationUI(false);
+            }
         });
     });
 
