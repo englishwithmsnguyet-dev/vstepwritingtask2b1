@@ -1245,75 +1245,109 @@ document.addEventListener('DOMContentLoaded', () => {
     const allowedClasses = ['CB196', 'CB201', 'CB202', 'B209'];
     const REQUIRED_PASSWORD = 'VSTEPSEPTEMBER';
 
-    const loggedInUser = localStorage.getItem('vstep_student_info');
-    if (loggedInUser) {
-        loginOverlay.classList.add('hidden');
+    // Check if authenticated in current session
+    const isSessionAuth = sessionStorage.getItem('vstep_authenticated');
+    if (isSessionAuth === 'true') {
+        if (loginOverlay) loginOverlay.classList.add('hidden');
     } else {
-        loginOverlay.classList.remove('hidden');
+        if (loginOverlay) loginOverlay.classList.remove('hidden');
+        // Pre-fill previously saved name and class for convenience
+        try {
+            const saved = JSON.parse(localStorage.getItem('vstep_student_info'));
+            if (saved) {
+                if (saved.fullName && loginFullName) loginFullName.value = saved.fullName;
+                if (saved.className && loginClass) loginClass.value = saved.className;
+            }
+        } catch (e) {}
+    }
+
+    function handleLoginSubmit() {
+        const fullName = loginFullName ? loginFullName.value.trim() : '';
+        const className = loginClass ? loginClass.value.trim().toUpperCase() : '';
+        const password = loginPassword ? loginPassword.value.trim() : '';
+
+        if (!fullName) {
+            if (loginError) loginError.textContent = 'Vui lòng nhập Họ và tên.';
+            if (loginFullName) loginFullName.focus();
+            return;
+        }
+
+        if (!className) {
+            if (loginError) loginError.textContent = 'Vui lòng nhập Lớp học.';
+            if (loginClass) loginClass.focus();
+            return;
+        }
+
+        if (!allowedClasses.includes(className)) {
+            if (loginError) loginError.textContent = 'Lớp học không hợp lệ. Chỉ nhận CB196, CB201, CB202, B209.';
+            if (loginClass) loginClass.focus();
+            return;
+        }
+
+        if (!password) {
+            if (loginError) loginError.textContent = 'Vui lòng nhập Mật khẩu.';
+            if (loginPassword) loginPassword.focus();
+            return;
+        }
+
+        if (password !== REQUIRED_PASSWORD) {
+            if (loginError) loginError.textContent = 'Mật khẩu không chính xác.';
+            if (loginPassword) loginPassword.focus();
+            return;
+        }
+
+        if (loginError) loginError.textContent = '';
+        if (loginBtn) {
+            loginBtn.textContent = 'ĐANG VÀO LỚP...';
+            loginBtn.disabled = true;
+        }
+
+        // Save to localStorage & sessionStorage
+        try {
+            const studentInfo = { fullName, className };
+            localStorage.setItem('vstep_student_info', JSON.stringify(studentInfo));
+            sessionStorage.setItem('vstep_authenticated', 'true');
+        } catch (e) {}
+
+        // Submit to Google Forms via no-cors fetch
+        const formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLScU5Jd_R15uECAgsBMHZsqKAaCR2g2K1IzqOGs-ZN9_RbDkdQ/formResponse';
+        const formData = new URLSearchParams();
+        formData.append('entry.388968236', `${fullName} - ${className}`);
+
+        fetch(formUrl, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: formData.toString()
+        }).then(() => {
+            if (loginOverlay) loginOverlay.classList.add('hidden');
+        }).catch(err => {
+            console.error('Lỗi khi gửi form:', err);
+            if (loginOverlay) loginOverlay.classList.add('hidden');
+        }).finally(() => {
+            if (loginBtn) {
+                loginBtn.textContent = 'BẮT ĐẦU HỌC NGAY';
+                loginBtn.disabled = false;
+            }
+        });
     }
 
     if (loginBtn) {
-        loginBtn.addEventListener('click', () => {
-            const fullName = loginFullName.value.trim();
-            const className = loginClass.value.trim().toUpperCase();
-            const password = loginPassword ? loginPassword.value.trim() : '';
-
-            if (!fullName) {
-                loginError.textContent = 'Vui lòng nhập Họ và tên.';
-                return;
-            }
-
-            if (!className) {
-                loginError.textContent = 'Vui lòng nhập Lớp học.';
-                return;
-            }
-
-            if (!allowedClasses.includes(className)) {
-                loginError.textContent = 'Lớp học không hợp lệ. Chỉ nhận CB196, CB201, CB202, B209.';
-                return;
-            }
-
-            if (!password) {
-                loginError.textContent = 'Vui lòng nhập Mật khẩu.';
-                return;
-            }
-
-            if (password !== REQUIRED_PASSWORD) {
-                loginError.textContent = 'Mật khẩu không chính xác.';
-                return;
-            }
-
-            loginError.textContent = '';
-            loginBtn.textContent = 'ĐANG VÀO LỚP...';
-            loginBtn.disabled = true;
-
-            // Save to localStorage
-            const studentInfo = { fullName, className };
-            localStorage.setItem('vstep_student_info', JSON.stringify(studentInfo));
-
-            // Submit to Google Forms via no-cors fetch
-            const formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLScU5Jd_R15uECAgsBMHZsqKAaCR2g2K1IzqOGs-ZN9_RbDkdQ/formResponse';
-            const formData = new URLSearchParams();
-            formData.append('entry.388968236', `${fullName} - ${className}`);
-
-            fetch(formUrl, {
-                method: 'POST',
-                mode: 'no-cors',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                },
-                body: formData.toString()
-            }).then(() => {
-                loginOverlay.classList.add('hidden');
-            }).catch(err => {
-                console.error('Lỗi khi gửi form:', err);
-                loginOverlay.classList.add('hidden');
-            }).finally(() => {
-                loginBtn.textContent = 'BẮT ĐẦU HỌC NGAY';
-                loginBtn.disabled = false;
-            });
-        });
+        loginBtn.addEventListener('click', handleLoginSubmit);
     }
+
+    // Support Enter key on input fields
+    [loginFullName, loginClass, loginPassword].forEach(input => {
+        if (input) {
+            input.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    handleLoginSubmit();
+                }
+            });
+        }
+    });
     // -------------------
     // Render navigation
     renderNav();
