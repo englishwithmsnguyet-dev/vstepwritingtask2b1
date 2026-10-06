@@ -818,24 +818,341 @@ function markOutlineCompleted(typeId, outlineIdx) {
     }
 }
 
-// Word-by-word diff algorithm using LCS
+// Recitation Timer Variables & Functions
+let recitationTimerBadge;
+let recitationCountdown;
+let timeSpentVal;
+let evaluationTimeSpent;
+let recitationTimerInterval = null;
+const RECITATION_TIME_LIMIT = 20 * 60; // 20 minutes = 1200 seconds
+let recitationTimeRemaining = RECITATION_TIME_LIMIT;
+let isRecitationTimerRunning = false;
+
+function formatTimerString(totalSeconds) {
+    const mins = Math.floor(totalSeconds / 60);
+    const secs = totalSeconds % 60;
+    const pad = (n) => (n < 10 ? '0' + n : n);
+    return `${pad(mins)}:${pad(secs)}`;
+}
+
+function updateRecitationTimerDisplay() {
+    if (recitationCountdown) {
+        recitationCountdown.textContent = formatTimerString(recitationTimeRemaining);
+    }
+
+    if (recitationTimerBadge) {
+        recitationTimerBadge.classList.remove('timer-normal', 'timer-warning', 'timer-urgent');
+        if (recitationTimeRemaining > 300) {
+            recitationTimerBadge.classList.add('timer-normal');
+        } else if (recitationTimeRemaining > 60) {
+            recitationTimerBadge.classList.add('timer-warning');
+        } else {
+            recitationTimerBadge.classList.add('timer-urgent');
+        }
+    }
+}
+
+function startRecitationTimer() {
+    if (isRecitationTimerRunning) return;
+    if (recitationTimeRemaining <= 0) {
+        recitationTimeRemaining = RECITATION_TIME_LIMIT;
+    }
+    isRecitationTimerRunning = true;
+    updateRecitationTimerDisplay();
+
+    if (recitationTimerInterval) clearInterval(recitationTimerInterval);
+    recitationTimerInterval = setInterval(() => {
+        if (recitationTimeRemaining > 0) {
+            recitationTimeRemaining--;
+            updateRecitationTimerDisplay();
+        } else {
+            handleRecitationTimeUp();
+        }
+    }, 1000);
+}
+
+function stopRecitationTimer() {
+    if (recitationTimerInterval) {
+        clearInterval(recitationTimerInterval);
+        recitationTimerInterval = null;
+    }
+    isRecitationTimerRunning = false;
+}
+
+function resetRecitationTimer() {
+    stopRecitationTimer();
+    recitationTimeRemaining = RECITATION_TIME_LIMIT;
+    updateRecitationTimerDisplay();
+}
+
+function handleRecitationTimeUp() {
+    stopRecitationTimer();
+    if (recitationInput) recitationInput.disabled = true;
+
+    // Check current question if student typed something but hasn't submitted yet
+    const userAns = recitationInput ? recitationInput.value.trim() : '';
+    if (userAns && (!recitationFeedback || recitationFeedback.classList.contains('hidden'))) {
+        const q = activeQuestions[currentQuestionIndex];
+        if (q) {
+            const diffResult = diffWords(userAns, q.target);
+            questionScores[currentQuestionIndex] = diffResult.accuracy;
+        }
+    }
+
+    alert('⏰ ĐÃ HẾT THỜI GIAN 20 PHÚT LÀM BÀI!\nHệ thống tự động nộp bài và hiển thị kết quả đánh giá trả bài của bạn.');
+    showEvaluationResult();
+}
+
+// Word-by-word diff algorithm supporting flexible bracket matching [ ... ]
 function diffWords(userText, targetText) {
+    const isPunctOrSignOnly = (w) => /^[+\-–—−.,!?;:()\[\]\s]+$/.test(w);
+
     const preProcess = (t) => t
         .replace(/…/g, '...')
         .replace(/\.\s*\.\s*\./g, '...')
         .replace(/[’‘]/g, "'")
         .replace(/[“”]/g, '"')
-        .replace(/\s*[-\u2010\u2011\u2013\u2014\u2212]+\s*/g, ' - ');
+        // Strip leading bullet marks (+, -, *, etc.)
+        .replace(/^[\s+\-–—−*•]+/, '')
+        // Normalize V-ing and V-o notation variations first
+        .replace(/(^|[^a-zA-Z0-9])([vV])\s*[-_–—−]\s*(ing\b|[0oO]\b)/gi, '$1$2$3')
+        // Normalize hành động slot delimiters (+, -, –, —, :, /, or space)
+        .replace(/(hành\s*động)\s*([+\-:–—−/]|->)?\s*/gi, '$1 ')
+        // Normalize hyphens between English words (e.g. part-time -> part time)
+        .replace(/([a-zA-Z0-9])\s*[-–—−]\s*([a-zA-Z0-9])/g, '$1 $2')
+        .replace(/[–—−]/g, '-')
+        .replace(/\s*\+\s*/g, ' + ')
+        .replace(/\s*-\s*/g, ' - ');
         
-    const clean = (w) => w.toLowerCase().trim();
-    
-    const uWords = preProcess(userText).trim().split(/\s+/).filter(w => w !== "");
-    const tWords = preProcess(targetText).trim().split(/\s+/).filter(w => w !== "");
-    
+    const clean = (w) => {
+        let s = w.toLowerCase().trim();
+        s = s.replace(/^[.,!?;:()+\[\]\s\-–—−/]+|[.,!?;:()+\[\]\s\-–—−/]+$/g, '');
+        s = s.replace(/^[vV]\s*[-_]?ing$/i, 'ving');
+        s = s.replace(/^[vV]\s*[-_]?[0oO]$/i, 'vo');
+        return s;
+    };
+
+    // If target has alternate options separated by ' / '
+    if (targetText.includes(' / ') && (targetText.includes('+ Vo') || targetText.includes('+ Ving') || targetText.includes('Don’t forget') || targetText.includes('quite unhappy'))) {
+        const altTargets = targetText.split(' / ');
+        let bestDiff = null;
+        for (const alt of altTargets) {
+            const curDiff = diffWordsSingle(userText, alt.trim(), preProcess, clean, isPunctOrSignOnly);
+            if (!bestDiff || curDiff.accuracy > bestDiff.accuracy) {
+                bestDiff = curDiff;
+            }
+        }
+        // Also compare against full targetText
+        const fullDiff = diffWordsSingle(userText, targetText, preProcess, clean, isPunctOrSignOnly);
+        if (fullDiff.accuracy > bestDiff.accuracy) {
+            bestDiff = fullDiff;
+        }
+        return bestDiff;
+    }
+
+    return diffWordsSingle(userText, targetText, preProcess, clean, isPunctOrSignOnly);
+}
+
+function diffWordsSingle(userText, targetText, preProcess, clean, isPunctOrSignOnly) {
+    if (!isPunctOrSignOnly) {
+        isPunctOrSignOnly = (w) => /^[+\-–—−.,!?;:()\[\]\s]+$/.test(w);
+    }
+    const rawUser = preProcess(userText).trim();
+    const rawTarget = preProcess(targetText).trim();
+
+    // If target has "+ Vo", "- Vo", or "Vo", or "+ Ving", "- Ving", or "Ving" without brackets, treat as bracket slot [+ Vo] or [+ Ving]
+    let adjustedTarget = rawTarget;
+    if (!adjustedTarget.includes('[') && !adjustedTarget.includes(']')) {
+        adjustedTarget = adjustedTarget.replace(/(^|[^a-zA-Z0-9])[+\-–—−]?\s*Vo\b/g, '$1[+ Vo]');
+        adjustedTarget = adjustedTarget.replace(/(^|[^a-zA-Z0-9])[+\-–—−]?\s*Ving\b/g, '$1[+ Ving]');
+    }
+
+    // Check if target has bracketed slots [ ... ]
+    const slotMatches = [...adjustedTarget.matchAll(/\[([^\]]+)\]/g)];
+
+    if (slotMatches.length > 0) {
+        const slots = slotMatches.map(m => m[1]);
+        const parts = adjustedTarget.split(/\[[^\]]+\]/);
+
+        // 1. Try template regex match (English skeleton matches + slots filled with any text)
+        let pattern = '^\\s*';
+        for (let i = 0; i < slots.length; i++) {
+            const pStr = parts[i].trim();
+            if (pStr) {
+                const words = pStr.split(/\s+/).filter(w => !isPunctOrSignOnly(w) || w === '.' || w === '!' || w === '?').map(w => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+                pattern += words.join('[\\s+\\-–—−]*') + '[\\s+\\-–—−]*(.+?)[\\s+\\-–—−]*';
+            } else {
+                pattern += '(.+?)[\\s+\\-–—−]*';
+            }
+        }
+        const pLast = parts[parts.length - 1].trim();
+        if (pLast) {
+            const lastWords = pLast.split(/\s+/).filter(w => !isPunctOrSignOnly(w) || w === '.' || w === '!' || w === '?').map(w => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+            if (/^[.,!?;:]+$/.test(pLast)) {
+                pattern += '(?:[\\s+\\-–—−]*[' + pLast.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '])?';
+            } else {
+                pattern += lastWords.join('[\\s+\\-–—−]*');
+            }
+        }
+        pattern += '\\s*$';
+
+        const templateRegex = new RegExp(pattern, 'i');
+        const tm = rawUser.match(templateRegex);
+
+        if (tm) {
+            // Perfect match! Every slot is filled and all English words match!
+            const diff = [];
+            for (let i = 0; i < slots.length; i++) {
+                const pWords = parts[i].trim().split(/\s+/).filter(w => w);
+                for (const pw of pWords) {
+                    diff.push({ word: pw, targetWord: pw, type: 'match' });
+                }
+                const userSlotVal = tm[i + 1].trim();
+                const targetSlotDisplay = slots[i].startsWith('+ ') ? slots[i] : `[${slots[i]}]`;
+                diff.push({
+                    word: userSlotVal,
+                    targetWord: targetSlotDisplay,
+                    type: 'match'
+                });
+            }
+            const pLastWords = parts[parts.length - 1].trim().split(/\s+/).filter(w => w);
+            for (const pw of pLastWords) {
+                diff.push({ word: pw, targetWord: pw, type: 'match' });
+            }
+
+            return {
+                diff,
+                accuracy: 100,
+                isPerfect: true
+            };
+        }
+
+        // 2. Fallback: normalize slots into unique tokens for LCS alignment
+        let uNorm = rawUser;
+        let tNorm = adjustedTarget;
+        const slotValues = {};
+
+        // Check if user explicitly used brackets
+        const userBrackets = [...rawUser.matchAll(/\[([^\]]+)\]/g)].map(m => m[1]);
+        if (userBrackets.length === slots.length) {
+            for (let i = 0; i < slots.length; i++) {
+                const tok = `__SLOT_${i}__`;
+                uNorm = uNorm.replace(`[${userBrackets[i]}]`, ` ${tok} `);
+                tNorm = tNorm.replace(`[${slots[i]}]`, ` ${tok} `);
+                slotValues[tok] = {
+                    user: `[${userBrackets[i]}]`,
+                    target: slots[i].startsWith('+ ') ? slots[i] : `[${slots[i]}]`
+                };
+            }
+        } else {
+            // Anchor-based slot extraction
+            for (let i = 0; i < slots.length; i++) {
+                const tok = `__SLOT_${i}__`;
+                tNorm = tNorm.replace(`[${slots[i]}]`, ` ${tok} `);
+
+                const beforeWords = parts[i].trim().split(/\s+/).filter(w => w);
+                const afterWords = parts[i + 1].trim().split(/\s+/).filter(w => w);
+                const anchorB = beforeWords.length > 0 ? beforeWords[beforeWords.length - 1].replace(/[.*+?^${}()|[\]\\]/g, '\\$&') : '';
+                const anchorA = afterWords.length > 0 ? afterWords[0].replace(/[.*+?^${}()|[\]\\]/g, '\\$&') : '';
+
+                let extractedUserSlot = '';
+                if (anchorB && anchorA) {
+                    const subReg = new RegExp(`(\\b${anchorB}\\b\\s*)(.+?)(\\s*${anchorA})`, 'i');
+                    const sm = uNorm.match(subReg);
+                    if (sm && sm[2].trim()) {
+                        extractedUserSlot = sm[2].trim();
+                        uNorm = uNorm.replace(subReg, `$1 ${tok} $3`);
+                    }
+                } else if (anchorB) {
+                    const subReg = new RegExp(`(\\b${anchorB}\\b\\s*)(.+?)(\\s*[,.!?]|$)`, 'i');
+                    const sm = uNorm.match(subReg);
+                    if (sm && sm[2].trim()) {
+                        extractedUserSlot = sm[2].trim();
+                        uNorm = uNorm.replace(subReg, `$1 ${tok} $3`);
+                    }
+                }
+
+                slotValues[tok] = {
+                    user: extractedUserSlot || (slots[i].startsWith('+ ') ? slots[i] : `[${slots[i]}]`),
+                    target: slots[i].startsWith('+ ') ? slots[i] : `[${slots[i]}]`
+                };
+            }
+        }
+
+        // Run LCS on normalized strings
+        const uWords = uNorm.trim().split(/\s+/).filter(w => w !== '');
+        const tWords = tNorm.trim().split(/\s+/).filter(w => w !== '');
+
+        const n = uWords.length;
+        const m = tWords.length;
+        const dp = Array(n + 1).fill(null).map(() => Array(m + 1).fill(0));
+
+        for (let i = 1; i <= n; i++) {
+            for (let j = 1; j <= m; j++) {
+                if (clean(uWords[i - 1]) === clean(tWords[j - 1])) {
+                    dp[i][j] = dp[i - 1][j - 1] + 1;
+                } else {
+                    dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
+                }
+            }
+        }
+
+        let i = n, j = m;
+        const diff = [];
+
+        while (i > 0 || j > 0) {
+            if (i > 0 && j > 0 && clean(uWords[i - 1]) === clean(tWords[j - 1])) {
+                const uW = uWords[i - 1];
+                const tW = tWords[j - 1];
+                if (slotValues[tW]) {
+                    diff.unshift({
+                        word: slotValues[tW].user,
+                        targetWord: slotValues[tW].target,
+                        type: 'match'
+                    });
+                } else {
+                    diff.unshift({ word: uW, targetWord: tW, type: 'match' });
+                }
+                i--;
+                j--;
+            } else if (j > 0 && (i === 0 || dp[i][j - 1] >= dp[i - 1][j])) {
+                const tW = tWords[j - 1];
+                diff.unshift({
+                    word: slotValues[tW] ? slotValues[tW].target : tW,
+                    targetWord: slotValues[tW] ? slotValues[tW].target : tW,
+                    type: 'missing'
+                });
+                j--;
+            } else {
+                const uW = uWords[i - 1];
+                diff.unshift({
+                    word: slotValues[uW] ? slotValues[uW].user : uW,
+                    type: 'extra'
+                });
+                i--;
+            }
+        }
+
+        const meaningfulUserWords = uWords.filter(w => !isPunctOrSignOnly(w));
+        const meaningfulTargetWords = tWords.filter(w => !isPunctOrSignOnly(w));
+        const matchCount = diff.filter(d => d.type === 'match' && !isPunctOrSignOnly(d.word)).length;
+        const maxWords = Math.max(meaningfulTargetWords.length, meaningfulUserWords.length);
+        const accuracy = maxWords > 0 ? Math.round((matchCount / maxWords) * 100) : 0;
+
+        return {
+            diff,
+            accuracy,
+            isPerfect: matchCount === meaningfulTargetWords.length && meaningfulUserWords.length === meaningfulTargetWords.length
+        };
+    }
+
+    // Standard LCS for targets without brackets
+    const uWords = rawUser.split(/\s+/).filter(w => w !== '');
+    const tWords = rawTarget.split(/\s+/).filter(w => w !== '');
     const n = uWords.length;
     const m = tWords.length;
     const dp = Array(n + 1).fill(null).map(() => Array(m + 1).fill(0));
-    
+
     for (let i = 1; i <= n; i++) {
         for (let j = 1; j <= m; j++) {
             if (clean(uWords[i - 1]) === clean(tWords[j - 1])) {
@@ -845,32 +1162,34 @@ function diffWords(userText, targetText) {
             }
         }
     }
-    
+
     let i = n, j = m;
     const diff = [];
-    
+
     while (i > 0 || j > 0) {
         if (i > 0 && j > 0 && clean(uWords[i - 1]) === clean(tWords[j - 1])) {
-            diff.unshift({ word: uWords[i - 1], type: 'match' });
+            diff.unshift({ word: uWords[i - 1], targetWord: tWords[j - 1], type: 'match' });
             i--;
             j--;
         } else if (j > 0 && (i === 0 || dp[i][j - 1] >= dp[i - 1][j])) {
-            diff.unshift({ word: tWords[j - 1], type: 'missing' });
+            diff.unshift({ word: tWords[j - 1], targetWord: tWords[j - 1], type: 'missing' });
             j--;
         } else {
             diff.unshift({ word: uWords[i - 1], type: 'extra' });
             i--;
         }
     }
-    
-    let matchCount = diff.filter(d => d.type === 'match').length;
-    let maxWords = Math.max(tWords.length, uWords.length);
-    let accuracy = maxWords > 0 ? Math.round((matchCount / maxWords) * 100) : 0;
-    
+
+    const meaningfulUserWords = uWords.filter(w => !isPunctOrSignOnly(w));
+    const meaningfulTargetWords = tWords.filter(w => !isPunctOrSignOnly(w));
+    const matchCount = diff.filter(d => d.type === 'match' && !isPunctOrSignOnly(d.word)).length;
+    const maxWords = Math.max(meaningfulTargetWords.length, meaningfulUserWords.length);
+    const accuracy = maxWords > 0 ? Math.round((matchCount / maxWords) * 100) : 0;
+
     return {
         diff,
         accuracy,
-        isPerfect: matchCount === tWords.length && uWords.length === tWords.length
+        isPerfect: matchCount === meaningfulTargetWords.length && meaningfulUserWords.length === meaningfulTargetWords.length
     };
 }
 
@@ -1057,6 +1376,10 @@ function resetRecitationUI(isRestart = false) {
     const progressWrapper = document.querySelector('.recitation-progress-wrapper');
     if (progressWrapper) progressWrapper.style.display = '';
     
+    // Reset and start countdown timer
+    resetRecitationTimer();
+    startRecitationTimer();
+
     showRecitationQuestion();
 }
 
@@ -1247,6 +1570,13 @@ function nextRecitationQuestion() {
 
 // Show evaluation result screen
 function showEvaluationResult() {
+    // Stop the timer
+    stopRecitationTimer();
+    const timeSpentSeconds = Math.max(0, RECITATION_TIME_LIMIT - recitationTimeRemaining);
+    if (timeSpentVal) {
+        timeSpentVal.textContent = formatTimerString(timeSpentSeconds);
+    }
+
     // Hide quiz box and feedback panel
     if (recitationQuizBox) recitationQuizBox.classList.add('hidden');
     if (recitationFeedback) recitationFeedback.classList.add('hidden');
@@ -1465,6 +1795,10 @@ document.addEventListener('DOMContentLoaded', () => {
     resultMessageVal = document.getElementById('resultMessageVal');
     btnRestartRecitation = document.getElementById('btnRestartRecitation');
     evaluationIcon = document.getElementById('evaluationIcon');
+    recitationTimerBadge = document.getElementById('recitationTimerBadge');
+    recitationCountdown = document.getElementById('recitationCountdown');
+    timeSpentVal = document.getElementById('timeSpentVal');
+    evaluationTimeSpent = document.getElementById('evaluationTimeSpent');
 
     // --- Login Logic ---
     const loginOverlay = document.getElementById('loginOverlay');
