@@ -6,72 +6,105 @@ const essayTypes = [
         titleVi: 'Thảo Luận Thuận Lợi & Bất Lợi',
         basicInfo: `
             <div class="content-block">
-                <h3>Mục đích</h3>
-                <p>Yêu cầu thí sinh <strong>phân tích một cách cân bằng các mặt tích cực và tiêu cực</strong> của một hiện tượng, hành vi hoặc xu hướng trong xã hội hiện đại.</p>
+                <h3>Yêu cầu chính</h3>
+                <p>Phân tích một cách cân bằng các mặt tích cực và tiêu cực của một hiện tượng, hành vi hoặc xu hướng trong xã hội hiện đại. Trong một số biến thể, đề bài có thể chỉ tập trung vào một khía cạnh duy nhất, chẳng hạn như chỉ phân tích lợi ích hoặc chỉ phân tích hạn chế.</p>
             </div>
             <div class="content-block">
                 <h3>Đặc điểm của dạng bài</h3>
-                <p>Về bản chất, đây là dạng bài <strong>mang tính trung lập</strong>. Thí sinh không bị bắt buộc phải bày tỏ quan điểm cá nhân rõ ràng như trong OPINION ESSAY. Việc đưa ra một nhận định tổng quát ở phần kết luận được xem là phù hợp.</p>
+                <p>Về bản chất, đây là dạng bài <strong>mang tính trung lập</strong>. Thí sinh không bị bắt buộc phải bày tỏ quan điểm cá nhân rõ ràng như trong OPINION ESSAY. Dạng bài này chủ yếu yêu cầu thí sinh trình bày và phân tích các mặt tích cực và tiêu cực của một vấn đề một cách tương đối cân bằng. Thí sinh không nhất thiết phải đưa ra quan điểm cá nhân, trừ khi đề bài yêu cầu.</p>
             </div>
         `,
         identifyingSigns: `
             <div class="content-block">
-                <h3>Các từ khóa thường xuất hiện trong đề bài:</h3>
-                <ul>
-                    <li>What are the advantages and disadvantages of…?</li>
-                    <li>Discuss the benefits and drawbacks of…</li>
-                    <li>Discuss the benefits/advantages of….</li>
-                    <li>Discuss the importance of …</li>
-                    <li>Do the advantages outweigh the disadvantages?</li>
-                    <li>What are the positive and negative aspects of …?</li>
-                </ul>
-                <p><em>Lưu ý: Việc xác định chính xác yêu cầu của đề (phân tích hai mặt hay chỉ một mặt, có yêu cầu so sánh mức độ hay không) là yếu tố then chốt để lựa chọn cấu trúc bài viết phù hợp.</em></p>
+                <h3>Dấu hiệu nhận biết theo từng dạng:</h3>
+                <div style="margin-bottom: 18px;">
+                    <h4 style="color: var(--primary-color); font-size: 16px; margin-bottom: 8px;">1. Dạng Advantages & Disadvantages:</h4>
+                    <ul>
+                        <li>What are the advantages and disadvantages of…?</li>
+                        <li>Discuss the benefits and drawbacks of…</li>
+                        <li>What are the positive and negative aspects of…?</li>
+                        <li>Do the advantages outweigh the disadvantages?</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: var(--secondary-color); font-size: 16px; margin-bottom: 8px;">2. Dạng Advantages-only:</h4>
+                    <ul>
+                        <li>Discuss the benefits of…</li>
+                        <li>Discuss the advantages of…</li>
+                        <li>Discuss the importance of…</li>
+                    </ul>
+                </div>
             </div>
         `,
         detailedOutline: `
             <div class="outline-variant">
-                <h3 style="color: var(--primary-color); border-bottom: 2px solid var(--primary-light); padding-bottom: 10px; margin-bottom: 15px;">DÀN Ý 1: ĐỀ THUẬN LỢI VÀ BẤT LỢI</h3>
+                <h3 style="color: var(--primary-color); border-bottom: 2px solid var(--primary-light); padding-bottom: 10px; margin-bottom: 15px;">DÀN Ý 1: THUẬN LỢI VÀ BẤT LỢI</h3>
                 <div class="outline-step">
                     <h4>1. MỞ BÀI</h4>
-                    <p>↳ <span class="outline-phrase">In recent years, [chủ đề] has become more common in modern society. Although it has some benefits, there are also some drawbacks. This essay will discuss both sides of this topic.</span></p>
+                    <p>↳ <span class="outline-phrase">In recent years, [chủ đề - danh từ/cụm danh từ] has become more common in modern society. Although it has some benefits, there are also some drawbacks. This essay will discuss both its advantages and disadvantages.</span></p>
                 </div>
                 <div class="outline-step">
-                    <h4>2. THÂN BÀI 1: advantages – lợi ích</h4>
-                    <p>↳ <span class="outline-phrase">On the one hand, [chủ đề] has several advantages.</span></p>
-                    <ul>
-                        <li><span class="outline-phrase">One major benefit is that [lợi ích 1].</span> → [luận cứ giải thích/ví dụ]</li>
-                        <li><span class="outline-phrase">Another positive aspect is that [lợi ích 2].</span> → [luận cứ giải thích/ví dụ]</li>
-                        <li><span class="outline-phrase">A further good point is that [lợi ích 3].</span> → [luận cứ giải thích/ví dụ]</li>
-                    </ul>
+                    <h4>2. THÂN BÀI</h4>
+                    <p><strong>THÂN BÀI 1: advantages – lợi ích</strong></p>
+                    <p>↳ <span class="outline-phrase">On the one hand, [chủ đề] has several advantages. One major benefit is that [lợi ích 1 – mệnh đề]. → [luận cứ]. Another positive aspect is that [lợi ích 2 – mệnh đề]. → [luận cứ]. A further good point is that [lợi ích 3 – mệnh đề]. → [luận cứ].</span></p>
+                    <p style="margin-top: 15px;"><strong>THÂN BÀI 2: disadvantages – bất lợi</strong></p>
+                    <p>↳ <span class="outline-phrase">On the other hand, there are also several disadvantages. One possible drawback is that [bất lợi 1 – mệnh đề]. → [luận cứ]. Another negative aspect is that [bất lợi 2 – mệnh đề]. → [luận cứ]. A further problem is that [bất lợi 3 – mệnh đề]. → [luận cứ].</span></p>
+                    
+                    <div style="margin-top: 20px; padding: 15px; background: var(--bg-main); border-left: 4px solid var(--primary-color); border-radius: 8px;">
+                        <h5 style="color: var(--primary-color); margin-bottom: 10px; font-size: 15px;">GỢI Ý CÁC CỤM TỪ DẪN DẮT LUẬN CỨ:</h5>
+                        <p style="margin-bottom: 6px;"><strong>1. Dẫn câu giải thích / lý do:</strong></p>
+                        <ul style="margin-bottom: 10px; padding-left: 20px;">
+                            <li><span class="outline-phrase">This is because …</span> / <span class="outline-phrase">The main reason is that …</span></li>
+                            <li><span class="outline-phrase">In fact, …</span> / <span class="outline-phrase">This means that ….</span></li>
+                        </ul>
+                        <p style="margin-bottom: 6px;"><strong>2. Dẫn câu hệ quả / kết quả:</strong></p>
+                        <ul style="margin-bottom: 10px; padding-left: 20px;">
+                            <li><span class="outline-phrase">As a result, …</span> / <span class="outline-phrase">Therefore, …</span></li>
+                            <li><span class="outline-phrase">Consequently, …</span> / <span class="outline-phrase">For this reason, …</span></li>
+                        </ul>
+                        <p style="margin-bottom: 6px;"><strong>3. Dẫn câu ví dụ minh họa:</strong></p>
+                        <ul style="margin-bottom: 0; padding-left: 20px;">
+                            <li><span class="outline-phrase">For example, …</span> / <span class="outline-phrase">For instance, …</span> / <span class="outline-phrase">To be specific, …</span></li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="outline-step">
-                    <h4>3. THÂN BÀI 2: disadvantages – bất lợi</h4>
-                    <p>↳ <span class="outline-phrase">On the other hand, there are also several disadvantages.</span></p>
-                    <ul>
-                        <li><span class="outline-phrase">One possible drawback is that [bất lợi 1].</span> → [luận cứ giải thích/ví dụ]</li>
-                        <li><span class="outline-phrase">Another negative aspect is that [bất lợi 2].</span> → [luận cứ giải thích/ví dụ]</li>
-                        <li><span class="outline-phrase">A further problem is that [bất lợi 3].</span> → [luận cứ giải thích/ví dụ]</li>
-                    </ul>
-                </div>
-                <div class="outline-step">
-                    <h4>4. KẾT BÀI</h4>
+                    <h4>3. KẾT BÀI</h4>
                     <p>↳ <span class="outline-phrase">In conclusion, [chủ đề] has both advantages and disadvantages. These points show that it has different effects on people’s lives. Therefore, it is important to consider both sides before making a decision.</span></p>
                 </div>
             </div>
 
             <div class="outline-variant" style="margin-top: 40px;">
-                <h3 style="color: var(--primary-color); border-bottom: 2px solid var(--primary-light); padding-bottom: 10px; margin-bottom: 15px;">DÀN Ý 2: ĐỀ CHỈ THUẬN LỢI</h3>
+                <h3 style="color: var(--primary-color); border-bottom: 2px solid var(--primary-light); padding-bottom: 10px; margin-bottom: 15px;">DÀN Ý 2: CHỈ THUẬN LỢI</h3>
                 <div class="outline-step">
                     <h4>1. MỞ BÀI</h4>
-                    <p>↳ <span class="outline-phrase">In recent years, [chủ đề] has become more common in modern society. Many people see this as a positive development. This essay will discuss the main advantages of this topic.</span></p>
+                    <p>↳ <span class="outline-phrase">In recent years, [chủ đề - danh từ/cụm danh từ] has become more common in modern society. Many people see this as a positive development. This essay will discuss its main advantages.</span></p>
                 </div>
                 <div class="outline-step">
                     <h4>2. THÂN BÀI</h4>
                     <ul>
-                        <li><strong>THÂN BÀI 1:</strong> <span class="outline-phrase">One main advantage is that [lợi ích 1].</span> → [luận cứ]</li>
-                        <li><strong>THÂN BÀI 2:</strong> <span class="outline-phrase">Another positive aspect is that [lợi ích 2].</span> → [luận cứ]</li>
-                        <li><strong>THÂN BÀI 3:</strong> <span class="outline-phrase">A further benefit is that [lợi ích 3].</span> → [luận cứ]</li>
+                        <li><strong>THÂN BÀI 1:</strong> <span class="outline-phrase">One main advantage is that [lợi ích 1 – mệnh đề].</span> → [Luận cứ 1]. → [Luận cứ 2]. → [Luận cứ 3].</li>
+                        <li><strong>THÂN BÀI 2:</strong> <span class="outline-phrase">Another positive aspect is that [lợi ích 2 – mệnh đề].</span> → [Luận cứ 1]. → [Luận cứ 2]. → [Luận cứ 3].</li>
+                        <li><strong>THÂN BÀI 3:</strong> <span class="outline-phrase">A further benefit is that [lợi ích 3 – mệnh đề].</span> → [Luận cứ 1]. → [Luận cứ 2]. → [Luận cứ 3].</li>
                     </ul>
+                    
+                    <div style="margin-top: 20px; padding: 15px; background: var(--bg-main); border-left: 4px solid var(--primary-color); border-radius: 8px;">
+                        <h5 style="color: var(--primary-color); margin-bottom: 10px; font-size: 15px;">GỢI Ý CÁC CỤM TỪ DẪN DẮT LUẬN CỨ:</h5>
+                        <p style="margin-bottom: 6px;"><strong>1. Dẫn câu giải thích / lý do:</strong></p>
+                        <ul style="margin-bottom: 10px; padding-left: 20px;">
+                            <li><span class="outline-phrase">This is because …</span> / <span class="outline-phrase">The main reason is that …</span></li>
+                            <li><span class="outline-phrase">In fact, …</span> / <span class="outline-phrase">This means that ….</span></li>
+                        </ul>
+                        <p style="margin-bottom: 6px;"><strong>2. Dẫn câu hệ quả / kết quả:</strong></p>
+                        <ul style="margin-bottom: 10px; padding-left: 20px;">
+                            <li><span class="outline-phrase">As a result, …</span> / <span class="outline-phrase">Therefore, …</span></li>
+                            <li><span class="outline-phrase">Consequently, …</span> / <span class="outline-phrase">For this reason, …</span></li>
+                        </ul>
+                        <p style="margin-bottom: 6px;"><strong>3. Dẫn câu ví dụ minh họa:</strong></p>
+                        <ul style="margin-bottom: 0; padding-left: 20px;">
+                            <li><span class="outline-phrase">For example, …</span> / <span class="outline-phrase">For instance, …</span> / <span class="outline-phrase">To be specific, …</span></li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="outline-step">
                     <h4>3. KẾT BÀI</h4>
@@ -88,9 +121,9 @@ const essayTypes = [
                     <p><strong>ĐỀ BÀI:</strong> Online learning is a great, revolutionary alternative to traditional training. Online learning is a form of distance learning that takes place over the Internet, including online courses, exams, gamified quizzes, and certification training. Some people believe that e-learning will replace traditional classes in the future.<br><br><strong>Write an essay to discuss the advantages and disadvantages of online learning.</strong></p>
                 </div>
                 <div class="sample-letter-box">
-                    In recent years, <strong>online learning</strong> has become more common in modern society. Although it has some benefits, there are also some drawbacks. <strong>This essay will discuss both sides of this topic.</strong><br><br>
-                    On the one hand, <strong>digital learning</strong> has several advantages. One major benefit is that <strong>it is convenient and flexible</strong>. <em>This is because learners can study anytime and anywhere, so they can manage their time better and balance learning with other activities.</em> Another positive aspect is that <strong>it helps save money</strong>. <em>The main reason is that students do not need to pay for transport, accommodation, or printed materials, so it is suitable for people with a limited budget.</em> A further good point is that <strong>it allows learners to study at their own pace</strong>. <em>This means that they can review lessons many times if they do not understand, so they do not feel left behind.</em><br><br>
-                    On the other hand, there are also several disadvantages. One possible drawback is that <strong>online education makes students easily distracted</strong>. <em>In fact, they often study at home with many distractions such as mobile phones or noise, so they may lose focus during lessons.</em> Another negative aspect is that <strong>it reduces face-to-face interaction</strong>. <em>This is because students cannot communicate directly with teachers or classmates, so their communication skills may not improve well.</em> A further problem is that <strong>it depends on technology</strong>. <em>This means that technical errors or internet problems can interrupt learning and make it less effective.</em><br><br>
+                    In recent years, <strong>online learning</strong> has become more common in modern society. Although it has some benefits, there are also some drawbacks. <strong>This essay will discuss both its advantages and disadvantages.</strong><br><br>
+                    On the one hand, <strong>digital learning</strong> has several advantages. One major benefit is that <strong>it is convenient and flexible</strong>. <em>This is because learners can study anytime and anywhere, so they can manage their time better and balance learning with other activities.</em> Another positive aspect is that <strong>it helps save money</strong>. <em>The main reason is that students do not need to pay for transport, accommodation, or printed materials, so it is suitable for people with a limited budget.</em> A further good point is that <strong>it allows learners to study at their own pace</strong>. <em>This means that they can review lessons many times if they do not understand, so they can learn more comfortably.</em><br><br>
+                    On the other hand, there are also several disadvantages. One possible drawback is that <strong>online education makes students easily distracted</strong>. <em>In fact, they often study at home with many distractions such as mobile phones or noise, so they may lose focus during lessons.</em> Another negative aspect is that <strong>it reduces face-to-face interaction</strong>. <em>This is because students cannot communicate directly with teachers or classmates, so they may have fewer opportunities to practise communication skills.</em> A further problem is that <strong>it depends on technology</strong>. <em>This means that technical errors or internet problems can interrupt learning and make it less effective.</em><br><br>
                     In conclusion, <strong>distance learning</strong> has both advantages and disadvantages. These points show that it has different effects on people’s lives. Therefore, it is important to consider both sides before making a decision.
                 </div>
 
@@ -99,10 +132,10 @@ const essayTypes = [
                     <p><strong>ĐỀ BÀI:</strong> Volunteer work is becoming increasingly popular among students and young adults. Participating in volunteer activities is believed to bring various benefits to individuals and the community.<br><br><strong>Write an essay to discuss the benefits of doing volunteer work.</strong></p>
                 </div>
                 <div class="sample-letter-box">
-                    In recent years, <strong>doing volunteer work</strong> has become more common in modern society. Many people see this as a positive development. <strong>This essay will discuss the main advantages of this topic.</strong><br><br>
+                    In recent years, <strong>doing volunteer work</strong> has become more common in modern society. Many people see this as a positive development. <strong>This essay will discuss its main advantages.</strong><br><br>
                     One main advantage is that <strong>volunteer work helps people develop important skills</strong>. <em>This is because volunteers communicate with many different people, so they can improve their communication skills. In addition, they work with others in different activities, so they can improve their teamwork skills and learn how to cooperate more effectively. As a result, they become more confident and gain useful experience for future jobs and studies.</em><br><br>
                     Another positive aspect is that <strong>participating in volunteer work brings benefits to the community</strong>. <em>The main reason is that volunteers help people in need, so some people can have better living conditions and receive more support. Moreover, volunteers can clean public areas or plant trees, so the environment can become cleaner and healthier. Therefore, some social and environmental problems can be reduced, and the community can become more connected.</em><br><br>
-                    A further benefit is that <strong>doing voluntary activities helps people feel happier and more meaningful</strong>. <em>In fact, volunteers can help other people and do useful things for society, so they often feel proud of themselves. Besides, many volunteers receive appreciation from other people, so they feel more motivated to continue helping others. Consequently, they usually develop a more positive attitude toward life and care more about the people around them.</em><br><br>
+                    A further benefit is that <strong>doing voluntary activities helps people feel happier and more positive</strong>. <em>In fact, volunteers can help other people and do useful things for society, so they often feel proud of themselves. Besides, many volunteers receive appreciation from other people, so they feel more motivated to continue helping others. Consequently, they usually develop a more positive attitude toward life and care more about the people around them.</em><br><br>
                     In conclusion, <strong>volunteer work</strong> offers several benefits. These advantages make it useful for many people. Overall, it is a positive development in modern society.
                 </div>
                 
@@ -519,7 +552,7 @@ const recitationOutlines = {
             questions: [
                 {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>1. MỞ BÀI<br>Viết câu giới thiệu chủ đề:', target: 'In recent years, [chủ đề] has become more common in modern society.', vn: 'Trong những năm gần đây, [chủ đề] đã trở nên phổ biến hơn trong xã hội hiện đại.'},
                 {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>1. MỞ BÀI<br>Viết câu khẳng định vấn đề có hai mặt (lợi và hại):', target: 'Although it has some benefits, there are also some drawbacks.', vn: 'Mặc dù nó có một số lợi ích, nhưng cũng có một vài bất lợi.'},
-                {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>1. MỞ BÀI<br>Viết câu giới thiệu mục đích bài viết:', target: 'This essay will discuss both sides of this topic.', vn: 'Bài viết này sẽ thảo luận cả hai mặt của chủ đề này.'},
+                {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>1. MỞ BÀI<br>Viết câu giới thiệu mục đích bài viết:', target: 'This essay will discuss both its advantages and disadvantages.', vn: 'Bài viết này sẽ thảo luận cả thuận lợi và bất lợi của nó.'},
                 {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>2. THÂN BÀI<br>Viết câu chủ đoạn cho thân bài miêu tả thuận lợi:', target: 'On the one hand, [chủ đề] has several advantages.', vn: 'Một mặt, [chủ đề] có một vài thuận lợi.'},
                 {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>2. THÂN BÀI<br>Viết câu dẫn lợi ích 1:', target: 'One major benefit is that [lợi ích 1].', vn: 'Một lợi ích chính là [lợi ích 1].'},
                 {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>2. THÂN BÀI<br>Viết câu dẫn lợi ích 2:', target: 'Another positive aspect is that [lợi ích 2].', vn: 'Một khía cạnh tích cực khác là [lợi ích 2].'},
@@ -542,7 +575,7 @@ const recitationOutlines = {
             questions: [
                 {cue: '[DÀN Ý 02 - CHỈ THUẬN LỢI]<br>1. MỞ BÀI<br>Viết câu dẫn dắt chủ đề:', target: 'In recent years, [chủ đề] has become more common in modern society.', vn: 'Trong những năm gần đây, [chủ đề] đã trở nên phổ biến hơn trong xã hội hiện đại.'},
                 {cue: '[DÀN Ý 02 - CHỈ THUẬN LỢI]<br>1. MỞ BÀI<br>Viết câu nêu góc nhìn tích cực:', target: 'Many people see this as a positive development.', vn: 'Nhiều người xem đây là một sự phát triển tích cực.'},
-                {cue: '[DÀN Ý 02 - CHỈ THUẬN LỢI]<br>1. MỞ BÀI<br>Viết câu giới thiệu mục đích bài viết:', target: 'This essay will discuss the main advantages of this topic.', vn: 'Bài viết này sẽ thảo luận những thuận lợi chính của chủ đề này.'},
+                {cue: '[DÀN Ý 02 - CHỈ THUẬN LỢI]<br>1. MỞ BÀI<br>Viết câu giới thiệu mục đích bài viết:', target: 'This essay will discuss its main advantages.', vn: 'Bài viết này sẽ thảo luận những thuận lợi chính của nó.'},
                 {cue: '[DÀN Ý 02 - CHỈ THUẬN LỢI]<br>2. THÂN BÀI<br>Thân bài 1 - Lợi ích 1:', target: 'One main advantage is that [lợi ích 1].', vn: 'Một thuận lợi chính là [lợi ích 1].'},
                 {cue: '[DÀN Ý 02 - CHỈ THUẬN LỢI]<br>2. THÂN BÀI<br>Thân bài 2 - Lợi ích 2:', target: 'Another positive aspect is that [lợi ích 2].', vn: 'Một khía cạnh tích cực khác là [lợi ích 2].'},
                 {cue: '[DÀN Ý 02 - CHỈ THUẬN LỢI]<br>2. THÂN BÀI<br>Thân bài 3 - Lợi ích 3:', target: 'A further benefit is that [lợi ích 3].', vn: 'Một lợi ích nữa là [lợi ích 3].'},
