@@ -1809,24 +1809,42 @@ document.addEventListener('DOMContentLoaded', () => {
     const loginError = document.getElementById('loginError');
 
     const REQUIRED_PASSWORD = 'PRACTICEWRITING';
-    const ALLOWED_CLASS = 'CB206';
+    const ALLOWED_CLASSES = ['CB206', 'CB210'];
 
-    const ALLOWED_STUDENTS = [
-        "Nguyễn Thị Vân Anh",
-        "Nguyễn Thị Hồng Duyên",
-        "Nguyễn Thị Thúy Hồng",
-        "Trương Ngọc Nhi",
-        "Nguyễn Phạm Như Quỳnh",
-        "Trần Lê Quỳnh",
-        "Ông Lê Thành",
-        "Trần Nguyễn Thanh Thảo",
-        "Phan Nhật Thiện",
-        "Trần Thị Cẩm Tiên",
-        "Võ Trần Bảo Tính",
-        "Trương Thanh Toàn",
-        "Phạm Ngọc Trâm",
-        "Nguyễn Võ Bảo Trân"
-    ];
+    const STUDENTS_BY_CLASS = {
+        'CB206': [
+            "Nguyễn Thị Vân Anh",
+            "Nguyễn Thị Hồng Duyên",
+            "Nguyễn Thị Thúy Hồng",
+            "Trương Ngọc Nhi",
+            "Nguyễn Phạm Như Quỳnh",
+            "Trần Lê Quỳnh",
+            "Ông Lê Thành",
+            "Trần Nguyễn Thanh Thảo",
+            "Phan Nhật Thiện",
+            "Trần Thị Cẩm Tiên",
+            "Võ Trần Bảo Tính",
+            "Trương Thanh Toàn",
+            "Phạm Ngọc Trâm",
+            "Nguyễn Võ Bảo Trân"
+        ],
+        'CB210': [
+            "Nguyễn Võ Thành Đạt",
+            "Lê Huỳnh Thanh Duy",
+            "Nguyễn Cao Kỳ Duyên",
+            "Đào Ngọc Hân",
+            "Trần Văn Hữu",
+            "Trần Văn Kim Khoa",
+            "Nguyễn Thanh Nâng",
+            "Huỳnh Kỳ Nguyên",
+            "Võ Thị Kim Nguyên",
+            "Võ Hùng Sanh",
+            "Tiền Thị Thanh Thảo",
+            "Đặng Thị Kim Thoa",
+            "Trần Thị Tiên Tiên",
+            "Lê Kim Tuyền"
+        ]
+    };
 
     function normalizeName(str) {
         return str
@@ -1835,8 +1853,6 @@ document.addEventListener('DOMContentLoaded', () => {
             .replace(/\s+/g, ' ')
             .trim();
     }
-
-    const normalizedStudentList = ALLOWED_STUDENTS.map(normalizeName);
 
     // Check if authenticated in current session
     const isSessionAuth = sessionStorage.getItem('vstep_authenticated');
@@ -1877,21 +1893,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!isTeacher) {
             // Student validation:
-            if (className !== ALLOWED_CLASS) {
-                if (loginError) loginError.textContent = 'Lớp học không hợp lệ. Chỉ nhận lớp CB206.';
+            if (!ALLOWED_CLASSES.includes(className)) {
+                if (loginError) loginError.textContent = 'Lớp học không hợp lệ. Chỉ nhận lớp CB206 hoặc CB210.';
                 if (loginClass) loginClass.focus();
                 return;
             }
 
+            const classStudentList = STUDENTS_BY_CLASS[className] || [];
+            const normalizedClassStudentList = classStudentList.map(normalizeName);
             const normInputName = normalizeName(rawFullName);
-            const matchedIndex = normalizedStudentList.indexOf(normInputName);
+            const matchedIndex = normalizedClassStudentList.indexOf(normInputName);
+
             if (matchedIndex === -1) {
-                if (loginError) loginError.textContent = 'Họ và tên không có trong danh sách lớp CB206.';
+                if (loginError) loginError.textContent = `Họ và tên không có trong danh sách lớp ${className}.`;
                 if (loginFullName) loginFullName.focus();
                 return;
             }
 
-            finalFullName = ALLOWED_STUDENTS[matchedIndex];
+            finalFullName = classStudentList[matchedIndex];
 
             if (!password) {
                 if (loginError) loginError.textContent = 'Vui lòng nhập Mật khẩu.';
