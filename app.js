@@ -554,13 +554,13 @@ const recitationOutlines = {
                 {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>1. MỞ BÀI<br>Viết câu khẳng định vấn đề có hai mặt (lợi và hại):', target: 'Although it has some benefits, there are also some drawbacks.', vn: 'Mặc dù nó có một số lợi ích, nhưng cũng có một vài bất lợi.'},
                 {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>1. MỞ BÀI<br>Viết câu giới thiệu mục đích bài viết:', target: 'This essay will discuss both its advantages and disadvantages.', vn: 'Bài viết này sẽ thảo luận cả thuận lợi và bất lợi của nó.'},
                 {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>2. THÂN BÀI<br>Viết câu chủ đoạn cho thân bài miêu tả thuận lợi:', target: 'On the one hand, [chủ đề] has several advantages.', vn: 'Một mặt, [chủ đề] có một vài thuận lợi.'},
-                {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>2. THÂN BÀI<br>Viết câu dẫn lợi ích 1:', target: 'One major benefit is that [lợi ích 1].', vn: 'Một lợi ích chính là [lợi ích 1].'},
-                {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>2. THÂN BÀI<br>Viết câu dẫn lợi ích 2:', target: 'Another positive aspect is that [lợi ích 2].', vn: 'Một khía cạnh tích cực khác là [lợi ích 2].'},
-                {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>2. THÂN BÀI<br>Viết câu dẫn lợi ích 3:', target: 'A further good point is that [lợi ích 3].', vn: 'Một điểm tốt nữa là [lợi ích 3].'},
+                {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>2. THÂN BÀI<br>Viết câu dẫn lợi ích 1:', target: 'One major benefit is that [lợi ích 1 - mệnh đề].', vn: 'Một lợi ích chính là [lợi ích 1 - mệnh đề].'},
+                {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>2. THÂN BÀI<br>Viết câu dẫn lợi ích 2:', target: 'Another positive aspect is that [lợi ích 2 - mệnh đề].', vn: 'Một khía cạnh tích cực khác là [lợi ích 2 - mệnh đề].'},
+                {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>2. THÂN BÀI<br>Viết câu dẫn lợi ích 3:', target: 'A further good point is that [lợi ích 3 - mệnh đề].', vn: 'Một điểm tốt nữa là [lợi ích 3 - mệnh đề].'},
                 {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>2. THÂN BÀI<br>Viết câu chủ đoạn cho thân bài miêu tả bất lợi:', target: 'On the other hand, there are also several disadvantages.', vn: 'Mặt khác, cũng có một vài bất lợi.'},
-                {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>2. THÂN BÀI<br>Viết câu dẫn bất lợi 1:', target: 'One possible drawback is that [bất lợi 1].', vn: 'Một bất lợi có thể xảy ra là [bất lợi 1].'},
-                {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>2. THÂN BÀI<br>Viết câu dẫn bất lợi 2:', target: 'Another negative aspect is that [bất lợi 2].', vn: 'Một khía cạnh tiêu cực khác là [bất lợi 2].'},
-                {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>2. THÂN BÀI<br>Viết câu dẫn bất lợi 3:', target: 'A further problem is that [bất lợi 3].', vn: 'Một vấn đề nữa là [bất lợi 3].'},
+                {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>2. THÂN BÀI<br>Viết câu dẫn bất lợi 1:', target: 'One possible drawback is that [bất lợi 1 - mệnh đề].', vn: 'Một bất lợi có thể xảy ra là [bất lợi 1 - mệnh đề].'},
+                {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>2. THÂN BÀI<br>Viết câu dẫn bất lợi 2:', target: 'Another negative aspect is that [bất lợi 2 - mệnh đề].', vn: 'Một khía cạnh tiêu cực khác là [bất lợi 2 - mệnh đề].'},
+                {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>2. THÂN BÀI<br>Viết câu dẫn bất lợi 3:', target: 'A further problem is that [bất lợi 3 - mệnh đề].', vn: 'Một vấn đề nữa là [bất lợi 3 - mệnh đề].'},
                 {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>3. KẾT BÀI<br>Viết câu Kết bài khẳng định chủ đề có cả hai mặt:', target: 'In conclusion, [chủ đề] has both advantages and disadvantages.', vn: 'Tóm lại, [chủ đề] có cả thuận lợi và bất lợi.'},
                 {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>3. KẾT BÀI<br>Viết câu nhận xét chung:', target: 'These points show that it has different effects on people’s lives.', vn: 'Những điểm này cho thấy nó có nhiều ảnh hưởng khác nhau lên đời sống con người.'},
                 {cue: '[DÀN Ý 01 - THUẬN LỢI & BẤT LỢI]<br>3. KẾT BÀI<br>Viết câu chốt lại lời khuyên :', target: 'Therefore, it is important to consider both sides before making a decision.', vn: 'Vì vậy, việc xem xét cả hai mặt trước khi đưa ra quyết định là điều quan trọng.'}
@@ -576,9 +576,9 @@ const recitationOutlines = {
                 {cue: '[DÀN Ý 02 - CHỈ THUẬN LỢI]<br>1. MỞ BÀI<br>Viết câu dẫn dắt chủ đề:', target: 'In recent years, [chủ đề] has become more common in modern society.', vn: 'Trong những năm gần đây, [chủ đề] đã trở nên phổ biến hơn trong xã hội hiện đại.'},
                 {cue: '[DÀN Ý 02 - CHỈ THUẬN LỢI]<br>1. MỞ BÀI<br>Viết câu nêu góc nhìn tích cực:', target: 'Many people see this as a positive development.', vn: 'Nhiều người xem đây là một sự phát triển tích cực.'},
                 {cue: '[DÀN Ý 02 - CHỈ THUẬN LỢI]<br>1. MỞ BÀI<br>Viết câu giới thiệu mục đích bài viết:', target: 'This essay will discuss its main advantages.', vn: 'Bài viết này sẽ thảo luận những thuận lợi chính của nó.'},
-                {cue: '[DÀN Ý 02 - CHỈ THUẬN LỢI]<br>2. THÂN BÀI<br>Thân bài 1 - Lợi ích 1:', target: 'One main advantage is that [lợi ích 1].', vn: 'Một thuận lợi chính là [lợi ích 1].'},
-                {cue: '[DÀN Ý 02 - CHỈ THUẬN LỢI]<br>2. THÂN BÀI<br>Thân bài 2 - Lợi ích 2:', target: 'Another positive aspect is that [lợi ích 2].', vn: 'Một khía cạnh tích cực khác là [lợi ích 2].'},
-                {cue: '[DÀN Ý 02 - CHỈ THUẬN LỢI]<br>2. THÂN BÀI<br>Thân bài 3 - Lợi ích 3:', target: 'A further benefit is that [lợi ích 3].', vn: 'Một lợi ích nữa là [lợi ích 3].'},
+                {cue: '[DÀN Ý 02 - CHỈ THUẬN LỢI]<br>2. THÂN BÀI<br>Thân bài 1 - Lợi ích 1:', target: 'One main advantage is that [lợi ích 1 - mệnh đề].', vn: 'Một thuận lợi chính là [lợi ích 1 - mệnh đề].'},
+                {cue: '[DÀN Ý 02 - CHỈ THUẬN LỢI]<br>2. THÂN BÀI<br>Thân bài 2 - Lợi ích 2:', target: 'Another positive aspect is that [lợi ích 2 - mệnh đề].', vn: 'Một khía cạnh tích cực khác là [lợi ích 2 - mệnh đề].'},
+                {cue: '[DÀN Ý 02 - CHỈ THUẬN LỢI]<br>2. THÂN BÀI<br>Thân bài 3 - Lợi ích 3:', target: 'A further benefit is that [lợi ích 3 - mệnh đề].', vn: 'Một lợi ích nữa là [lợi ích 3 - mệnh đề].'},
                 {cue: '[DÀN Ý 02 - CHỈ THUẬN LỢI]<br>3. KẾT BÀI<br>Viết câu tóm tắt lại lợi ích:', target: 'In conclusion, [chủ đề] offers several benefits.', vn: 'Tóm lại, [chủ đề] mang lại một vài lợi ích.'},
                 {cue: '[DÀN Ý 02 - CHỈ THUẬN LỢI]<br>3. KẾT BÀI<br>Viết câu khẳng định giá trị:', target: 'These advantages make it useful for many people.', vn: 'Những thuận lợi này khiến nó trở nên hữu ích cho nhiều người.'},
                 {cue: '[DÀN Ý 02 - CHỈ THUẬN LỢI]<br>3. KẾT BÀI<br>Viết câu chốt lại vấn đề:', target: 'Overall, it is a positive development in modern society.', vn: 'Nhìn chung, đây là một sự phát triển tích cực trong xã hội hiện đại.'}
@@ -918,8 +918,6 @@ function diffWords(userText, targetText) {
         .replace(/(^|[^a-zA-Z0-9])([vV])\s*[-_–—−]\s*(ing\b|[0oO]\b)/gi, '$1$2$3')
         // Normalize hành động slot delimiters (+, -, –, —, :, /, or space)
         .replace(/(hành\s*động)\s*([+\-:–—−/]|->)?\s*/gi, '$1 ')
-        // Normalize hyphens between English words (e.g. part-time -> part time)
-        .replace(/([a-zA-Z0-9])\s*[-–—−]\s*([a-zA-Z0-9])/g, '$1 $2')
         .replace(/[–—−]/g, '-')
         .replace(/\s*\+\s*/g, ' + ')
         .replace(/\s*-\s*/g, ' - ');
