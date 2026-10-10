@@ -1838,6 +1838,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "Võ Thị Kim Nguyên",
             "Võ Hùng Sanh",
             "Tiền Thị Thanh Thảo",
+            "Trần Thị Thanh Thảo",
             "Đặng Thị Kim Thoa",
             "Trần Thị Tiên Tiên",
             "Lê Kim Tuyền"
