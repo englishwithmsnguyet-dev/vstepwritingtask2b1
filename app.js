@@ -157,10 +157,17 @@ const essayTypes = [
             </div>
             <div class="content-block">
                 <h3>Đặc điểm của dạng bài</h3>
-                <p>Tùy theo yêu cầu của đề bài, thí sinh có thể được yêu cầu: Phân tích nguyên nhân & hậu quả, Phân tích nguyên nhân & giải pháp, Phân tích hậu quả & giải pháp, hoặc chỉ tập trung vào một yếu tố duy nhất. Bài viết cần thể hiện khả năng giải thích mối quan hệ giữa vấn đề một cách logic và rõ ràng.</p>
+                <p>Tùy theo yêu cầu của đề bài, thí sinh có thể được yêu cầu:</p>
+                <ul>
+                    <li>Phân tích nguyên nhân và hậu quả của một vấn đề.</li>
+                    <li>Phân tích nguyên nhân và giải pháp.</li>
+                    <li>Phân tích hậu quả và giải pháp.</li>
+                    <li>Hoặc chỉ tập trung vào một yếu tố (chỉ nguyên nhân / hậu quả / giải pháp).</li>
+                </ul>
+                <p>Về bản chất, đây là dạng bài mang tính phân tích và giải thích. Thí sinh cần trình bày các ý tưởng một cách logic, làm rõ mối quan hệ giữa vấn đề và những yếu tố liên quan.</p>
             </div>
         `,
-        identifyingSigns: `
+identifyingSigns: `
             <div class="content-block">
                 <h3>Dạng đề có thể xuất hiện dưới nhiều biến thể, bao gồm:</h3>
                 
@@ -179,7 +186,7 @@ const essayTypes = [
                 <h4>3. Yêu cầu phân tích hậu quả và giải pháp</h4>
                 <ul>
                     <li>What problems does this issue cause and what are the possible solutions?</li>
-                    <li>What are the effects and how can we deal with them?</li>
+                    <li>What are the effects of this problem and how can it be addressed?</li>
                 </ul>
                 
                 <h4>4. Yêu cầu phân tích một yếu tố duy nhất <em>(nguyên nhân / hậu quả / giải pháp)</em></h4>
@@ -195,28 +202,36 @@ const essayTypes = [
                 <h3 style="color: var(--primary-color); border-bottom: 2px solid var(--primary-light); padding-bottom: 10px; margin-bottom: 15px;">DÀN Ý 1: NGUYÊN NHÂN VÀ GIẢI PHÁP</h3>
                 <div class="outline-step">
                     <h4>1. MỞ BÀI</h4>
-                    <p>↳ <span class="outline-phrase">In recent years, [chủ đề] has become a growing concern in many parts of the world. This issue affects both individuals and society in different ways. This essay will discuss the main causes of this problem and suggest possible solutions.</span></p>
+                    <p>↳ <span class="outline-phrase">In recent years, [chủ đề – danh từ/cụm danh từ] has become a growing concern in many parts of the world. This problem affects both individuals and society in different ways. This essay will discuss its main causes and suggest possible solutions.</span></p>
                 </div>
                 <div class="outline-step">
                     <h4>2. THÂN BÀI</h4>
                     <p><strong>THÂN BÀI 1: causes – nguyên nhân</strong></p>
-                    <p>↳ <span class="outline-phrase">This issue can be caused by several factors.</span></p>
+                    <p>↳ <span class="outline-phrase">This problem can be caused by several factors.</span></p>
                     <ul>
-                        <li><span class="outline-phrase">One major cause is that [nguyên nhân 1].</span></li>
-                        <li><span class="outline-phrase">Another contributing factor is that [nguyên nhân 2].</span></li>
-                        <li><span class="outline-phrase">A further reason is that [nguyên nhân 3].</span></li>
+                        <li><span class="outline-phrase">One major cause is that [nguyên nhân 1 – mệnh đề]. &rarr; [luận cứ - mệnh đề].</span></li>
+                        <li><span class="outline-phrase">Another contributing factor is that [nguyên nhân 2 – mệnh đề]. &rarr; [luận cứ - mệnh đề].</span></li>
+                        <li><span class="outline-phrase">A further reason is that [nguyên nhân 3 – mệnh đề]. &rarr; [luận cứ - mệnh đề].</span></li>
                     </ul>
                     <p><strong>THÂN BÀI 2: solutions – giải pháp</strong></p>
                     <p>↳ <span class="outline-phrase">To solve this problem, several measures can be taken.</span></p>
                     <ul>
-                        <li><span class="outline-phrase">One effective solution is to [giải pháp 1].</span></li>
-                        <li><span class="outline-phrase">Another possible measure is to [giải pháp 2].</span></li>
-                        <li><span class="outline-phrase">Finally, it is important to [giải pháp 3].</span></li>
+                        <li><span class="outline-phrase">One effective solution is to [giải pháp 1 – Vo]. &rarr; [luận cứ - mệnh đề].</span></li>
+                        <li><span class="outline-phrase">Another possible measure is to [giải pháp 2 – Vo]. &rarr; [luận cứ - mệnh đề].</span></li>
+                        <li><span class="outline-phrase">Finally, it is important to [giải pháp 3 – Vo]. &rarr; [luận cứ - mệnh đề].</span></li>
                     </ul>
+                    <div style="background: #f8fafc; border-left: 4px solid var(--primary-color); padding: 12px 16px; margin: 15px 0; border-radius: 0 8px 8px 0;">
+                        <h5 style="color: var(--primary-color); margin-bottom: 8px; font-size: 0.95rem;"><i class="fa-solid fa-lightbulb"></i> GỢI Ý CÁC CỤM TỪ DẪN DẮT LUẬN CỨ:</h5>
+                        <ul style="margin: 0; padding-left: 20px; font-size: 0.9rem; line-height: 1.6;">
+                            <li><strong>1. Dẫn câu giải thích / lý do:</strong> This is because … / The main reason is that … / In fact, … / This means that ….</li>
+                            <li><strong>2. Dẫn câu hệ quả / kết quả:</strong> As a result, … / Therefore, … / Consequently, … / For this reason, …</li>
+                            <li><strong>3. Dẫn câu ví dụ minh họa:</strong> For example, … / For instance, … / To be specific, …</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="outline-step">
                     <h4>3. KẾT BÀI</h4>
-                    <p>↳ <span class="outline-phrase">In conclusion, [chủ đề] is caused by several factors and requires practical solutions. By addressing the causes and applying suitable measures, this problem can be reduced in the future. These actions can help create positive changes for both individuals and society.</span></p>
+                    <p>↳ <span class="outline-phrase">In conclusion, [chủ đề – danh từ/cụm danh từ] has several causes and requires practical solutions. By addressing these causes and applying suitable measures, this problem can be reduced in the future. These actions can bring positive changes to both individuals and society.</span></p>
                 </div>
             </div>
 
@@ -224,28 +239,36 @@ const essayTypes = [
                 <h3 style="color: var(--primary-color); border-bottom: 2px solid var(--primary-light); padding-bottom: 10px; margin-bottom: 15px;">DÀN Ý 2: NGUYÊN NHÂN VÀ ẢNH HƯỞNG</h3>
                 <div class="outline-step">
                     <h4>1. MỞ BÀI</h4>
-                    <p>↳ <span class="outline-phrase">In recent years, [chủ đề] has become a growing concern in many parts of the world. This issue affects both individuals and society in different ways. This essay will discuss the main causes of this problem and its possible effects.</span></p>
+                    <p>↳ <span class="outline-phrase">In recent years, [chủ đề – danh từ/cụm danh từ] has become a growing concern in many parts of the world. This problem affects both individuals and society in different ways. This essay will discuss its main causes and possible effects.</span></p>
                 </div>
                 <div class="outline-step">
                     <h4>2. THÂN BÀI</h4>
                     <p><strong>THÂN BÀI 1: causes – nguyên nhân</strong></p>
-                    <p>↳ <span class="outline-phrase">This issue can be caused by several factors.</span></p>
+                    <p>↳ <span class="outline-phrase">This problem can be caused by several factors.</span></p>
                     <ul>
-                        <li><span class="outline-phrase">One major cause is that [nguyên nhân 1].</span></li>
-                        <li><span class="outline-phrase">Another contributing factor is that [nguyên nhân 2].</span></li>
-                        <li><span class="outline-phrase">A further reason is that [nguyên nhân 3].</span></li>
+                        <li><span class="outline-phrase">One major cause is that [nguyên nhân 1 – mệnh đề]. &rarr; [luận cứ - mệnh đề].</span></li>
+                        <li><span class="outline-phrase">Another contributing factor is that [nguyên nhân 2 – mệnh đề]. &rarr; [luận cứ - mệnh đề].</span></li>
+                        <li><span class="outline-phrase">A further reason is that [nguyên nhân 3 – mệnh đề]. &rarr; [luận cứ - mệnh đề].</span></li>
                     </ul>
                     <p><strong>THÂN BÀI 2: effects – ảnh hưởng</strong></p>
-                    <p>↳ <span class="outline-phrase">This problem can lead to several negative effects.</span></p>
+                    <p>↳ <span class="outline-phrase">This issue can lead to several negative effects.</span></p>
                     <ul>
-                        <li><span class="outline-phrase">One serious impact is that [ảnh hưởng 1].</span></li>
-                        <li><span class="outline-phrase">Another consequence is that [ảnh hưởng 2].</span></li>
-                        <li><span class="outline-phrase">A further problem is that [ảnh hưởng 3].</span></li>
+                        <li><span class="outline-phrase">One serious impact is that [ảnh hưởng 1 – mệnh đề]. &rarr; [luận cứ - mệnh đề].</span></li>
+                        <li><span class="outline-phrase">Another consequence is that [ảnh hưởng 2 – mệnh đề]. &rarr; [luận cứ - mệnh đề].</span></li>
+                        <li><span class="outline-phrase">A further problem is that [ảnh hưởng 3 – mệnh đề]. &rarr; [luận cứ - mệnh đề].</span></li>
                     </ul>
+                    <div style="background: #f8fafc; border-left: 4px solid var(--primary-color); padding: 12px 16px; margin: 15px 0; border-radius: 0 8px 8px 0;">
+                        <h5 style="color: var(--primary-color); margin-bottom: 8px; font-size: 0.95rem;"><i class="fa-solid fa-lightbulb"></i> GỢI Ý CÁC CỤM TỪ DẪN DẮT LUẬN CỨ:</h5>
+                        <ul style="margin: 0; padding-left: 20px; font-size: 0.9rem; line-height: 1.6;">
+                            <li><strong>1. Dẫn câu giải thích / lý do:</strong> This is because … / The main reason is that … / In fact, … / This means that ….</li>
+                            <li><strong>2. Dẫn câu hệ quả / kết quả:</strong> As a result, … / Therefore, … / Consequently, … / For this reason, …</li>
+                            <li><strong>3. Dẫn câu ví dụ minh họa:</strong> For example, … / For instance, … / To be specific, …</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="outline-step">
                     <h4>3. KẾT BÀI</h4>
-                    <p>↳ <span class="outline-phrase">In conclusion, [chủ đề] is caused by several factors and can lead to many negative effects. By understanding the causes and paying more attention to this issue, the situation can be improved in the future. These actions can help create a better environment for both individuals and society.</span></p>
+                    <p>↳ <span class="outline-phrase">In conclusion, [chủ đề – danh từ/cụm danh từ] has several causes and can lead to various negative effects. By understanding the causes and paying more attention to this problem, people can help improve the situation in the future. These actions can bring positive changes to both individuals and society.</span></p>
                 </div>
             </div>
 
@@ -253,28 +276,36 @@ const essayTypes = [
                 <h3 style="color: var(--primary-color); border-bottom: 2px solid var(--primary-light); padding-bottom: 10px; margin-bottom: 15px;">DÀN Ý 3: ẢNH HƯỞNG VÀ GIẢI PHÁP</h3>
                 <div class="outline-step">
                     <h4>1. MỞ BÀI</h4>
-                    <p>↳ <span class="outline-phrase">In recent years, [chủ đề] has become a growing concern in many parts of the world. This issue affects both individuals and society in different ways. This essay will discuss the main effects of this problem and suggest possible solutions.</span></p>
+                    <p>↳ <span class="outline-phrase">In recent years, [chủ đề – danh từ/cụm danh từ] has become a growing concern in many parts of the world. This problem affects both individuals and society in different ways. This essay will discuss its main effects and suggest possible solutions.</span></p>
                 </div>
                 <div class="outline-step">
                     <h4>2. THÂN BÀI</h4>
                     <p><strong>THÂN BÀI 1: effects – ảnh hưởng</strong></p>
-                    <p>↳ <span class="outline-phrase">This problem can lead to several negative effects.</span></p>
+                    <p>↳ <span class="outline-phrase">This issue can lead to several negative effects.</span></p>
                     <ul>
-                        <li><span class="outline-phrase">One serious impact is that [ảnh hưởng 1].</span></li>
-                        <li><span class="outline-phrase">Another consequence is that [ảnh hưởng 2].</span></li>
-                        <li><span class="outline-phrase">A further problem is that [ảnh hưởng 3].</span></li>
+                        <li><span class="outline-phrase">One serious impact is that [ảnh hưởng 1 – mệnh đề]. &rarr; [luận cứ - mệnh đề].</span></li>
+                        <li><span class="outline-phrase">Another consequence is that [ảnh hưởng 2 – mệnh đề]. &rarr; [luận cứ - mệnh đề].</span></li>
+                        <li><span class="outline-phrase">A further problem is that [ảnh hưởng 3 – mệnh đề]. &rarr; [luận cứ - mệnh đề].</span></li>
                     </ul>
                     <p><strong>THÂN BÀI 2: solutions – giải pháp</strong></p>
                     <p>↳ <span class="outline-phrase">To solve this problem, several measures can be taken.</span></p>
                     <ul>
-                        <li><span class="outline-phrase">One effective solution is to [giải pháp 1].</span></li>
-                        <li><span class="outline-phrase">Another possible measure is to [giải pháp 2].</span></li>
-                        <li><span class="outline-phrase">Finally, it is important to [giải pháp 3].</span></li>
+                        <li><span class="outline-phrase">One effective solution is to [giải pháp 1 – Vo]. &rarr; [luận cứ - mệnh đề].</span></li>
+                        <li><span class="outline-phrase">Another possible measure is to [giải pháp 2 – Vo]. &rarr; [luận cứ - mệnh đề].</span></li>
+                        <li><span class="outline-phrase">Finally, it is important to [giải pháp 3 – Vo]. &rarr; [luận cứ - mệnh đề].</span></li>
                     </ul>
+                    <div style="background: #f8fafc; border-left: 4px solid var(--primary-color); padding: 12px 16px; margin: 15px 0; border-radius: 0 8px 8px 0;">
+                        <h5 style="color: var(--primary-color); margin-bottom: 8px; font-size: 0.95rem;"><i class="fa-solid fa-lightbulb"></i> GỢI Ý CÁC CỤM TỪ DẪN DẮT LUẬN CỨ:</h5>
+                        <ul style="margin: 0; padding-left: 20px; font-size: 0.9rem; line-height: 1.6;">
+                            <li><strong>1. Dẫn câu giải thích / lý do:</strong> This is because … / The main reason is that … / In fact, … / This means that ….</li>
+                            <li><strong>2. Dẫn câu hệ quả / kết quả:</strong> As a result, … / Therefore, … / Consequently, … / For this reason, …</li>
+                            <li><strong>3. Dẫn câu ví họa:</strong> For example, … / For instance, … / To be specific, …</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="outline-step">
                     <h4>3. KẾT BÀI</h4>
-                    <p>↳ <span class="outline-phrase">In conclusion, [chủ đề] leads to several negative effects and requires practical solutions. By applying suitable measures and paying more attention to this issue, the situation can be improved in the future. These actions can help create positive changes for both individuals and society.</span></p>
+                    <p>↳ <span class="outline-phrase">In conclusion, [chủ đề – danh từ/cụm danh từ] can lead to several negative effects and requires practical solutions. By applying suitable measures and paying more attention to this problem, people can help improve the situation in the future. These actions can bring positive changes to both individuals and society.</span></p>
                 </div>
             </div>
 
@@ -282,19 +313,28 @@ const essayTypes = [
                 <h3 style="color: var(--primary-color); border-bottom: 2px solid var(--primary-light); padding-bottom: 10px; margin-bottom: 15px;">DÀN Ý 4: CHỈ NGUYÊN NHÂN</h3>
                 <div class="outline-step">
                     <h4>1. MỞ BÀI</h4>
-                    <p>↳ <span class="outline-phrase">In recent years, [chủ đề] has become a growing concern in many parts of the world. This issue affects both individuals and society in different ways. This essay will discuss the main causes of this problem.</span></p>
+                    <p>↳ <span class="outline-phrase">In recent years, [chủ đề – danh từ/cụm danh từ] has become a growing concern in many parts of the world. This problem affects both individuals and society in different ways. This essay will discuss the main causes of this problem.</span></p>
+                    <p style="font-size: 0.9rem; color: #64748b; font-style: italic; margin-top: 5px;">* LƯU Ý: Nếu đề nói về một xu hướng hoặc hiện tượng trung tính, có thể dùng <strong>trend</strong> hoặc <strong>phenomenon</strong> thay cho <strong>problem</strong>. Khi đó, cần điều chỉnh các câu tiếp theo cho phù hợp với chủ đề.</p>
                 </div>
                 <div class="outline-step">
                     <h4>2. THÂN BÀI</h4>
                     <ul>
-                        <li><strong>THÂN BÀI 1:</strong> <span class="outline-phrase">One major cause is that [nguyên nhân 1].</span></li>
-                        <li><strong>THÂN BÀI 2:</strong> <span class="outline-phrase">Another contributing factor is that [nguyên nhân 2].</span></li>
-                        <li><strong>THÂN BÀI 3:</strong> <span class="outline-phrase">A further reason is that [nguyên nhân 3].</span></li>
+                        <li><strong>THÂN BÀI 1:</strong> <span class="outline-phrase">One major cause is that [nguyên nhân 1 – mệnh đề]. &rarr; [luận cứ 1 - mệnh đề] &rarr; [luận cứ 2] &rarr; [luận cứ 3]</span></li>
+                        <li><strong>THÂN BÀI 2:</strong> <span class="outline-phrase">Another contributing factor is that [nguyên nhân 2 – mệnh đề]. &rarr; [luận cứ 1 - mệnh đề] &rarr; [luận cứ 2] &rarr; [luận cứ 3]</span></li>
+                        <li><strong>THÂN BÀI 3:</strong> <span class="outline-phrase">A further reason is that [nguyên nhân 3 – mệnh đề]. &rarr; [luận cứ 1 - mệnh đề] &rarr; [luận cứ 2] &rarr; [luận cứ 3]</span></li>
                     </ul>
+                    <div style="background: #f8fafc; border-left: 4px solid var(--primary-color); padding: 12px 16px; margin: 15px 0; border-radius: 0 8px 8px 0;">
+                        <h5 style="color: var(--primary-color); margin-bottom: 8px; font-size: 0.95rem;"><i class="fa-solid fa-lightbulb"></i> GỢI Ý CÁC CỤM TỪ DẪN DẮT LUẬN CỨ:</h5>
+                        <ul style="margin: 0; padding-left: 20px; font-size: 0.9rem; line-height: 1.6;">
+                            <li><strong>1. Dẫn câu giải thích / lý do:</strong> This is because … / The main reason is that … / In fact, … / This means that ….</li>
+                            <li><strong>2. Dẫn câu hệ quả / kết quả:</strong> As a result, … / Therefore, … / Consequently, … / For this reason, …</li>
+                            <li><strong>3. Dẫn câu ví dụ minh họa:</strong> For example, … / For instance, … / To be specific, …</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="outline-step">
                     <h4>3. KẾT BÀI</h4>
-                    <p>↳ <span class="outline-phrase">In conclusion, [chủ đề] is caused by several factors that affect both individuals and society. Understanding these causes is important to improve the situation in the future. With greater attention, this problem can be reduced over time.</span></p>
+                    <p>↳ <span class="outline-phrase">In conclusion, [chủ đề – danh từ/cụm danh từ] is caused by several factors. By understanding these causes and taking appropriate action, people can help improve the situation in the future. These efforts can bring positive changes to both individuals and society.</span></p>
                 </div>
             </div>
 
@@ -302,19 +342,28 @@ const essayTypes = [
                 <h3 style="color: var(--primary-color); border-bottom: 2px solid var(--primary-light); padding-bottom: 10px; margin-bottom: 15px;">DÀN Ý 5: CHỈ ẢNH HƯỞNG</h3>
                 <div class="outline-step">
                     <h4>1. MỞ BÀI</h4>
-                    <p>↳ <span class="outline-phrase">In recent years, [chủ đề] has become a growing concern in many parts of the world. This issue affects both individuals and society in different ways. This essay will discuss the main effects of this problem.</span></p>
+                    <p>↳ <span class="outline-phrase">In recent years, [chủ đề – danh từ/cụm danh từ] has become a growing concern in many parts of the world. This problem affects both individuals and society in different ways. This essay will discuss its main effects.</span></p>
+                    <p style="font-size: 0.9rem; color: #64748b; font-style: italic; margin-top: 5px;">* LƯU Ý: Nếu đề nói về một xu hướng hoặc hiện tượng trung tính, có thể dùng <strong>trend</strong> hoặc <strong>phenomenon</strong> thay cho <strong>problem</strong>. Khi đó, cần điều chỉnh các câu tiếp theo cho phù hợp với chủ đề.</p>
                 </div>
                 <div class="outline-step">
                     <h4>2. THÂN BÀI</h4>
                     <ul>
-                        <li><strong>THÂN BÀI 1:</strong> <span class="outline-phrase">One major effect is that [ảnh hưởng 1].</span></li>
-                        <li><strong>THÂN BÀI 2:</strong> <span class="outline-phrase">Another serious impact is that [ảnh hưởng 2].</span></li>
-                        <li><strong>THÂN BÀI 3:</strong> <span class="outline-phrase">A further consequence is that [ảnh hưởng 3].</span></li>
+                        <li><strong>THÂN BÀI 1:</strong> <span class="outline-phrase">One major effect is that [ảnh hưởng 1 – mệnh đề]. &rarr; [luận cứ 1 - mệnh đề] &rarr; [luận cứ 2] &rarr; [luận cứ 3]</span></li>
+                        <li><strong>THÂN BÀI 2:</strong> <span class="outline-phrase">Another serious impact is that [ảnh hưởng 2 – mệnh đề]. &rarr; [luận cứ 1 - mệnh đề] &rarr; [luận cứ 2] &rarr; [luận cứ 3]</span></li>
+                        <li><strong>THÂN BÀI 3:</strong> <span class="outline-phrase">A further consequence is that [ảnh hưởng 3 – mệnh đề]. &rarr; [luận cứ 1 - mệnh đề] &rarr; [luận cứ 2] &rarr; [luận cứ 3]</span></li>
                     </ul>
+                    <div style="background: #f8fafc; border-left: 4px solid var(--primary-color); padding: 12px 16px; margin: 15px 0; border-radius: 0 8px 8px 0;">
+                        <h5 style="color: var(--primary-color); margin-bottom: 8px; font-size: 0.95rem;"><i class="fa-solid fa-lightbulb"></i> GỢI Ý CÁC CỤM TỪ DẪN DẮT LUẬN CỨ:</h5>
+                        <ul style="margin: 0; padding-left: 20px; font-size: 0.9rem; line-height: 1.6;">
+                            <li><strong>1. Dẫn câu giải thích / lý do:</strong> This is because … / The main reason is that … / In fact, … / This means that ….</li>
+                            <li><strong>2. Dẫn câu hệ quả / kết quả:</strong> As a result, … / Therefore, … / Consequently, … / For this reason, …</li>
+                            <li><strong>3. Dẫn câu ví dụ minh họa:</strong> For example, … / For instance, … / To be specific, …</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="outline-step">
                     <h4>3. KẾT BÀI</h4>
-                    <p>↳ <span class="outline-phrase">In conclusion, [chủ đề] leads to several negative effects on both individuals and society. These impacts can affect many areas of life in different ways. Therefore, it is important to pay more attention to this issue in the future.</span></p>
+                    <p>↳ <span class="outline-phrase">In conclusion, [chủ đề – danh từ/cụm danh từ] can lead to several negative effects on both individuals and society. These effects can influence different areas of life. Therefore, it is important to pay more attention to this issue.</span></p>
                 </div>
             </div>
 
@@ -322,19 +371,28 @@ const essayTypes = [
                 <h3 style="color: var(--primary-color); border-bottom: 2px solid var(--primary-light); padding-bottom: 10px; margin-bottom: 15px;">DÀN Ý 6: CHỈ GIẢI PHÁP</h3>
                 <div class="outline-step">
                     <h4>1. MỞ BÀI</h4>
-                    <p>↳ <span class="outline-phrase">In recent years, [chủ đề] has become increasingly important in modern society. Many people believe that more effective actions are needed in this area. This essay will suggest several practical measures to improve the situation.</span></p>
+                    <p>↳ <span class="outline-phrase">In recent years, [chủ đề – danh từ/cụm danh từ] has become a growing concern in many parts of the world. This problem affects both individuals and society in different ways. This essay will suggest several practical solutions to this problem.</span></p>
+                    <p style="font-size: 0.9rem; color: #64748b; font-style: italic; margin-top: 5px;">* Lưu ý: Nếu đề yêu cầu đề xuất giải pháp cho một lĩnh vực hoặc tình huống trung tính, có thể giữ cách câu giới thiệu chủ đề, sau đó điều chỉnh các câu tiếp theo cho phù hợp.</p>
                 </div>
                 <div class="outline-step">
                     <h4>2. THÂN BÀI</h4>
                     <ul>
-                        <li><strong>THÂN BÀI 1:</strong> <span class="outline-phrase">One effective solution is to [giải pháp 1].</span></li>
-                        <li><strong>THÂN BÀI 2:</strong> <span class="outline-phrase">Another possible measure is to [giải pháp 2].</span></li>
-                        <li><strong>THÂN BÀI 3:</strong> <span class="outline-phrase">A further approach is to [giải pháp 3].</span></li>
+                        <li><strong>THÂN BÀI 1:</strong> <span class="outline-phrase">One effective solution is to [giải pháp 1 – Vo]. &rarr; [luận cứ 1 - mệnh đề] &rarr; [luận cứ 2] &rarr; [luận cứ 3]</span></li>
+                        <li><strong>THÂN BÀI 2:</strong> <span class="outline-phrase">Another possible measure is to [giải pháp 2 – Vo]. &rarr; [luận cứ 1 - mệnh đề] &rarr; [luận cứ 2] &rarr; [luận cứ 3]</span></li>
+                        <li><strong>THÂN BÀI 3:</strong> <span class="outline-phrase">A further approach is to [giải pháp 3 – Vo]. &rarr; [luận cứ 1 - mệnh đề] &rarr; [luận cứ 2] &rarr; [luận cứ 3]</span></li>
                     </ul>
+                    <div style="background: #f8fafc; border-left: 4px solid var(--primary-color); padding: 12px 16px; margin: 15px 0; border-radius: 0 8px 8px 0;">
+                        <h5 style="color: var(--primary-color); margin-bottom: 8px; font-size: 0.95rem;"><i class="fa-solid fa-lightbulb"></i> GỢI Ý CÁC CỤM TỪ DẪN DẮT LUẬN CỨ:</h5>
+                        <ul style="margin: 0; padding-left: 20px; font-size: 0.9rem; line-height: 1.6;">
+                            <li><strong>1. Dẫn câu giải thích / lý do:</strong> This is because … / The main reason is that … / In fact, … / This means that ….</li>
+                            <li><strong>2. Dẫn câu hệ quả / kết quả:</strong> As a result, … / Therefore, … / Consequently, … / For this reason, …</li>
+                            <li><strong>3. Dẫn câu ví dụ minh họa:</strong> For example, … / For instance, … / To be specific, …</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="outline-step">
                     <h4>3. KẾT BÀI</h4>
-                    <p>↳ <span class="outline-phrase">In conclusion, several practical measures can help improve this situation effectively. These solutions can bring positive changes for both individuals and society. Therefore, it is important to take suitable actions in the future.</span></p>
+                    <p>↳ <span class="outline-phrase">In conclusion, several practical solutions can help address this problem. By applying suitable measures, people can help improve the situation in the future. These efforts can bring positive changes to both individuals and society.</span></p>
                 </div>
             </div>
         `,
@@ -344,71 +402,71 @@ const essayTypes = [
                 
                 <h4 style="color: var(--primary-color); margin-top: 15px;">BÀI MẪU 1: DÀN Ý 01 (NGUYÊN NHÂN & GIẢI PHÁP)</h4>
                 <div class="prompt-box" style="margin-bottom: 15px;">
-                    <p><strong>ĐỀ BÀI:</strong> Obesity is a serious global problem in today's society, especially among young people. More than one-third of adults and 17% of youth in the United States are obese, although the prevalence remained stable between 2003-2004 and 2009-2010. Obesity causes a lot of conditions, including heart disease, stroke, type 2 diabetes, and certain types of cancer, some of the leading causes of preventable death.<br><br><strong>Write an essay to discuss the causes of obesity among young people and suggest possible solutions.</strong></p>
+                    <p><strong>ĐỀ BÀI:</strong> Obesity is a serious global problem in today's society, especially among young people. More than one-third of adults and 17% of youth in the United States are obese, although the prevalence remained stable between 2003-2004 and 2009-2010. Obesity causes a lot of conditions, including heart disease, stroke, type 2 diabetes, and certain types of cancer, some of the leading causes of preventable death.<br><br><strong>Write an essay to discuss the causes of obesity among young people and suggest possible solutions. Include reasons and any relevant examples to support your answer. You should write at least 250 words. Your response will be evaluated in terms of Task fulfillment, Organization, Vocabulary, and Grammar.</strong></p>
                 </div>
                 <div class="sample-letter-box">
-                    In recent years, <strong>obesity among young people</strong> has become a growing concern in many parts of the world. This issue affects both individuals and society in different ways. <strong>This essay will discuss the main causes of this problem and suggest possible solutions.</strong><br><br>
-                    <strong>This issue can be caused by several factors.</strong> One major cause is that <strong>many young people have unhealthy eating habits</strong>. <em>This is because they often eat fast food and drink sugary beverages, so they consume too much fat and sugar every day.</em> Another contributing factor is that <strong>many young individuals do not exercise regularly</strong>. <em>As a result, they do not burn enough calories and may gain weight easily.</em> A further reason is that <strong>many teenagers lack nutritional knowledge</strong>. <em>Consequently, they may choose unhealthy food and develop poor eating habits.</em><br><br>
-                    <strong>To solve this problem, several measures can be taken.</strong> One effective solution is to <strong>encourage young people to follow a healthier diet</strong>. <em>The main reason is that eating more vegetables and reducing junk food can help them control their weight and improve their health.</em> Another possible measure is to <strong>promote regular physical exercise at schools</strong>. <em>For example, schools can organize sports activities or encourage students to join exercise clubs after class.</em> Finally, it is important to <strong>educate young people about healthy eating habits</strong>. <em>Therefore, they can make healthier choices in their daily lives.</em><br><br>
-                    In conclusion, <strong>obesity among young people</strong> is caused by several factors and requires practical solutions. By addressing the causes and applying suitable measures, this problem can be reduced in the future. These actions can help create positive changes for both individuals and society.
+                    In recent years, <strong>obesity among young people</strong> has become a growing concern in many parts of the world. This problem affects both individuals and society in different ways. <strong>This essay will discuss its main causes and suggest possible solutions.</strong><br><br>
+                    <strong>This problem can be caused by several factors.</strong> One major cause is that <strong>many young people have unhealthy eating habits</strong>. <em>This is because they often eat fast food and drink sugary beverages, so they consume too much fat and sugar every day.</em> Another contributing factor is that <strong>many young people do not exercise regularly</strong>. <em>As a result, they do not burn enough calories and may gain weight easily.</em> A further reason is that <strong>many teenagers lack nutritional knowledge</strong>. <em>This means that they may choose unhealthy food and develop poor eating habits.</em><br><br>
+                    <strong>To solve this problem, several measures can be taken.</strong> One effective solution is to <strong>encourage young people to follow a healthier diet</strong>. <em>This is because eating more vegetables and reducing junk food can help them control their weight and improve their health.</em> Another possible measure is to <strong>promote regular physical exercise at schools</strong>. <em>For example, schools can organize sports activities or encourage students to join exercise clubs after class.</em> Finally, it is important to <strong>educate young people about healthy eating habits</strong>. <em>This means that they can make healthier choices in their daily lives.</em><br><br>
+                    In conclusion, <strong>obesity among young people</strong> has several causes and requires practical solutions. By addressing these causes and applying suitable measures, this problem can be reduced in the future. These actions can bring positive changes to both individuals and society.
                 </div>
 
                 <h4 style="color: var(--primary-color); margin-top: 25px;">BÀI MẪU 2: DÀN Ý 02 (NGUYÊN NHÂN & ẢNH HƯỞNG)</h4>
                 <div class="prompt-box" style="margin-bottom: 15px;">
-                    <p><strong>ĐỀ BÀI:</strong> In many countries, the number of single-parent families has been rising steadily in recent decades. This trend has raised concerns about its possible causes and effects on individuals and society.<br><br><strong>Write an essay to discuss the causes of this trend and its effects.</strong></p>
+                    <p><strong>ĐỀ BÀI:</strong> In many countries, the number of single-parent families has been rising steadily in recent decades. This trend has raised concerns about its possible causes and effects on individuals and society.<br><br><strong>Write an essay to an educated reader to discuss the causes of this trend and its effects. Include reasons and any relevant examples to support your answer. You should write at least 250 words. Your response will be evaluated in terms of Task fulfillment, Organization, Vocabulary, and Grammar.</strong></p>
                 </div>
                 <div class="sample-letter-box">
-                    In recent years, <strong>the increase in single-parent families</strong> has become a growing concern in many parts of the world. This issue affects both individuals and society in different ways. <strong>This essay will discuss the main causes of this problem and discuss its possible effects.</strong><br><br>
-                    <strong>This issue can be caused by several factors.</strong> One major cause is that <strong>divorce rates are increasing in many countries</strong>. <em>This is because many couples face financial pressure or relationship problems, so they decide to separate.</em> Another contributing factor is that <strong>some young people have unplanned pregnancies</strong>. <em>As a result, some children are raised by only one parent.</em> A further reason is that <strong>society is more accepting of single-parent families nowadays</strong>. <em>Consequently, more people feel comfortable becoming single parents.</em><br><br>
-                    <strong>This problem can lead to several negative effects.</strong> One serious impact is that <strong>children in single-parent families may not receive enough parental supervision</strong>. <em>For example, a single parent may spend most of their time working to earn money, so they cannot spend enough time with their children.</em> Another consequence is that <strong>single parents may face financial burdens</strong>. <em>This is because they often have to support the whole family alone.</em> A further problem is that <strong>some children may develop bad behavior</strong>. <em>This is because they may not receive enough guidance from their parents, so they may behave badly at school or do negative things.</em><br><br>
-                    In conclusion, <strong>the increase in single-parent families</strong> is caused by several factors and can lead to many negative effects. By understanding the causes and paying more attention to this issue, the situation can be improved in the future. These actions can help create a better environment for both individuals and society.
+                    In recent years, <strong>the increase in single-parent families</strong> has become a growing concern in many parts of the world. This problem affects both individuals and society in different ways. <strong>This essay will discuss its main causes and possible effects.</strong><br><br>
+                    <strong>This problem can be caused by several factors.</strong> One major cause is that <strong>divorce rates are increasing in many countries</strong>. <em>This is because many couples face financial pressure or relationship problems, so they decide to separate.</em> Another contributing factor is that <strong>some young people have unplanned pregnancies</strong>. <em>As a result, some children are raised by only one parent.</em> A further reason is that <strong>society is more accepting of single-parent families nowadays</strong>. <em>This means that more people feel comfortable becoming single parents.</em><br><br>
+                    <strong>This issue can lead to several negative effects.</strong> One serious impact is that <strong>children in single-parent families may not receive enough parental supervision</strong>. <em>For example, a single parent may spend most of their time working to earn money, so they cannot spend enough time with their children.</em> Another consequence is that <strong>single parents may face financial burdens</strong>. <em>This is because they often have to support the whole family alone.</em> A further problem is that <strong>some children may develop bad behavior</strong>. <em>This is because they may not receive enough guidance from their parents, so they may behave badly at school or do negative things.</em><br><br>
+                    In conclusion, <strong>the increase in single-parent families</strong> has several causes and can lead to various negative effects. By understanding the causes and paying more attention to this problem, people can help improve the situation in the future. These actions can bring positive changes to both individuals and society.
                 </div>
 
                 <h4 style="color: var(--primary-color); margin-top: 25px;">BÀI MẪU 3: DÀN Ý 03 (ẢNH HƯỞNG & GIẢI PHÁP)</h4>
                 <div class="prompt-box" style="margin-bottom: 15px;">
-                    <p><strong>ĐỀ BÀI:</strong> Cybercrime has become a serious issue in modern society, affecting both individuals and organizations around the world. As technology continues to develop, the impacts of online crime are becoming more widespread and damaging.<br><br><strong>Write an essay to discuss the impacts of cybercrime and suggest possible solutions.</strong></p>
+                    <p><strong>ĐỀ BÀI:</strong> Cybercrime has become a serious issue in modern society, affecting both individuals and organizations around the world. As technology continues to develop, the impacts of online crime are becoming more widespread and damaging.<br><br><strong>Write an essay to discuss the impacts of cybercrime and suggest possible solutions. Include reasons and any relevant examples to support your answer. You should write at least 250 words. Your response will be evaluated in terms of Task fulfillment, Organization, Vocabulary, and Grammar.</strong></p>
                 </div>
                 <div class="sample-letter-box">
-                    In recent years, <strong>cybercrime</strong> has become a growing concern in many parts of the world. This issue affects both individuals and society in different ways. <strong>This essay will discuss the main effects of this problem and suggest possible solutions.</strong><br><br>
-                    <strong>This problem can lead to several negative effects.</strong> One serious impact is that <strong>many people may lose money</strong>. <em>This is because cybercriminals can steal personal and financial information, so they can take money from victims’ bank accounts.</em> Another consequence is that <strong>companies may lose important data</strong>. <em>For example, hackers can attack computer systems and damage valuable business information.</em> A further problem is that <strong>many individuals may feel unsafe when using online services</strong>. <em>This is because cybercrime can make the Internet seem dangerous, so some people may avoid online shopping or online banking.</em><br><br>
-                    <strong>To solve this problem, several measures can be taken.</strong> One effective solution is to <strong>improve online security systems</strong>. <em>This is because stronger passwords and security software can better protect users from cyber attacks.</em> Another possible measure is to <strong>educate people about online safety</strong>. <em>For example, schools and companies can teach people how to recognize fake messages or dangerous websites.</em> Finally, it is important to <strong>create stricter laws against cybercrime</strong>. <em>As a result, criminals may receive stronger punishments and become less likely to commit online crimes.</em><br><br>
-                    In conclusion, <strong>online crime</strong> leads to several negative effects and requires practical solutions. By applying suitable measures and paying more attention to this issue, the situation can be improved in the future. These actions can help create positive changes for both individuals and society.
+                    In recent years, <strong>cybercrime</strong> has become a growing concern in many parts of the world. This problem affects both individuals and society in different ways. <strong>This essay will discuss its main effects and suggest possible solutions.</strong><br><br>
+                    <strong>This problem can lead to several negative effects.</strong> One serious effect is that <strong>many people may lose money</strong>. <em>This is because cybercriminals can steal personal and financial information, so they can take money from victims’ bank accounts.</em> Another negative consequence is that <strong>companies may lose important data</strong>. <em>For example, hackers can attack computer systems and damage valuable business information.</em> A further impact is that <strong>many individuals may feel unsafe when using online services</strong>. <em>This is because cybercrime can make the Internet seem dangerous, so some people may avoid online shopping or online banking.</em><br><br>
+                    <strong>To solve this problem, several measures can be taken.</strong> One effective solution is to <strong>improve online security systems</strong>. <em>This is because stronger passwords and security software can better protect users from cyberattacks.</em> Another possible measure is to <strong>educate people about online safety</strong>. <em>For example, schools and companies can teach people how to recognize fake messages or dangerous websites.</em> Finally, it is important to <strong>create stricter laws against cybercrime</strong>. <em>As a result, criminals may receive stronger punishments and become less likely to commit online crimes.</em><br><br>
+                    In conclusion, <strong>cybercrime</strong> can lead to several negative effects and requires practical solutions. By applying suitable measures and paying more attention to this problem, people can help improve the situation in the future. These actions can bring positive changes to both individuals and society.
                 </div>
 
                 <h4 style="color: var(--primary-color); margin-top: 25px;">BÀI MẪU 4: DÀN Ý 04 (CHỈ NGUYÊN NHÂN)</h4>
                 <div class="prompt-box" style="margin-bottom: 15px;">
-                    <p><strong>ĐỀ BÀI:</strong> In recent years, a growing number of young people have chosen to leave traditional jobs in companies to start their own businesses. This trend has attracted attention from the public and sparked discussion about what is driving this change.<br><br><strong>Write an essay to discuss the causes of this trend.</strong></p>
+                    <p><strong>ĐỀ BÀI:</strong> In recent years, a growing number of young people have chosen to leave traditional jobs in companies to start their own businesses. This trend has attracted attention from the public and sparked discussion about what is driving this change.<br><br><strong>Write an essay to discuss the causes of this trend. Include reasons and any relevant examples to support your answer. You should write at least 250 words. Your response will be evaluated in terms of Task fulfillment, Organization, Vocabulary, and Grammar.</strong></p>
                 </div>
                 <div class="sample-letter-box">
-                    In recent years, <strong>young people leaving their companies to start their own businesses</strong> has become a growing trend in many parts of the world. This situation affects both individuals and society in different ways. <strong>This essay will discuss the main causes behind this change.</strong><br><br>
-                    One major cause is that <strong>many young people want more freedom and independence at work</strong>. <em>Many employees dislike fixed working hours and strict company rules. In addition, starting a business allows them to make their own decisions and develop their personal ideas. As a result, many young people believe that self-employment can give them a more flexible and satisfying working life.</em><br><br>
+                    In recent years, <strong>the trend of young people leaving traditional jobs to start their own businesses</strong> has become more common in many parts of the world. This trend has attracted attention from the public and society in different ways. <strong>This essay will discuss the main causes of this trend.</strong><br><br>
+                    One major cause is that <strong>many young people want more freedom and independence at work</strong>. <em>This is because many employees dislike fixed working hours and strict company rules. In addition, starting a business allows them to make their own decisions and develop their personal ideas. As a result, many young people believe that self-employment can give them a more flexible and satisfying working life.</em><br><br>
                     Another contributing factor is that <strong>many young people want to earn higher incomes</strong>. <em>In some companies, employees may receive low salaries or have limited opportunities for promotion. Moreover, successful business owners can sometimes earn much more money than regular workers. Therefore, many young people believe that starting their own businesses can help them improve their financial situation more quickly.</em><br><br>
-                    A further reason is that <strong>the development of technology and social media has made business easier</strong>. <em>Young people can now sell products or advertise services through online platforms with lower costs. For example, many people open online shops or become content creators on social media. Consequently, starting a business has become more convenient and accessible for young people.</em><br><br>
-                    In conclusion, <strong>young people choosing self-employment</strong> is caused by several factors that affect both individuals and society. Understanding these causes is important to better understand this situation in the future. With greater attention, suitable support and guidance can also be provided for young entrepreneurs.
+                    A further reason is that <strong>the development of technology and social media has made starting a business easier</strong>. <em>Young people can now sell products or advertise services through online platforms at lower costs. For example, many people open online shops or become content creators on social media. Consequently, starting a business has become more convenient and accessible for young people.</em><br><br>
+                    In conclusion, <strong>the trend of young people starting their own businesses</strong> is caused by several factors. By understanding these causes and taking appropriate action, people can help improve the situation in the future. These efforts can bring positive changes to both individuals and society.
                 </div>
 
                 <h4 style="color: var(--primary-color); margin-top: 25px;">BÀI MẪU 5: DÀN Ý 05 (CHỈ ẢNH HƯỞNG)</h4>
                 <div class="prompt-box" style="margin-bottom: 15px;">
-                    <p><strong>ĐỀ BÀI:</strong> Deforestation has become a serious environmental issue in many parts of the world. As large areas of forest are being cut down every year, this practice is causing significant damage to the environment and human life.<br><br><strong>Write an essay to discuss the effects of deforestation.</strong></p>
+                    <p><strong>ĐỀ BÀI:</strong> Deforestation has become a serious environmental issue in many parts of the world. As large areas of forest are being cut down every year, this practice is causing significant damage to the environment and human life.<br><br><strong>Write an essay to discuss the effects of deforestation. Include reasons and any relevant examples to support your answer. You should write at least 250 words. Your response will be evaluated in terms of Task fulfillment, Organization, Vocabulary, and Grammar.</strong></p>
                 </div>
                 <div class="sample-letter-box">
-                    In recent years, <strong>deforestation</strong> has become a growing concern in many parts of the world. This issue affects both individuals and society in different ways. <strong>This essay will discuss the main effects of this problem.</strong><br><br>
-                    One major effect is that <strong>forest destruction causes serious damage to the environment and biodiversity</strong>. <em>In fact, many forests are natural habitats for animals and plants, so cutting down trees destroys their living environment. In addition, some species may gradually disappear because they cannot survive without forests or find enough food and shelter. As a result, ecosystems become weaker and biodiversity is reduced in many areas around the world.</em><br><br>
-                    Another serious impact is that <strong>the loss of forests contributes to climate change and natural disasters</strong>. <em>The main reason is that trees help absorb carbon dioxide and control temperatures in the environment. However, when forests are destroyed, more greenhouse gases remain in the atmosphere and global warming becomes more serious. Consequently, many countries may experience floods, droughts, storms, and soil erosion more frequently than before.</em><br><br>
-                    A further consequence is that <strong>the removal of forests negatively affects human life</strong>. <em>This is because many local people depend on forests for food, water, medicine, and income in their daily lives. Moreover, environmental damage caused by deforestation can reduce farming productivity and worsen living conditions in these areas. Therefore, many people may face financial difficulties, unemployment, and health problems in the future.</em><br><br>
-                    In conclusion, <strong>this environmental issue</strong> leads to several negative effects on both individuals and society. These impacts can affect many areas of life in different ways. Therefore, it is important to pay more attention to this issue in the future.
+                    In recent years, <strong>deforestation</strong> has become a growing concern in many parts of the world. This problem affects both individuals and society in different ways. <strong>This essay will discuss its main effects.</strong><br><br>
+                    One major effect is that <strong>deforestation causes serious damage to the environment and biodiversity</strong>. <em>In fact, many forests are natural habitats for animals and plants, so cutting down trees destroys their living environment. In addition, some species may gradually disappear because they cannot survive without forests or find enough food and shelter. As a result, ecosystems become weaker and biodiversity is reduced in many areas around the world.</em><br><br>
+                    Another serious impact is that <strong>deforestation contributes to climate change and natural disasters</strong>. <em>The main reason is that trees help absorb carbon dioxide and control temperatures in the environment. However, when forests are destroyed, more greenhouse gases remain in the atmosphere and global warming becomes more serious. Consequently, many countries may experience floods, droughts, storms, and soil erosion more frequently than before.</em><br><br>
+                    A further consequence is that <strong>deforestation negatively affects human life</strong>. <em>This is because many local people depend on forests for food, water, medicine, and income in their daily lives. Moreover, environmental damage caused by deforestation can reduce farming productivity and worsen living conditions in these areas. Therefore, many people may face financial difficulties, unemployment, and health problems in the future.</em><br><br>
+                    In conclusion, <strong>deforestation</strong> can lead to several negative effects on both individuals and society. These effects can influence different areas of life. Therefore, it is important to pay more attention to this issue.
                 </div>
 
                 <h4 style="color: var(--primary-color); margin-top: 25px;">BÀI MẪU 6: DÀN Ý 06 (CHỈ GIẢI PHÁP)</h4>
                 <div class="prompt-box" style="margin-bottom: 15px;">
-                    <p><strong>ĐỀ BÀI:</strong> In today’s globalized world, language education plays a key role in helping people communicate, work, and study across borders. However, in many countries, language learning is still limited or ineffective.<br><br><strong>Write an essay to suggest measures that can be taken to promote language education.</strong></p>
+                    <p><strong>ĐỀ BÀI:</strong> In today’s globalized world, language education plays a key role in helping people communicate, work, and study across borders. However, in many countries, language learning is still limited or ineffective.<br><br><strong>Write an essay to suggest measures that can be taken to promote language education. Include reasons and any relevant examples to support your answer. You should write at least 250 words. Your response will be evaluated in terms of Task fulfillment, Organization, Vocabulary, and Grammar.</strong></p>
                 </div>
                 <div class="sample-letter-box">
-                    In recent years, <strong>promoting language education</strong> has become increasingly important in modern society. Many people believe that more effective actions are needed in this area. <strong>This essay will suggest several practical measures to improve the situation.</strong><br><br>
-                    One effective solution is to <strong>improve language teaching methods in schools</strong>. <em>Teachers should use more interactive activities such as games, group discussions, and speaking practice in class instead of focusing only on grammar exercises. In addition, students should be encouraged to use the language in real communication during lessons and daily activities. As a result, students may become more interested in language learning.</em><br><br>
+                    In recent years, <strong>language education</strong> has become increasingly important in modern society. Effective language learning helps people communicate, work, and study across borders. <strong>This essay will suggest several practical solutions to improve language education.</strong><br><br>
+                    One effective solution is to <strong>improve language teaching methods in schools</strong>. <em>Teachers should use more interactive activities, such as games, group discussions, and speaking practice, instead of focusing only on grammar exercises. In addition, students should be encouraged to use the language in real communication during lessons and daily activities. As a result, students may become more interested in language learning and improve their language skills.</em><br><br>
                     Another possible measure is to <strong>increase access to language learning resources</strong>. <em>Schools and governments can provide more books, online materials, videos, and language learning applications for students. Moreover, free or low-cost language courses can help people from low-income families have better opportunities to learn foreign languages. Consequently, more students and adults may be able to study languages more easily.</em><br><br>
                     A further approach is to <strong>create more opportunities for people to practise foreign languages in daily life</strong>. <em>Schools can organize language clubs, cultural exchange programs, or speaking competitions for students on a regular basis. For example, learners can communicate with foreign teachers or international students through these activities and improve their speaking confidence. Therefore, people may become more confident, develop better communication skills, and use foreign languages more naturally in real situations.</em><br><br>
-                    In conclusion, <strong>several practical measures</strong> can help improve this situation effectively. These solutions can bring positive changes for both individuals and society. Therefore, it is important to take suitable actions in the future.
+                    In conclusion, <strong>several practical solutions</strong> can help improve language education. By applying suitable measures, schools and governments can help improve the situation in the future. These efforts can bring positive changes to both individuals and society.
                 </div>
             </div>
         `
@@ -593,20 +651,20 @@ const recitationOutlines = {
             outlineName: 'DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP',
             shortName: 'Dàn ý 01: Nguyên nhân & Giải pháp',
             questions: [
-                {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>1. MỞ BÀI<br>Viết câu dẫn dắt chủ đề:', target: 'In recent years, [chủ đề] has become a growing concern in many parts of the world.', vn: 'Trong những năm gần đây, [chủ đề] đã trở thành một mối lo ngại ngày càng tăng ở nhiều nơi trên thế giới.'},
-                {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>1. MỞ BÀI<br>Viết câu nêu mức độ nghiêm trọng:', target: 'This issue affects both individuals and society in different ways.', vn: 'Vấn đề này ảnh hưởng đến cả cá nhân và xã hội theo nhiều cách khác nhau.'},
-                {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>1. MỞ BÀI<br>Viết câu giới thiệu mục đích bài viết:', target: 'This essay will discuss the main causes of this problem and suggest possible solutions.', vn: 'Bài viết này sẽ thảo luận những nguyên nhân chính của vấn đề này và đề xuất các giải pháp khả thi.'},
-                {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>2. THÂN BÀI<br>Dẫn dắt Thân bài 1 (Nguyên nhân):', target: 'This issue can be caused by several factors.', vn: 'Vấn đề này có thể được gây ra bởi một vài yếu tố.'},
-                {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>2. THÂN BÀI<br>Câu dẫn nguyên nhân 1:', target: 'One major cause is that [nguyên nhân 1].', vn: 'Một nguyên nhân chính là [nguyên nhân 1].'},
-                {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>2. THÂN BÀI<br>Câu dẫn nguyên nhân 2:', target: 'Another contributing factor is that [nguyên nhân 2].', vn: 'Một yếu tố góp phần khác là [nguyên nhân 2].'},
-                {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>2. THÂN BÀI<br>Câu dẫn nguyên nhân 3:', target: 'A further reason is that [nguyên nhân 3].', vn: 'Một lý do nữa là [nguyên nhân 3].'},
+                {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>1. MỞ BÀI<br>Viết câu dẫn dắt chủ đề:', target: 'In recent years, [chủ đề – danh từ/cụm danh từ] has become a growing concern in many parts of the world.', vn: 'Trong những năm gần đây, [chủ đề – danh từ/cụm danh từ] đã trở thành một mối lo ngại ngày càng tăng ở nhiều nơi trên thế giới.'},
+                {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>1. MỞ BÀI<br>Viết câu nêu mức độ ảnh hưởng:', target: 'This problem affects both individuals and society in different ways.', vn: 'Vấn đề này ảnh hưởng đến cả cá nhân và xã hội theo nhiều cách khác nhau.'},
+                {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>1. MỞ BÀI<br>Viết câu giới thiệu mục đích bài viết:', target: 'This essay will discuss its main causes and suggest possible solutions.', vn: 'Bài viết này sẽ thảo luận những nguyên nhân chính và đề xuất các giải pháp khả thi của nó.'},
+                {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>2. THÂN BÀI<br>Dẫn dắt Thân bài 1 (Nguyên nhân):', target: 'This problem can be caused by several factors.', vn: 'Vấn đề này có thể được gây ra bởi một vài yếu tố.'},
+                {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>2. THÂN BÀI<br>Câu dẫn nguyên nhân 1:', target: 'One major cause is that [nguyên nhân 1 – mệnh đề].', vn: 'Một nguyên nhân chính là [nguyên nhân 1 – mệnh đề].'},
+                {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>2. THÂN BÀI<br>Câu dẫn nguyên nhân 2:', target: 'Another contributing factor is that [nguyên nhân 2 – mệnh đề].', vn: 'Một yếu tố góp phần khác là [nguyên nhân 2 – mệnh đề].'},
+                {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>2. THÂN BÀI<br>Câu dẫn nguyên nhân 3:', target: 'A further reason is that [nguyên nhân 3 – mệnh đề].', vn: 'Một lý do nữa là [nguyên nhân 3 – mệnh đề].'},
                 {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>2. THÂN BÀI<br>Dẫn dắt Thân bài 2 (Giải pháp):', target: 'To solve this problem, several measures can be taken.', vn: 'Để giải quyết vấn đề này, một vài biện pháp có thể được thực hiện.'},
-                {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>2. THÂN BÀI<br>Câu dẫn giải pháp 1:', target: 'One effective solution is to [giải pháp 1].', vn: 'Một giải pháp hiệu quả là [giải pháp 1].'},
-                {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>2. THÂN BÀI<br>Câu dẫn giải pháp 2:', target: 'Another possible measure is to [giải pháp 2].', vn: 'Một biện pháp khả thi khác là [giải pháp 2].'},
-                {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>2. THÂN BÀI<br>Câu dẫn giải pháp 3:', target: 'Finally, it is important to [giải pháp 3].', vn: 'Cuối cùng, điều quan trọng là phải [giải pháp 3].'},
-                {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>3. KẾT BÀI<br>Viết câu tóm tắt nguyên nhân và giải pháp:', target: 'In conclusion, [chủ đề] is caused by several factors and requires practical solutions.', vn: 'Tóm lại, [chủ đề] được gây ra bởi một vài yếu tố và đòi hỏi các giải pháp thực tế.'},
-                {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>3. KẾT BÀI<br>Viết câu khẳng định tính khả thi:', target: 'By addressing the causes and applying suitable measures, this problem can be reduced in the future.', vn: 'Bằng cách giải quyết nguyên nhân và áp dụng các biện pháp phù hợp, vấn đề này có thể được giảm thiểu trong tương lai.'},
-                {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>3. KẾT BÀI<br>Viết câu chốt lại vấn đề:', target: 'These actions can help create positive changes for both individuals and society.', vn: 'Những hành động này có thể giúp tạo ra những thay đổi tích cực cho cả cá nhân và xã hội.'}
+                {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>2. THÂN BÀI<br>Câu dẫn giải pháp 1:', target: 'One effective solution is to [giải pháp 1 – Vo].', vn: 'Một giải pháp hiệu quả là [giải pháp 1 – Vo].'},
+                {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>2. THÂN BÀI<br>Câu dẫn giải pháp 2:', target: 'Another possible measure is to [giải pháp 2 – Vo].', vn: 'Một biện pháp khả thi khác là [giải pháp 2 – Vo].'},
+                {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>2. THÂN BÀI<br>Câu dẫn giải pháp 3:', target: 'Finally, it is important to [giải pháp 3 – Vo].', vn: 'Cuối cùng, điều quan trọng là phải [giải pháp 3 – Vo].'},
+                {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>3. KẾT BÀI<br>Viết câu tóm tắt nguyên nhân và giải pháp:', target: 'In conclusion, [chủ đề – danh từ/cụm danh từ] has several causes and requires practical solutions.', vn: 'Tóm lại, [chủ đề – danh từ/cụm danh từ] có một vài nguyên nhân và đòi hỏi các giải pháp thực tế.'},
+                {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>3. KẾT BÀI<br>Viết câu khẳng định tính khả thi:', target: 'By addressing these causes and applying suitable measures, this problem can be reduced in the future.', vn: 'Bằng cách giải quyết những nguyên nhân này và áp dụng các biện pháp phù hợp, vấn đề này có thể được giảm thiểu trong tương lai.'},
+                {cue: '[DÀN Ý 01 - NGUYÊN NHÂN & GIẢI PHÁP]<br>3. KẾT BÀI<br>Viết câu chốt lại vấn đề:', target: 'These actions can bring positive changes to both individuals and society.', vn: 'Những hành động này có thể mang lại những thay đổi tích cực cho cả cá nhân và xã hội.'}
             ]
         },
         {
@@ -616,20 +674,20 @@ const recitationOutlines = {
             outlineName: 'DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG',
             shortName: 'Dàn ý 02: Nguyên nhân & Ảnh hưởng',
             questions: [
-                {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>1. MỞ BÀI<br>Viết câu dẫn dắt chủ đề:', target: 'In recent years, [chủ đề] has become a growing concern in many parts of the world.', vn: 'Trong những năm gần đây, [chủ đề] đã trở thành một mối lo ngại ngày càng tăng ở nhiều nơi trên thế giới.'},
-                {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>1. MỞ BÀI<br>Viết câu nêu mức độ nghiêm trọng:', target: 'This issue affects both individuals and society in different ways.', vn: 'Vấn đề này ảnh hưởng đến cả cá nhân và xã hội theo nhiều cách khác nhau.'},
-                {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>1. MỞ BÀI<br>Viết câu giới thiệu mục đích bài viết:', target: 'This essay will discuss the main causes of this problem and its possible effects.', vn: 'Bài viết này sẽ thảo luận những nguyên nhân chính của vấn đề này và những ảnh hưởng có thể có của nó.'},
-                {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>2. THÂN BÀI<br>Dẫn dắt Thân bài 1 (Nguyên nhân):', target: 'This issue can be caused by several factors.', vn: 'Vấn đề này có thể được gây ra bởi một vài yếu tố.'},
-                {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>2. THÂN BÀI<br>Câu dẫn nguyên nhân 1:', target: 'One major cause is that [nguyên nhân 1].', vn: 'Một nguyên nhân chính là [nguyên nhân 1].'},
-                {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>2. THÂN BÀI<br>Câu dẫn nguyên nhân 2:', target: 'Another contributing factor is that [nguyên nhân 2].', vn: 'Một yếu tố góp phần khác là [nguyên nhân 2].'},
-                {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>2. THÂN BÀI<br>Câu dẫn nguyên nhân 3:', target: 'A further reason is that [nguyên nhân 3].', vn: 'Một lý do nữa là [nguyên nhân 3].'},
-                {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>2. THÂN BÀI<br>Dẫn dắt Thân bài 2 (Ảnh hưởng):', target: 'This problem can lead to several negative effects.', vn: 'Vấn đề này có thể dẫn đến một vài ảnh hưởng tiêu cực.'},
-                {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>2. THÂN BÀI<br>Câu dẫn ảnh hưởng 1:', target: 'One serious impact is that [ảnh hưởng 1].', vn: 'Một tác động nghiêm trọng là [ảnh hưởng 1].'},
-                {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>2. THÂN BÀI<br>Câu dẫn ảnh hưởng 2:', target: 'Another consequence is that [ảnh hưởng 2].', vn: 'Một hậu quả khác là [ảnh hưởng 2].'},
-                {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>2. THÂN BÀI<br>Câu dẫn ảnh hưởng 3:', target: 'A further problem is that [ảnh hưởng 3].', vn: 'Một vấn đề nữa là [ảnh hưởng 3].'},
-                {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>3. KẾT BÀI<br>Viết câu tóm tắt nguyên nhân và ảnh hưởng:', target: 'In conclusion, [chủ đề] is caused by several factors and can lead to many negative effects.', vn: 'Tóm lại, [chủ đề] được gây ra bởi một vài yếu tố và có thể dẫn đến nhiều ảnh hưởng tiêu cực.'},
-                {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>3. KẾT BÀI<br>Viết câu đề xuất hướng cải thiện:', target: 'By understanding the causes and paying more attention to this issue, the situation can be improved in the future.', vn: 'Bằng cách thấu hiểu nguyên nhân và quan tâm hơn đến vấn đề này, tình hình có thể được cải thiện trong tương lai.'},
-                {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>3. KẾT BÀI<br>Viết câu chốt lại vấn đề:', target: 'These actions can help create a better environment for both individuals and society.', vn: 'Những hành động này có thể giúp tạo ra một môi trường tốt hơn cho cả cá nhân và xã hội.'}
+                {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>1. MỞ BÀI<br>Viết câu dẫn dắt chủ đề:', target: 'In recent years, [chủ đề – danh từ/cụm danh từ] has become a growing concern in many parts of the world.', vn: 'Trong những năm gần đây, [chủ đề – danh từ/cụm danh từ] đã trở thành một mối lo ngại ngày càng tăng ở nhiều nơi trên thế giới.'},
+                {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>1. MỞ BÀI<br>Viết câu nêu mức độ ảnh hưởng:', target: 'This problem affects both individuals and society in different ways.', vn: 'Vấn đề này ảnh hưởng đến cả cá nhân và xã hội theo nhiều cách khác nhau.'},
+                {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>1. MỞ BÀI<br>Viết câu giới thiệu mục đích bài viết:', target: 'This essay will discuss its main causes and possible effects.', vn: 'Bài viết này sẽ thảo luận những nguyên nhân chính và những ảnh hưởng có thể có của nó.'},
+                {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>2. THÂN BÀI<br>Dẫn dắt Thân bài 1 (Nguyên nhân):', target: 'This problem can be caused by several factors.', vn: 'Vấn đề này có thể được gây ra bởi một vài yếu tố.'},
+                {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>2. THÂN BÀI<br>Câu dẫn nguyên nhân 1:', target: 'One major cause is that [nguyên nhân 1 – mệnh đề].', vn: 'Một nguyên nhân chính là [nguyên nhân 1 – mệnh đề].'},
+                {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>2. THÂN BÀI<br>Câu dẫn nguyên nhân 2:', target: 'Another contributing factor is that [nguyên nhân 2 – mệnh đề].', vn: 'Một yếu tố góp phần khác là [nguyên nhân 2 – mệnh đề].'},
+                {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>2. THÂN BÀI<br>Câu dẫn nguyên nhân 3:', target: 'A further reason is that [nguyên nhân 3 – mệnh đề].', vn: 'Một lý do nữa là [nguyên nhân 3 – mệnh đề].'},
+                {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>2. THÂN BÀI<br>Dẫn dắt Thân bài 2 (Ảnh hưởng):', target: 'This issue can lead to several negative effects.', vn: 'Vấn đề này có thể dẫn đến một vài ảnh hưởng tiêu cực.'},
+                {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>2. THÂN BÀI<br>Câu dẫn ảnh hưởng 1:', target: 'One serious impact is that [ảnh hưởng 1 – mệnh đề].', vn: 'Một tác động nghiêm trọng là [ảnh hưởng 1 – mệnh đề].'},
+                {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>2. THÂN BÀI<br>Câu dẫn ảnh hưởng 2:', target: 'Another consequence is that [ảnh hưởng 2 – mệnh đề].', vn: 'Một hậu quả khác là [ảnh hưởng 2 – mệnh đề].'},
+                {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>2. THÂN BÀI<br>Câu dẫn ảnh hưởng 3:', target: 'A further problem is that [ảnh hưởng 3 – mệnh đề].', vn: 'Một vấn đề nữa là [ảnh hưởng 3 – mệnh đề].'},
+                {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>3. KẾT BÀI<br>Viết câu tóm tắt nguyên nhân và ảnh hưởng:', target: 'In conclusion, [chủ đề – danh từ/cụm danh từ] has several causes and can lead to various negative effects.', vn: 'Tóm lại, [chủ đề – danh từ/cụm danh từ] có một vài nguyên nhân và có thể dẫn đến nhiều ảnh hưởng tiêu cực khác nhau.'},
+                {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>3. KẾT BÀI<br>Viết câu đề xuất hướng cải thiện:', target: 'By understanding the causes and paying more attention to this problem, people can help improve the situation in the future.', vn: 'Bằng cách thấu hiểu nguyên nhân và quan tâm hơn đến vấn đề này, mọi người có thể giúp cải thiện tình hình trong tương lai.'},
+                {cue: '[DÀN Ý 02 - NGUYÊN NHÂN & ẢNH HƯỞNG]<br>3. KẾT BÀI<br>Viết câu chốt lại vấn đề:', target: 'These actions can bring positive changes to both individuals and society.', vn: 'Những hành động này có thể mang lại những thay đổi tích cực cho cả cá nhân và xã hội.'}
             ]
         },
         {
@@ -639,20 +697,20 @@ const recitationOutlines = {
             outlineName: 'DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP',
             shortName: 'Dàn ý 03: Ảnh hưởng & Giải pháp',
             questions: [
-                {cue: '[DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP]<br>1. MỞ BÀI<br>Viết câu dẫn dắt chủ đề:', target: 'In recent years, [chủ đề] has become a growing concern in many parts of the world.', vn: 'Trong những năm gần đây, [chủ đề] đã trở thành một mối lo ngại ngày càng tăng ở nhiều nơi trên thế giới.'},
-                {cue: '[DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP]<br>1. MỞ BÀI<br>Viết câu nêu mức độ nghiêm trọng:', target: 'This issue affects both individuals and society in different ways.', vn: 'Vấn đề này ảnh hưởng đến cả cá nhân và xã hội theo nhiều cách khác nhau.'},
-                {cue: '[DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP]<br>1. MỞ BÀI<br>Viết câu giới thiệu mục đích bài viết:', target: 'This essay will discuss the main effects of this problem and suggest possible solutions.', vn: 'Bài viết này sẽ thảo luận những ảnh hưởng chính của vấn đề này và đề xuất các giải pháp khả thi.'},
-                {cue: '[DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP]<br>2. THÂN BÀI<br>Dẫn dắt Thân bài 1 (Ảnh hưởng):', target: 'This problem can lead to several negative effects.', vn: 'Vấn đề này có thể dẫn đến một vài ảnh hưởng tiêu cực.'},
-                {cue: '[DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP]<br>2. THÂN BÀI<br>Câu dẫn ảnh hưởng 1:', target: 'One serious impact is that [ảnh hưởng 1].', vn: 'Một tác động nghiêm trọng là [ảnh hưởng 1].'},
-                {cue: '[DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP]<br>2. THÂN BÀI<br>Câu dẫn ảnh hưởng 2:', target: 'Another consequence is that [ảnh hưởng 2].', vn: 'Một hậu quả khác là [ảnh hưởng 2].'},
-                {cue: '[DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP]<br>2. THÂN BÀI<br>Câu dẫn ảnh hưởng 3:', target: 'A further problem is that [ảnh hưởng 3].', vn: 'Một vấn đề nữa là [ảnh hưởng 3].'},
+                {cue: '[DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP]<br>1. MỞ BÀI<br>Viết câu dẫn dắt chủ đề:', target: 'In recent years, [chủ đề – danh từ/cụm danh từ] has become a growing concern in many parts of the world.', vn: 'Trong những năm gần đây, [chủ đề – danh từ/cụm danh từ] đã trở thành một mối lo ngại ngày càng tăng ở nhiều nơi trên thế giới.'},
+                {cue: '[DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP]<br>1. MỞ BÀI<br>Viết câu nêu mức độ ảnh hưởng:', target: 'This problem affects both individuals and society in different ways.', vn: 'Vấn đề này ảnh hưởng đến cả cá nhân và xã hội theo nhiều cách khác nhau.'},
+                {cue: '[DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP]<br>1. MỞ BÀI<br>Viết câu giới thiệu mục đích bài viết:', target: 'This essay will discuss its main effects and suggest possible solutions.', vn: 'Bài viết này sẽ thảo luận những ảnh hưởng chính và đề xuất các giải pháp khả thi của nó.'},
+                {cue: '[DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP]<br>2. THÂN BÀI<br>Dẫn dắt Thân bài 1 (Ảnh hưởng):', target: 'This issue can lead to several negative effects.', vn: 'Vấn đề này có thể dẫn đến một vài ảnh hưởng tiêu cực.'},
+                {cue: '[DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP]<br>2. THÂN BÀI<br>Câu dẫn ảnh hưởng 1:', target: 'One serious impact is that [ảnh hưởng 1 – mệnh đề].', vn: 'Một tác động nghiêm trọng là [ảnh hưởng 1 – mệnh đề].'},
+                {cue: '[DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP]<br>2. THÂN BÀI<br>Câu dẫn ảnh hưởng 2:', target: 'Another consequence is that [ảnh hưởng 2 – mệnh đề].', vn: 'Một hậu quả khác là [ảnh hưởng 2 – mệnh đề].'},
+                {cue: '[DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP]<br>2. THÂN BÀI<br>Câu dẫn ảnh hưởng 3:', target: 'A further problem is that [ảnh hưởng 3 – mệnh đề].', vn: 'Một vấn đề nữa là [ảnh hưởng 3 – mệnh đề].'},
                 {cue: '[DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP]<br>2. THÂN BÀI<br>Dẫn dắt Thân bài 2 (Giải pháp):', target: 'To solve this problem, several measures can be taken.', vn: 'Để giải quyết vấn đề này, một vài biện pháp có thể được thực hiện.'},
-                {cue: '[DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP]<br>2. THÂN BÀI<br>Câu dẫn giải pháp 1:', target: 'One effective solution is to [giải pháp 1].', vn: 'Một giải pháp hiệu quả là [giải pháp 1].'},
-                {cue: '[DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP]<br>2. THÂN BÀI<br>Câu dẫn giải pháp 2:', target: 'Another possible measure is to [giải pháp 2].', vn: 'Một biện pháp khả thi khác là [giải pháp 2].'},
-                {cue: '[DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP]<br>2. THÂN BÀI<br>Câu dẫn giải pháp 3:', target: 'Finally, it is important to [giải pháp 3].', vn: 'Cuối cùng, điều quan trọng là phải [giải pháp 3].'},
-                {cue: '[DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP]<br>3. KẾT BÀI<br>Viết câu tóm tắt ảnh hưởng và giải pháp:', target: 'In conclusion, [chủ đề] leads to several negative effects and requires practical solutions.', vn: 'Tóm lại, [chủ đề] dẫn đến một vài ảnh hưởng tiêu cực và đòi hỏi các giải pháp thực tế.'},
-                {cue: '[DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP]<br>3. KẾT BÀI<br>Viết câu đề xuất hướng cải thiện:', target: 'By applying suitable measures and paying more attention to this issue, the situation can be improved in the future.', vn: 'Bằng cách áp dụng các biện pháp phù hợp và quan tâm hơn đến vấn đề này, tình hình có thể được cải thiện trong tương lai.'},
-                {cue: '[DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP]<br>3. KẾT BÀI<br>Viết câu chốt lại vấn đề:', target: 'These actions can help create positive changes for both individuals and society.', vn: 'Những hành động này có thể giúp tạo ra những thay đổi tích cực cho cả cá nhân và xã hội.'}
+                {cue: '[DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP]<br>2. THÂN BÀI<br>Câu dẫn giải pháp 1:', target: 'One effective solution is to [giải pháp 1 – Vo].', vn: 'Một giải pháp hiệu quả là [giải pháp 1 – Vo].'},
+                {cue: '[DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP]<br>2. THÂN BÀI<br>Câu dẫn giải pháp 2:', target: 'Another possible measure is to [giải pháp 2 – Vo].', vn: 'Một biện pháp khả thi khác là [giải pháp 2 – Vo].'},
+                {cue: '[DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP]<br>2. THÂN BÀI<br>Câu dẫn giải pháp 3:', target: 'Finally, it is important to [giải pháp 3 – Vo].', vn: 'Cuối cùng, điều quan trọng là phải [giải pháp 3 – Vo].'},
+                {cue: '[DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP]<br>3. KẾT BÀI<br>Viết câu tóm tắt ảnh hưởng và giải pháp:', target: 'In conclusion, [chủ đề – danh từ/cụm danh từ] can lead to several negative effects and requires practical solutions.', vn: 'Tóm lại, [chủ đề – danh từ/cụm danh từ] có thể dẫn đến một vài ảnh hưởng tiêu cực và đòi hỏi các giải pháp thực tế.'},
+                {cue: '[DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP]<br>3. KẾT BÀI<br>Viết câu đề xuất hướng cải thiện:', target: 'By applying suitable measures and paying more attention to this problem, people can help improve the situation in the future.', vn: 'Bằng cách áp dụng các biện pháp phù hợp và quan tâm hơn đến vấn đề này, mọi người có thể giúp cải thiện tình hình trong tương lai.'},
+                {cue: '[DÀN Ý 03 - ẢNH HƯỞNG & GIẢI PHÁP]<br>3. KẾT BÀI<br>Viết câu chốt lại vấn đề:', target: 'These actions can bring positive changes to both individuals and society.', vn: 'Những hành động này có thể mang lại những thay đổi tích cực cho cả cá nhân và xã hội.'}
             ]
         },
         {
@@ -662,15 +720,15 @@ const recitationOutlines = {
             outlineName: 'DÀN Ý 04 - CHỈ NGUYÊN NHÂN',
             shortName: 'Dàn ý 04: Chỉ Nguyên nhân',
             questions: [
-                {cue: '[DÀN Ý 04 - CHỈ NGUYÊN NHÂN]<br>1. MỞ BÀI<br>Viết câu dẫn dắt chủ đề:', target: 'In recent years, [chủ đề] has become a growing concern in many parts of the world.', vn: 'Trong những năm gần đây, [chủ đề] đã trở thành một mối lo ngại ngày càng tăng ở nhiều nơi trên thế giới.'},
-                {cue: '[DÀN Ý 04 - CHỈ NGUYÊN NHÂN]<br>1. MỞ BÀI<br>Viết câu nêu mức độ nghiêm trọng:', target: 'This issue affects both individuals and society in different ways.', vn: 'Vấn đề này ảnh hưởng đến cả cá nhân và xã hội theo nhiều cách khác nhau.'},
+                {cue: '[DÀN Ý 04 - CHỈ NGUYÊN NHÂN]<br>1. MỞ BÀI<br>Viết câu dẫn dắt chủ đề:', target: 'In recent years, [chủ đề – danh từ/cụm danh từ] has become a growing concern in many parts of the world.', vn: 'Trong những năm gần đây, [chủ đề – danh từ/cụm danh từ] đã trở thành một mối lo ngại ngày càng tăng ở nhiều nơi trên thế giới.'},
+                {cue: '[DÀN Ý 04 - CHỈ NGUYÊN NHÂN]<br>1. MỞ BÀI<br>Viết câu nêu mức độ ảnh hưởng:', target: 'This problem affects both individuals and society in different ways.', vn: 'Vấn đề này ảnh hưởng đến cả cá nhân và xã hội theo nhiều cách khác nhau.'},
                 {cue: '[DÀN Ý 04 - CHỈ NGUYÊN NHÂN]<br>1. MỞ BÀI<br>Viết câu giới thiệu mục đích bài viết:', target: 'This essay will discuss the main causes of this problem.', vn: 'Bài viết này sẽ thảo luận những nguyên nhân chính của vấn đề này.'},
-                {cue: '[DÀN Ý 04 - CHỈ NGUYÊN NHÂN]<br>2. THÂN BÀI<br>Thân bài 1 - Câu dẫn nguyên nhân 1:', target: 'One major cause is that [nguyên nhân 1].', vn: 'Một nguyên nhân chính là [nguyên nhân 1].'},
-                {cue: '[DÀN Ý 04 - CHỈ NGUYÊN NHÂN]<br>2. THÂN BÀI<br>Thân bài 2 - Câu dẫn nguyên nhân 2:', target: 'Another contributing factor is that [nguyên nhân 2].', vn: 'Một yếu tố góp phần khác là [nguyên nhân 2].'},
-                {cue: '[DÀN Ý 04 - CHỈ NGUYÊN NHÂN]<br>2. THÂN BÀI<br>Thân bài 3 - Câu dẫn nguyên nhân 3:', target: 'A further reason is that [nguyên nhân 3].', vn: 'Một lý do nữa là [nguyên nhân 3].'},
-                {cue: '[DÀN Ý 04 - CHỈ NGUYÊN NHÂN]<br>3. KẾT BÀI<br>Viết câu tóm tắt nguyên nhân:', target: 'In conclusion, [chủ đề] is caused by several factors that affect both individuals and society.', vn: 'Tóm lại, [chủ đề] được gây ra bởi một vài yếu tố có ảnh hưởng đến cả cá nhân và xã hội.'},
-                {cue: '[DÀN Ý 04 - CHỈ NGUYÊN NHÂN]<br>3. KẾT BÀI<br>Viết câu khẳng định tầm quan trọng:', target: 'Understanding these causes is important to improve the situation in the future.', vn: 'Việc thấu hiểu những nguyên nhân này là quan trọng để cải thiện tình hình trong tương lai.'},
-                {cue: '[DÀN Ý 04 - CHỈ NGUYÊN NHÂN]<br>3. KẾT BÀI<br>Viết câu chốt lại vấn đề:', target: 'With greater attention, this problem can be reduced over time.', vn: 'Với sự quan tâm lớn hơn, vấn đề này có thể được giảm thiểu theo thời gian.'}
+                {cue: '[DÀN Ý 04 - CHỈ NGUYÊN NHÂN]<br>2. THÂN BÀI<br>Thân bài 1 - Câu dẫn nguyên nhân 1:', target: 'One major cause is that [nguyên nhân 1 – mệnh đề].', vn: 'Một nguyên nhân chính là [nguyên nhân 1 – mệnh đề].'},
+                {cue: '[DÀN Ý 04 - CHỈ NGUYÊN NHÂN]<br>2. THÂN BÀI<br>Thân bài 2 - Câu dẫn nguyên nhân 2:', target: 'Another contributing factor is that [nguyên nhân 2 – mệnh đề].', vn: 'Một yếu tố góp phần khác là [nguyên nhân 2 – mệnh đề].'},
+                {cue: '[DÀN Ý 04 - CHỈ NGUYÊN NHÂN]<br>2. THÂN BÀI<br>Thân bài 3 - Câu dẫn nguyên nhân 3:', target: 'A further reason is that [nguyên nhân 3 – mệnh đề].', vn: 'Một lý do nữa là [nguyên nhân 3 – mệnh đề].'},
+                {cue: '[DÀN Ý 04 - CHỈ NGUYÊN NHÂN]<br>3. KẾT BÀI<br>Viết câu tóm tắt nguyên nhân:', target: 'In conclusion, [chủ đề – danh từ/cụm danh từ] is caused by several factors.', vn: 'Tóm lại, [chủ đề – danh từ/cụm danh từ] được gây ra bởi một vài yếu tố.'},
+                {cue: '[DÀN Ý 04 - CHỈ NGUYÊN NHÂN]<br>3. KẾT BÀI<br>Viết câu khẳng định tầm quan trọng:', target: 'By understanding these causes and taking appropriate action, people can help improve the situation in the future.', vn: 'Bằng cách thấu hiểu những nguyên nhân này và thực hiện hành động thích hợp, mọi người có thể giúp cải thiện tình hình trong tương lai.'},
+                {cue: '[DÀN Ý 04 - CHỈ NGUYÊN NHÂN]<br>3. KẾT BÀI<br>Viết câu chốt lại vấn đề:', target: 'These efforts can bring positive changes to both individuals and society.', vn: 'Những nỗ lực này có thể mang lại những thay đổi tích cực cho cả cá nhân và xã hội.'}
             ]
         },
         {
@@ -680,15 +738,15 @@ const recitationOutlines = {
             outlineName: 'DÀN Ý 05 - CHỈ ẢNH HƯỞNG',
             shortName: 'Dàn ý 05: Chỉ Ảnh hưởng',
             questions: [
-                {cue: '[DÀN Ý 05 - CHỈ ẢNH HƯỞNG]<br>1. MỞ BÀI<br>Viết câu dẫn dắt chủ đề:', target: 'In recent years, [chủ đề] has become a growing concern in many parts of the world.', vn: 'Trong những năm gần đây, [chủ đề] đã trở thành một mối lo ngại ngày càng tăng ở nhiều nơi trên thế giới.'},
-                {cue: '[DÀN Ý 05 - CHỈ ẢNH HƯỞNG]<br>1. MỞ BÀI<br>Viết câu nêu mức độ nghiêm trọng:', target: 'This issue affects both individuals and society in different ways.', vn: 'Vấn đề này ảnh hưởng đến cả cá nhân và xã hội theo nhiều cách khác nhau.'},
-                {cue: '[DÀN Ý 05 - CHỈ ẢNH HƯỞNG]<br>1. MỞ BÀI<br>Viết câu giới thiệu mục đích bài viết:', target: 'This essay will discuss the main effects of this problem.', vn: 'Bài viết này sẽ thảo luận những ảnh hưởng chính của vấn đề này.'},
-                {cue: '[DÀN Ý 05 - CHỈ ẢNH HƯỞNG]<br>2. THÂN BÀI<br>Thân bài 1 - Câu dẫn ảnh hưởng 1:', target: 'One major effect is that [ảnh hưởng 1].', vn: 'Một ảnh hưởng chính là [ảnh hưởng 1].'},
-                {cue: '[DÀN Ý 05 - CHỈ ẢNH HƯỞNG]<br>2. THÂN BÀI<br>Thân bài 2 - Câu dẫn ảnh hưởng 2:', target: 'Another serious impact is that [ảnh hưởng 2].', vn: 'Một tác động nghiêm trọng khác là [ảnh hưởng 2].'},
-                {cue: '[DÀN Ý 05 - CHỈ ẢNH HƯỞNG]<br>2. THÂN BÀI<br>Thân bài 3 - Câu dẫn ảnh hưởng 3:', target: 'A further consequence is that [ảnh hưởng 3].', vn: 'Một hậu quả nữa là [ảnh hưởng 3].'},
-                {cue: '[DÀN Ý 05 - CHỈ ẢNH HƯỞNG]<br>3. KẾT BÀI<br>Viết câu tóm tắt ảnh hưởng:', target: 'In conclusion, [chủ đề] leads to several negative effects on both individuals and society.', vn: 'Tóm lại, [chủ đề] dẫn đến một vài ảnh hưởng tiêu cực lên cả cá nhân và xã hội.'},
-                {cue: '[DÀN Ý 05 - CHỈ ẢNH HƯỞNG]<br>3. KẾT BÀI<br>Viết câu khẳng định mức độ tác động:', target: 'These impacts can affect many areas of life in different ways.', vn: 'Những tác động này có thể ảnh hưởng đến nhiều lĩnh vực của đời sống theo những cách khác nhau.'},
-                {cue: '[DÀN Ý 05 - CHỈ ẢNH HƯỞNG]<br>3. KẾT BÀI<br>Viết câu chốt lại lời khuyên:', target: 'Therefore, it is important to pay more attention to this issue in the future.', vn: 'Vì vậy, việc quan tâm nhiều hơn đến vấn đề này trong tương lai là điều quan trọng.'}
+                {cue: '[DÀN Ý 05 - CHỈ ẢNH HƯỞNG]<br>1. MỞ BÀI<br>Viết câu dẫn dắt chủ đề:', target: 'In recent years, [chủ đề – danh từ/cụm danh từ] has become a growing concern in many parts of the world.', vn: 'Trong những năm gần đây, [chủ đề – danh từ/cụm danh từ] đã trở thành một mối lo ngại ngày càng tăng ở nhiều nơi trên thế giới.'},
+                {cue: '[DÀN Ý 05 - CHỈ ẢNH HƯỞNG]<br>1. MỞ BÀI<br>Viết câu nêu mức độ ảnh hưởng:', target: 'This problem affects both individuals and society in different ways.', vn: 'Vấn đề này ảnh hưởng đến cả cá nhân và xã hội theo nhiều cách khác nhau.'},
+                {cue: '[DÀN Ý 05 - CHỈ ẢNH HƯỞNG]<br>1. MỞ BÀI<br>Viết câu giới thiệu mục đích bài viết:', target: 'This essay will discuss its main effects.', vn: 'Bài viết này sẽ thảo luận những ảnh hưởng chính của nó.'},
+                {cue: '[DÀN Ý 05 - CHỈ ẢNH HƯỞNG]<br>2. THÂN BÀI<br>Thân bài 1 - Câu dẫn ảnh hưởng 1:', target: 'One major effect is that [ảnh hưởng 1 – mệnh đề].', vn: 'Một ảnh hưởng chính là [ảnh hưởng 1 – mệnh đề].'},
+                {cue: '[DÀN Ý 05 - CHỈ ẢNH HƯỞNG]<br>2. THÂN BÀI<br>Thân bài 2 - Câu dẫn ảnh hưởng 2:', target: 'Another serious impact is that [ảnh hưởng 2 – mệnh đề].', vn: 'Một tác động nghiêm trọng khác là [ảnh hưởng 2 – mệnh đề].'},
+                {cue: '[DÀN Ý 05 - CHỈ ẢNH HƯỞNG]<br>2. THÂN BÀI<br>Thân bài 3 - Câu dẫn ảnh hưởng 3:', target: 'A further consequence is that [ảnh hưởng 3 – mệnh đề].', vn: 'Một hậu quả nữa là [ảnh hưởng 3 – mệnh đề].'},
+                {cue: '[DÀN Ý 05 - CHỈ ẢNH HƯỞNG]<br>3. KẾT BÀI<br>Viết câu tóm tắt ảnh hưởng:', target: 'In conclusion, [chủ đề – danh từ/cụm danh từ] can lead to several negative effects on both individuals and society.', vn: 'Tóm lại, [chủ đề – danh từ/cụm danh từ] có thể dẫn đến một vài ảnh hưởng tiêu cực lên cả cá nhân và xã hội.'},
+                {cue: '[DÀN Ý 05 - CHỈ ẢNH HƯỞNG]<br>3. KẾT BÀI<br>Viết câu khẳng định mức độ tác động:', target: 'These effects can influence different areas of life.', vn: 'Những ảnh hưởng này có thể tác động đến các lĩnh vực khác nhau của đời sống.'},
+                {cue: '[DÀN Ý 05 - CHỈ ẢNH HƯỞNG]<br>3. KẾT BÀI<br>Viết câu chốt lại lời khuyên:', target: 'Therefore, it is important to pay more attention to this issue.', vn: 'Vì vậy, điều quan trọng là phải quan tâm nhiều hơn đến vấn đề này.'}
             ]
         },
         {
@@ -698,15 +756,15 @@ const recitationOutlines = {
             outlineName: 'DÀN Ý 06 - CHỈ GIẢI PHÁP',
             shortName: 'Dàn ý 06: Chỉ Giải pháp',
             questions: [
-                {cue: '[DÀN Ý 06 - CHỈ GIẢI PHÁP]<br>1. MỞ BÀI<br>Viết câu dẫn dắt chủ đề:', target: 'In recent years, [chủ đề] has become increasingly important in modern society.', vn: 'Trong những năm gần đây, [chủ đề] đã trở nên ngày càng quan trọng trong xã hội hiện đại.'},
-                {cue: '[DÀN Ý 06 - CHỈ GIẢI PHÁP]<br>1. MỞ BÀI<br>Viết câu nêu tính cấp thiết:', target: 'Many people believe that more effective actions are needed in this area.', vn: 'Nhiều người tin rằng cần có những hành động hiệu quả hơn trong lĩnh vực này.'},
-                {cue: '[DÀN Ý 06 - CHỈ GIẢI PHÁP]<br>1. MỞ BÀI<br>Viết câu giới thiệu mục đích bài viết:', target: 'This essay will suggest several practical measures to improve the situation.', vn: 'Bài viết này sẽ đề xuất một vài biện pháp thực tế để cải thiện tình hình.'},
-                {cue: '[DÀN Ý 06 - CHỈ GIẢI PHÁP]<br>2. THÂN BÀI<br>Thân bài 1 - Giải pháp 1:', target: 'One effective solution is to [giải pháp 1].', vn: 'Một giải pháp hiệu quả là [giải pháp 1].'},
-                {cue: '[DÀN Ý 06 - CHỈ GIẢI PHÁP]<br>2. THÂN BÀI<br>Thân bài 2 - Giải pháp 2:', target: 'Another possible measure is to [giải pháp 2].', vn: 'Một biện pháp khả thi khác là [giải pháp 2].'},
-                {cue: '[DÀN Ý 06 - CHỈ GIẢI PHÁP]<br>2. THÂN BÀI<br>Thân bài 3 - Giải pháp 3:', target: 'A further approach is to [giải pháp 3].', vn: 'Một hướng tiếp cận nữa là [giải pháp 3].'},
-                {cue: '[DÀN Ý 06 - CHỈ GIẢI PHÁP]<br>3. KẾT BÀI<br>Viết câu tóm tắt giải pháp:', target: 'In conclusion, several practical measures can help improve this situation effectively.', vn: 'Tóm lại, một vài biện pháp thực tế có thể giúp cải thiện tình hình này một cách hiệu quả.'},
-                {cue: '[DÀN Ý 06 - CHỈ GIẢI PHÁP]<br>3. KẾT BÀI<br>Viết câu dự báo kết quả:', target: 'These solutions can bring positive changes for both individuals and society.', vn: 'Những giải pháp này có thể mang lại thay đổi tích cực cho cả cá nhân và xã hội.'},
-                {cue: '[DÀN Ý 06 - CHỈ GIẢI PHÁP]<br>3. KẾT BÀI<br>Viết câu chốt lại lời khuyên:', target: 'Therefore, it is important to take suitable actions in the future.', vn: 'Vì vậy, việc đưa ra các hành động phù hợp trong tương lai là điều quan trọng.'}
+                {cue: '[DÀN Ý 06 - CHỈ GIẢI PHÁP]<br>1. MỞ BÀI<br>Viết câu dẫn dắt chủ đề:', target: 'In recent years, [chủ đề – danh từ/cụm danh từ] has become a growing concern in many parts of the world.', vn: 'Trong những năm gần đây, [chủ đề – danh từ/cụm danh từ] đã trở thành một mối lo ngại ngày càng tăng ở nhiều nơi trên thế giới.'},
+                {cue: '[DÀN Ý 06 - CHỈ GIẢI PHÁP]<br>1. MỞ BÀI<br>Viết câu nêu mức độ ảnh hưởng:', target: 'This problem affects both individuals and society in different ways.', vn: 'Vấn đề này ảnh hưởng đến cả cá nhân và xã hội theo nhiều cách khác nhau.'},
+                {cue: '[DÀN Ý 06 - CHỈ GIẢI PHÁP]<br>1. MỞ BÀI<br>Viết câu giới thiệu mục đích bài viết:', target: 'This essay will suggest several practical solutions to this problem.', vn: 'Bài viết này sẽ đề xuất một vài giải pháp thực tế cho vấn đề này.'},
+                {cue: '[DÀN Ý 06 - CHỈ GIẢI PHÁP]<br>2. THÂN BÀI<br>Thân bài 1 - Giải pháp 1:', target: 'One effective solution is to [giải pháp 1 – Vo].', vn: 'Một giải pháp hiệu quả là [giải pháp 1 – Vo].'},
+                {cue: '[DÀN Ý 06 - CHỈ GIẢI PHÁP]<br>2. THÂN BÀI<br>Thân bài 2 - Giải pháp 2:', target: 'Another possible measure is to [giải pháp 2 – Vo].', vn: 'Một biện pháp khả thi khác là [giải pháp 2 – Vo].'},
+                {cue: '[DÀN Ý 06 - CHỈ GIẢI PHÁP]<br>2. THÂN BÀI<br>Thân bài 3 - Giải pháp 3:', target: 'A further approach is to [giải pháp 3 – Vo].', vn: 'Một hướng tiếp cận nữa là [giải pháp 3 – Vo].'},
+                {cue: '[DÀN Ý 06 - CHỈ GIẢI PHÁP]<br>3. KẾT BÀI<br>Viết câu tóm tắt giải pháp:', target: 'In conclusion, several practical solutions can help address this problem.', vn: 'Tóm lại, một vài giải pháp thực tế có thể giúp giải quyết vấn đề này.'},
+                {cue: '[DÀN Ý 06 - CHỈ GIẢI PHÁP]<br>3. KẾT BÀI<br>Viết câu đề xuất áp dụng:', target: 'By applying suitable measures, people can help improve the situation in the future.', vn: 'Bằng cách áp dụng các biện pháp phù hợp, mọi người có thể giúp cải thiện tình hình trong tương lai.'},
+                {cue: '[DÀN Ý 06 - CHỈ GIẢI PHÁP]<br>3. KẾT BÀI<br>Viết câu chốt lại vấn đề:', target: 'These efforts can bring positive changes to both individuals and society.', vn: 'Những nỗ lực này có thể mang lại những thay đổi tích cực cho cả cá nhân và xã hội.'}
             ]
         }
     ],
@@ -1806,7 +1864,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const loginPassword = document.getElementById('loginPassword');
     const loginError = document.getElementById('loginError');
 
-    const REQUIRED_PASSWORD = 'PRACTICEWRITING';
+    const REQUIRED_PASSWORD = 'STUDYHARD';
     const ALLOWED_CLASSES = ['CB206', 'CB210'];
 
     const STUDENTS_BY_CLASS = {
