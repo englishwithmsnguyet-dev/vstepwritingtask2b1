@@ -1276,8 +1276,11 @@ function markEssayCompleted(id) {
 
 function updateGlobalProgress() {
     const completed = getCompletedEssays();
-    const total = 4;
-    const count = completed.length;
+    const userClass = getUserClass();
+    const isCB210 = (userClass === 'CB210');
+    const total = isCB210 ? 2 : 4;
+    const validCompleted = isCB210 ? completed.filter(id => id === 'adv-disadv' || id === 'cause-effect') : completed;
+    const count = validCompleted.length;
     const percent = Math.round((count / total) * 100);
 
     // Update Sidebar progress
@@ -1298,7 +1301,9 @@ function updateGlobalProgress() {
         if (count === 0) {
             dashStatus.textContent = "Chưa hoàn thành dạng bài nào. Hãy bắt đầu học tập!";
         } else if (count === total) {
-            dashStatus.textContent = "🎉 TUYỆT VỜI! Bạn đã xuất sắc chinh phục tất cả 4 dạng luận VSTEP Writing Task 02!";
+            dashStatus.textContent = isCB210
+                ? "🎉 TUYỆT VỜI! Bạn đã xuất sắc hoàn thành Dạng 01 & Dạng 02 VSTEP Writing Task 02!"
+                : "🎉 TUYỆT VỜI! Bạn đã xuất sắc chinh phục tất cả 4 dạng luận VSTEP Writing Task 02!";
         } else {
             dashStatus.textContent = `Đã chinh phục ${count}/${total} dạng bài. Hãy tiếp tục nhiệm vụ tiếp theo!`;
         }
@@ -1731,6 +1736,52 @@ function showWelcomeScreen() {
     }
 }
 
+
+// User Class & Permission Helpers
+function getUserClass() {
+    try {
+        const saved = JSON.parse(localStorage.getItem('vstep_student_info'));
+        if (saved && saved.className) return saved.className.toUpperCase();
+    } catch (e) {}
+    return (sessionStorage.getItem('current_user_class') || '').toUpperCase();
+}
+
+function isTypeLocked(typeId) {
+    const userClass = getUserClass();
+    if (userClass === 'CB210') {
+        return (typeId === 'opinion' || typeId === 'discussion');
+    }
+    return false;
+}
+
+// Toast Notification
+let toastNoticeTimeout = null;
+function showToast(message, type = 'warning') {
+    let container = document.getElementById('toastContainer');
+    if (!container) {
+        container = document.createElement('div');
+        container.id = 'toastContainer';
+        container.className = 'toast-container';
+        document.body.appendChild(container);
+    }
+    
+    const toast = document.createElement('div');
+    toast.className = `app-toast toast-${type}`;
+    let icon = '<i class="fa-solid fa-triangle-exclamation"></i>';
+    if (type === 'success') icon = '<i class="fa-solid fa-circle-check"></i>';
+    if (type === 'danger' || type === 'lock') icon = '<i class="fa-solid fa-lock"></i>';
+    
+    toast.innerHTML = `${icon}<span>${message}</span>`;
+    
+    container.appendChild(toast);
+    setTimeout(() => toast.classList.add('show'), 10);
+    
+    setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => toast.remove(), 300);
+    }, 3500);
+}
+
 // Render Navigation
 function renderNav() {
     if (!essayNav) return;
@@ -1753,19 +1804,34 @@ function renderNav() {
 
     essayTypes.forEach(type => {
         const isCompleted = completed.includes(type.id);
+        const locked = isTypeLocked(type.id);
         const navItem = document.createElement('div');
-        navItem.className = 'nav-item';
+        navItem.className = 'nav-item' + (locked ? ' is-locked' : '');
         navItem.dataset.id = type.id;
+        
+        let statusBadge = '';
+        if (locked) {
+            statusBadge = '<span class="nav-lock-badge" title="Dạng luận này tạm thời chưa mở cho lớp CB210"><i class="fa-solid fa-lock"></i> Khoá</span>';
+        } else if (isCompleted) {
+            statusBadge = '<span class="nav-completed-badge" title="Đã chinh phục"><i class="fa-solid fa-circle-check"></i></span>';
+        }
+
         navItem.innerHTML = `
-            <i class="fa-solid ${type.icon}"></i>
+            <i class="fa-solid ${locked ? 'fa-lock' : type.icon}"></i>
             <div class="nav-text">
                 <div class="nav-title-en">${type.titleEn}</div>
                 <div class="nav-title-vi">${type.titleVi}</div>
             </div>
-            ${isCompleted ? '<span class="nav-completed-badge" title="Đã chinh phục"><i class="fa-solid fa-circle-check"></i></span>' : ''}
+            ${statusBadge}
         `;
         
-        navItem.addEventListener('click', () => selectEssayType(type.id));
+        navItem.addEventListener('click', () => {
+            if (isTypeLocked(type.id)) {
+                showToast('🔒 Dạng luận này tạm thời chưa mở cho lớp CB210. Lớp hiện mở Dạng 01 và Dạng 02!', 'warning');
+                return;
+            }
+            selectEssayType(type.id);
+        });
         essayNav.appendChild(navItem);
     });
 }
@@ -1773,6 +1839,10 @@ function renderNav() {
 
 // Select an Essay Type
 function selectEssayType(id) {
+    if (isTypeLocked(id)) {
+        showToast('🔒 Dạng luận này tạm thời chưa mở cho lớp CB210. Lớp hiện mở Dạng 01 và Dạng 02!', 'warning');
+        return;
+    }
     activeEssayTypeId = id;
     
     // Update active nav
@@ -1992,6 +2062,7 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const studentInfo = { fullName: finalFullName, className };
             localStorage.setItem('vstep_student_info', JSON.stringify(studentInfo));
+            sessionStorage.setItem('current_user_class', className);
             sessionStorage.setItem('vstep_authenticated', 'true');
         } catch (e) {}
 
@@ -2017,6 +2088,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 loginBtn.textContent = 'BẮT ĐẦU HỌC NGAY';
                 loginBtn.disabled = false;
             }
+            if (isTypeLocked(activeEssayTypeId)) {
+                showWelcomeScreen();
+            }
+            renderNav();
+            updateGlobalProgress();
         });
     }
 
@@ -2036,6 +2112,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     // -------------------
     // Render navigation
+    if (isTypeLocked(activeEssayTypeId)) {
+        activeEssayTypeId = 'adv-disadv';
+    }
     renderNav();
 
     // Update global progress on load
