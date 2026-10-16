@@ -1935,7 +1935,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const loginError = document.getElementById('loginError');
 
     const REQUIRED_PASSWORD = 'STUDYHARD';
-    const ALLOWED_CLASSES = ['CB206', 'CB210'];
+    const ALLOWED_CLASSES = ['CB206', 'CB210', 'CB211'];
 
     const STUDENTS_BY_CLASS = {
         'CB206': [
@@ -1970,6 +1970,15 @@ document.addEventListener('DOMContentLoaded', () => {
             "Đặng Thị Kim Thoa",
             "Trần Thị Tiên Tiên",
             "Lê Kim Tuyền"
+        ],
+        'CB211': [
+            "Hồ Anh Quân",
+            "Lê Thành Nghiệp",
+            "Lê Khánh Lâm",
+            "Huỳnh Thị Ngọc Thắm",
+            "Mai Trần Xuân Mai",
+            "Lê Thị Uyển Nhi",
+            "Nguyễn Thụy Thanh Trúc"
         ]
     };
 
@@ -2021,7 +2030,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!isTeacher) {
             // Student validation:
             if (!ALLOWED_CLASSES.includes(className)) {
-                if (loginError) loginError.textContent = 'Lớp học không hợp lệ. Chỉ nhận lớp CB206 hoặc CB210.';
+                if (loginError) loginError.textContent = 'Lớp học không hợp lệ. Chỉ nhận lớp CB206, CB210 hoặc CB211.';
                 if (loginClass) loginClass.focus();
                 return;
             }
