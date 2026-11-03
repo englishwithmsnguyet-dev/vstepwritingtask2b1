@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WRITING TASK 02 - B1 LEVEL</title>
-    <link rel="stylesheet" href="style.css?v=4.1">
+    <link rel="stylesheet" href="style.css?v=4.2">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <script>
         window.onerror = function(msg, url, line, col, error) {
@@ -48,11 +48,17 @@
         <!-- Sidebar -->
         <aside class="sidebar">
             <div class="sidebar-header">
-                <div class="logo">
-                    <i class="fa-solid fa-pen-nib"></i>
-                </div>
-                <h2>VSTEP WRITING</h2>
-                <p>TASK 02 - WRITING AN ESSAY</p>
+                <a href="https://www.facebook.com/nguyetpham28" target="_blank" rel="noopener noreferrer" class="sidebar-brand-box" title="Ghé thăm Facebook: English with Miss Nguyet">
+                    <div class="sidebar-avatar-wrap">
+                        <img src="miss_nguyet.jpg" alt="Miss Nguyet" class="brand-avatar">
+                        <span class="online-indicator" title="Miss Nguyet Online"></span>
+                    </div>
+                    <div class="brand-info-wrap">
+                        <div class="brand-title">VSTEP WRITING TASK 02</div>
+                        <div class="brand-sub">ENGLISH WITH MISS NGUYET</div>
+                        <div class="brand-badge-pill"><i class="fa-solid fa-certificate"></i> B1 LEVEL</div>
+                    </div>
+                </a>
             </div>
             
             <!-- Sidebar Progress Tracking -->
@@ -278,23 +284,68 @@
 
     <!-- Login Overlay -->
     <div id="loginOverlay" class="login-overlay">
-        <div class="login-card">
-            <div class="login-icon">
-                <i class="fa-solid fa-pen"></i>
+        <div class="login-card-custom">
+            <!-- Miss Nguyet Avatar Brand Ring -->
+            <div class="login-teacher-avatar-wrap">
+                <div class="login-teacher-halo">
+                    <img src="miss_nguyet.jpg" alt="Miss Nguyet" class="login-teacher-avatar">
+                </div>
+                <span class="login-teacher-badge">
+                    <i class="fa-solid fa-certificate"></i> LEAD INSTRUCTOR
+                </span>
             </div>
-            <h2 class="login-title">CHÀO MỪNG BẠN ĐẾN VỚI LỚP HỌC CỦA MISS NGUYET</h2>
-            <p class="login-subtitle">Vui lòng điền Họ tên và Lớp học của bạn để bắt đầu học. Kết quả luyện tập sẽ được ghi nhận và gửi báo cáo cho giáo viên.</p>
+
+            <div class="login-brand-tag">
+                <i class="fa-solid fa-graduation-cap"></i> Welcome to Miss Nguyet's Class!
+            </div>
+            <div class="login-course-title">VSTEP WRITING TASK 02 – B1 LEVEL</div>
+            <h2 class="login-title-custom">NHẬP THÔNG TIN<br>ĐỂ BẮT ĐẦU HỌC 🚀</h2>
             
-            <div class="login-form">
-                <input type="text" id="loginFullName" placeholder="HỌ VÀ TÊN" autocomplete="off">
-                <input type="text" id="loginClass" placeholder="LỚP HỌC" autocomplete="off">
-                <input type="password" id="loginPassword" placeholder="MẬT KHẨU" autocomplete="off">
-                <p id="loginError" class="login-error"></p>
-                <button id="loginBtn" class="login-btn">BẮT ĐẦU HỌC NGAY</button>
+            <div class="input-group-custom">
+                <label for="loginFullName">
+                    <i class="fa-solid fa-user-pen" style="color: #6366f1;"></i> HỌ VÀ TÊN HỌC VIÊN:
+                </label>
+                <input autocomplete="off" id="loginFullName" type="text" placeholder="Nhập họ và tên học viên..." spellcheck="false">
+            </div>
+            
+            <div class="input-group-custom">
+                <label for="loginClass">
+                    <i class="fa-solid fa-chalkboard-user" style="color: #0284c7;"></i> MÃ LỚP HỌC:
+                </label>
+                <input autocomplete="off" id="loginClass" type="text" placeholder="Nhập mã lớp học..." spellcheck="false">
+            </div>
+
+            <div class="input-group-custom">
+                <label for="loginPassword">
+                    <i class="fa-solid fa-key" style="color: #eab308;"></i> MẬT KHẨU TRUY CẬP:
+                </label>
+                <div class="login-password-wrap">
+                    <input autocomplete="off" id="loginPassword" type="password" placeholder="Nhập mật khẩu..." spellcheck="false">
+                    <button type="button" class="btn-toggle-pwd" id="btnTogglePwd" title="Hiện/Ẩn mật khẩu" aria-label="Hiện/Ẩn mật khẩu">
+                        <svg id="togglePwdIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <p id="loginError" class="login-error-custom"></p>
+            
+            <button class="btn-login-custom" id="loginBtn">
+                <span>BẮT ĐẦU HỌC</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+            <div class="login-footer-signature">
+                <a href="https://www.facebook.com/nguyetpham28" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-facebook" style="color: #1877f2;"></i>
+                    <span>ENGLISH WITH MISS NGUYET</span>
+                </a>
             </div>
         </div>
     </div>
 
-    <script src="app.js?v=4.1"></script>
+    <script src="app.js?v=4.2"></script>
 </body>
 </html>
