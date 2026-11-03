@@ -478,12 +478,16 @@ identifyingSigns: `
         titleVi: 'Trình Bày Quan Điểm',
         basicInfo: `
             <div class="content-block">
-                <h3>Mục đích</h3>
-                <p>Trình bày quan điểm cá nhân về một vấn đề xã hội và bảo vệ quan điểm đó bằng các lập luận thuyết phục.</p>
+                <h3>Yêu cầu chính</h3>
+                <p>Trình bày quan điểm cá nhân về một vấn đề xã hội và bảo vệ quan điểm đó bằng các <strong>lập luận thuyết phục</strong>.</p>
             </div>
             <div class="content-block">
                 <h3>Đặc điểm của dạng bài</h3>
-                <p>Thí sinh cần lựa chọn một lập trường rõ ràng như <strong>hoàn toàn đồng ý</strong> hoặc <strong>hoàn toàn không đồng ý</strong> với ý kiến được đưa ra. Bài viết cần có hệ thống lập luận mạch lạc, logic và nhất quán xuyên suốt.</p>
+                <ul>
+                    <li>Thí sinh cần lựa chọn một lập trường rõ ràng như <strong>hoàn toàn đồng ý</strong> hoặc <strong>hoàn toàn không đồng ý</strong> với ý kiến được đưa ra <em>(trong một số trường hợp, người viết cũng có thể đồng ý hoặc không đồng ý ở một mức độ nhất định)</em>.</li>
+                    <li>Bài viết cần có hệ thống lập luận mạch lạc, logic và nhất quán xuyên suốt. Các lý lẽ đưa ra nên được phát triển bằng <strong>giải thích, ví dụ hoặc dẫn chứng phù hợp</strong> để tăng tính thuyết phục và thể hiện khả năng lập luận học thuật.</li>
+                </ul>
+                <p><em><i class="fa-solid fa-thumbtack"></i> <strong>LƯU Ý:</strong> OPINION ESSAY không yêu cầu người viết giữ quan điểm trung lập. Người viết cần thể hiện rõ lập trường cá nhân ở phần mở bài, duy trì và bảo vệ quan điểm đó bằng các lý lẽ và ví dụ phù hợp trong thân bài, đồng thời khẳng định lại lập trường ở phần kết bài để đảm bảo tính nhất quán xuyên suốt bài viết.</em></p>
             </div>
         `,
         identifyingSigns: `
@@ -502,97 +506,214 @@ identifyingSigns: `
         detailedOutline: `
             <div class="outline-step">
                 <h4>1. MỞ BÀI</h4>
-                <p>↳ <span class="outline-phrase">In recent years, the idea that [quan điểm trong đề bài – mệnh đề] has become a common topic of discussion. From my perspective, I completely agree / disagree with this opinion for several important reasons. This essay will present the main arguments supporting my viewpoint.</span></p>
+                <p>↳ <span class="outline-phrase">Nowadays, the idea that [quan điểm trong đề bài – mệnh đề] has become a common topic of discussion. From my perspective, I completely agree / disagree with this opinion for several important reasons. This essay will present the main arguments supporting my viewpoint.</span></p>
             </div>
             <div class="outline-step">
                 <h4>2. THÂN BÀI</h4>
                 <p><strong>THÂN BÀI 1</strong></p>
-                <p>↳ <span class="outline-phrase">The first reason why I agree / disagree with this opinion is that [lý do 1 – mệnh đề].</span> → Giải thích và phát triển lý do bằng các lập luận, ví dụ phù hợp.</p>
+                <p>↳ <span class="outline-phrase">The first reason why I agree / disagree with this opinion is that [lý do 1 – mệnh đề].</span> &rarr; Giải thích và phát triển lý do bằng các lập luận, ví dụ hoặc dẫn chứng phù hợp (khoảng 3-4 câu).</p>
                 <p><strong>THÂN BÀI 2</strong></p>
-                <p>↳ <span class="outline-phrase">Another important reason is that [lý do 2 – mệnh đề].</span> → Tiếp tục phân tích và mở rộng ý.</p>
+                <p>↳ <span class="outline-phrase">Another important reason is that [lý do 2 – mệnh đề].</span> &rarr; Tiếp tục phân tích và mở rộng ý bằng giải thích hoặc ví dụ cụ thể (khoảng 3-4 câu).</p>
                 <p><strong>THÂN BÀI 3</strong></p>
-                <p>↳ <span class="outline-phrase">A further reason supporting my viewpoint is that [lý do 3 – mệnh đề].</span> → Phát triển lý do cuối cùng và nhấn mạnh tác động.</p>
+                <p>↳ <span class="outline-phrase">A further reason supporting my viewpoint is that [lý do 3 – mệnh đề].</span> &rarr; Phát triển lý do cuối cùng và nhấn mạnh tác động hoặc ý nghĩa của vấn đề (khoảng 3-4 câu).</p>
+                
+                <div style="background: #f8fafc; border-left: 4px solid var(--primary-color); padding: 12px 16px; margin: 15px 0; border-radius: 0 8px 8px 0;">
+                    <h5 style="color: var(--primary-color); margin-bottom: 8px; font-size: 0.95rem;"><i class="fa-solid fa-lightbulb"></i> LƯU Ý - CÔNG THỨC 3 BƯỚC PHÁT TRIỂN ĐOẠN VĂN:</h5>
+                    <p style="margin-bottom: 6px; font-size: 0.9rem;">Sau câu nêu lý do (Topic Sentence), học viên có thể phát triển đoạn văn theo công thức 3 bước:</p>
+                    <ul style="margin: 0; padding-left: 20px; font-size: 0.9rem; line-height: 1.6;">
+                        <li><strong>Bước 1 - Giải thích lý do:</strong> Dùng <em>This is because...</em> hoặc <em>In fact,...</em> / <em>To be specific,…</em></li>
+                        <li><strong>Bước 2 - Đưa ví dụ minh họa:</strong> Dùng <em>For example,...</em> hoặc <em>For instance,...</em></li>
+                        <li><strong>Bước 3 - Nêu kết quả / tác động:</strong> Dùng <em>As a result,...</em> hoặc <em>Therefore,...</em></li>
+                    </ul>
+                    <p style="margin-top: 8px; font-size: 0.85rem; color: #64748b; font-style: italic;">(Lưu ý: Học viên có thể chọn viết 2 hoặc 3 thân bài tùy theo lượng ý tưởng và thời gian làm bài).</p>
+                </div>
             </div>
             <div class="outline-step">
                 <h4>3. KẾT BÀI</h4>
-                <p>↳ <span class="outline-phrase">In conclusion, I strongly agree / disagree with the idea that [quan điểm trong đề bài – mệnh đề]. The reasons above clearly explain why I support / oppose this viewpoint. Therefore, people should think about this opinion carefully in modern society.</span></p>
+                <p>↳ <span class="outline-phrase">In conclusion, I strongly agree / disagree with the idea that [quan điểm trong đề bài – mệnh đề]. The reasons above clearly explain why I support / oppose this viewpoint. Therefore, it is essential that [đối tượng] take this matter into consideration.</span></p>
             </div>
         `,
         sampleWriting: `
             <div class="content-block">
                 <h3>BÀI VIẾT MẪU (SAMPLE ESSAY - B1 LEVEL)</h3>
                 <div class="prompt-box" style="margin-bottom: 15px; margin-top: 15px;">
-                    <p><strong>ĐỀ BÀI:</strong> In today’s modern society, many families can afford to hire domestic helpers or rely on convenient services for meals and housework. As a result, some people believe that children, especially girls, no longer need to learn how to cook or do household chores.<br><br><strong>To what extent do you agree or disagree with this opinion?</strong></p>
+                    <p><strong>ĐỀ BÀI:</strong> In today’s modern society, many families can afford to hire domestic helpers or rely on convenient services for meals and housework. As a result, some people believe that children, especially girls, no longer need to learn how to cook or do household chores.<br><br><strong>To what extent do you agree or disagree with this opinion? Write an essay to express your opinion. Give reasons for your answer and include relevant examples from your own knowledge or experience. You should write at least 250 words. Your response will be evaluated in terms of Task fulfillment, Organization, Vocabulary, and Grammar.</strong></p>
                 </div>
                 <div class="sample-letter-box">
-                    In recent years, the idea that <strong>children, especially girls, no longer need to learn how to cook or do household chores</strong> has become a common topic of discussion. From my perspective, I completely <strong>disagree</strong> with this opinion for several important reasons. This essay will present the main arguments supporting my viewpoint.<br><br>
-                    The first reason why I <strong>disagree</strong> with this opinion is that <strong>learning household chores helps children develop important life skills</strong>. This is because cooking, cleaning, and organizing personal things are useful skills in daily life. If children do not learn to do these tasks at an early age, they may depend too much on other people in the future. As a result, if they have these basic skills, they can become more independent and better prepared for adult life.<br><br>
-                    Another important reason is that <strong>household chores can strengthen family relationships and encourage children to become more responsible</strong>. When children help their parents with cooking or cleaning, they can learn to share family duties. This can make family members understand and support each other better. As a result, children who often do housework may have closer relationships with their parents. They can also develop a stronger sense of responsibility from a young age.<br><br>
-                    A further reason supporting my viewpoint is that <strong>both boys and girls should learn household chores to promote gender equality</strong>. In modern society, housework should not be only the responsibility of women. Teaching both boys and girls to cook and clean can help reduce old ideas about gender roles. Therefore, children can learn that both men and women should share responsibilities in the family.<br><br>
-                    In conclusion, I strongly <strong>disagree</strong> with the idea that <strong>household chores are no longer necessary for children in modern society</strong>. The reasons above clearly explain why I oppose this viewpoint. Therefore, people should think about this opinion carefully in modern society.
+                    Nowadays, the idea that <strong>children, especially girls, no longer need to learn how to cook or do household chores</strong> has become a common topic of discussion. From my perspective, I completely <strong>disagree</strong> with this opinion for several important reasons. <strong>This essay will present the main arguments supporting my viewpoint.</strong><br><br>
+                    The first reason why I <strong>disagree</strong> with this opinion is that <strong>learning household chores helps children develop important life skills</strong>. <em>This is because cooking, cleaning, and organizing personal things are useful skills in daily life. If children do not learn to do these tasks at an early age, they may depend too much on other people in the future. By learning these basic skills, they can become more independent and better prepared for adult life.</em><br><br>
+                    Another important reason is that <strong>household chores can strengthen family relationships and encourage children to become more responsible</strong>. <em>When children help their parents with cooking or cleaning, they can learn to share family duties. This can make family members understand and support each other better. As a result, children who often do housework may have closer relationships with their parents. They can also develop a stronger sense of responsibility from a young age.</em><br><br>
+                    A further reason supporting my viewpoint is that <strong>both boys and girls should learn household chores to promote gender equality</strong>. <em>In modern society, housework should not be only the responsibility of women. Teaching both boys and girls to cook and clean can help reduce old ideas about gender roles. Therefore, children can learn that both men and women should share responsibilities in the family.</em><br><br>
+                    In conclusion, I strongly <strong>disagree</strong> with the idea that <strong>household chores are no longer necessary for children in modern society</strong>. The reasons above clearly explain why I oppose this viewpoint. <strong>Therefore, it is essential that parents encourage both sons and daughters to share household chores from an early age.</strong>
+                </div>
+
+                <!-- Practice & Idea Guide Section -->
+                <div class="practice-box" style="margin-top: 30px; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 20px;">
+                    <h4 style="color: var(--primary-color); margin-bottom: 15px;"><i class="fa-solid fa-pen-to-square"></i> BÀI TẬP VẬN DỤNG & GỢI Ý Ý TƯỞNG (PRACTICE)</h4>
+                    <div class="prompt-box" style="margin-bottom: 15px;">
+                        <p><strong>ĐỀ BÀI LUYỆN TẬP:</strong> Artificial intelligence plays an increasingly important role in human life, influencing the way people work, study, and communicate. Therefore, many people believe that the development of artificial intelligence brings significant benefits to society.<br><br><strong>To what extent do you agree or disagree with this opinion? Write an essay to express your opinion. Give reasons for your answer and include relevant examples from your own knowledge or experience. You should write at least 250 words.</strong></p>
+                    </div>
+
+                    <div style="margin-bottom: 15px; background: #f8fafc; border-left: 4px solid #3b82f6; padding: 12px 16px; border-radius: 0 8px 8px 0;">
+                        <h5 style="color: #1e40af; margin-bottom: 6px;">📌 PHÂN TÍCH ĐỀ:</h5>
+                        <ul style="margin: 0; padding-left: 20px; font-size: 0.95rem; line-height: 1.6;">
+                            <li><strong>Quan điểm gốc:</strong> The development of artificial intelligence brings significant benefits to society.</li>
+                            <li><strong>Diễn đạt lại:</strong> AI plays an increasingly important role and positively influences human life.</li>
+                            <li><strong>Đồng ý hay phản đối:</strong> Lựa chọn lập trường rõ ràng (Đồng ý hoặc Phản đối).</li>
+                        </ul>
+                    </div>
+
+                    <div style="background: #f8fafc; border-left: 4px solid #10b981; padding: 12px 16px; border-radius: 0 8px 8px 0;">
+                        <h5 style="color: #065f46; margin-bottom: 8px;">💡 GỢI Ý Ý TƯỞNG (NẾU ĐỒNG Ý):</h5>
+                        <div style="margin-bottom: 12px;">
+                            <strong style="color: var(--primary-color);">🔹 Lý do 1: Trí tuệ nhân tạo giúp nâng cao hiệu quả công việc</strong>
+                            <p style="margin: 4px 0 6px 0; font-size: 0.9rem;"><strong>Luận điểm:</strong> Trí tuệ nhân tạo có thể giúp con người làm việc nhanh hơn và hiệu quả hơn trong nhiều lĩnh vực.</p>
+                            <ul style="margin: 0; padding-left: 20px; font-size: 0.9rem; line-height: 1.5;">
+                                <li><em>Luận cứ 1:</em> Các hệ thống AI có thể xử lý dữ liệu và thực hiện những công việc lặp đi lặp lại với tốc độ rất cao.</li>
+                                <li><em>Luận cứ 2:</em> Điều này giúp người lao động giảm bớt khối lượng công việc và tiết kiệm nhiều thời gian trong quá trình làm việc.</li>
+                                <li><em>Luận cứ 3:</em> Ngoài ra, AI còn có thể hạn chế sai sót trong những công việc cần độ chính xác cao như quản lý dữ liệu hoặc kiểm tra thông tin.</li>
+                            </ul>
+                        </div>
+                        <div style="margin-bottom: 12px;">
+                            <strong style="color: var(--primary-color);">🔹 Lý do 2: Trí tuệ nhân tạo hỗ trợ giáo dục và chăm sóc sức khỏe</strong>
+                            <p style="margin: 4px 0 6px 0; font-size: 0.9rem;"><strong>Luận điểm:</strong> AI mang lại nhiều lợi ích quan trọng trong lĩnh vực giáo dục và y tế.</p>
+                            <ul style="margin: 0; padding-left: 20px; font-size: 0.9rem; line-height: 1.5;">
+                                <li><em>Luận cứ 1:</em> Trong giáo dục, AI có thể giúp người học tiếp cận tài liệu phù hợp với trình độ và nhu cầu cá nhân.</li>
+                                <li><em>Luận cứ 2:</em> Nhờ các ứng dụng học tập thông minh, học sinh có thể luyện tập nhiều hơn và cải thiện kỹ năng học tập hiệu quả hơn.</li>
+                                <li><em>Luận cứ 3:</em> Trong lĩnh vực y tế, AI có thể hỗ trợ bác sĩ phân tích dữ liệu, phát hiện bệnh sớm hơn và theo dõi tình trạng bệnh nhân tốt hơn.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong style="color: var(--primary-color);">🔹 Lý do 3: Trí tuệ nhân tạo giúp cuộc sống thuận tiện hơn</strong>
+                            <p style="margin: 4px 0 6px 0; font-size: 0.9rem;"><strong>Luận điểm:</strong> AI giúp con người có cuộc sống tiện lợi và thoải mái hơn trong sinh hoạt hằng ngày.</p>
+                            <ul style="margin: 0; padding-left: 20px; font-size: 0.9rem; line-height: 1.5;">
+                                <li><em>Luận cứ 1:</em> Nhiều thiết bị và ứng dụng sử dụng AI có thể hỗ trợ con người trong các hoạt động hằng ngày như tìm kiếm thông tin, học tập hoặc quản lý công việc.</li>
+                                <li><em>Luận cứ 2:</em> Các công nghệ thông minh cũng giúp người dùng tiết kiệm thời gian và công sức khi thực hiện nhiều nhiệm vụ khác nhau.</li>
+                                <li><em>Luận cứ 3:</em> Bên cạnh đó, AI có thể đưa ra các gợi ý cá nhân hóa dựa trên nhu cầu và sở thích của từng người, nên cuộc sống trở nên thuận tiện hơn.</li>
+                            </ul>
+                        </div>
+                        <p style="margin-top: 10px; font-size: 0.85rem; color: #dc2626; font-style: italic;">* LƯU Ý: Nếu phản đối quan điểm này thì chúng ta sẽ phân tích những tác động tiêu cực của AI nhé!</p>
+                    </div>
                 </div>
             </div>
         `
     },
     {
         id: 'discussion',
-        icon: 'fa-users-viewfinder',
+        icon: 'fa-comments',
         titleEn: 'DISCUSSION',
         titleVi: 'Thảo Luận 2 Chiều',
         basicInfo: `
             <div class="content-block">
-                <h3>Mục đích</h3>
-                <p>Phân tích một vấn đề dưới góc nhìn của hai quan điểm hoặc hai lập trường trái chiều, sau đó nêu rõ quan điểm cá nhân nếu đề bài có yêu cầu.</p>
+                <h3>Yêu cầu chính</h3>
+                <p>Phân tích một vấn đề dưới góc nhìn của <strong>hai quan điểm hoặc hai lập trường trái chiều</strong>, sau đó:</p>
+                <ul>
+                    <li>Nêu rõ quan điểm cá nhân nếu đề bài có yêu cầu.</li>
+                    <li>Hoặc tổng hợp và đánh giá hai phía một cách khách quan nếu đề bài không yêu cầu ý kiến riêng.</li>
+                </ul>
             </div>
             <div class="content-block">
                 <h3>Đặc điểm của dạng bài</h3>
-                <p>Người viết cần trình bày lập luận cho cả hai phía một cách tương đối cân bằng và hợp lý. Bài viết cần có bố cục rõ ràng, hệ thống lập luận logic. <strong>Không nên thiên vị quá mức cho một phía</strong> trong phần phân tích hai quan điểm đối lập.</p>
+                <ul>
+                    <li>Người viết cần phân tích cả hai quan điểm một cách cân bằng, với các lập luận rõ ràng, hợp lý và được hỗ trợ bằng giải thích hoặc ví dụ phù hợp.</li>
+                    <li>Bài viết cần có bố cục mạch lạc, các ý được liên kết chặt chẽ và duy trì văn phong khách quan, tránh thiên vị quá mức cho một phía.</li>
+                </ul>
+                <p><em><i class="fa-solid fa-thumbtack"></i> <strong>LƯU Ý:</strong> DISCUSSION ESSAY yêu cầu người viết phân tích và phát triển cả hai quan điểm trước khi đưa ra kết luận. Nếu đề bài yêu cầu nêu quan điểm cá nhân, ý kiến của người viết nên được thể hiện rõ ràng và hợp lý, thường ở phần kết bài hoặc xuyên suốt bài viết một cách cân bằng. Người viết không nên chỉ tập trung phát triển một phía vì điều này có thể làm mất tính cân bằng của bài luận.</em></p>
             </div>
         `,
         identifyingSigns: `
             <div class="content-block">
-                <h3>Các cấu trúc thể hiện hai quan điểm hoặc hai lập trường trái chiều:</h3>
+                <h3>Dấu hiệu nhận biết dạng Discussion Essay:</h3>
+                <p>Dạng DISCUSSION ESSAY thường được nhận diện qua các cấu trúc thể hiện hai quan điểm hoặc hai lập trường trái chiều, chẳng hạn:</p>
                 <ul>
-                    <li>Discuss both views and give your opinion.</li>
-                    <li>Discuss both sides and state your own view.</li>
-                    <li>Some people believe that... while others think that...</li>
-                    <li>There are different views about…</li>
-                    <li>While some think that…, others feel that…</li>
-                    <li>Some people argue that… while others believe that…</li>
+                    <li>Some people believe that... while others think that... Discuss both views and give your opinion.</li>
+                    <li>While some think that…, others feel that… Discuss both sides and state your own view.</li>
+                    <li>Some people argue that… while others believe that… Discuss both sides and give your own opinion.</li>
                 </ul>
-                <p><em><i class="fa-solid fa-thumbtack"></i> LƯU Ý: Khi đề bài xuất hiện hai quan điểm hoặc hai cách nhìn đối lập về cùng một vấn đề, đó thường là dấu hiệu đặc trưng của dạng DISCUSSION ESSAY. Người viết cần phân tích và phát triển cả hai phía trước khi đưa ra kết luận hoặc quan điểm cá nhân.</em></p>
+                <p><em><i class="fa-solid fa-thumbtack"></i> <strong>LƯU Ý:</strong> Khi đề bài xuất hiện hai quan điểm hoặc hai cách nhìn đối lập về cùng một vấn đề, đó thường là dấu hiệu đặc trưng của dạng DISCUSSION ESSAY. Người viết cần phân tích và phát triển cả hai phía trước khi đưa ra kết luận hoặc quan điểm cá nhân.</em></p>
             </div>
         `,
         detailedOutline: `
             <div class="outline-step">
                 <h4>1. MỞ BÀI</h4>
-                <p>↳ <span class="outline-phrase">In recent years, [chủ đề] has become a common topic of discussion. Some people believe that [ý kiến 1 – mệnh đề], while others argue that [ý kiến 2 – mệnh đề]. This essay will discuss both views and give my own opinion.</span></p>
+                <p>↳ <span class="outline-phrase">Nowadays, [chủ đề] has become a common topic of discussion. Some people believe that [ý kiến 1 – mệnh đề], while others argue that [ý kiến 2 – mệnh đề]. This essay will discuss both views and give my own opinion.</span></p>
             </div>
             <div class="outline-step">
                 <h4>2. THÂN BÀI</h4>
-                <p><strong>THÂN BÀI 1 (Phân tích ý kiến 1):</strong></p>
+                <p><strong>THÂN BÀI 1:</strong></p>
                 <p>↳ <span class="outline-phrase">On the one hand, it is argued that [ý kiến 1 – mệnh đề].</span></p>
-                <p>→ Phân tích và phát triển quan điểm bằng giải thích, ví dụ phù hợp (khoảng 4-6 câu).</p>
-                <p><strong>THÂN BÀI 2 (Phân tích ý kiến 2):</strong></p>
+                <p>&rArr; Phân tích và phát triển quan điểm bằng giải thích, ví dụ hoặc dẫn chứng phù hợp.</p>
+                <p><strong>THÂN BÀI 2:</strong></p>
                 <p>↳ <span class="outline-phrase">On the other hand, it is believed that [ý kiến 2 – mệnh đề].</span></p>
-                <p>→ Phân tích quan điểm đối lập bằng các lập luận và ví dụ phù hợp (khoảng 4-6 câu).</p>
+                <p>&rArr; Phân tích quan điểm đối lập bằng các lập luận và ví dụ phù hợp.</p>
             </div>
             <div class="outline-step">
                 <h4>3. KẾT BÀI</h4>
-                <p>↳ <span class="outline-phrase">In conclusion, both views have their own reasons. However, I believe that [quan điểm cá nhân – mệnh đề] because [lý do ngắn gọn]. Therefore, people should think carefully before forming an opinion.</span></p>
+                <p>↳ <span class="outline-phrase">In conclusion, both views have their own reasons. However, I believe that [quan điểm cá nhân – mệnh đề] because [lý do ngắn gọn – mệnh đề]. Therefore, it is important that people consider both views carefully.</span></p>
+                <p style="margin-top: 8px; font-size: 0.9rem; color: #64748b; font-style: italic;">* LƯU Ý: Cần xác định đề bài có yêu cầu nêu quan điểm cá nhân hay không. Nếu có, người viết cần thể hiện rõ quan điểm; nếu không, chỉ cần phân tích hai phía và đưa ra kết luận tổng quát.</p>
             </div>
         `,
         sampleWriting: `
             <div class="content-block">
                 <h3>BÀI VIẾT MẪU (SAMPLE ESSAY - B1 LEVEL)</h3>
                 <div class="prompt-box" style="margin-bottom: 15px; margin-top: 15px;">
-                    <p><strong>ĐỀ BÀI:</strong> Some people believe that children should read picture books because they are easier to understand and more enjoyable. However, others argue that picture books may negatively affect children's imagination, just like watching television.<br><br><strong>Discuss both views and give your own opinion.</strong></p>
+                    <p><strong>ĐỀ BÀI:</strong> Some people believe that children should read picture books because they are easier to understand and more enjoyable. However, others argue that picture books may negatively affect children's imagination, just like watching television.<br><br><strong>Discuss both views and give your own opinion. Give reasons for your answer and include relevant examples from your own knowledge or experience. You should write at least 250 words. Your response will be evaluated in terms of Task fulfillment, Organization, Vocabulary, and Grammar.</strong></p>
+                </div>
+                <div style="background: #f8fafc; border-left: 4px solid var(--primary-color); padding: 10px 16px; margin-bottom: 15px; border-radius: 0 8px 8px 0; font-size: 0.92rem;">
+                    <div><strong>Chủ đề:</strong> the use of picture books for children</div>
+                    <div><strong>Quan điểm 1:</strong> children should read picture books because they are easier to understand and more enjoyable</div>
+                    <div><strong>Quan điểm 2:</strong> picture books may negatively affect children's imagination, just like watching television</div>
                 </div>
                 <div class="sample-letter-box">
                     In recent years, <strong>the use of picture books for children</strong> has become a common topic of discussion. Some people believe that <strong>children should read picture books because they are easier to understand and more enjoyable</strong>, while others argue that <strong>picture books may negatively affect children's imagination, just like watching television</strong>. <strong>This essay will discuss both views and give my own opinion.</strong><br><br>
-                    On the one hand, it is argued that <strong>picture books bring many benefits to children</strong>. This is because pictures can help children understand stories more easily, especially when they are learning new words. In addition, young readers can follow the content more easily because the illustrations explain important parts of the story. Reading also becomes more enjoyable because colorful images attract children's attention. As a result, children are often more interested in reading and learning. For example, many primary teachers use picture books to encourage students to participate actively in reading lessons.<br><br>
-                    On the other hand, it is believed that <strong>picture books may have some negative effects on children</strong>. The main reason is that children may rely too much on pictures instead of using their imagination. As a result, they may not need to imagine characters, places, or events because the illustrations already provide this information. This can reduce opportunities for children to develop creative thinking skills. Furthermore, some children may find books without pictures less attractive and more difficult to read. Therefore, the excessive use of picture books may reduce children's creativity and imagination.<br><br>
-                    In conclusion, both views have their own reasons. However, I personally believe that <strong>picture books are beneficial for children</strong> because <strong>they help young readers enjoy reading and improve language skills</strong>. Therefore, people should think carefully before forming an opinion.
+                    On the one hand, it is argued that <strong>picture books bring many benefits to children</strong>. <em>This is because pictures can help children understand stories more easily, especially when they are learning new words. In addition, young readers can follow the content more easily because the illustrations explain important parts of the story. Reading also becomes more enjoyable because colorful images attract children's attention. As a result, children are often more interested in reading and learning. For example, many primary teachers use picture books to encourage students to participate actively in reading lessons.</em><br><br>
+                    On the other hand, it is believed that <strong>picture books may have some negative effects on children</strong>. <em>The main reason is that children may rely too much on pictures instead of using their imagination. As a result, they may not need to imagine characters, places, or events because the illustrations already provide this information. This can reduce opportunities for children to develop creative thinking skills. Furthermore, some children may find books without pictures less attractive and more difficult to read. Therefore, the excessive use of picture books may reduce children's creativity and imagination.</em><br><br>
+                    In conclusion, both views have their own reasons. However, I personally believe that <strong>picture books are beneficial for children</strong> because <strong>they help young readers enjoy reading and improve language skills</strong>. <strong>Therefore, it is important that people consider both views carefully.</strong>
+                </div>
+
+                <!-- Practice & Idea Guide Section -->
+                <div class="practice-box" style="margin-top: 30px; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 20px;">
+                    <h4 style="color: var(--primary-color); margin-bottom: 15px;"><i class="fa-solid fa-pen-to-square"></i> BÀI TẬP VẬN DỤNG & GỢI Ý Ý TƯỞNG (PRACTICE)</h4>
+                    <div class="prompt-box" style="margin-bottom: 15px;">
+                        <p><strong>ĐỀ BÀI LUYỆN TẬP:</strong> In many societies, marriage is considered one of the most important decisions in a person’s life. While some people believe that arranged marriages are more stable and beneficial because families are involved in the decision-making process, others argue that people should be free to choose their own partners based on love and personal choice.<br><br><strong>Discuss both views and give your own opinion. Give reasons for your answer and include relevant examples from your own knowledge or experience. You should write at least 250 words.</strong></p>
+                    </div>
+
+                    <div style="margin-bottom: 15px; background: #f8fafc; border-left: 4px solid #3b82f6; padding: 12px 16px; border-radius: 0 8px 8px 0;">
+                        <h5 style="color: #1e40af; margin-bottom: 6px;">📌 PHÂN TÍCH ĐỀ:</h5>
+                        <ul style="margin: 0; padding-left: 20px; font-size: 0.95rem; line-height: 1.6;">
+                            <li><strong>Chủ đề:</strong> Hôn nhân và việc lựa chọn bạn đời (Marriage decisions / Choosing a life partner).</li>
+                            <li><strong>Quan điểm 1:</strong> Hôn nhân sắp đặt ổn định và có lợi hơn do có sự tham gia của gia đình.</li>
+                            <li><strong>Quan điểm 2:</strong> Mọi người nên được tự do lựa chọn bạn đời dựa trên tình yêu và cảm xúc cá nhân.</li>
+                        </ul>
+                    </div>
+
+                    <div style="background: #f8fafc; border-left: 4px solid #10b981; padding: 12px 16px; border-radius: 0 8px 8px 0;">
+                        <h5 style="color: #065f46; margin-bottom: 8px;">💡 GỢI Ý Ý TƯỞNG CHO 2 QUAN ĐIỂM:</h5>
+                        <div style="margin-bottom: 12px;">
+                            <strong style="color: var(--primary-color);">🔹 Quan điểm 1: Hôn nhân sắp đặt có thể tạo ra các mối quan hệ ổn định và lâu dài hơn</strong>
+                            <ul style="margin: 6px 0 0 0; padding-left: 20px; font-size: 0.9rem; line-height: 1.5;">
+                                <li><em>Giải thích 1:</em> Nhiều người tin rằng gia đình có nhiều kinh nghiệm sống hơn trong việc lựa chọn bạn đời phù hợp.</li>
+                                <li><em>Giải thích 2:</em> Cha mẹ thường cân nhắc các yếu tố như tính cách, học vấn và hoàn cảnh gia đình trước khi đưa ra quyết định.</li>
+                                <li><em>Giải thích 3:</em> Điều này có thể giúp các cặp đôi giảm xung đột và duy trì mối quan hệ ổn định hơn sau khi kết hôn.</li>
+                                <li><em>Giải thích 4:</em> Ngoài ra, các cặp vợ chồng trong hôn nhân sắp đặt thường nhận được nhiều sự hỗ trợ từ gia đình hai bên.</li>
+                                <li><em>Giải thích 5:</em> Ví dụ, ở nhiều quốc gia châu Á, nhiều cuộc hôn nhân sắp đặt vẫn duy trì hạnh phúc và bền vững trong thời gian dài.</li>
+                            </ul>
+                        </div>
+                        <div style="margin-bottom: 12px;">
+                            <strong style="color: var(--primary-color);">🔹 Quan điểm 2: Mọi người nên được tự do lựa chọn bạn đời dựa trên tình yêu và cảm xúc cá nhân</strong>
+                            <ul style="margin: 6px 0 0 0; padding-left: 20px; font-size: 0.9rem; line-height: 1.5;">
+                                <li><em>Giải thích 1:</em> Khi tự lựa chọn bạn đời, các cặp đôi thường hiểu rõ tính cách, sở thích và quan điểm sống của nhau hơn.</li>
+                                <li><em>Giải thích 2:</em> Điều này có thể giúp họ xây dựng sự gắn kết tình cảm mạnh mẽ hơn trong hôn nhân.</li>
+                                <li><em>Giải thích 3:</em> Ngoài ra, việc tự quyết định hôn nhân cũng thể hiện quyền tự do cá nhân và sự độc lập trong cuộc sống.</li>
+                                <li><em>Giải thích 4:</em> Trên thực tế, khi tự lựa chọn bạn đời, mọi người thường cảm thấy hài lòng hơn với quyết định của mình.</li>
+                                <li><em>Giải thích 5:</em> Ví dụ, nhiều cặp đôi hiện nay xây dựng mối quan hệ thành công nhờ sự thấu hiểu và tình yêu chân thành trước khi kết hôn.</li>
+                            </ul>
+                        </div>
+                        <div style="border-top: 1px dashed #cbd5e1; padding-top: 8px;">
+                            <strong style="color: #b45309;">🔹 Quan điểm cá nhân & Lý do:</strong>
+                            <p style="margin: 4px 0 0 0; font-size: 0.9rem;"><strong>Quan điểm:</strong> Mọi người nên được tự do lựa chọn bạn đời dựa trên tình yêu và sự thấu hiểu lẫn nhau.<br><strong>Lý do:</strong> Bởi vì chúng là nền tảng của một cuộc hôn nhân hạnh phúc.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         `
@@ -776,14 +897,15 @@ const recitationOutlines = {
             outlineName: 'DÀN Ý TRÌNH BÀY QUAN ĐIỂM',
             shortName: 'Dàn ý chuẩn',
             questions: [
-                {cue: '[DÀN Ý TRÌNH BÀY QUAN ĐIỂM]<br>1. MỞ BÀI<br>Viết câu mở bài cho dạng Opinion:', target: 'In recent years, the idea that [quan điểm trong đề bài – mệnh đề] has become a common topic of discussion.', vn: 'Trong những năm gần đây, ý kiến cho rằng [quan điểm trong đề bài – mệnh đề] đã trở thành một chủ đề thảo luận phổ biến.'},
+                {cue: '[DÀN Ý TRÌNH BÀY QUAN ĐIỂM]<br>1. MỞ BÀI<br>Viết câu mở bài cho dạng Opinion:', target: 'Nowadays, the idea that [quan điểm trong đề bài – mệnh đề] has become a common topic of discussion.', vn: 'Ngày nay, ý kiến cho rằng [quan điểm trong đề bài – mệnh đề] đã trở thành một chủ đề thảo luận phổ biến.'},
                 {cue: '[DÀN Ý TRÌNH BÀY QUAN ĐIỂM]<br>1. MỞ BÀI<br>Viết câu thể hiện quan điểm cá nhân (Đồng ý / Không đồng ý):', target: 'From my perspective, I completely agree / disagree with this opinion for several important reasons.', vn: 'Theo quan điểm của tôi, tôi hoàn toàn đồng ý / không đồng ý với ý kiến này vì một vài lý do quan trọng.'},
                 {cue: '[DÀN Ý TRÌNH BÀY QUAN ĐIỂM]<br>1. MỞ BÀI<br>Viết câu kết nối dẫn dắt vào Thân bài:', target: 'This essay will present the main arguments supporting my viewpoint.', vn: 'Bài viết này sẽ trình bày những lập luận chính ủng hộ quan điểm của tôi.'},
                 {cue: '[DÀN Ý TRÌNH BÀY QUAN ĐIỂM]<br>2. THÂN BÀI<br>Viết câu dẫn lý do 1:', target: 'The first reason why I agree / disagree with this opinion is that [lý do 1 – mệnh đề].', vn: 'Lý do đầu tiên khiến tôi đồng ý / không đồng ý với ý kiến này là [lý do 1 – mệnh đề].'},
                 {cue: '[DÀN Ý TRÌNH BÀY QUAN ĐIỂM]<br>2. THÂN BÀI<br>Viết câu dẫn lý do 2:', target: 'Another important reason is that [lý do 2 – mệnh đề].', vn: 'Một lý do quan trọng khác là [lý do 2 – mệnh đề].'},
                 {cue: '[DÀN Ý TRÌNH BÀY QUAN ĐIỂM]<br>2. THÂN BÀI<br>Viết câu dẫn lý do 3:', target: 'A further reason supporting my viewpoint is that [lý do 3 – mệnh đề].', vn: 'Một lý do nữa ủng hộ quan điểm của tôi là [lý do 3 – mệnh đề].'},
                 {cue: '[DÀN Ý TRÌNH BÀY QUAN ĐIỂM]<br>3. KẾT BÀI<br>Viết câu Kết bài khẳng định lại quan điểm:', target: 'In conclusion, I strongly agree / disagree with the idea that [quan điểm trong đề bài – mệnh đề].', vn: 'Tóm lại, tôi mạnh mẽ đồng ý / không đồng ý với ý kiến cho rằng [quan điểm trong đề bài – mệnh đề].'},
-                {cue: '[DÀN Ý TRÌNH BÀY QUAN ĐIỂM]<br>3. KẾT BÀI<br>Viết câu kết luận cuối cùng:', target: 'The reasons above clearly explain why I support / oppose this viewpoint.', vn: 'Những lý do trên giải thích rõ ràng tại sao tôi ủng hộ / phản đối quan điểm này.'}
+                {cue: '[DÀN Ý TRÌNH BÀY QUAN ĐIỂM]<br>3. KẾT BÀI<br>Viết câu giải thích lý do ủng hộ / phản đối quan điểm:', target: 'The reasons above clearly explain why I support / oppose this viewpoint.', vn: 'Những lý do trên giải thích rõ ràng tại sao tôi ủng hộ / phản đối quan điểm này.'},
+                {cue: '[DÀN Ý TRÌNH BÀY QUAN ĐIỂM]<br>3. KẾT BÀI<br>Viết câu chốt lại lời khuyên / hành động cần thiết:', target: 'Therefore, it is essential that [đối tượng] take this matter into consideration.', vn: 'Vì vậy, điều cần thiết là [đối tượng] cần cân nhắc vấn đề này.'}
             ]
         }
     ],
@@ -795,13 +917,14 @@ const recitationOutlines = {
             outlineName: 'DÀN Ý THẢO LUẬN 2 CHIỀU',
             shortName: 'Dàn ý chuẩn',
             questions: [
-                {cue: '[DÀN Ý THẢO LUẬN 2 CHIỀU]<br>1. MỞ BÀI<br>Viết câu mở bài cho dạng Discussion:', target: 'In recent years, [chủ đề] has become a common topic of discussion.', vn: 'Trong những năm gần đây, [chủ đề] đã trở thành một chủ đề thảo luận phổ biến.'},
+                {cue: '[DÀN Ý THẢO LUẬN 2 CHIỀU]<br>1. MỞ BÀI<br>Viết câu mở bài cho dạng Discussion:', target: 'Nowadays, [chủ đề] has become a common topic of discussion.', vn: 'Ngày nay, [chủ đề] đã trở thành một chủ đề thảo luận phổ biến.'},
                 {cue: '[DÀN Ý THẢO LUẬN 2 CHIỀU]<br>1. MỞ BÀI<br>Viết câu trình bày 2 luồng quan điểm:', target: 'Some people believe that [ý kiến 1 – mệnh đề], while others argue that [ý kiến 2 – mệnh đề].', vn: 'Một số người tin rằng [ý kiến 1 – mệnh đề], trong khi những người khác cho rằng [ý kiến 2 – mệnh đề].'},
                 {cue: '[DÀN Ý THẢO LUẬN 2 CHIỀU]<br>1. MỞ BÀI<br>Viết câu kết nối dẫn dắt vào Thân bài (kèm quan điểm cá nhân):', target: 'This essay will discuss both views and give my own opinion.', vn: 'Bài viết này sẽ thảo luận cả hai quan điểm và đưa ra ý kiến của riêng tôi.'},
                 {cue: '[DÀN Ý THẢO LUẬN 2 CHIỀU]<br>2. THÂN BÀI<br>Viết câu mở đầu Thân bài 1 (Ý kiến 1):', target: 'On the one hand, it is argued that [ý kiến 1 – mệnh đề].', vn: 'Một mặt, người ta lập luận rằng [ý kiến 1 – mệnh đề].'},
                 {cue: '[DÀN Ý THẢO LUẬN 2 CHIỀU]<br>2. THÂN BÀI<br>Viết câu mở đầu Thân bài 2 (Ý kiến 2):', target: 'On the other hand, it is believed that [ý kiến 2 – mệnh đề].', vn: 'Mặt khác, người ta tin rằng [ý kiến 2 – mệnh đề].'},
-                {cue: '[DÀN Ý THẢO LUẬN 2 CHIỀU]<br>3. KẾT BÀI<br>Viết câu Kết bài tóm tắt:', target: 'In conclusion, both views have their own reasons.', vn: 'Tóm lại, cả hai quan điểm đều có những lý do riêng.'},
-                {cue: '[DÀN Ý THẢO LUẬN 2 CHIỀU]<br>3. KẾT BÀI<br>Viết câu Kết bài nêu quan điểm cá nhân:', target: 'However, I believe that [quan điểm cá nhân – mệnh đề] because [lý do ngắn gọn – mệnh đề].', vn: 'Tuy nhiên, tôi tin rằng [quan điểm cá nhân – mệnh đề] bởi vì [lý do ngắn gọn – mệnh đề].'}
+                {cue: '[DÀN Ý THẢO LUẬN 2 CHIỀU]<br>3. KẾT BÀI<br>Viết câu Kết bài tóm tắt hai luồng ý kiến:', target: 'In conclusion, both views have their own reasons.', vn: 'Tóm lại, cả hai quan điểm đều có những lý do riêng.'},
+                {cue: '[DÀN Ý THẢO LUẬN 2 CHIỀU]<br>3. KẾT BÀI<br>Viết câu Kết bài nêu quan điểm cá nhân:', target: 'However, I believe that [quan điểm cá nhân – mệnh đề] because [lý do ngắn gọn – mệnh đề].', vn: 'Tuy nhiên, tôi tin rằng [quan điểm cá nhân – mệnh đề] bởi vì [lý do ngắn gọn – mệnh đề].'},
+                {cue: '[DÀN Ý THẢO LUẬN 2 CHIỀU]<br>3. KẾT BÀI<br>Viết câu chốt lại lời khuyên / tính cân nhắc:', target: 'Therefore, it is important that people consider both views carefully.', vn: 'Vì vậy, điều quan trọng là mọi người cần cân nhắc kỹ lưỡng cả hai quan điểm.'}
             ]
         }
     ]
@@ -962,6 +1085,7 @@ function handleRecitationTimeUp() {
 }
 
 // Word-by-word diff algorithm supporting flexible bracket matching [ ... ]
+// Word-by-word diff algorithm supporting flexible bracket matching [ ... ]
 function diffWords(userText, targetText) {
     const isPunctOrSignOnly = (w) => /^[+\-–—−.,!?;:()\[\]\s]+$/.test(w);
 
@@ -973,7 +1097,7 @@ function diffWords(userText, targetText) {
         // Strip leading bullet marks (+, -, *, etc.)
         .replace(/^[\s+\-–—−*•]+/, '')
         // Normalize V-ing and V-o notation variations first
-        .replace(/(^|[^a-zA-Z0-9])([vV])\s*[-_–—−]\s*(ing\b|[0oO]\b)/gi, '$1$2$3')
+        .replace(/(^|[^a-zA-Z0-9])([vV])\s*[-_–—−]\s*(ing|[0oO])/gi, '$1$2$3')
         // Normalize hành động slot delimiters (+, -, –, —, :, /, or space)
         .replace(/(hành\s*động)\s*([+\-:–—−/]|->)?\s*/gi, '$1 ')
         .replace(/[–—−]/g, '-')
@@ -988,20 +1112,58 @@ function diffWords(userText, targetText) {
         return s;
     };
 
-    // If target has alternate options separated by ' / '
-    if (targetText.includes(' / ') && (targetText.includes('+ Vo') || targetText.includes('+ Ving') || targetText.includes('Don’t forget') || targetText.includes('quite unhappy'))) {
-        const altTargets = targetText.split(' / ');
+    // Helper to generate natural pedagogical variants for target sentences
+    function getTargetVariants(t) {
+        let variants = [t];
+        if (t.includes('agree / disagree')) {
+            const next = [];
+            for (const v of variants) {
+                next.push(v);
+                next.push(v.replace(/agree\s*\/\s*disagree/g, 'agree'));
+                next.push(v.replace(/agree\s*\/\s*disagree/g, 'disagree'));
+            }
+            variants = next;
+        }
+        if (t.includes('support / oppose')) {
+            const next = [];
+            for (const v of variants) {
+                next.push(v);
+                next.push(v.replace(/support\s*\/\s*oppose/g, 'support'));
+                next.push(v.replace(/support\s*\/\s*oppose/g, 'oppose'));
+            }
+            variants = next;
+        }
+        if (/^Nowadays,/i.test(t)) {
+            const next = [];
+            for (const v of variants) {
+                next.push(v);
+                next.push(v.replace(/^Nowadays,/i, 'In recent years,'));
+            }
+            variants = next;
+        }
+        if (/^In recent years,/i.test(t)) {
+            const next = [];
+            for (const v of variants) {
+                next.push(v);
+                next.push(v.replace(/^In recent years,/i, 'Nowadays,'));
+            }
+            variants = next;
+        }
+        if (t.includes(' / ') && (t.includes('+ Vo') || t.includes('+ Ving') || t.includes('Don’t forget') || t.includes('quite unhappy'))) {
+            const parts = t.split(' / ');
+            parts.forEach(p => variants.push(p.trim()));
+        }
+        return [...new Set(variants)];
+    }
+
+    const variants = getTargetVariants(targetText);
+    if (variants.length > 1) {
         let bestDiff = null;
-        for (const alt of altTargets) {
-            const curDiff = diffWordsSingle(userText, alt.trim(), preProcess, clean, isPunctOrSignOnly);
+        for (const v of variants) {
+            const curDiff = diffWordsSingle(userText, v.trim(), preProcess, clean, isPunctOrSignOnly);
             if (!bestDiff || curDiff.accuracy > bestDiff.accuracy) {
                 bestDiff = curDiff;
             }
-        }
-        // Also compare against full targetText
-        const fullDiff = diffWordsSingle(userText, targetText, preProcess, clean, isPunctOrSignOnly);
-        if (fullDiff.accuracy > bestDiff.accuracy) {
-            bestDiff = fullDiff;
         }
         return bestDiff;
     }
@@ -2017,20 +2179,29 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        if (!className) {
-            if (loginError) loginError.textContent = 'Vui lòng nhập Lớp học.';
-            if (loginClass) loginClass.focus();
-            return;
-        }
+        const normFullName = rawFullName.toUpperCase();
+        let finalClassName = className;
+        const isTeacher = (normFullName === 'PTMN' && (finalClassName === 'GV' || !finalClassName)) || (normFullName === 'PTMN' && finalClassName === 'GV');
+        let finalFullName = isTeacher ? 'PTMN' : rawFullName;
 
-        // Check if teacher login: tên PTMN, lớp GV -> đăng nhập được ngay, không cần pass
-        const isTeacher = (rawFullName.toUpperCase() === 'PTMN' && className === 'GV');
-        let finalFullName = rawFullName;
+        if (isTeacher) {
+            if (!finalClassName) finalClassName = 'GV';
+        } else {
+            if (finalClassName === 'GV') {
+                if (loginError) loginError.textContent = 'Mã lớp GV chỉ dành riêng cho tài khoản Giáo viên (PTMN)!';
+                if (loginFullName) loginFullName.focus();
+                return;
+            }
 
-        if (!isTeacher) {
+            if (!finalClassName) {
+                if (loginError) loginError.textContent = 'Vui lòng nhập Lớp học.';
+                if (loginClass) loginClass.focus();
+                return;
+            }
+
             // Student validation:
-            if (!ALLOWED_CLASSES.includes(className)) {
-                if (loginError) loginError.textContent = 'Lớp học không hợp lệ. Chỉ nhận lớp CB206, CB210 hoặc CB211.';
+            if (!ALLOWED_CLASSES.includes(finalClassName)) {
+                if (loginError) loginError.textContent = `Lớp học không hợp lệ. Chỉ nhận lớp: ${ALLOWED_CLASSES.filter(c => c !== 'GV').join(', ')}.`;
                 if (loginClass) loginClass.focus();
                 return;
             }
@@ -2069,16 +2240,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Save to localStorage & sessionStorage
         try {
-            const studentInfo = { fullName: finalFullName, className };
+            const studentInfo = { fullName: finalFullName, className: finalClassName };
             localStorage.setItem('vstep_student_info', JSON.stringify(studentInfo));
-            sessionStorage.setItem('current_user_class', className);
+            sessionStorage.setItem('current_user_class', finalClassName);
             sessionStorage.setItem('vstep_authenticated', 'true');
         } catch (e) {}
 
         // Submit to Google Forms via no-cors fetch
         const formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLScU5Jd_R15uECAgsBMHZsqKAaCR2g2K1IzqOGs-ZN9_RbDkdQ/formResponse';
         const formData = new URLSearchParams();
-        formData.append('entry.388968236', `${finalFullName} - ${className}`);
+        formData.append('entry.388968236', `${finalFullName} - ${finalClassName}`);
 
         fetch(formUrl, {
             method: 'POST',
