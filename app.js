@@ -1438,11 +1438,8 @@ function markEssayCompleted(id) {
 
 function updateGlobalProgress() {
     const completed = getCompletedEssays();
-    const userClass = getUserClass();
-    const isCB210 = (userClass === 'CB210');
-    const total = isCB210 ? 3 : 4;
-    const validCompleted = isCB210 ? completed.filter(id => id === 'adv-disadv' || id === 'cause-effect' || id === 'opinion') : completed;
-    const count = validCompleted.length;
+    const count = completed.length;
+    const total = 4;
     const percent = Math.round((count / total) * 100);
 
     // Update Sidebar progress
@@ -1463,9 +1460,7 @@ function updateGlobalProgress() {
         if (count === 0) {
             dashStatus.textContent = "Chưa hoàn thành dạng bài nào. Hãy bắt đầu học tập!";
         } else if (count === total) {
-            dashStatus.textContent = isCB210
-                ? "🎉 TUYỆT VỜI! Bạn đã xuất sắc hoàn thành Dạng 01, Dạng 02 & Dạng 03 VSTEP Writing Task 02!"
-                : "🎉 TUYỆT VỜI! Bạn đã xuất sắc chinh phục tất cả 4 dạng luận VSTEP Writing Task 02!";
+            dashStatus.textContent = "🎉 TUYỆT VỜI! Bạn đã xuất sắc chinh phục tất cả 4 dạng luận VSTEP Writing Task 02!";
         } else {
             dashStatus.textContent = `Đã chinh phục ${count}/${total} dạng bài. Hãy tiếp tục nhiệm vụ tiếp theo!`;
         }
@@ -1909,10 +1904,6 @@ function getUserClass() {
 }
 
 function isTypeLocked(typeId) {
-    const userClass = getUserClass();
-    if (userClass === 'CB210') {
-        return (typeId === 'discussion');
-    }
     return false;
 }
 
