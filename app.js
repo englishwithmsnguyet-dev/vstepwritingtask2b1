@@ -2219,6 +2219,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         } catch (e) {}
     }
+    updateStudentProfileCard();
 
     function cleanAccessPassword(pwd) {
         return (pwd || '')
@@ -2378,8 +2379,52 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             renderNav();
             updateGlobalProgress();
+            updateStudentProfileCard(finalFullName, finalClassName);
         });
     }
+
+    function updateStudentProfileCard(name, cls) {
+        const nameEl = document.getElementById('studentNameDisplay');
+        const classEl = document.getElementById('studentClassDisplay');
+        const avatarIcon = document.getElementById('studentAvatarIcon');
+        
+        if (!name || !cls) {
+            try {
+                const saved = JSON.parse(localStorage.getItem('vstep_student_info'));
+                if (saved) {
+                    if (!name) name = saved.fullName;
+                    if (!cls) cls = saved.className;
+                }
+            } catch (e) {}
+        }
+        
+        const isTeacher = (cls === 'GV' || name === 'PTMN' || (cls && cls.toUpperCase() === 'GV'));
+        
+        if (nameEl) {
+            nameEl.textContent = name || 'Chưa đăng nhập';
+            nameEl.title = name || '';
+        }
+        if (classEl) {
+            if (isTeacher) {
+                classEl.innerHTML = '<span class="badge-class" style="background: rgba(16,185,129,0.15); color: #059669;">Giáo viên (GV)</span>';
+            } else {
+                classEl.innerHTML = `<span class="badge-class">${cls ? 'Lớp: ' + cls : 'Lớp: --'}</span>`;
+            }
+        }
+        if (avatarIcon) {
+            avatarIcon.innerHTML = isTeacher ? '<i class="fa-solid fa-chalkboard-user"></i>' : '<i class="fa-solid fa-user-graduate"></i>';
+        }
+    }
+
+    window.reopenLoginOverlay = function() {
+        if (confirm('Bạn có muốn đăng xuất và đổi thông tin tài khoản không?')) {
+            sessionStorage.removeItem('vstep_authenticated');
+            sessionStorage.removeItem('current_user_class');
+            const loginOverlay = document.getElementById('loginOverlay');
+            if (loginOverlay) loginOverlay.classList.remove('hidden');
+            updateStudentProfileCard('', '');
+        }
+    };
 
     if (loginBtn) {
         loginBtn.addEventListener('click', handleLoginSubmit);
