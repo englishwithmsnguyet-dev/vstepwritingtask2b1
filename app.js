@@ -1,3 +1,19 @@
+
+// Hàm hiển thị / ẩn bản dịch tiếng Việt bài mẫu
+window.toggleTranslation = function(btn) {
+    const content = btn.nextElementSibling;
+    if (!content) return;
+    if (content.style.display === 'none' || content.classList.contains('hidden')) {
+        content.style.display = 'block';
+        content.classList.remove('hidden');
+        btn.innerHTML = '<i class="fa-solid fa-eye-slash"></i> Ẩn bản dịch tiếng Việt';
+    } else {
+        content.style.display = 'none';
+        content.classList.add('hidden');
+        btn.innerHTML = '<i class="fa-solid fa-language"></i> Xem bản dịch tiếng Việt';
+    }
+};
+
 const essayTypes = [
     {
         id: 'adv-disadv',
@@ -127,6 +143,18 @@ const essayTypes = [
                     In conclusion, <strong>distance learning</strong> has both advantages and disadvantages. These points show that it has different effects on people’s lives. Therefore, it is important to consider both sides before making a decision.
                 </div>
 
+                <button class="translation-toggle-btn" onclick="toggleTranslation(this)">
+                    <i class="fa-solid fa-language"></i> Xem bản dịch tiếng Việt
+                </button>
+                <div class="translation-content" style="display: none;">
+                    <div class="sample-letter-box">
+                        Trong những năm gần đây, <strong>việc học trực tuyến</strong> ngày càng trở nên phổ biến trong xã hội hiện đại. Mặc dù hình thức này có một số lợi ích, nhưng cũng tồn tại một vài bất lợi. <strong>Bài luận này sẽ thảo luận về cả những thuận lợi và khó khăn của nó.</strong><br><br>
+                    Một mặt, <strong>học tập qua nền tảng kỹ thuật số</strong> có nhiều ưu điểm. Một lợi ích lớn là <strong>nó rất thuận tiện và linh hoạt</strong>. <em>Điều này là do người học có thể học mọi lúc mọi nơi, nhờ đó họ có thể quản lý thời gian tốt hơn và cân bằng việc học với các hoạt động khác.</em> Một khía cạnh tích cực khác là <strong>nó giúp tiết kiệm tiền bạc</strong>. <em>Lý do chính là học sinh không cần phải trả tiền đi lại, chỗ ở hay tài liệu in ấn, vì vậy rất phù hợp cho những người có ngân sách hạn chế.</em> Một điểm tốt nữa là <strong>nó cho phép người học học theo tốc độ của riêng mình</strong>. <em>Điều này có nghĩa là họ có thể xem lại bài học nhiều lần nếu chưa hiểu, giúp việc học trở nên thoải mái hơn.</em><br><br>
+                    Mặt khác, hình thức này cũng có một số bất lợi. Một hạn chế có thể thấy là <strong>giáo dục trực tuyến khiến học sinh dễ bị xao nhãng</strong>. <em>Trên thực tế, các em thường học ở nhà với nhiều yếu tố gây phân tâm như điện thoại di động hay tiếng ồn, dẫn đến việc mất tập trung trong buổi học.</em> Một khía cạnh tiêu cực khác là <strong>nó làm giảm tương tác trực tiếp</strong>. <em>Bởi vì học sinh không thể giao tiếp trực tiếp với giáo viên hay bạn học, các em có thể có ít cơ hội rèn luyện kỹ năng giao tiếp hơn.</em> Một vấn đề nữa là <strong>việc học phụ thuộc nhiều vào công nghệ</strong>. <em>Điều này đồng nghĩa với việc sự cố kỹ thuật hoặc đường truyền mạng chập chờn có thể làm gián đoạn buổi học và giảm hiệu quả tiếp thu.</em><br><br>
+                    Tóm lại, <strong>học từ xa</strong> có cả ưu điểm và nhược điểm. Những điểm này cho thấy hình thức học tập này mang lại những tác động khác nhau đến đời sống của con người. Vì vậy, điều quan trọng là cần cân nhắc kỹ lưỡng cả hai mặt trước khi đưa ra quyết định.
+                    </div>
+                </div>
+
                 <h4 style="color: var(--primary-color); margin-top: 25px;">BÀI MẪU 2: ÁP DỤNG DÀN Ý 02 (CHỈ THUẬN LỢI)</h4>
                 <div class="prompt-box" style="margin-bottom: 15px;">
                     <p><strong>ĐỀ BÀI:</strong> Volunteer work is becoming increasingly popular among students and young adults. Participating in volunteer activities is believed to bring various benefits to individuals and the community.<br><br><strong>Write an essay to discuss the benefits of doing volunteer work.</strong></p>
@@ -137,6 +165,19 @@ const essayTypes = [
                     Another positive aspect is that <strong>participating in volunteer work brings benefits to the community</strong>. <em>The main reason is that volunteers help people in need, so some people can have better living conditions and receive more support. Moreover, volunteers can clean public areas or plant trees, so the environment can become cleaner and healthier. Therefore, some social and environmental problems can be reduced, and the community can become more connected.</em><br><br>
                     A further benefit is that <strong>doing voluntary activities helps people feel happier and more positive</strong>. <em>In fact, volunteers can help other people and do useful things for society, so they often feel proud of themselves. Besides, many volunteers receive appreciation from other people, so they feel more motivated to continue helping others. Consequently, they usually develop a more positive attitude toward life and care more about the people around them.</em><br><br>
                     In conclusion, <strong>volunteer work</strong> offers several benefits. These advantages make it useful for many people. Overall, it is a positive development in modern society.
+                </div>
+
+                <button class="translation-toggle-btn" onclick="toggleTranslation(this)">
+                    <i class="fa-solid fa-language"></i> Xem bản dịch tiếng Việt
+                </button>
+                <div class="translation-content" style="display: none;">
+                    <div class="sample-letter-box">
+                        Trong những năm gần đây, <strong>làm công việc tình nguyện</strong> ngày càng trở nên phổ biến trong xã hội hiện đại. Nhiều người xem đây là một xu hướng phát triển tích cực. <strong>Bài luận này sẽ thảo luận về những lợi ích chính của hoạt động này.</strong><br><br>
+                    Một ưu điểm chính là <strong>công việc tình nguyện giúp con người phát triển các kỹ năng quan trọng</strong>. <em>Điều này là do các tình nguyện viên được giao lưu với nhiều người khác nhau, nhờ đó họ có thể nâng cao kỹ năng giao tiếp. Thêm vào đó, họ làm việc cùng người khác trong nhiều hoạt động đa dạng, giúp họ rèn luyện kỹ năng làm việc nhóm và học cách hợp tác hiệu quả hơn. Kết quả là, họ trở nên tự tin hơn và tích lũy được nhiều kinh nghiệm hữu ích cho công việc cũng như việc học tập trong tương lai.</em><br><br>
+                    Một khía cạnh tích cực khác là <strong>tham gia công việc tình nguyện mang lại nhiều lợi ích cho cộng đồng</strong>. <em>Lý do chính là các tình nguyện viên giúp đỡ những người có hoàn cảnh khó khăn, giúp họ có điều kiện sống tốt hơn và nhận được nhiều sự hỗ trợ hơn. Hơn nữa, tình nguyện viên còn dọn dẹp các khu vực công cộng hoặc trồng cây xanh, giúp môi trường trở nên trong lành và sạch đẹp hơn. Nhờ đó, một số vấn đề xã hội và môi trường có thể được giảm thiểu, và cộng đồng trở nên gắn kết hơn.</em><br><br>
+                    Một lợi ích nữa là <strong>tham gia các hoạt động tình nguyện giúp con người cảm thấy vui vẻ và lạc quan hơn</strong>. <em>Trên thực tế, khi giúp đỡ người khác và làm những việc có ích cho xã hội, các tình nguyện viên thường cảm thấy tự hào về bản thân. Bên cạnh đó, nhiều người nhận được sự trân trọng và biết ơn từ mọi người xung quanh, tạo động lực để họ tiếp tục giúp đỡ cộng đồng. Hệ quả là, họ thường xây dựng được thái độ sống tích cực hơn và biết quan tâm hơn đến những người xung quanh.</em><br><br>
+                    Tóm lại, <strong>công việc tình nguyện</strong> đem lại nhiều lợi ích thiết thực. Những ưu điểm này khiến nó trở nên vô cùng ý nghĩa đối với nhiều người. Nhìn chung, đây là một bước phát triển rất tích cực trong xã hội hiện đại.
+                    </div>
                 </div>
                 
                 <div class="highlight-box" style="margin-top: 20px;">
@@ -411,6 +452,18 @@ identifyingSigns: `
                     In conclusion, <strong>obesity among young people</strong> has several causes and requires practical solutions. By addressing these causes and applying suitable measures, this problem can be reduced in the future. These actions can bring positive changes to both individuals and society.
                 </div>
 
+                <button class="translation-toggle-btn" onclick="toggleTranslation(this)">
+                    <i class="fa-solid fa-language"></i> Xem bản dịch tiếng Việt
+                </button>
+                <div class="translation-content" style="display: none;">
+                    <div class="sample-letter-box">
+                        Trong những năm gần đây, <strong>tình trạng béo phì ở giới trẻ</strong> đã trở thành một mối lo ngại ngày càng tăng ở nhiều nơi trên thế giới. Vấn đề này ảnh hưởng đến cả cá nhân và xã hội theo nhiều cách khác nhau. <strong>Bài luận này sẽ thảo luận về các nguyên nhân chính và đề xuất các giải pháp khả thi.</strong><br><br>
+                    <strong>Vấn đề này có thể bắt nguồn từ một số nguyên nhân.</strong> Một nguyên nhân chính là <strong>nhiều người trẻ có thói quen ăn uống không lành mạnh</strong>. <em>Điều này là do các em thường ăn thức ăn nhanh và uống nước ngọt có ga, dẫn đến việc tiêu thụ quá nhiều chất béo và đường mỗi ngày.</em> Một yếu tố góp phần khác là <strong>nhiều bạn trẻ không tập thể dục thường xuyên</strong>. <em>Hậu quả là, các em không đốt cháy đủ lượng calo và có thể dễ dàng tăng cân.</em> Một lý do nữa là <strong>nhiều thanh thiếu niên thiếu kiến thức về dinh dưỡng</strong>. <em>Điều này có nghĩa là các em có thể lựa chọn thực phẩm không có lợi cho sức khỏe và hình thành thói quen ăn uống kém khoa học.</em><br><br>
+                    <strong>Để giải quyết vấn đề này, có thể thực hiện một số biện pháp.</strong> Một giải pháp hiệu quả là <strong>khuyến khích giới trẻ thực hiện chế độ ăn uống lành mạnh hơn</strong>. <em>Điều này là do việc ăn nhiều rau xanh và giảm thức ăn nhanh có thể giúp các em kiểm soát cân nặng và cải thiện sức khỏe.</em> Một biện pháp khả thi khác là <strong>thúc đẩy việc rèn luyện thể chất thường xuyên tại trường học</strong>. <em>Ví dụ, nhà trường có thể tổ chức các hoạt động thể thao hoặc khuyến khích học sinh tham gia các câu lạc bộ thể dục sau giờ học.</em> Cuối cùng, điều quan trọng là phải <strong>giáo dục giới trẻ về thói quen ăn uống lành mạnh</strong>. <em>Điều này đồng nghĩa với việc các em có thể tự đưa ra những lựa chọn tốt hơn cho sức khỏe trong cuộc sống hàng ngày.</em><br><br>
+                    Tóm lại, <strong>tình trạng béo phì ở giới trẻ</strong> có một số nguyên nhân và đòi hỏi những giải pháp thực tế. Bằng cách giải quyết các nguyên nhân này và áp dụng các biện pháp phù hợp, vấn đề này có thể được giảm bớt trong tương lai. Những hành động này có thể mang lại những thay đổi tích cực cho cả cá nhân và xã hội.
+                    </div>
+                </div>
+
                 <h4 style="color: var(--primary-color); margin-top: 25px;">BÀI MẪU 2: DÀN Ý 02 (NGUYÊN NHÂN & ẢNH HƯỞNG)</h4>
                 <div class="prompt-box" style="margin-bottom: 15px;">
                     <p><strong>ĐỀ BÀI:</strong> In many countries, the number of single-parent families has been rising steadily in recent decades. This trend has raised concerns about its possible causes and effects on individuals and society.<br><br><strong>Write an essay to an educated reader to discuss the causes of this trend and its effects. Include reasons and any relevant examples to support your answer. You should write at least 250 words. Your response will be evaluated in terms of Task fulfillment, Organization, Vocabulary, and Grammar.</strong></p>
@@ -422,6 +475,18 @@ identifyingSigns: `
                     In conclusion, <strong>the increase in single-parent families</strong> has several causes and can lead to various negative effects. By understanding the causes and paying more attention to this problem, people can help improve the situation in the future. These actions can bring positive changes to both individuals and society.
                 </div>
 
+                <button class="translation-toggle-btn" onclick="toggleTranslation(this)">
+                    <i class="fa-solid fa-language"></i> Xem bản dịch tiếng Việt
+                </button>
+                <div class="translation-content" style="display: none;">
+                    <div class="sample-letter-box">
+                        Trong những năm gần đây, <strong>sự gia tăng của các gia đình cha/mẹ đơn thân</strong> đã trở thành một mối lo ngại ngày càng tăng ở nhiều nơi trên thế giới. Vấn đề này ảnh hưởng đến cả cá nhân và xã hội theo nhiều cách khác nhau. <strong>Bài luận này sẽ thảo luận về các nguyên nhân chính và những tác động có thể xảy ra.</strong><br><br>
+                    <strong>Vấn đề này có thể bắt nguồn từ một số yếu tố.</strong> Một nguyên nhân chính là <strong>tỷ lệ ly hôn đang ngày càng tăng ở nhiều quốc gia</strong>. <em>Điều này là do nhiều cặp vợ chồng phải đối mặt với áp lực tài chính hoặc bất đồng tình cảm, dẫn đến quyết định chia tay.</em> Một yếu tố góp phần khác là <strong>một số người trẻ mang thai ngoài ý muốn</strong>. <em>Hậu quả là, một số đứa trẻ chỉ được nuôi dạy bởi một người cha hoặc mẹ.</em> Một lý do nữa là <strong>ngày nay xã hội đã cởi mở hơn với các gia đình đơn thân</strong>. <em>Điều này khiến nhiều người cảm thấy thoải mái hơn khi lựa chọn làm cha/mẹ đơn thân.</em><br><br>
+                    <strong>Vấn đề này có thể dẫn đến một số tác động tiêu cực.</strong> Một ảnh hưởng nghiêm trọng là <strong>trẻ em trong các gia đình đơn thân có thể không nhận được sự giám sát đầy đủ từ cha mẹ</strong>. <em>Ví dụ, một người cha hoặc mẹ đơn thân có thể phải dành phần lớn thời gian làm việc để kiếm tiền, nên không thể dành đủ thời gian cho con cái.</em> Một hậu quả khác là <strong>cha/mẹ đơn thân có thể phải đối mặt với gánh nặng tài chính</strong>. <em>Lý do là họ thường phải một mình gánh vác kinh tế cho cả gia đình.</em> Một vấn đề nữa là <strong>một số trẻ em có thể phát triển những hành vi không tốt</strong>. <em>Điều này là do các em có thể không nhận được sự chỉ bảo đầy đủ từ cha mẹ, dẫn đến việc cư xử chưa tốt ở trường hoặc làm những điều tiêu cực.</em><br><br>
+                    Tóm lại, <strong>sự gia tăng của các gia đình đơn thân</strong> có một số nguyên nhân và có thể dẫn đến nhiều tác động tiêu cực khác nhau. Bằng cách thấu hiểu các nguyên nhân và quan tâm nhiều hơn đến vấn đề này, mọi người có thể giúp cải thiện tình hình trong tương lai. Những hành động này có thể mang lại những thay đổi tích cực cho cả cá nhân và xã hội.
+                    </div>
+                </div>
+
                 <h4 style="color: var(--primary-color); margin-top: 25px;">BÀI MẪU 3: DÀN Ý 03 (ẢNH HƯỞNG & GIẢI PHÁP)</h4>
                 <div class="prompt-box" style="margin-bottom: 15px;">
                     <p><strong>ĐỀ BÀI:</strong> Cybercrime has become a serious issue in modern society, affecting both individuals and organizations around the world. As technology continues to develop, the impacts of online crime are becoming more widespread and damaging.<br><br><strong>Write an essay to discuss the impacts of cybercrime and suggest possible solutions. Include reasons and any relevant examples to support your answer. You should write at least 250 words. Your response will be evaluated in terms of Task fulfillment, Organization, Vocabulary, and Grammar.</strong></p>
@@ -431,6 +496,18 @@ identifyingSigns: `
                     <strong>This problem can lead to several negative effects.</strong> One serious effect is that <strong>many people may lose money</strong>. <em>This is because cybercriminals can steal personal and financial information, so they can take money from victims’ bank accounts.</em> Another negative consequence is that <strong>companies may lose important data</strong>. <em>For example, hackers can attack computer systems and damage valuable business information.</em> A further impact is that <strong>many individuals may feel unsafe when using online services</strong>. <em>This is because cybercrime can make the Internet seem dangerous, so some people may avoid online shopping or online banking.</em><br><br>
                     <strong>To solve this problem, several measures can be taken.</strong> One effective solution is to <strong>improve online security systems</strong>. <em>This is because stronger passwords and security software can better protect users from cyberattacks.</em> Another possible measure is to <strong>educate people about online safety</strong>. <em>For example, schools and companies can teach people how to recognize fake messages or dangerous websites.</em> Finally, it is important to <strong>create stricter laws against cybercrime</strong>. <em>As a result, criminals may receive stronger punishments and become less likely to commit online crimes.</em><br><br>
                     In conclusion, <strong>cybercrime</strong> can lead to several negative effects and requires practical solutions. By applying suitable measures and paying more attention to this problem, people can help improve the situation in the future. These actions can bring positive changes to both individuals and society.
+                </div>
+
+                <button class="translation-toggle-btn" onclick="toggleTranslation(this)">
+                    <i class="fa-solid fa-language"></i> Xem bản dịch tiếng Việt
+                </button>
+                <div class="translation-content" style="display: none;">
+                    <div class="sample-letter-box">
+                        Trong những năm gần đây, <strong>tội phạm mạng</strong> đã trở thành một mối lo ngại ngày càng tăng ở nhiều nơi trên thế giới. Vấn đề này ảnh hưởng đến cả cá nhân và xã hội theo nhiều cách khác nhau. <strong>Bài luận này sẽ thảo luận về các tác động chính và đề xuất các giải pháp khả thi.</strong><br><br>
+                    <strong>Vấn đề này có thể dẫn đến một số tác động tiêu cực.</strong> Một hậu quả nghiêm trọng là <strong>nhiều người có thể bị mất tiền</strong>. <em>Điều này là do tội phạm mạng có thể đánh cắp thông tin cá nhân và tài chính, từ đó chiếm đoạt tiền từ tài khoản ngân hàng của nạn nhân.</em> Một hệ quả tiêu cực khác là <strong>các công ty có thể bị mất dữ liệu quan trọng</strong>. <em>Hậu quả là, họ có thể phải đối mặt với thiệt hại tài chính nặng nề và mất uy tín kinh doanh.</em> Một vấn đề nữa là <strong>các vụ tấn công mạng có thể gây ra căng thẳng tâm lý cho nạn nhân</strong>. <em>Điều này có nghĩa là nhiều người cảm thấy lo lắng và bất an khi sử dụng các dịch vụ trực tuyến.</em><br><br>
+                    <strong>Để giải quyết vấn đề này, có thể thực hiện một số biện pháp.</strong> Một giải pháp hiệu quả là <strong>chính phủ nên ban hành luật an ninh mạng nghiêm khắc hơn</strong>. <em>Điều này là do các hình phạt nặng có thể ngăn chặn tội phạm và giảm bớt các hoạt động bất hợp pháp trên mạng internet.</em> Một biện pháp khả thi khác là <strong>các tổ chức nên nâng cấp hệ thống an ninh mạng</strong>. <em>Ví dụ, các công ty có thể sử dụng các công cụ bảo mật tốt hơn và đào tạo nhân viên để nhận biết các nguy cơ trên không gian mạng.</em> Cuối cùng, điều quan trọng là phải <strong>nâng cao nhận thức của cộng đồng về an toàn trực tuyến</strong>. <em>Điều này giúp mọi người biết cách bảo vệ thông tin cá nhân của mình khi sử dụng mạng internet.</em><br><br>
+                    Tóm lại, <strong>tội phạm mạng</strong> có thể dẫn đến một số tác động tiêu cực và đòi hỏi các biện pháp xử lý kịp thời. Bằng cách áp dụng các giải pháp phù hợp, các chính phủ và tổ chức có thể giúp giảm thiểu vấn đề này trong tương lai. Những nỗ lực này có thể mang lại những thay đổi tích cực cho cả cá nhân và xã hội.
+                    </div>
                 </div>
 
                 <h4 style="color: var(--primary-color); margin-top: 25px;">BÀI MẪU 4: DÀN Ý 04 (CHỈ NGUYÊN NHÂN)</h4>
@@ -445,6 +522,18 @@ identifyingSigns: `
                     In conclusion, <strong>the trend of young people starting their own businesses</strong> is caused by several factors. By understanding these causes and taking appropriate action, people can help improve the situation in the future. These efforts can bring positive changes to both individuals and society.
                 </div>
 
+                <button class="translation-toggle-btn" onclick="toggleTranslation(this)">
+                    <i class="fa-solid fa-language"></i> Xem bản dịch tiếng Việt
+                </button>
+                <div class="translation-content" style="display: none;">
+                    <div class="sample-letter-box">
+                        Trong những năm gần đây, <strong>xu hướng người trẻ rời bỏ công việc truyền thống để tự kinh doanh</strong> đã trở thành một hiện tượng phổ biến ở nhiều quốc gia. Xu hướng này phản ánh những thay đổi quan trọng trong thị trường lao động hiện đại. <strong>Bài luận này sẽ thảo luận về các nguyên nhân chính đằng sau hiện tượng này.</strong><br><br>
+                    Một nguyên nhân lớn là <strong>nhiều người trẻ khao khát sự độc lập và linh hoạt hơn trong công việc</strong>. <em>Điều này là do các công việc văn phòng truyền thống thường có giờ giấc làm việc cố định và quy định nghiêm ngặt, khiến một số người cảm thấy bị gò bó hoặc mất động lực. Ngược lại, việc tự kinh doanh cho phép họ tự quản lý thời gian, đưa ra các quyết định độc lập và theo đuổi đam mê của riêng mình. Nhờ đó, nhiều bạn trẻ tin rằng khởi nghiệp mang lại sự hài lòng cao hơn trong công việc và cuộc sống.</em><br><br>
+                    Một lý do quan trọng khác là <strong>sự phát triển nhanh chóng của công nghệ đã tạo ra nhiều cơ hội kinh doanh mới</strong>. <em>Với sự bùng nổ của mạng internet và mạng xã hội, các bạn trẻ có thể dễ dàng tiếp cận khách hàng trên toàn cầu mà không cần số vốn đầu tư ban đầu quá lớn. Hơn nữa, họ có thể bán sản phẩm hoặc quảng bá dịch vụ qua các nền tảng trực tuyến với chi phí thấp hơn nhiều. Ví dụ, nhiều người đã mở các cửa hàng trực tuyến hoặc trở thành nhà sáng tạo nội dung trên mạng xã hội. Vì vậy, việc bắt đầu khởi nghiệp đã trở nên thuận tiện và dễ dàng tiếp cận hơn đối với người trẻ.</em><br><br>
+                    Tóm lại, <strong>xu hướng người trẻ tự khởi nghiệp</strong> bắt nguồn từ một số nguyên nhân. Bằng cách thấu hiểu các nguyên nhân này và đưa ra những định hướng hỗ trợ phù hợp, xã hội có thể giúp phát triển phong trào này tốt hơn trong tương lai. Những nỗ lực này có thể mang lại những thay đổi tích cực cho cả cá nhân và xã hội.
+                    </div>
+                </div>
+
                 <h4 style="color: var(--primary-color); margin-top: 25px;">BÀI MẪU 5: DÀN Ý 05 (CHỈ ẢNH HƯỞNG)</h4>
                 <div class="prompt-box" style="margin-bottom: 15px;">
                     <p><strong>ĐỀ BÀI:</strong> Deforestation has become a serious environmental issue in many parts of the world. As large areas of forest are being cut down every year, this practice is causing significant damage to the environment and human life.<br><br><strong>Write an essay to discuss the effects of deforestation. Include reasons and any relevant examples to support your answer. You should write at least 250 words. Your response will be evaluated in terms of Task fulfillment, Organization, Vocabulary, and Grammar.</strong></p>
@@ -457,6 +546,19 @@ identifyingSigns: `
                     In conclusion, <strong>deforestation</strong> can lead to several negative effects on both individuals and society. These effects can influence different areas of life. Therefore, it is important to pay more attention to this issue.
                 </div>
 
+                <button class="translation-toggle-btn" onclick="toggleTranslation(this)">
+                    <i class="fa-solid fa-language"></i> Xem bản dịch tiếng Việt
+                </button>
+                <div class="translation-content" style="display: none;">
+                    <div class="sample-letter-box">
+                        Trong những năm gần đây, <strong>nạn phá rừng</strong> đã trở thành một mối lo ngại ngày càng tăng ở nhiều nơi trên thế giới. Vấn đề này ảnh hưởng đến cả cá nhân và xã hội theo nhiều cách khác nhau. <strong>Bài luận này sẽ thảo luận về các tác động chính của nó.</strong><br><br>
+                    Một tác động lớn là <strong>nạn phá rừng gây ra thiệt hại nghiêm trọng cho môi trường và sự đa dạng sinh học</strong>. <em>Trên thực tế, nhiều khu rừng là môi trường sống tự nhiên của vô số loài động thực vật, nên việc đốn hạ cây cối đã phá hủy môi trường sống của chúng. Thêm vào đó, một số loài có thể dần biến mất do không thể tồn tại nếu thiếu rừng hoặc không tìm đủ thức ăn và nơi trú ẩn. Kết quả là, các hệ sinh thái trở nên suy yếu và đa dạng sinh học bị suy giảm ở nhiều khu vực trên thế giới.</em><br><br>
+                    Một ảnh hưởng nghiêm trọng khác là <strong>nạn phá rừng góp phần gây ra biến đổi khí hậu và thiên tai</strong>. <em>Lý do chính là cây xanh giúp hấp thụ khí carbon dioxide và điều hòa nhiệt độ môi trường. Tuy nhiên, khi rừng bị tàn phá, nhiều khí nhà kính hơn sẽ tích tụ trong khí quyển và hiện tượng nóng lên toàn cầu trở nên trầm trọng hơn. Hệ quả là, nhiều quốc gia có thể phải hứng chịu lũ lụt, hạn hán, bão lũ và xói mòn đất thường xuyên hơn trước.</em><br><br>
+                    Một hậu quả nữa là <strong>nạn phá rừng ảnh hưởng tiêu cực đến đời sống của con người</strong>. <em>Điều này là do nhiều người dân địa phương phụ thuộc vào rừng để có thức ăn, nguồn nước, thuốc men và thu nhập trong cuộc sống hàng ngày. Hơn nữa, sự tàn phá môi trường do mất rừng có thể làm giảm năng suất nông nghiệp và làm suy giảm điều kiện sống tại các khu vực này. Vì vậy, nhiều người có thể phải đối mặt với khó khăn tài chính, thất nghiệp và các vấn đề về sức khỏe trong tương lai.</em><br><br>
+                    Tóm lại, <strong>nạn phá rừng</strong> có thể dẫn đến một số tác động tiêu cực đối với cả cá nhân và xã hội. Những tác động này ảnh hưởng đến nhiều lĩnh vực khác nhau của cuộc sống. Do đó, điều quan trọng là cần dành nhiều sự quan tâm hơn nữa cho vấn đề cấp bách này.
+                    </div>
+                </div>
+
                 <h4 style="color: var(--primary-color); margin-top: 25px;">BÀI MẪU 6: DÀN Ý 06 (CHỈ GIẢI PHÁP)</h4>
                 <div class="prompt-box" style="margin-bottom: 15px;">
                     <p><strong>ĐỀ BÀI:</strong> In today’s globalized world, language education plays a key role in helping people communicate, work, and study across borders. However, in many countries, language learning is still limited or ineffective.<br><br><strong>Write an essay to suggest measures that can be taken to promote language education. Include reasons and any relevant examples to support your answer. You should write at least 250 words. Your response will be evaluated in terms of Task fulfillment, Organization, Vocabulary, and Grammar.</strong></p>
@@ -467,6 +569,19 @@ identifyingSigns: `
                     Another possible measure is to <strong>increase access to language learning resources</strong>. <em>Schools and governments can provide more books, online materials, videos, and language learning applications for students. Moreover, free or low-cost language courses can help people from low-income families have better opportunities to learn foreign languages. Consequently, more students and adults may be able to study languages more easily.</em><br><br>
                     A further approach is to <strong>create more opportunities for people to practise foreign languages in daily life</strong>. <em>Schools can organize language clubs, cultural exchange programs, or speaking competitions for students on a regular basis. For example, learners can communicate with foreign teachers or international students through these activities and improve their speaking confidence. Therefore, people may become more confident, develop better communication skills, and use foreign languages more naturally in real situations.</em><br><br>
                     In conclusion, <strong>several practical solutions</strong> can help improve language education. By applying suitable measures, schools and governments can help improve the situation in the future. These efforts can bring positive changes to both individuals and society.
+                </div>
+
+                <button class="translation-toggle-btn" onclick="toggleTranslation(this)">
+                    <i class="fa-solid fa-language"></i> Xem bản dịch tiếng Việt
+                </button>
+                <div class="translation-content" style="display: none;">
+                    <div class="sample-letter-box">
+                        Trong những năm gần đây, <strong>giáo dục ngoại ngữ</strong> ngày càng trở nên quan trọng trong xã hội hiện đại. Việc học ngôn ngữ hiệu quả giúp con người giao tiếp, làm việc và học tập vượt qua mọi ranh giới quốc gia. <strong>Bài luận này sẽ đề xuất một số giải pháp thực tế để nâng cao chất lượng giáo dục ngôn ngữ.</strong><br><br>
+                    Một giải pháp hiệu quả là <strong>cải tiến phương pháp giảng dạy ngoại ngữ trong nhà trường</strong>. <em>Giáo viên nên sử dụng nhiều hoạt động tương tác hơn, chẳng hạn như trò chơi, thảo luận nhóm và thực hành nói, thay vì chỉ tập trung vào các bài tập ngữ pháp khô khan. Ngoài ra, học sinh nên được khuyến khích sử dụng ngôn ngữ trong giao tiếp thực tế xuyên suốt các buổi học và hoạt động hàng ngày. Kết quả là, học sinh có thể trở nên hứng thú hơn với việc học ngoại ngữ và nâng cao rõ rệt các kỹ năng ngôn ngữ của mình.</em><br><br>
+                    Một biện pháp khả thi khác là <strong>tăng cường khả năng tiếp cận các nguồn tài nguyên học ngôn ngữ</strong>. <em>Nhà trường và chính phủ có thể cung cấp thêm sách, tài liệu trực tuyến, video và các ứng dụng học tiếng cho học sinh. Hơn nữa, các khóa học ngôn ngữ miễn phí hoặc chi phí thấp có thể giúp những người có hoàn cảnh khó khăn có cơ hội tốt hơn để học ngoại ngữ. Hệ quả là, nhiều học sinh và người lớn sẽ có điều kiện học ngoại ngữ một cách dễ dàng và thuận tiện hơn.</em><br><br>
+                    Một hướng tiếp cận nữa là <strong>tạo thêm nhiều cơ hội cho mọi người thực hành ngoại ngữ trong đời sống hàng ngày</strong>. <em>Nhà trường có thể định kỳ tổ chức các câu lạc bộ tiếng Anh, chương trình giao lưu văn hóa hoặc các cuộc thi hùng biện cho học sinh. Ví dụ, người học có thể giao tiếp với giáo viên bản xứ hoặc du học sinh quốc tế thông qua các hoạt động này để nâng cao sự tự tin khi nói. Do đó, mọi người sẽ trở nên tự tin hơn, phát triển kỹ năng giao tiếp tốt hơn và sử dụng ngoại ngữ một cách tự nhiên hơn trong các tình huống thực tế.</em><br><br>
+                    Tóm lại, <strong>một số giải pháp thực tế</strong> có thể giúp cải thiện đáng kể giáo dục ngoại ngữ. Bằng cách áp dụng các biện pháp phù hợp, các trường học và chính phủ có thể nâng cao chất lượng dạy và học trong tương lai. Những nỗ lực này có thể mang lại những đổi thay tích cực cho cả cá nhân và toàn xã hội.
+                    </div>
                 </div>
             </div>
         `
@@ -545,6 +660,19 @@ identifyingSigns: `
                     Another important reason is that <strong>household chores can strengthen family relationships and encourage children to become more responsible</strong>. <em>When children help their parents with cooking or cleaning, they can learn to share family duties. This can make family members understand and support each other better. As a result, children who often do housework may have closer relationships with their parents. They can also develop a stronger sense of responsibility from a young age.</em><br><br>
                     A further reason supporting my viewpoint is that <strong>both boys and girls should learn household chores to promote gender equality</strong>. <em>In modern society, housework should not be only the responsibility of women. Teaching both boys and girls to cook and clean can help reduce old ideas about gender roles. Therefore, children can learn that both men and women should share responsibilities in the family.</em><br><br>
                     In conclusion, I strongly <strong>disagree</strong> with the idea that <strong>household chores are no longer necessary for children in modern society</strong>. The reasons above clearly explain why I oppose this viewpoint. <strong>Therefore, it is essential that parents encourage both sons and daughters to share household chores from an early age.</strong>
+                </div>
+
+                <button class="translation-toggle-btn" onclick="toggleTranslation(this)">
+                    <i class="fa-solid fa-language"></i> Xem bản dịch tiếng Việt
+                </button>
+                <div class="translation-content" style="display: none;">
+                    <div class="sample-letter-box">
+                        Ngày nay, quan điểm cho rằng <strong>trẻ em, đặc biệt là các bé gái, không còn cần phải học cách nấu ăn hay làm việc nhà nữa</strong> đã trở thành một chủ đề thảo luận phổ biến. Từ góc nhìn của cá nhân tôi, tôi hoàn toàn <strong>không đồng ý</strong> với quan điểm này vì một số lý do quan trọng. <strong>Bài luận này sẽ trình bày những lập luận chính để bảo vệ quan điểm của tôi.</strong><br><br>
+                    Lý do đầu tiên khiến tôi <strong>không đồng ý</strong> với ý kiến này là <strong>học làm việc nhà giúp trẻ phát triển các kỹ năng sống thiết yếu</strong>. <em>Điều này là do nấu nướng, dọn dẹp và sắp xếp đồ đạc cá nhân đều là những kỹ năng vô cùng hữu ích trong cuộc sống hàng ngày. Nếu trẻ không học làm những công việc này từ khi còn nhỏ, các em có thể sẽ phụ thuộc quá nhiều vào người khác trong tương lai. Bằng cách nắm vững những kỹ năng cơ bản này, các em có thể trở nên tự lập hơn và chuẩn bị tốt hơn cho cuộc sống trưởng thành.</em><br><br>
+                    Một lý do quan trọng khác là <strong>làm việc nhà có thể thắt chặt mối quan hệ gia đình và giúp trẻ trở nên có trách nhiệm hơn</strong>. <em>Khi con cái phụ giúp cha mẹ việc bếp núc hay lau dọn, các em sẽ học được cách chia sẻ nghĩa vụ trong gia đình. Điều này giúp các thành viên trong gia đình thấu hiểu và gắn bó hỗ trợ nhau tốt hơn. Kết quả là, những đứa trẻ thường xuyên làm việc nhà có xu hướng gần gũi, gắn kết hơn với cha mẹ. Các em cũng sớm hình thành được ý thức trách nhiệm cao ngay từ khi còn nhỏ.</em><br><br>
+                    Một lý do nữa củng cố cho quan điểm của tôi là <strong>cả bé trai và bé gái đều nên học làm việc nhà để thúc đẩy bình đẳng giới</strong>. <em>Trong xã hội hiện đại, công việc nội trợ không nên chỉ là bổn phận riêng của phụ nữ. Dạy cho cả con trai và con gái biết nấu nướng và dọn dẹp có thể giúp xóa bỏ những định kiến cổ hủ về vai trò giới. Nhờ đó, trẻ em sẽ hiểu rằng cả nam và nữ đều cần chung tay chia sẻ trách nhiệm trong tổ ấm gia đình.</em><br><br>
+                    Tóm lại, tôi kịch liệt <strong>không đồng ý</strong> với ý kiến cho rằng <strong>việc nhà không còn cần thiết đối với trẻ em trong xã hội hiện đại</strong>. Những lý do nêu trên đã giải thích rõ ràng tại sao tôi phản đối quan điểm này. <strong>Vì vậy, điều cốt yếu là cha mẹ cần khuyến khích cả con trai lẫn con gái cùng chia sẻ công việc nhà ngay từ khi còn nhỏ.</strong>
+                    </div>
                 </div>
 
                 <!-- Practice & Idea Guide Section -->
@@ -669,6 +797,18 @@ identifyingSigns: `
                     On the one hand, it is argued that <strong>picture books bring many benefits to children</strong>. <em>This is because pictures can help children understand stories more easily, especially when they are learning new words. In addition, young readers can follow the content more easily because the illustrations explain important parts of the story. Reading also becomes more enjoyable because colorful images attract children's attention. As a result, children are often more interested in reading and learning. For example, many primary teachers use picture books to encourage students to participate actively in reading lessons.</em><br><br>
                     On the other hand, it is believed that <strong>picture books may have some negative effects on children</strong>. <em>The main reason is that children may rely too much on pictures instead of using their imagination. As a result, they may not need to imagine characters, places, or events because the illustrations already provide this information. This can reduce opportunities for children to develop creative thinking skills. Furthermore, some children may find books without pictures less attractive and more difficult to read. Therefore, the excessive use of picture books may reduce children's creativity and imagination.</em><br><br>
                     In conclusion, both views have their own reasons. However, I personally believe that <strong>picture books are beneficial for children</strong> because <strong>they help young readers enjoy reading and improve language skills</strong>. <strong>Therefore, it is important that people consider both views carefully.</strong>
+                </div>
+
+                <button class="translation-toggle-btn" onclick="toggleTranslation(this)">
+                    <i class="fa-solid fa-language"></i> Xem bản dịch tiếng Việt
+                </button>
+                <div class="translation-content" style="display: none;">
+                    <div class="sample-letter-box">
+                        Trong những năm gần đây, <strong>việc cho trẻ đọc sách tranh</strong> đã trở thành một chủ đề thảo luận phổ biến. Một số người cho rằng <strong>trẻ em nên đọc sách tranh vì chúng dễ hiểu và thú vị hơn</strong>, trong khi những người khác lại lập luận rằng <strong>sách tranh có thể gây ảnh hưởng tiêu cực đến trí tưởng tượng của trẻ, tương tự như việc xem tivi</strong>. <strong>Bài luận này sẽ thảo luận về cả hai quan điểm và đưa ra ý kiến của cá nhân tôi.</strong><br><br>
+                    Một mặt, có quan điểm cho rằng <strong>sách tranh mang lại nhiều lợi ích cho trẻ nhỏ</strong>. <em>Điều này là do hình ảnh có thể giúp trẻ hiểu câu chuyện một cách dễ dàng hơn, đặc biệt là khi các em đang trong quá trình học từ mới. Ngoài ra, các độc giả nhỏ tuổi có thể nắm bắt diễn biến câu chuyện thuận tiện hơn nhờ các hình minh họa diễn giải những tình tiết quan trọng. Việc đọc sách cũng trở nên hấp dẫn hơn vì những hình ảnh rực rỡ màu sắc thu hút sự chú ý của trẻ. Nhờ đó, trẻ em thường có nhiều hứng thú hơn với việc đọc sách và học tập. Ví dụ, nhiều giáo viên tiểu học sử dụng sách tranh để khuyến khích học sinh tham gia tích cực vào các tiết học đọc.</em><br><br>
+                    Mặt khác, nhiều người tin rằng <strong>sách tranh có thể gây ra một số tác động tiêu cực đến trẻ em</strong>. <em>Lý do chính là trẻ có thể quá phụ thuộc vào hình ảnh thay vì phát huy trí tưởng tượng của mình. Hệ quả là, các em có thể không cần phải hình dung về nhân vật, bối cảnh hay các sự việc vì tranh vẽ đã cung cấp sẵn tất cả các chi tiết này. Điều này có thể làm giảm cơ hội rèn luyện và phát triển tư duy sáng tạo của trẻ. Hơn nữa, một số trẻ có thể cảm thấy những cuốn sách thuần chữ kém hấp dẫn và khó đọc hơn. Vì vậy, việc lạm dụng quá nhiều sách tranh có thể làm hạn chế sự sáng tạo và trí tưởng tượng phong phú của trẻ.</em><br><br>
+                    Tóm lại, cả hai quan điểm đều có những lý lẽ riêng xác đáng. Tuy nhiên, cá nhân tôi tin rằng <strong>sách tranh rất có lợi cho trẻ em</strong> bởi vì <strong>chúng giúp các độc giả nhỏ tuổi thêm yêu thích việc đọc sách và trau dồi các kỹ năng ngôn ngữ</strong>. <strong>Do đó, điều quan trọng là mọi người cần xem xét kỹ lưỡng và cân bằng cả hai quan điểm.</strong>
+                    </div>
                 </div>
 
                 <!-- Practice & Idea Guide Section -->
