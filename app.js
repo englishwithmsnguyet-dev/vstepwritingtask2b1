@@ -1517,7 +1517,7 @@ function renderOutlineSelector() {
                 Đang trả bài: <strong>${activeOutline.shortName}</strong>
             </span>
         </div>
-        <div class="outline-btn-grid">
+        <div class="outline-btn-grid ${outlines.length === 2 ? 'grid-cols-2' : 'grid-cols-3'}">
             ${outlines.map((o, idx) => {
                 const isDone = completedList.includes(idx);
                 const isLocked = isOutlineLocked(activeEssayTypeId, idx);
@@ -2051,7 +2051,7 @@ function setupVariantTabs(container, itemSelector = '.outline-variant', defaultP
 
     // Create tabs navigation
     const nav = document.createElement('div');
-    nav.className = 'outline-variant-tabs-nav';
+    nav.className = `outline-variant-tabs-nav ${variants.length === 2 ? 'nav-cols-2' : 'nav-cols-3'}`;
 
     variants.forEach((variant, index) => {
         const h3 = variant.querySelector('h3');
