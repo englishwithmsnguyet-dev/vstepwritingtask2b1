@@ -994,7 +994,10 @@ function markOutlineCompleted(typeId, outlineIdx) {
     }
 
     const outlines = recitationOutlines[typeId] || [];
-    if (outlines.length > 0 && completed[typeId].length >= outlines.length) {
+    const userClass = getUserClass();
+    const isRestricted = ['CB211', 'CB213', 'ONB103'].includes(userClass);
+    const requiredCount = (isRestricted && typeId === 'cause-effect') ? 2 : outlines.length;
+    if (outlines.length > 0 && completed[typeId].length >= requiredCount) {
         markEssayCompleted(typeId);
     }
 }
@@ -1438,8 +1441,11 @@ function markEssayCompleted(id) {
 
 function updateGlobalProgress() {
     const completed = getCompletedEssays();
-    const count = completed.length;
-    const total = 4;
+    const userClass = getUserClass();
+    const isRestricted = ['CB211', 'CB213', 'ONB103'].includes(userClass);
+    const total = isRestricted ? 2 : 4;
+    const validCompleted = isRestricted ? completed.filter(id => id === 'adv-disadv' || id === 'cause-effect') : completed;
+    const count = validCompleted.length;
     const percent = Math.round((count / total) * 100);
 
     // Update Sidebar progress
@@ -1460,7 +1466,9 @@ function updateGlobalProgress() {
         if (count === 0) {
             dashStatus.textContent = "Chưa hoàn thành dạng bài nào. Hãy bắt đầu học tập!";
         } else if (count === total) {
-            dashStatus.textContent = "🎉 TUYỆT VỜI! Bạn đã xuất sắc chinh phục tất cả 4 dạng luận VSTEP Writing Task 02!";
+            dashStatus.textContent = isRestricted
+                ? "🎉 TUYỆT VỜI! Bạn đã xuất sắc hoàn thành các dạng bài được mở cho lớp của mình!"
+                : "🎉 TUYỆT VỜI! Bạn đã xuất sắc chinh phục tất cả 4 dạng luận VSTEP Writing Task 02!";
         } else {
             dashStatus.textContent = `Đã chinh phục ${count}/${total} dạng bài. Hãy tiếp tục nhiệm vụ tiếp theo!`;
         }
@@ -1519,15 +1527,23 @@ function renderOutlineSelector() {
         <div class="outline-btn-grid">
             ${outlines.map((o, idx) => {
                 const isDone = completedList.includes(idx);
+                const isLocked = isOutlineLocked(activeEssayTypeId, idx);
+                let badgeHtml = '';
+                if (isLocked) {
+                    badgeHtml = '<span class="outline-badge-locked"><i class="fa-solid fa-lock"></i> KHOÁ</span>';
+                } else if (isDone) {
+                    badgeHtml = '<span class="outline-badge-done"><i class="fa-solid fa-circle-check"></i> ĐÃ ĐẠT</span>';
+                }
+
                 return `
-                    <button class="outline-tab-btn ${idx === currentOutlineIndex ? 'active' : ''}" data-outline-index="${idx}">
+                    <button class="outline-tab-btn ${idx === currentOutlineIndex ? 'active' : ''} ${isLocked ? 'is-locked' : ''}" data-outline-index="${idx}">
                         <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
                             <span class="outline-tab-btn-tag">${o.shortTitle}</span>
-                            ${isDone ? '<span class="outline-badge-done"><i class="fa-solid fa-circle-check"></i> ĐÃ ĐẠT</span>' : ''}
+                            ${badgeHtml}
                         </div>
                         <span class="outline-tab-btn-name">${o.subtitle}</span>
                         <span class="outline-tab-btn-count">
-                            <i class="fa-solid fa-list-check"></i> ${o.questions.length} câu hỏi
+                            <i class="fa-solid ${isLocked ? 'fa-lock' : 'fa-list-check'}"></i> ${isLocked ? 'Chưa mở cho lớp' : `${o.questions.length} câu hỏi`}
                         </span>
                     </button>
                 `;
@@ -1538,6 +1554,11 @@ function renderOutlineSelector() {
     container.querySelectorAll('.outline-tab-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
             const idx = parseInt(e.currentTarget.dataset.outlineIndex, 10);
+            if (isOutlineLocked(activeEssayTypeId, idx)) {
+                const userClass = getUserClass();
+                showToast(`🔒 Dàn ý này tạm thời chưa mở cho lớp ${userClass || 'của bạn'}. Lớp hiện mở Dàn ý 01 và Dàn ý 02!`, 'warning');
+                return;
+            }
             if (idx === currentOutlineIndex) return;
             currentOutlineIndex = idx;
             renderOutlineSelector();
@@ -1549,6 +1570,9 @@ function renderOutlineSelector() {
 // Reset Recitation State and UI
 function resetRecitationUI(isRestart = false) {
     const outlines = recitationOutlines[activeEssayTypeId] || [];
+    if (isOutlineLocked(activeEssayTypeId, currentOutlineIndex)) {
+        currentOutlineIndex = 0;
+    }
     if (currentOutlineIndex >= outlines.length) currentOutlineIndex = 0;
     const currentOutline = outlines[currentOutlineIndex];
     activeQuestions = currentOutline ? currentOutline.questions : [];
@@ -1895,6 +1919,19 @@ function showWelcomeScreen() {
 
 
 // User Class & Permission Helpers
+function isTeacherUser() {
+    try {
+        const saved = JSON.parse(localStorage.getItem('vstep_student_info'));
+        if (saved) {
+            const cls = (saved.className || '').toUpperCase();
+            const name = (saved.fullName || '').toUpperCase();
+            if (cls === 'GV' || name === 'PTMN') return true;
+        }
+    } catch (e) {}
+    const curCls = (sessionStorage.getItem('current_user_class') || '').toUpperCase();
+    return curCls === 'GV';
+}
+
 function getUserClass() {
     try {
         const saved = JSON.parse(localStorage.getItem('vstep_student_info'));
@@ -1904,6 +1941,25 @@ function getUserClass() {
 }
 
 function isTypeLocked(typeId) {
+    if (isTeacherUser()) return false;
+    const userClass = getUserClass();
+    if (['CB211', 'CB213', 'ONB103'].includes(userClass)) {
+        return (typeId === 'opinion' || typeId === 'discussion');
+    }
+    return false;
+}
+
+function isOutlineLocked(typeId, outlineIndex) {
+    if (isTeacherUser()) return false;
+    const userClass = getUserClass();
+    if (['CB211', 'CB213', 'ONB103'].includes(userClass)) {
+        if (typeId === 'cause-effect') {
+            return outlineIndex >= 2; // Only first 2 outlines (index 0 and 1) are unlocked
+        }
+        if (typeId === 'opinion' || typeId === 'discussion') {
+            return true;
+        }
+    }
     return false;
 }
 
@@ -1964,7 +2020,7 @@ function renderNav() {
         
         let statusBadge = '';
         if (locked) {
-            statusBadge = '<span class="nav-lock-badge" title="Dạng luận này tạm thời chưa mở cho lớp CB210"><i class="fa-solid fa-lock"></i> Khoá</span>';
+            statusBadge = '<span class="nav-lock-badge" title="Dạng luận này tạm thời chưa mở cho lớp của bạn"><i class="fa-solid fa-lock"></i> Khoá</span>';
         } else if (isCompleted) {
             statusBadge = '<span class="nav-completed-badge" title="Đã chinh phục"><i class="fa-solid fa-circle-check"></i></span>';
         }
@@ -1980,7 +2036,8 @@ function renderNav() {
         
         navItem.addEventListener('click', () => {
             if (isTypeLocked(type.id)) {
-                showToast('🔒 Dạng luận này tạm thời chưa mở cho lớp CB210. Lớp hiện mở Dạng 01, Dạng 02 và Dạng 03!', 'warning');
+                const userClass = getUserClass();
+                showToast(`🔒 Dạng luận này tạm thời chưa mở cho lớp ${userClass || 'của bạn'}. Lớp hiện mở Dạng 01 và 2 dàn ý đầu của Dạng 02!`, 'warning');
                 return;
             }
             selectEssayType(type.id);
@@ -2032,15 +2089,23 @@ function setupVariantTabs(container, itemSelector = '.outline-variant', defaultP
             titleText = parts.slice(1).join('-').trim();
         }
 
+        const isLocked = isOutlineLocked(activeEssayTypeId, index);
         const btn = document.createElement('button');
         btn.type = 'button';
-        btn.className = `outline-variant-tab-btn ${index === 0 ? 'active' : ''}`;
+        btn.className = `outline-variant-tab-btn ${index === 0 ? 'active' : ''} ${isLocked ? 'is-locked' : ''}`;
         btn.innerHTML = `
-            <span class="variant-tab-badge"><i class="fa-solid fa-layer-group"></i> ${badgeText}</span>
-            <span class="variant-tab-title">${titleText}</span>
+            <span class="variant-tab-badge ${isLocked ? 'is-locked' : ''}">
+                <i class="fa-solid ${isLocked ? 'fa-lock' : 'fa-layer-group'}"></i> ${badgeText}
+            </span>
+            <span class="variant-tab-title">${titleText} ${isLocked ? '<span class="tab-lock-badge"><i class="fa-solid fa-lock"></i> Khoá</span>' : ''}</span>
         `;
 
         btn.addEventListener('click', () => {
+            if (isOutlineLocked(activeEssayTypeId, index)) {
+                const userClass = getUserClass();
+                showToast(`🔒 Dàn ý này tạm thời chưa mở cho lớp ${userClass || 'của bạn'}. Lớp hiện mở Dàn ý 01 và Dàn ý 02!`, 'warning');
+                return;
+            }
             nav.querySelectorAll('.outline-variant-tab-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
 
@@ -2077,7 +2142,8 @@ function setupVariantTabs(container, itemSelector = '.outline-variant', defaultP
 // Select an Essay Type
 function selectEssayType(id) {
     if (isTypeLocked(id)) {
-        showToast('🔒 Dạng luận này tạm thời chưa mở cho lớp CB210. Lớp hiện mở Dạng 01, Dạng 02 và Dạng 03!', 'warning');
+        const userClass = getUserClass();
+        showToast(`🔒 Dạng luận này tạm thời chưa mở cho lớp ${userClass || 'của bạn'}. Lớp hiện mở Dạng 01 và 2 dàn ý đầu của Dạng 02!`, 'warning');
         return;
     }
     activeEssayTypeId = id;
