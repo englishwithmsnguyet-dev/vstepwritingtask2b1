@@ -1490,14 +1490,7 @@ function resetLearningProgress() {
 
 // Save current recitation progress
 function saveCurrentRecitationProgress() {
-    if (!activeEssayTypeId) return;
-    try {
-        const key = 'vstep_recitation_' + activeEssayTypeId + '_' + currentOutlineIndex;
-        localStorage.setItem(key, JSON.stringify({
-            currentQuestionIndex,
-            questionScores
-        }));
-    } catch (e) {}
+    // Luôn mặc định trả từ câu đầu của Mở bài khi mở mục Trả Bài
 }
 
 // Render Outline Selector in Trả Bài
@@ -1567,7 +1560,7 @@ function renderOutlineSelector() {
     });
 }
 
-// Reset Recitation State and UI
+// Reset Recitation State and UI - Luôn mặc định trả từ câu đầu của Mở bài
 function resetRecitationUI(isRestart = false) {
     const outlines = recitationOutlines[activeEssayTypeId] || [];
     if (isOutlineLocked(activeEssayTypeId, currentOutlineIndex)) {
@@ -1578,24 +1571,11 @@ function resetRecitationUI(isRestart = false) {
     activeQuestions = currentOutline ? currentOutline.questions : [];
 
     const key = 'vstep_recitation_' + activeEssayTypeId + '_' + currentOutlineIndex;
+    try { localStorage.removeItem(key); } catch (e) {}
 
-    if (isRestart === true && activeEssayTypeId) {
-        try { localStorage.removeItem(key); } catch (e) {}
-    }
-
-    let savedProgress = null;
-    try {
-        const data = localStorage.getItem(key);
-        if (data) savedProgress = JSON.parse(data);
-    } catch (e) {}
-
-    if (savedProgress && savedProgress.questionScores && savedProgress.questionScores.length === activeQuestions.length) {
-        currentQuestionIndex = savedProgress.currentQuestionIndex || 0;
-        questionScores = savedProgress.questionScores;
-    } else {
-        currentQuestionIndex = 0;
-        questionScores = Array(activeQuestions.length).fill(0);
-    }
+    // Luôn luôn mặc định bắt đầu từ câu đầu của Mở bài (index 0)
+    currentQuestionIndex = 0;
+    questionScores = Array(activeQuestions.length).fill(0);
     
     if (recitationInput) recitationInput.value = '';
     if (recitationFeedback) recitationFeedback.classList.add('hidden');
@@ -2622,7 +2602,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (tabId === 'writingPractice') {
                 renderOutlineSelector();
-                resetRecitationUI(false);
+                resetRecitationUI(true);
             }
         });
     });
