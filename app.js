@@ -354,8 +354,14 @@ identifyingSigns: `
                 <h3 style="color: var(--primary-color); border-bottom: 2px solid var(--primary-light); padding-bottom: 10px; margin-bottom: 15px;">DÀN Ý 4: CHỈ NGUYÊN NHÂN</h3>
                 <div class="outline-step">
                     <h4>1. MỞ BÀI</h4>
-                    <p>↳ <span class="outline-phrase">In recent years, [chủ đề – danh từ/cụm danh từ] has become a growing concern in many parts of the world. This problem affects both individuals and society in different ways. This essay will discuss the main causes of this problem.</span></p>
-                    <p style="font-size: 0.9rem; color: #64748b; font-style: italic; margin-top: 5px;">* LƯU Ý: Nếu đề nói về một xu hướng hoặc hiện tượng trung tính, có thể dùng <strong>trend</strong> hoặc <strong>phenomenon</strong> thay cho <strong>problem</strong>. Khi đó, cần điều chỉnh các câu tiếp theo cho phù hợp với chủ đề.</p>
+                    <div style="background: rgba(67, 97, 238, 0.04); border: 1px solid rgba(67, 97, 238, 0.15); border-radius: 8px; padding: 12px 14px; margin-bottom: 12px;">
+                        <p style="font-weight: 700; color: #1e293b; margin-bottom: 6px;"><i class="fa-solid fa-circle-exclamation" style="color: #ef4444;"></i> Nguyên nhân của một vấn đề:</p>
+                        <p style="margin: 0;">↳ <span class="outline-phrase">In recent years, [chủ đề – danh từ/cụm danh từ] has become a growing concern in many parts of the world. This problem affects both individuals and society in different ways. This essay will discuss the main causes of this problem.</span></p>
+                    </div>
+                    <div style="background: rgba(67, 97, 238, 0.04); border: 1px solid rgba(67, 97, 238, 0.15); border-radius: 8px; padding: 12px 14px;">
+                        <p style="font-weight: 700; color: #1e293b; margin-bottom: 6px;"><i class="fa-solid fa-arrow-trend-up" style="color: #4361ee;"></i> Nguyên nhân của một xu hướng hoặc hiện tượng trung tính:</p>
+                        <p style="margin: 0;">↳ <span class="outline-phrase">In recent years, [chủ đề – danh từ/cụm danh từ] has become increasingly popular in many parts of the world. This trend has attracted considerable attention in modern society. This essay will discuss the main reasons for this trend.</span></p>
+                    </div>
                 </div>
                 <div class="outline-step">
                     <h4>2. THÂN BÀI</h4>
@@ -375,7 +381,14 @@ identifyingSigns: `
                 </div>
                 <div class="outline-step">
                     <h4>3. KẾT BÀI</h4>
-                    <p>↳ <span class="outline-phrase">In conclusion, [chủ đề – danh từ/cụm danh từ] is caused by several factors. By understanding these causes and taking appropriate action, people can help improve the situation in the future. These efforts can bring positive changes to both individuals and society.</span></p>
+                    <div style="background: rgba(67, 97, 238, 0.04); border: 1px solid rgba(67, 97, 238, 0.15); border-radius: 8px; padding: 12px 14px; margin-bottom: 12px;">
+                        <p style="font-weight: 700; color: #1e293b; margin-bottom: 6px;"><i class="fa-solid fa-circle-exclamation" style="color: #ef4444;"></i> Nguyên nhân của một vấn đề:</p>
+                        <p style="margin: 0;">↳ <span class="outline-phrase">In conclusion, [chủ đề – danh từ/cụm danh từ] is caused by several factors. By understanding these causes and taking appropriate action, people can help improve the situation in the future. These efforts can bring positive changes to both individuals and society.</span></p>
+                    </div>
+                    <div style="background: rgba(67, 97, 238, 0.04); border: 1px solid rgba(67, 97, 238, 0.15); border-radius: 8px; padding: 12px 14px;">
+                        <p style="font-weight: 700; color: #1e293b; margin-bottom: 6px;"><i class="fa-solid fa-arrow-trend-up" style="color: #4361ee;"></i> Nguyên nhân của một xu hướng hoặc hiện tượng trung tính:</p>
+                        <p style="margin: 0;">↳ <span class="outline-phrase">In conclusion, [chủ đề – danh từ/cụm danh từ] has become increasingly popular for several reasons. By understanding these reasons, people can better understand the development of this trend. This trend may continue to influence different aspects of life in the future.</span></p>
+                    </div>
                 </div>
             </div>
 
@@ -383,15 +396,21 @@ identifyingSigns: `
                 <h3 style="color: var(--primary-color); border-bottom: 2px solid var(--primary-light); padding-bottom: 10px; margin-bottom: 15px;">DÀN Ý 5: CHỈ ẢNH HƯỞNG</h3>
                 <div class="outline-step">
                     <h4>1. MỞ BÀI</h4>
-                    <p>↳ <span class="outline-phrase">In recent years, [chủ đề – danh từ/cụm danh từ] has become a growing concern in many parts of the world. This problem affects both individuals and society in different ways. This essay will discuss its main effects.</span></p>
-                    <p style="font-size: 0.9rem; color: #64748b; font-style: italic; margin-top: 5px;">* LƯU Ý: Nếu đề nói về một xu hướng hoặc hiện tượng trung tính, có thể dùng <strong>trend</strong> hoặc <strong>phenomenon</strong> thay cho <strong>problem</strong>. Khi đó, cần điều chỉnh các câu tiếp theo cho phù hợp với chủ đề.</p>
+                    <div style="background: rgba(67, 97, 238, 0.04); border: 1px solid rgba(67, 97, 238, 0.15); border-radius: 8px; padding: 12px 14px; margin-bottom: 12px;">
+                        <p style="font-weight: 700; color: #1e293b; margin-bottom: 6px;"><i class="fa-solid fa-circle-minus" style="color: #ef4444;"></i> Nếu phân tích ảnh hưởng tiêu cực của một vấn đề:</p>
+                        <p style="margin: 0;">↳ <span class="outline-phrase">In recent years, [chủ đề – danh từ/cụm danh từ] has become a growing concern in many parts of the world. This problem affects both individuals and society in different ways. This essay will discuss its main negative effects.</span></p>
+                    </div>
+                    <div style="background: rgba(67, 97, 238, 0.04); border: 1px solid rgba(67, 97, 238, 0.15); border-radius: 8px; padding: 12px 14px;">
+                        <p style="font-weight: 700; color: #1e293b; margin-bottom: 6px;"><i class="fa-solid fa-circle-plus" style="color: #10b981;"></i> Nếu phân tích ảnh hưởng tích cực của một xu hướng:</p>
+                        <p style="margin: 0;">↳ <span class="outline-phrase">In recent years, [chủ đề – danh từ/cụm danh từ] has become an increasingly popular trend in many parts of the world. This trend has brought many benefits to individuals and society. This essay will discuss its main positive effects.</span></p>
+                    </div>
                 </div>
                 <div class="outline-step">
                     <h4>2. THÂN BÀI</h4>
                     <ul>
-                        <li><strong>THÂN BÀI 1:</strong> <span class="outline-phrase">One major effect is that [ảnh hưởng 1 – mệnh đề]. &rarr; [luận cứ 1 - mệnh đề] &rarr; [luận cứ 2] &rarr; [luận cứ 3]</span></li>
-                        <li><strong>THÂN BÀI 2:</strong> <span class="outline-phrase">Another serious impact is that [ảnh hưởng 2 – mệnh đề]. &rarr; [luận cứ 1 - mệnh đề] &rarr; [luận cứ 2] &rarr; [luận cứ 3]</span></li>
-                        <li><strong>THÂN BÀI 3:</strong> <span class="outline-phrase">A further consequence is that [ảnh hưởng 3 – mệnh đề]. &rarr; [luận cứ 1 - mệnh đề] &rarr; [luận cứ 2] &rarr; [luận cứ 3]</span></li>
+                        <li><strong>THÂN BÀI 1:</strong> <span class="outline-phrase">One major effect is that [ảnh hưởng 1 – mệnh đề]. &rarr; [luận cứ 1 - mệnh đề] &rarr; [luận cứ 2 - mệnh đề] &rarr; [luận cứ 3 - mệnh đề]</span></li>
+                        <li><strong>THÂN BÀI 2:</strong> <span class="outline-phrase">Another significant impact is that [ảnh hưởng 2 – mệnh đề]. &rarr; [luận cứ 1 - mệnh đề] &rarr; [luận cứ 2 - mệnh đề] &rarr; [luận cứ 3 - mệnh đề]</span></li>
+                        <li><strong>THÂN BÀI 3:</strong> <span class="outline-phrase">A further result is that [ảnh hưởng 3 – mệnh đề]. &rarr; [luận cứ 1 - mệnh đề] &rarr; [luận cứ 2 - mệnh đề] &rarr; [luận cứ 3 - mệnh đề]</span></li>
                     </ul>
                     <div style="background: #f8fafc; border-left: 4px solid var(--primary-color); padding: 12px 16px; margin: 15px 0; border-radius: 0 8px 8px 0;">
                         <h5 style="color: var(--primary-color); margin-bottom: 8px; font-size: 0.95rem;"><i class="fa-solid fa-lightbulb"></i> GỢI Ý CÁC CỤM TỪ DẪN DẮT LUẬN CỨ:</h5>
@@ -404,7 +423,14 @@ identifyingSigns: `
                 </div>
                 <div class="outline-step">
                     <h4>3. KẾT BÀI</h4>
-                    <p>↳ <span class="outline-phrase">In conclusion, [chủ đề – danh từ/cụm danh từ] can lead to several negative effects on both individuals and society. These effects can influence different areas of life. Therefore, it is important to pay more attention to this issue.</span></p>
+                    <div style="background: rgba(67, 97, 238, 0.04); border: 1px solid rgba(67, 97, 238, 0.15); border-radius: 8px; padding: 12px 14px; margin-bottom: 12px;">
+                        <p style="font-weight: 700; color: #1e293b; margin-bottom: 6px;"><i class="fa-solid fa-circle-minus" style="color: #ef4444;"></i> Nếu phân tích ảnh hưởng tiêu cực của một vấn đề:</p>
+                        <p style="margin: 0;">↳ <span class="outline-phrase">In conclusion, [chủ đề – danh từ/cụm danh từ] can lead to several negative effects on both individuals and society. These effects can influence different areas of life. Therefore, it is important to pay more attention to this issue.</span></p>
+                    </div>
+                    <div style="background: rgba(67, 97, 238, 0.04); border: 1px solid rgba(67, 97, 238, 0.15); border-radius: 8px; padding: 12px 14px;">
+                        <p style="font-weight: 700; color: #1e293b; margin-bottom: 6px;"><i class="fa-solid fa-circle-plus" style="color: #10b981;"></i> Nếu phân tích ảnh hưởng tích cực của một xu hướng:</p>
+                        <p style="margin: 0;">↳ <span class="outline-phrase">In conclusion, [chủ đề – danh từ/cụm danh từ] can bring several positive effects to both individuals and society. These effects can have a positive influence on different areas of life. Therefore, it is important to recognize the benefits of this trend.</span></p>
+                    </div>
                 </div>
             </div>
 
@@ -412,8 +438,15 @@ identifyingSigns: `
                 <h3 style="color: var(--primary-color); border-bottom: 2px solid var(--primary-light); padding-bottom: 10px; margin-bottom: 15px;">DÀN Ý 6: CHỈ GIẢI PHÁP</h3>
                 <div class="outline-step">
                     <h4>1. MỞ BÀI</h4>
-                    <p>↳ <span class="outline-phrase">In recent years, [chủ đề – danh từ/cụm danh từ] has become a growing concern in many parts of the world. This problem affects both individuals and society in different ways. This essay will suggest several practical solutions to this problem.</span></p>
-                    <p style="font-size: 0.9rem; color: #64748b; font-style: italic; margin-top: 5px;">* Lưu ý: Nếu đề yêu cầu đề xuất giải pháp cho một lĩnh vực hoặc tình huống trung tính, có thể giữ cách câu giới thiệu chủ đề, sau đó điều chỉnh các câu tiếp theo cho phù hợp.</p>
+                    <div style="background: rgba(67, 97, 238, 0.04); border: 1px solid rgba(67, 97, 238, 0.15); border-radius: 8px; padding: 12px 14px; margin-bottom: 12px;">
+                        <p style="font-weight: 700; color: #1e293b; margin-bottom: 6px;"><i class="fa-solid fa-wrench" style="color: #f59e0b;"></i> Đề xuất giải pháp giải quyết một vấn đề:</p>
+                        <p style="margin: 0;">↳ <span class="outline-phrase">In recent years, [chủ đề – danh từ/cụm danh từ] has become a growing concern in many parts of the world. This problem affects both individuals and society in different ways. This essay will suggest several practical solutions to this problem.</span></p>
+                    </div>
+                    <div style="background: rgba(67, 97, 238, 0.04); border: 1px solid rgba(67, 97, 238, 0.15); border-radius: 8px; padding: 12px 14px;">
+                        <p style="font-weight: 700; color: #1e293b; margin-bottom: 6px;"><i class="fa-solid fa-chart-line" style="color: #10b981;"></i> Đề xuất giải pháp cải thiện một tình trạng hoặc lĩnh vực:</p>
+                        <p style="margin: 0;">↳ <span class="outline-phrase">In today's world, [chủ đề – danh từ/cụm danh từ] has become an important aspect of modern life. However, there are several ways to make improvements in this area. This essay will discuss some practical measures to achieve this goal.</span></p>
+                        <p style="font-size: 0.88rem; color: #64748b; font-style: italic; margin: 6px 0 0 0;">* LƯU Ý: Có thể thay <em>an important aspect of modern life</em> bằng cách diễn đạt phù hợp khác.</p>
+                    </div>
                 </div>
                 <div class="outline-step">
                     <h4>2. THÂN BÀI</h4>
@@ -433,7 +466,14 @@ identifyingSigns: `
                 </div>
                 <div class="outline-step">
                     <h4>3. KẾT BÀI</h4>
-                    <p>↳ <span class="outline-phrase">In conclusion, several practical solutions can help address this problem. By applying suitable measures, people can help improve the situation in the future. These efforts can bring positive changes to both individuals and society.</span></p>
+                    <div style="background: rgba(67, 97, 238, 0.04); border: 1px solid rgba(67, 97, 238, 0.15); border-radius: 8px; padding: 12px 14px; margin-bottom: 12px;">
+                        <p style="font-weight: 700; color: #1e293b; margin-bottom: 6px;"><i class="fa-solid fa-wrench" style="color: #f59e0b;"></i> Đề xuất giải pháp giải quyết một vấn đề:</p>
+                        <p style="margin: 0;">↳ <span class="outline-phrase">In conclusion, several practical solutions can help address this problem. By applying suitable measures, people can help improve the situation in the future. These efforts can bring positive changes to both individuals and society.</span></p>
+                    </div>
+                    <div style="background: rgba(67, 97, 238, 0.04); border: 1px solid rgba(67, 97, 238, 0.15); border-radius: 8px; padding: 12px 14px;">
+                        <p style="font-weight: 700; color: #1e293b; margin-bottom: 6px;"><i class="fa-solid fa-chart-line" style="color: #10b981;"></i> Đề xuất giải pháp cải thiện một tình trạng hoặc lĩnh vực:</p>
+                        <p style="margin: 0;">↳ <span class="outline-phrase">In conclusion, there are several practical ways to improve this area. By taking appropriate actions, individuals and society can make significant progress. These efforts can contribute to long-term development and bring lasting benefits to the community.</span></p>
+                    </div>
                 </div>
             </div>
         `,
@@ -977,19 +1017,19 @@ const recitationOutlines = {
         {
             id: 'cause-effect-4',
             shortTitle: 'DÀN Ý 04',
-            subtitle: 'Chỉ Nguyên Nhân',
+            subtitle: 'ChỈ Nguyên Nhân',
             outlineName: 'DÀN Ý 04 - CHỈ NGUYÊN NHÂN',
             shortName: 'Dàn ý 04: Chỉ Nguyên nhân',
             questions: [
-                {cue: '[DÀN Ý 04 - CHỈ NGUYÊN NHÂN]<br>1. MỞ BÀI<br>Viết câu dẫn dắt chủ đề:', target: 'In recent years, [chủ đề – danh từ/cụm danh từ] has become a growing concern in many parts of the world.', vn: 'Trong những năm gần đây, [chủ đề – danh từ/cụm danh từ] đã trở thành một mối lo ngại ngày càng tăng ở nhiều nơi trên thế giới.'},
-                {cue: '[DÀN Ý 04 - CHỈ NGUYÊN NHÂN]<br>1. MỞ BÀI<br>Viết câu nêu mức độ ảnh hưởng:', target: 'This problem affects both individuals and society in different ways.', vn: 'Vấn đề này ảnh hưởng đến cả cá nhân và xã hội theo nhiều cách khác nhau.'},
-                {cue: '[DÀN Ý 04 - CHỈ NGUYÊN NHÂN]<br>1. MỞ BÀI<br>Viết câu giới thiệu mục đích bài viết:', target: 'This essay will discuss the main causes of this problem.', vn: 'Bài viết này sẽ thảo luận những nguyên nhân chính của vấn đề này.'},
+                {cue: '[DÀN Ý 04 - CHỈ NGUYÊN NHÂN]<br>1. MỞ BÀI<br>Viết câu dẫn dắt chủ đề (Vấn đề / Xu hướng):', target: 'In recent years, [chủ đề – danh từ/cụm danh từ] has become a growing concern in many parts of the world.', vn: 'Trong những năm gần đây, [chủ đề – danh từ/cụm danh từ] đã trở thành một mối lo ngại ngày càng tăng ở nhiều nơi trên thế giới.<br><em>(Hoặc dạng xu hướng: In recent years, [chủ đề – danh từ/cụm danh từ] has become increasingly popular in many parts of the world.)</em>'},
+                {cue: '[DÀN Ý 04 - CHỈ NGUYÊN NHÂN]<br>1. MỞ BÀI<br>Viết câu nêu mức độ ảnh hưởng / sự quan tâm:', target: 'This problem affects both individuals and society in different ways.', vn: 'Vấn đề này ảnh hưởng đến cả cá nhân và xã hội theo nhiều cách khác nhau.<br><em>(Hoặc dạng xu hướng: This trend has attracted considerable attention in modern society.)</em>'},
+                {cue: '[DÀN Ý 04 - CHỈ NGUYÊN NHÂN]<br>1. MỞ BÀI<br>Viết câu giới thiệu mục đích bài viết:', target: 'This essay will discuss the main causes of this problem.', vn: 'Bài viết này sẽ thảo luận những nguyên nhân chính của vấn đề này.<br><em>(Hoặc dạng xu hướng: This essay will discuss the main reasons for this trend.)</em>'},
                 {cue: '[DÀN Ý 04 - CHỈ NGUYÊN NHÂN]<br>2. THÂN BÀI<br>Thân bài 1 - Câu dẫn nguyên nhân 1:', target: 'One major cause is that [nguyên nhân 1 – mệnh đề].', vn: 'Một nguyên nhân chính là [nguyên nhân 1 – mệnh đề].'},
                 {cue: '[DÀN Ý 04 - CHỈ NGUYÊN NHÂN]<br>2. THÂN BÀI<br>Thân bài 2 - Câu dẫn nguyên nhân 2:', target: 'Another contributing factor is that [nguyên nhân 2 – mệnh đề].', vn: 'Một yếu tố góp phần khác là [nguyên nhân 2 – mệnh đề].'},
                 {cue: '[DÀN Ý 04 - CHỈ NGUYÊN NHÂN]<br>2. THÂN BÀI<br>Thân bài 3 - Câu dẫn nguyên nhân 3:', target: 'A further reason is that [nguyên nhân 3 – mệnh đề].', vn: 'Một lý do nữa là [nguyên nhân 3 – mệnh đề].'},
-                {cue: '[DÀN Ý 04 - CHỈ NGUYÊN NHÂN]<br>3. KẾT BÀI<br>Viết câu tóm tắt nguyên nhân:', target: 'In conclusion, [chủ đề – danh từ/cụm danh từ] is caused by several factors.', vn: 'Tóm lại, [chủ đề – danh từ/cụm danh từ] được gây ra bởi một vài yếu tố.'},
-                {cue: '[DÀN Ý 04 - CHỈ NGUYÊN NHÂN]<br>3. KẾT BÀI<br>Viết câu khẳng định tầm quan trọng:', target: 'By understanding these causes and taking appropriate action, people can help improve the situation in the future.', vn: 'Bằng cách thấu hiểu những nguyên nhân này và thực hiện hành động thích hợp, mọi người có thể giúp cải thiện tình hình trong tương lai.'},
-                {cue: '[DÀN Ý 04 - CHỈ NGUYÊN NHÂN]<br>3. KẾT BÀI<br>Viết câu chốt lại vấn đề:', target: 'These efforts can bring positive changes to both individuals and society.', vn: 'Những nỗ lực này có thể mang lại những thay đổi tích cực cho cả cá nhân và xã hội.'}
+                {cue: '[DÀN Ý 04 - CHỈ NGUYÊN NHÂN]<br>3. KẾT BÀI<br>Viết câu tóm tắt nguyên nhân (Vấn đề / Xu hướng):', target: 'In conclusion, [chủ đề – danh từ/cụm danh từ] is caused by several factors.', vn: 'Tóm lại, [chủ đề – danh từ/cụm danh từ] được gây ra bởi một vài yếu tố.<br><em>(Hoặc dạng xu hướng: In conclusion, [chủ đề – danh từ/cụm danh từ] has become increasingly popular for several reasons.)</em>'},
+                {cue: '[DÀN Ý 04 - CHỈ NGUYÊN NHÂN]<br>3. KẾT BÀI<br>Viết câu khẳng định tầm quan trọng / thấu hiểu xu hướng:', target: 'By understanding these causes and taking appropriate action, people can help improve the situation in the future.', vn: 'Bằng cách thấu hiểu những nguyên nhân này và thực hiện hành động thích hợp, mọi người có thể giúp cải thiện tình hình trong tương lai.<br><em>(Hoặc dạng xu hướng: By understanding these reasons, people can better understand the development of this trend.)</em>'},
+                {cue: '[DÀN Ý 04 - CHỈ NGUYÊN NHÂN]<br>3. KẾT BÀI<br>Viết câu chốt lại vấn đề / tác động tương lai:', target: 'These efforts can bring positive changes to both individuals and society.', vn: 'Những nỗ lực này có thể mang lại những thay đổi tích cực cho cả cá nhân và xã hội.<br><em>(Hoặc dạng xu hướng: This trend may continue to influence different aspects of life in the future.)</em>'}
             ]
         },
         {
@@ -999,15 +1039,15 @@ const recitationOutlines = {
             outlineName: 'DÀN Ý 05 - CHỈ ẢNH HƯỞNG',
             shortName: 'Dàn ý 05: Chỉ Ảnh hưởng',
             questions: [
-                {cue: '[DÀN Ý 05 - CHỈ ẢNH HƯỞNG]<br>1. MỞ BÀI<br>Viết câu dẫn dắt chủ đề:', target: 'In recent years, [chủ đề – danh từ/cụm danh từ] has become a growing concern in many parts of the world.', vn: 'Trong những năm gần đây, [chủ đề – danh từ/cụm danh từ] đã trở thành một mối lo ngại ngày càng tăng ở nhiều nơi trên thế giới.'},
-                {cue: '[DÀN Ý 05 - CHỈ ẢNH HƯỞNG]<br>1. MỞ BÀI<br>Viết câu nêu mức độ ảnh hưởng:', target: 'This problem affects both individuals and society in different ways.', vn: 'Vấn đề này ảnh hưởng đến cả cá nhân và xã hội theo nhiều cách khác nhau.'},
-                {cue: '[DÀN Ý 05 - CHỈ ẢNH HƯỞNG]<br>1. MỞ BÀI<br>Viết câu giới thiệu mục đích bài viết:', target: 'This essay will discuss its main effects.', vn: 'Bài viết này sẽ thảo luận những ảnh hưởng chính của nó.'},
+                {cue: '[DÀN Ý 05 - CHỈ ẢNH HƯỞNG]<br>1. MỞ BÀI<br>Viết câu dẫn dắt chủ đề (Tiêu cực / Tích cực):', target: 'In recent years, [chủ đề – danh từ/cụm danh từ] has become a growing concern in many parts of the world.', vn: 'Trong những năm gần đây, [chủ đề – danh từ/cụm danh từ] đã trở thành một mối lo ngại ngày càng tăng ở nhiều nơi trên thế giới.<br><em>(Hoặc dạng xu hướng tích cực: In recent years, [chủ đề – danh từ/cụm danh từ] has become an increasingly popular trend in many parts of the world.)</em>'},
+                {cue: '[DÀN Ý 05 - CHỈ ẢNH HƯỞNG]<br>1. MỞ BÀI<br>Viết câu nêu mức độ ảnh hưởng / lợi ích:', target: 'This problem affects both individuals and society in different ways.', vn: 'Vấn đề này ảnh hưởng đến cả cá nhân và xã hội theo nhiều cách khác nhau.<br><em>(Hoặc dạng xu hướng tích cực: This trend has brought many benefits to individuals and society.)</em>'},
+                {cue: '[DÀN Ý 05 - CHỈ ẢNH HƯỞNG]<br>1. MỞ BÀI<br>Viết câu giới thiệu mục đích bài viết:', target: 'This essay will discuss its main negative effects.', vn: 'Bài viết này sẽ thảo luận những ảnh hưởng tiêu cực chính của nó.<br><em>(Hoặc dạng tích cực: This essay will discuss its main positive effects. / Hoặc trung tính: This essay will discuss its main effects.)</em>'},
                 {cue: '[DÀN Ý 05 - CHỈ ẢNH HƯỞNG]<br>2. THÂN BÀI<br>Thân bài 1 - Câu dẫn ảnh hưởng 1:', target: 'One major effect is that [ảnh hưởng 1 – mệnh đề].', vn: 'Một ảnh hưởng chính là [ảnh hưởng 1 – mệnh đề].'},
-                {cue: '[DÀN Ý 05 - CHỈ ẢNH HƯỞNG]<br>2. THÂN BÀI<br>Thân bài 2 - Câu dẫn ảnh hưởng 2:', target: 'Another serious impact is that [ảnh hưởng 2 – mệnh đề].', vn: 'Một tác động nghiêm trọng khác là [ảnh hưởng 2 – mệnh đề].'},
-                {cue: '[DÀN Ý 05 - CHỈ ẢNH HƯỞNG]<br>2. THÂN BÀI<br>Thân bài 3 - Câu dẫn ảnh hưởng 3:', target: 'A further consequence is that [ảnh hưởng 3 – mệnh đề].', vn: 'Một hậu quả nữa là [ảnh hưởng 3 – mệnh đề].'},
-                {cue: '[DÀN Ý 05 - CHỈ ẢNH HƯỞNG]<br>3. KẾT BÀI<br>Viết câu tóm tắt ảnh hưởng:', target: 'In conclusion, [chủ đề – danh từ/cụm danh từ] can lead to several negative effects on both individuals and society.', vn: 'Tóm lại, [chủ đề – danh từ/cụm danh từ] có thể dẫn đến một vài ảnh hưởng tiêu cực lên cả cá nhân và xã hội.'},
-                {cue: '[DÀN Ý 05 - CHỈ ẢNH HƯỞNG]<br>3. KẾT BÀI<br>Viết câu khẳng định mức độ tác động:', target: 'These effects can influence different areas of life.', vn: 'Những ảnh hưởng này có thể tác động đến các lĩnh vực khác nhau của đời sống.'},
-                {cue: '[DÀN Ý 05 - CHỈ ẢNH HƯỞNG]<br>3. KẾT BÀI<br>Viết câu chốt lại lời khuyên:', target: 'Therefore, it is important to pay more attention to this issue.', vn: 'Vì vậy, điều quan trọng là phải quan tâm nhiều hơn đến vấn đề này.'}
+                {cue: '[DÀN Ý 05 - CHỈ ẢNH HƯỞNG]<br>2. THÂN BÀI<br>Thân bài 2 - Câu dẫn ảnh hưởng 2:', target: 'Another significant impact is that [ảnh hưởng 2 – mệnh đề].', vn: 'Một tác động đáng kể khác là [ảnh hưởng 2 – mệnh đề].'},
+                {cue: '[DÀN Ý 05 - CHỈ ẢNH HƯỞNG]<br>2. THÂN BÀI<br>Thân bài 3 - Câu dẫn ảnh hưởng 3:', target: 'A further result is that [ảnh hưởng 3 – mệnh đề].', vn: 'Một kết quả nữa là [ảnh hưởng 3 – mệnh đề].'},
+                {cue: '[DÀN Ý 05 - CHỈ ẢNH HƯỞNG]<br>3. KẾT BÀI<br>Viết câu tóm tắt ảnh hưởng (Tiêu cực / Tích cực):', target: 'In conclusion, [chủ đề – danh từ/cụm danh từ] can lead to several negative effects on both individuals and society.', vn: 'Tóm lại, [chủ đề – danh từ/cụm danh từ] có thể dẫn đến một vài ảnh hưởng tiêu cực lên cả cá nhân và xã hội.<br><em>(Hoặc dạng tích cực: In conclusion, [chủ đề – danh từ/cụm danh từ] can bring several positive effects to both individuals and society.)</em>'},
+                {cue: '[DÀN Ý 05 - CHỈ ẢNH HƯỞNG]<br>3. KẾT BÀI<br>Viết câu khẳng định mức độ tác động:', target: 'These effects can influence different areas of life.', vn: 'Những ảnh hưởng này có thể tác động đến các lĩnh vực khác nhau của đời sống.<br><em>(Hoặc dạng tích cực: These effects can have a positive influence on different areas of life.)</em>'},
+                {cue: '[DÀN Ý 05 - CHỈ ẢNH HƯỞNG]<br>3. KẾT BÀI<br>Viết câu chốt lại lời khuyên / nhận thức:', target: 'Therefore, it is important to pay more attention to this issue.', vn: 'Vì vậy, điều quan trọng là phải quan tâm nhiều hơn đến vấn đề này.<br><em>(Hoặc dạng tích cực: Therefore, it is important to recognize the benefits of this trend.)</em>'}
             ]
         },
         {
@@ -1017,15 +1057,15 @@ const recitationOutlines = {
             outlineName: 'DÀN Ý 06 - CHỈ GIẢI PHÁP',
             shortName: 'Dàn ý 06: Chỉ Giải pháp',
             questions: [
-                {cue: '[DÀN Ý 06 - CHỈ GIẢI PHÁP]<br>1. MỞ BÀI<br>Viết câu dẫn dắt chủ đề:', target: 'In recent years, [chủ đề – danh từ/cụm danh từ] has become a growing concern in many parts of the world.', vn: 'Trong những năm gần đây, [chủ đề – danh từ/cụm danh từ] đã trở thành một mối lo ngại ngày càng tăng ở nhiều nơi trên thế giới.'},
-                {cue: '[DÀN Ý 06 - CHỈ GIẢI PHÁP]<br>1. MỞ BÀI<br>Viết câu nêu mức độ ảnh hưởng:', target: 'This problem affects both individuals and society in different ways.', vn: 'Vấn đề này ảnh hưởng đến cả cá nhân và xã hội theo nhiều cách khác nhau.'},
-                {cue: '[DÀN Ý 06 - CHỈ GIẢI PHÁP]<br>1. MỞ BÀI<br>Viết câu giới thiệu mục đích bài viết:', target: 'This essay will suggest several practical solutions to this problem.', vn: 'Bài viết này sẽ đề xuất một vài giải pháp thực tế cho vấn đề này.'},
+                {cue: '[DÀN Ý 06 - CHỈ GIẢI PHÁP]<br>1. MỞ BÀI<br>Viết câu dẫn dắt chủ đề (Giải quyết vấn đề / Cải thiện lĩnh vực):', target: 'In recent years, [chủ đề – danh từ/cụm danh từ] has become a growing concern in many parts of the world.', vn: 'Trong những năm gần đây, [chủ đề – danh từ/cụm danh từ] đã trở thành một mối lo ngại ngày càng tăng ở nhiều nơi trên thế giới.<br><em>(Hoặc dạng cải thiện lĩnh vực: In today\'s world, [chủ đề – danh từ/cụm danh từ] has become an important aspect of modern life.)</em>'},
+                {cue: '[DÀN Ý 06 - CHỈ GIẢI PHÁP]<br>1. MỞ BÀI<br>Viết câu nêu mức độ ảnh hưởng / nhu cầu cải thiện:', target: 'This problem affects both individuals and society in different ways.', vn: 'Vấn đề này ảnh hưởng đến cả cá nhân và xã hội theo nhiều cách khác nhau.<br><em>(Hoặc dạng cải thiện lĩnh vực: However, there are several ways to make improvements in this area.)</em>'},
+                {cue: '[DÀN Ý 06 - CHỈ GIẢI PHÁP]<br>1. MỞ BÀI<br>Viết câu giới thiệu mục đích bài viết:', target: 'This essay will suggest several practical solutions to this problem.', vn: 'Bài viết này sẽ đề xuất một vài giải pháp thực tế cho vấn đề này.<br><em>(Hoặc dạng cải thiện: This essay will discuss some practical measures to achieve this goal.)</em>'},
                 {cue: '[DÀN Ý 06 - CHỈ GIẢI PHÁP]<br>2. THÂN BÀI<br>Thân bài 1 - Giải pháp 1:', target: 'One effective solution is to [giải pháp 1 – Vo].', vn: 'Một giải pháp hiệu quả là [giải pháp 1 – Vo].'},
                 {cue: '[DÀN Ý 06 - CHỈ GIẢI PHÁP]<br>2. THÂN BÀI<br>Thân bài 2 - Giải pháp 2:', target: 'Another possible measure is to [giải pháp 2 – Vo].', vn: 'Một biện pháp khả thi khác là [giải pháp 2 – Vo].'},
                 {cue: '[DÀN Ý 06 - CHỈ GIẢI PHÁP]<br>2. THÂN BÀI<br>Thân bài 3 - Giải pháp 3:', target: 'A further approach is to [giải pháp 3 – Vo].', vn: 'Một hướng tiếp cận nữa là [giải pháp 3 – Vo].'},
-                {cue: '[DÀN Ý 06 - CHỈ GIẢI PHÁP]<br>3. KẾT BÀI<br>Viết câu tóm tắt giải pháp:', target: 'In conclusion, several practical solutions can help address this problem.', vn: 'Tóm lại, một vài giải pháp thực tế có thể giúp giải quyết vấn đề này.'},
-                {cue: '[DÀN Ý 06 - CHỈ GIẢI PHÁP]<br>3. KẾT BÀI<br>Viết câu đề xuất áp dụng:', target: 'By applying suitable measures, people can help improve the situation in the future.', vn: 'Bằng cách áp dụng các biện pháp phù hợp, mọi người có thể giúp cải thiện tình hình trong tương lai.'},
-                {cue: '[DÀN Ý 06 - CHỈ GIẢI PHÁP]<br>3. KẾT BÀI<br>Viết câu chốt lại vấn đề:', target: 'These efforts can bring positive changes to both individuals and society.', vn: 'Những nỗ lực này có thể mang lại những thay đổi tích cực cho cả cá nhân và xã hội.'}
+                {cue: '[DÀN Ý 06 - CHỈ GIẢI PHÁP]<br>3. KẾT BÀI<br>Viết câu tóm tắt giải pháp (Giải quyết vấn đề / Cải thiện lĩnh vực):', target: 'In conclusion, several practical solutions can help address this problem.', vn: 'Tóm lại, một vài giải pháp thực tế có thể giúp giải quyết vấn đề này.<br><em>(Hoặc dạng cải thiện: In conclusion, there are several practical ways to improve this area.)</em>'},
+                {cue: '[DÀN Ý 06 - CHỈ GIẢI PHÁP]<br>3. KẾT BÀI<br>Viết câu đề xuất áp dụng / phát triển:', target: 'By applying suitable measures, people can help improve the situation in the future.', vn: 'Bằng cách áp dụng các biện pháp phù hợp, mọi người có thể giúp cải thiện tình hình trong tương lai.<br><em>(Hoặc dạng cải thiện: By taking appropriate actions, individuals and society can make significant progress.)</em>'},
+                {cue: '[DÀN Ý 06 - CHỈ GIẢI PHÁP]<br>3. KẾT BÀI<br>Viết câu chốt lại vấn đề / lợi ích cộng đồng:', target: 'These efforts can bring positive changes to both individuals and society.', vn: 'Những nỗ lực này có thể mang lại những thay đổi tích cực cho cả cá nhân và xã hội.<br><em>(Hoặc dạng cải thiện: These efforts can contribute to long-term development and bring lasting benefits to the community.)</em>'}
             ]
         }
     ],
@@ -1298,6 +1338,71 @@ function diffWords(userText, targetText) {
         if (t.includes(' / ') && (t.includes('+ Vo') || t.includes('+ Ving') || t.includes('Don’t forget') || t.includes('quite unhappy'))) {
             const parts = t.split(' / ');
             parts.forEach(p => variants.push(p.trim()));
+        }
+
+        // TYPE 02: Causes - Effects - Solutions Pedagogical Variations (Problem vs Trend/Neutral/Positive)
+        // Outline 4, 5, 6 Opening variations
+        if (t.includes('has become a growing concern in many parts of the world')) {
+            variants.push(t.replace('has become a growing concern in many parts of the world', 'has become increasingly popular in many parts of the world'));
+            variants.push(t.replace('has become a growing concern in many parts of the world', 'has become an increasingly popular trend in many parts of the world'));
+            variants.push('In today\'s world, [chủ đề – danh từ/cụm danh từ] has become an important aspect of modern life.');
+            variants.push('In today’s world, [chủ đề – danh từ/cụm danh từ] has become an important aspect of modern life.');
+        }
+        if (t.includes('This problem affects both individuals and society in different ways')) {
+            variants.push('This trend has attracted considerable attention in modern society.');
+            variants.push('This trend has brought many benefits to individuals and society.');
+            variants.push('However, there are several ways to make improvements in this area.');
+        }
+        if (t.includes('main causes of this problem')) {
+            variants.push(t.replace('main causes of this problem', 'main reasons for this trend'));
+        }
+        if (t.includes('main negative effects')) {
+            variants.push(t.replace('main negative effects', 'main positive effects'));
+            variants.push(t.replace('main negative effects', 'main effects'));
+        }
+        if (t.includes('suggest several practical solutions to this problem')) {
+            variants.push('This essay will discuss some practical measures to achieve this goal.');
+        }
+
+        // Outline 5 Thân bài variations (significant impact vs serious impact, result vs consequence)
+        if (t.includes('Another significant impact is that')) {
+            variants.push(t.replace('Another significant impact is that', 'Another serious impact is that'));
+        }
+        if (t.includes('Another serious impact is that')) {
+            variants.push(t.replace('Another serious impact is that', 'Another significant impact is that'));
+        }
+        if (t.includes('A further result is that')) {
+            variants.push(t.replace('A further result is that', 'A further consequence is that'));
+        }
+        if (t.includes('A further consequence is that')) {
+            variants.push(t.replace('A further consequence is that', 'A further result is that'));
+        }
+
+        // Outline 4, 5, 6 Conclusion variations
+        if (t.includes('is caused by several factors')) {
+            variants.push(t.replace('is caused by several factors', 'has become increasingly popular for several reasons'));
+        }
+        if (t.includes('By understanding these causes and taking appropriate action, people can help improve the situation in the future')) {
+            variants.push('By understanding these reasons, people can better understand the development of this trend.');
+        }
+        if (t.includes('These efforts can bring positive changes to both individuals and society')) {
+            variants.push('This trend may continue to influence different aspects of life in the future.');
+            variants.push('These efforts can contribute to long-term development and bring lasting benefits to the community.');
+        }
+        if (t.includes('can lead to several negative effects on both individuals and society')) {
+            variants.push(t.replace('can lead to several negative effects on both individuals and society', 'can bring several positive effects to both individuals and society'));
+        }
+        if (t.includes('These effects can influence different areas of life')) {
+            variants.push('These effects can have a positive influence on different areas of life.');
+        }
+        if (t.includes('Therefore, it is important to pay more attention to this issue')) {
+            variants.push('Therefore, it is important to recognize the benefits of this trend.');
+        }
+        if (t.includes('several practical solutions can help address this problem')) {
+            variants.push('In conclusion, there are several practical ways to improve this area.');
+        }
+        if (t.includes('By applying suitable measures, people can help improve the situation in the future')) {
+            variants.push('By taking appropriate actions, individuals and society can make significant progress.');
         }
         return [...new Set(variants)];
     }
