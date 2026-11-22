@@ -1740,13 +1740,14 @@ function resetLearningProgress() {
 let violationCount = 0;
 let isAntiCheatModalOpen = false;
 let isTabHidden = false;
+let isRecitationStarted = false;
 
 function isRecitationSessionActive() {
     const practicePanel = document.getElementById('writingPracticePanel');
     const isPracticeActive = practicePanel && practicePanel.classList.contains('active');
     const isQuizVisible = recitationQuizBox && !recitationQuizBox.classList.contains('hidden');
     const isResultHidden = recitationResultBox && recitationResultBox.classList.contains('hidden');
-    return Boolean(activeEssayTypeId && isPracticeActive && isQuizVisible && isResultHidden);
+    return Boolean(isRecitationStarted && activeEssayTypeId && isPracticeActive && isQuizVisible && isResultHidden);
 }
 
 function getRecitationStorageKey() {
@@ -1837,28 +1838,36 @@ function exitRecitationSession(isAccidentalClick = false) {
         }
         dismissAntiCheatModal();
     } else {
-        const confirmExit = confirm('Bạn có chắc chắn muốn THOÁT khỏi phiên Trả Bài không?\n\n• Tiến độ câu hỏi của bạn đã được tự động sao lưu.\n• Bạn sẽ quay lại tab Dàn ý chi tiết để ôn tập.');
+        const confirmExit = confirm('Bạn có chắc chắn muốn THOÁT khỏi phiên Trả Bài không?\n\n• Tiến độ câu hỏi của bạn đã được tự động sao lưu.\n• Bạn sẽ quay lại danh sách chọn dàn ý / ôn tập.');
         if (!confirmExit) return;
     }
 
     stopRecitationTimer();
     saveCurrentRecitationProgress();
+    isRecitationStarted = false;
 
     // Temporarily hide quiz box so isRecitationSessionActive() returns false
     if (recitationQuizBox) {
         recitationQuizBox.classList.add('hidden');
     }
-
-    // Switch back to detailedOutline tab (or basicInfo if missing)
-    const outlineTabBtn = document.querySelector('.tab-btn[data-tab="detailedOutline"]');
-    if (outlineTabBtn) {
-        outlineTabBtn.click();
-    } else {
-        const firstTabBtn = document.querySelector('.tab-btn[data-tab="basicInfo"]');
-        if (firstTabBtn) firstTabBtn.click();
+    if (recitationFeedback) {
+        recitationFeedback.classList.add('hidden');
     }
 
-    showToast('Đã thoát khỏi phiên Trả Bài thành công!', 'info');
+    const outlines = recitationOutlines[activeEssayTypeId] || [];
+    if (outlines.length > 1) {
+        renderOutlineSelectorLobby();
+        showToast('Đã dừng phiên Trả Bài. Bạn có thể chọn dàn ý khác hoặc chuyển tab ôn tập!', 'info');
+    } else {
+        const outlineTabBtn = document.querySelector('.tab-btn[data-tab="detailedOutline"]');
+        if (outlineTabBtn) {
+            outlineTabBtn.click();
+        } else {
+            const firstTabBtn = document.querySelector('.tab-btn[data-tab="basicInfo"]');
+            if (firstTabBtn) firstTabBtn.click();
+        }
+        showToast('Đã thoát khỏi phiên Trả Bài thành công!', 'info');
+    }
 }
 
 function getStudentDisplayInfo() {
@@ -1878,77 +1887,231 @@ function getStudentDisplayInfo() {
     return 'Học viên VSTEP';
 }
 
-// Render Outline Selector in Trả Bài
+// Render Outline Selector in Trả Bài (delegates to Lobby or Active Bar)
 function renderOutlineSelector() {
+    if (isRecitationStarted) {
+        renderActiveOutlineBar();
+    } else {
+        renderOutlineSelectorLobby();
+    }
+}
+
+// Render Outline Selection Lobby (Displayed before recitation starts)
+function renderOutlineSelectorLobby() {
     const container = document.getElementById('outlineSelectorContainer');
     if (!container) return;
 
+    isRecitationStarted = false;
+    container.classList.remove('hidden');
+
+    // Ensure quiz box, results and feedback are hidden while in lobby
+    if (recitationQuizBox) recitationQuizBox.classList.add('hidden');
+    if (recitationResultBox) recitationResultBox.classList.add('hidden');
+    if (recitationFeedback) recitationFeedback.classList.add('hidden');
+
+    // Reset header timer & progress display
+    stopRecitationTimer();
+    recitationTimeRemaining = RECITATION_TIME_LIMIT;
+    updateRecitationTimerDisplay();
+
+    const recitationHeader = document.querySelector('.recitation-header');
+    if (recitationHeader) recitationHeader.classList.remove('hidden');
+    const progressWrapper = document.querySelector('.recitation-progress-wrapper');
+    if (progressWrapper) progressWrapper.style.display = '';
+
     const outlines = recitationOutlines[activeEssayTypeId] || [];
-    if (outlines.length <= 1) {
-        container.classList.add('hidden');
-        return;
+    if (isOutlineLocked(activeEssayTypeId, currentOutlineIndex)) {
+        currentOutlineIndex = 0;
+    }
+    if (currentOutlineIndex >= outlines.length) currentOutlineIndex = 0;
+    const activeOutline = outlines[currentOutlineIndex] || outlines[0];
+    const completedList = getCompletedOutlines()[activeEssayTypeId] || [];
+    const isCurrentDone = completedList.includes(currentOutlineIndex);
+
+    // Check if there is saved progress for the current outline
+    const saved = loadSavedRecitationProgress();
+    const hasSavedProgress = Boolean(saved && typeof saved.questionIndex === 'number' && saved.questionIndex < (activeOutline ? activeOutline.questions.length : 0));
+
+    let savedNoticeHtml = '';
+    if (hasSavedProgress) {
+        const remainingStr = formatTimerString(saved.timeRemaining || RECITATION_TIME_LIMIT);
+        savedNoticeHtml = `
+            <div class="lobby-saved-notice">
+                <i class="fa-solid fa-floppy-disk"></i>
+                <span>Bạn đang có bài làm dở dang: <strong>Câu ${(saved.questionIndex || 0) + 1}/${activeOutline.questions.length}</strong> (Còn lại: <strong>${remainingStr}</strong>). Bấm <strong>Tiếp tục trả bài</strong> để làm tiếp hoặc <strong>Làm lại từ đầu</strong>.</span>
+            </div>
+        `;
     }
 
-    container.classList.remove('hidden');
-    const completedList = getCompletedOutlines()[activeEssayTypeId] || [];
-    const activeOutline = outlines[currentOutlineIndex] || outlines[0];
+    const hasMultipleOutlines = outlines.length > 1;
 
     container.innerHTML = `
-        <div class="outline-selector-header">
-            <span class="outline-selector-title">
-                <i class="fa-solid fa-layer-group"></i> CHỌN DÀN Ý ĐỂ TRẢ BÀI:
-            </span>
-            <span class="outline-current-badge">
-                Đang trả bài: <strong>${activeOutline.shortName}</strong>
-            </span>
-        </div>
-        <div class="outline-btn-grid ${outlines.length === 2 ? 'grid-cols-2' : 'grid-cols-3'}">
-            ${outlines.map((o, idx) => {
-                const isDone = completedList.includes(idx);
-                const isLocked = isOutlineLocked(activeEssayTypeId, idx);
-                let badgeHtml = '';
-                if (isLocked) {
-                    badgeHtml = '<span class="outline-badge-locked"><i class="fa-solid fa-lock"></i> KHOÁ</span>';
-                } else if (isDone) {
-                    badgeHtml = '<span class="outline-badge-done"><i class="fa-solid fa-circle-check"></i> ĐÃ ĐẠT</span>';
-                }
+        <div class="outline-lobby-container">
+            <div class="outline-lobby-hero">
+                <div class="lobby-hero-badge">
+                    <i class="fa-solid fa-graduation-cap"></i> CHẾ ĐỘ TRẢ BÀI DÀN Ý
+                </div>
+                <h3 class="lobby-hero-title">
+                    ${hasMultipleOutlines ? 'CHỌN 1 DÀN Ý ĐỂ BẮT ĐẦU TRẢ BÀI' : 'SẴN SÀNG TRẢ BÀI DÀN Ý'}
+                </h3>
+                <p class="lobby-hero-desc">
+                    ${hasMultipleOutlines 
+                        ? `Dạng bài này có <strong>${outlines.length} dàn ý khác nhau</strong>. Vui lòng chọn 1 dàn ý bên dưới, sau đó bấm <strong>BẮT ĐẦU TRẢ BÀI</strong> khi bạn đã sẵn sàng:` 
+                        : `Kiểm tra mức độ ghi nhớ chính xác từng câu trong dàn ý chuẩn. Bấm <strong>BẮT ĐẦU TRẢ BÀI</strong> khi bạn đã sẵn sàng:`}
+                </p>
+            </div>
 
-                return `
-                    <button class="outline-tab-btn ${idx === currentOutlineIndex ? 'active' : ''} ${isLocked ? 'is-locked' : ''}" data-outline-index="${idx}">
-                        <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
-                            <span class="outline-tab-btn-tag">${o.shortTitle}</span>
-                            ${badgeHtml}
-                        </div>
-                        <span class="outline-tab-btn-name">${o.subtitle}</span>
-                        <span class="outline-tab-btn-count">
-                            <i class="fa-solid ${isLocked ? 'fa-lock' : 'fa-list-check'}"></i> ${isLocked ? 'Chưa mở cho lớp' : `${o.questions.length} câu hỏi`}
-                        </span>
+            ${hasMultipleOutlines ? `
+                <div class="outline-btn-grid ${outlines.length === 2 ? 'grid-cols-2' : 'grid-cols-3'}">
+                    ${outlines.map((o, idx) => {
+                        const isSelected = idx === currentOutlineIndex;
+                        const isDone = completedList.includes(idx);
+                        const isLocked = isOutlineLocked(activeEssayTypeId, idx);
+                        let badgeHtml = '';
+                        if (isLocked) {
+                            badgeHtml = '<span class="outline-badge-locked"><i class="fa-solid fa-lock"></i> KHOÁ</span>';
+                        } else if (isDone) {
+                            badgeHtml = '<span class="outline-badge-done"><i class="fa-solid fa-circle-check"></i> ĐÃ ĐẠT</span>';
+                        }
+
+                        return `
+                            <button type="button" class="outline-tab-btn ${isSelected ? 'active' : ''} ${isLocked ? 'is-locked' : ''}" data-outline-index="${idx}">
+                                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+                                    <span class="outline-tab-btn-tag">${o.shortTitle}</span>
+                                    ${badgeHtml}
+                                </div>
+                                <span class="outline-tab-btn-name">${o.subtitle}</span>
+                                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; margin-top: 8px;">
+                                    <span class="outline-tab-btn-count">
+                                        <i class="fa-solid ${isLocked ? 'fa-lock' : 'fa-list-check'}"></i> ${isLocked ? 'Chưa mở cho lớp' : `${o.questions.length} câu hỏi`}
+                                    </span>
+                                    ${isSelected ? '<span class="outline-selected-indicator"><i class="fa-solid fa-circle-check"></i> Đang chọn</span>' : ''}
+                                </div>
+                            </button>
+                        `;
+                    }).join('')}
+                </div>
+            ` : ''}
+
+            <!-- Outline Details & Start CTA Card -->
+            <div class="outline-lobby-cta-card">
+                <div class="lobby-cta-info">
+                    <div class="lobby-cta-tag">
+                        <i class="fa-solid fa-check"></i> DÀN Ý ĐANG CHỌN
+                    </div>
+                    <h4 class="lobby-cta-name">${activeOutline ? `${activeOutline.shortTitle}: ${activeOutline.subtitle}` : 'Dàn ý chuẩn'}</h4>
+                    <div class="lobby-cta-pills">
+                        <span class="cta-pill"><i class="fa-solid fa-list-check"></i> <strong>${activeOutline ? activeOutline.questions.length : 0}</strong> câu hỏi</span>
+                        <span class="cta-pill"><i class="fa-solid fa-stopwatch"></i> <strong>20</strong> phút làm bài</span>
+                        <span class="cta-pill"><i class="fa-solid fa-bullseye"></i> Yêu cầu đạt: <strong>80%</strong></span>
+                        ${isCurrentDone 
+                            ? '<span class="cta-pill cta-pill-done"><i class="fa-solid fa-medal"></i> Bạn đã đạt dàn ý này</span>' 
+                            : '<span class="cta-pill cta-pill-pending"><i class="fa-solid fa-hourglass-half"></i> Chưa đạt</span>'}
+                    </div>
+                    ${savedNoticeHtml}
+                </div>
+                <div class="lobby-cta-actions">
+                    <button type="button" class="btn-start-recitation" id="btnStartRecitationAction">
+                        <i class="fa-solid fa-play"></i> ${hasSavedProgress ? 'TIẾP TỤC TRẢ BÀI' : 'BẮT ĐẦU TRẢ BÀI'}
                     </button>
-                `;
-            }).join('')}
+                    ${hasSavedProgress ? `
+                        <button type="button" class="btn-restart-lobby" id="btnRestartLobbyAction" title="Xoá bài làm dở và trả bài lại từ đầu">
+                            <i class="fa-solid fa-rotate-left"></i> Làm lại từ đầu
+                        </button>
+                    ` : ''}
+                </div>
+            </div>
         </div>
     `;
 
+    // Attach outline selection listeners
     container.querySelectorAll('.outline-tab-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
             const idx = parseInt(e.currentTarget.dataset.outlineIndex, 10);
-            if (idx === currentOutlineIndex) return;
-            if (isRecitationSessionActive()) {
-                e.preventDefault();
-                e.stopPropagation();
-                recordAntiCheatViolation('Chuyển sang dàn ý khác trong khi bài thi đang diễn ra');
-                return;
-            }
             if (isOutlineLocked(activeEssayTypeId, idx)) {
                 const userClass = getUserClass();
                 showToast(`🔒 Dàn ý này tạm thời chưa mở cho lớp ${userClass || 'của bạn'}. Lớp hiện mở Dàn ý 01 và Dàn ý 02!`, 'warning');
                 return;
             }
             currentOutlineIndex = idx;
-            renderOutlineSelector();
-            resetRecitationUI(false);
+            renderOutlineSelectorLobby();
         });
     });
+
+    // Start Recitation Button
+    const btnStart = container.querySelector('#btnStartRecitationAction');
+    if (btnStart) {
+        btnStart.addEventListener('click', () => {
+            startRecitationSession(false);
+        });
+    }
+
+    // Restart Button (if saved progress exists)
+    const btnRestart = container.querySelector('#btnRestartLobbyAction');
+    if (btnRestart) {
+        btnRestart.addEventListener('click', () => {
+            if (confirm('Bạn có chắc chắn muốn XÓA bài làm dở dang và BẮT ĐẦU LẠI TỪ ĐẦU cho dàn ý này không?')) {
+                startRecitationSession(true);
+            }
+        });
+    }
+}
+
+// Start Recitation Session (transitions from Lobby into active quiz)
+function startRecitationSession(isRestart = false) {
+    isRecitationStarted = true;
+    renderActiveOutlineBar();
+    resetRecitationUI(isRestart);
+
+    if (recitationInput) {
+        setTimeout(() => {
+            recitationInput.focus();
+        }, 120);
+    }
+}
+
+// Render Active Outline Bar while recitation is in progress
+function renderActiveOutlineBar() {
+    const container = document.getElementById('outlineSelectorContainer');
+    if (!container) return;
+
+    const outlines = recitationOutlines[activeEssayTypeId] || [];
+    const activeOutline = outlines[currentOutlineIndex] || outlines[0];
+
+    container.innerHTML = `
+        <div class="outline-active-session-bar">
+            <div class="active-session-left">
+                <span class="active-pulse-dot"></span>
+                <span class="active-session-label">ĐANG TRẢ BÀI:</span>
+                <strong class="active-session-name">${activeOutline ? `${activeOutline.shortTitle} – ${activeOutline.subtitle}` : 'Dàn ý'}</strong>
+                <span class="active-session-count">(${activeOutline ? activeOutline.questions.length : 0} câu hỏi)</span>
+            </div>
+            <div class="active-session-right">
+                ${outlines.length > 1 ? `
+                    <button type="button" class="btn-switch-outline" id="btnSwitchOutline" title="Dừng bài thi để chọn dàn ý khác">
+                        <i class="fa-solid fa-layer-group"></i> Chọn dàn ý khác
+                    </button>
+                ` : ''}
+            </div>
+        </div>
+    `;
+
+    const btnSwitch = container.querySelector('#btnSwitchOutline');
+    if (btnSwitch) {
+        btnSwitch.addEventListener('click', () => {
+            const confirmSwitch = confirm('Bạn có muốn tạm dừng bài thi hiện tại để CHỌN DÀN Ý KHÁC không?\n\n• Tiến độ bài làm của bạn đã được tự động sao lưu.\n• Bạn có thể quay lại làm tiếp bất kỳ lúc nào.');
+            if (!confirmSwitch) return;
+
+            stopRecitationTimer();
+            saveCurrentRecitationProgress();
+            isRecitationStarted = false;
+
+            if (recitationQuizBox) recitationQuizBox.classList.add('hidden');
+            if (recitationFeedback) recitationFeedback.classList.add('hidden');
+            renderOutlineSelectorLobby();
+            showToast('Đã lưu tiến độ. Bạn có thể chọn dàn ý khác!', 'info');
+        });
+    }
 }
 
 // Reset Recitation State and UI - Supports Auto-Save restoration and fresh restart
@@ -2297,6 +2460,7 @@ function showEvaluationResult() {
 
     // Clear saved progress for this outline upon completion
     clearSavedRecitationProgress();
+    isRecitationStarted = false;
 
     // Show result box
     if (recitationResultBox) recitationResultBox.classList.remove('hidden');
@@ -2625,8 +2789,8 @@ function selectEssayType(id) {
 
     // Reset recitation for this type
     currentOutlineIndex = 0;
-    renderOutlineSelector();
-    resetRecitationUI();
+    isRecitationStarted = false;
+    renderOutlineSelectorLobby();
 
     // Reset tabs to first tab
     const firstTab = document.querySelector('.tab-btn[data-tab="basicInfo"]');
@@ -3070,8 +3234,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (panel) panel.classList.add('active');
 
             if (tabId === 'writingPractice') {
-                renderOutlineSelector();
-                resetRecitationUI(false);
+                if (!isRecitationStarted) {
+                    renderOutlineSelectorLobby();
+                } else {
+                    renderActiveOutlineBar();
+                }
             }
         });
     });
@@ -3081,7 +3248,21 @@ document.addEventListener('DOMContentLoaded', () => {
     if (btnShowHint) btnShowHint.addEventListener('click', showRecitationHint);
     if (btnCheckAnswer) btnCheckAnswer.addEventListener('click', checkRecitationAnswer);
     if (btnNextQuestion) btnNextQuestion.addEventListener('click', nextRecitationQuestion);
-    if (btnRestartRecitation) btnRestartRecitation.addEventListener('click', () => resetRecitationUI(true));
+    if (btnRestartRecitation) {
+        btnRestartRecitation.addEventListener('click', () => {
+            if (recitationResultBox) recitationResultBox.classList.add('hidden');
+            startRecitationSession(true);
+        });
+    }
+
+    const btnChooseAnotherOutline = document.getElementById('btnChooseAnotherOutline');
+    if (btnChooseAnotherOutline) {
+        btnChooseAnotherOutline.addEventListener('click', () => {
+            if (recitationResultBox) recitationResultBox.classList.add('hidden');
+            isRecitationStarted = false;
+            renderOutlineSelectorLobby();
+        });
+    }
 
     if (recitationInput) {
         recitationInput.addEventListener('input', () => {
