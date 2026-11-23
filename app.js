@@ -1176,7 +1176,7 @@ function markOutlineCompleted(typeId, outlineIdx) {
     const outlines = recitationOutlines[typeId] || [];
     const userClass = getUserClass();
     const isRestricted = ['CB211', 'CB213', 'ONB103'].includes(userClass);
-    const requiredCount = (isRestricted && typeId === 'cause-effect') ? 2 : outlines.length;
+    const requiredCount = (isRestricted && typeId === 'cause-effect') ? 4 : outlines.length;
     if (outlines.length > 0 && completed[typeId].length >= requiredCount) {
         markEssayCompleted(typeId);
     }
@@ -2030,7 +2030,7 @@ function renderOutlineSelectorLobby() {
             const idx = parseInt(e.currentTarget.dataset.outlineIndex, 10);
             if (isOutlineLocked(activeEssayTypeId, idx)) {
                 const userClass = getUserClass();
-                showToast(`🔒 Dàn ý này tạm thời chưa mở cho lớp ${userClass || 'của bạn'}. Lớp hiện mở Dàn ý 01 và Dàn ý 02!`, 'warning');
+                showToast(`🔒 Dàn ý này tạm thời chưa mở cho lớp ${userClass || 'của bạn'}. Lớp hiện mở Dàn ý 01, 02, 03 và 04!`, 'warning');
                 return;
             }
             currentOutlineIndex = idx;
@@ -2535,7 +2535,7 @@ function isOutlineLocked(typeId, outlineIndex) {
     const userClass = getUserClass();
     if (['CB211', 'CB213', 'ONB103'].includes(userClass)) {
         if (typeId === 'cause-effect') {
-            return outlineIndex >= 2; // Only first 2 outlines (index 0 and 1) are unlocked
+            return outlineIndex >= 4; // First 4 outlines (indices 0, 1, 2, 3) are unlocked: Nguyên nhân & Giải pháp, Nguyên nhân & Ảnh hưởng, Ảnh hưởng & Giải pháp, Chỉ Nguyên nhân
         }
         if (typeId === 'opinion' || typeId === 'discussion') {
             return true;
@@ -2632,7 +2632,7 @@ function renderNav() {
             }
             if (isTypeLocked(type.id)) {
                 const userClass = getUserClass();
-                showToast(`🔒 Dạng luận này tạm thời chưa mở cho lớp ${userClass || 'của bạn'}. Lớp hiện mở Dạng 01 và 2 dàn ý đầu của Dạng 02!`, 'warning');
+                showToast(`🔒 Dạng luận này tạm thời chưa mở cho lớp ${userClass || 'của bạn'}. Lớp hiện mở Dạng 01 và 4 dàn ý đầu của Dạng 02!`, 'warning');
                 return;
             }
             selectEssayType(type.id);
@@ -2707,7 +2707,7 @@ function setupVariantTabs(container, itemSelector = '.outline-variant', defaultP
         btn.addEventListener('click', () => {
             if (isOutlineLocked(activeEssayTypeId, index)) {
                 const userClass = getUserClass();
-                showToast(`🔒 Dàn ý này tạm thời chưa mở cho lớp ${userClass || 'của bạn'}. Lớp hiện mở Dàn ý 01 và Dàn ý 02!`, 'warning');
+                showToast(`🔒 Dàn ý này tạm thời chưa mở cho lớp ${userClass || 'của bạn'}. Lớp hiện mở Dàn ý 01, 02, 03 và 04!`, 'warning');
                 return;
             }
             nav.querySelectorAll('.outline-variant-tab-btn').forEach(b => b.classList.remove('active'));
@@ -2747,7 +2747,7 @@ function setupVariantTabs(container, itemSelector = '.outline-variant', defaultP
 function selectEssayType(id) {
     if (isTypeLocked(id)) {
         const userClass = getUserClass();
-        showToast(`🔒 Dạng luận này tạm thời chưa mở cho lớp ${userClass || 'của bạn'}. Lớp hiện mở Dạng 01 và 2 dàn ý đầu của Dạng 02!`, 'warning');
+        showToast(`🔒 Dạng luận này tạm thời chưa mở cho lớp ${userClass || 'của bạn'}. Lớp hiện mở Dạng 01 và 4 dàn ý đầu của Dạng 02!`, 'warning');
         return;
     }
     activeEssayTypeId = id;
