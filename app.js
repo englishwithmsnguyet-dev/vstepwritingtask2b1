@@ -2843,7 +2843,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const loginError = document.getElementById('loginError');
 
     const REQUIRED_PASSWORD = 'STUDYHARD';
-    const ALLOWED_CLASSES = ['CB210', 'CB211', 'CB213', 'ONB103', 'B212', 'B2'];
+    const ALLOWED_CLASSES = ['CB210', 'CB211', 'CB213', 'ONB103', 'B212'];
 
     const STUDENTS_BY_CLASS = {
         'CB210': [
@@ -3046,19 +3046,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Student validation:
             if (!ALLOWED_CLASSES.includes(finalClassName)) {
-                if (loginError) loginError.textContent = 'Hệ thống hiện chỉ mở cho các lớp: CB210, CB211, CB213, ONB103, B212 và Gia Tuệ (B2)!';
+                if (loginError) loginError.textContent = 'Hệ thống hiện chỉ mở cho các lớp: CB210, CB211, CB213, ONB103, B212!';
                 if (loginClass) loginClass.focus();
                 return;
             }
 
             const isGiaTue = noToneName.includes('gia tue') || noToneName.replace(/\s+/g, '').includes('giatue');
-            if (finalClassName === 'B2') {
-                if (!isGiaTue) {
-                    if (loginError) loginError.textContent = 'Lớp B2 hiện chỉ dành riêng cho học viên Gia Tuệ (B2)!';
-                    if (loginFullName) loginFullName.focus();
-                    return;
-                }
-                finalFullName = 'Gia Tuệ';
+            if (isGiaTue || finalClassName === 'B2') {
+                if (loginError) loginError.textContent = 'Tài khoản học viên "Gia Tuệ" hiện đã bị KHÓA! Vui lòng liên hệ Giáo viên (Cô Nguyệt).';
+                if (loginFullName) loginFullName.focus();
+                return;
             } else {
                 const classStudentList = STUDENTS_BY_CLASS[finalClassName] || [];
                 const normInputName = normalizeName(rawFullName);
@@ -3069,9 +3066,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (matchedStudent) {
                     finalFullName = matchedStudent;
-                } else if (finalClassName === 'B212' && isGiaTue) {
-                    finalFullName = 'Gia Tuệ';
-                    finalClassName = 'B2';
+                
                 } else {
                     if (loginError) loginError.textContent = `Họ và tên không có trong danh sách lớp ${finalClassName}.`;
                     if (loginFullName) loginFullName.focus();
